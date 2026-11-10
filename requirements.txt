@@ -1,0 +1,6 @@
+fastmcp>=4
+pyld>=3
+jsonschema>=4.20
+requests
+httpx
+beautifulsoup4
