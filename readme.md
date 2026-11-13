@@ -14,7 +14,7 @@ script, and looks up the implementation guide to explain the gaps.
 | Tool | What it does |
 | --- | --- |
 | `fetch_metadata(url)` | Extracts the JSON-LD records embedded in a landing page |
-| `validate_cdif(example \| url \| record)` | Validates a bundled example (by name), a landing page (by URL) or a record against the CDIF Discovery JSON Schema |
+| `validate_cdif(example \| url \| record)` | Validates a bundled example (by name), a landing page (by URL) or a record against the CDIF Discovery JSON Schema and SHACL rules |
 | `search_cdif_guide(query)` | Returns the most relevant sections of the implementation guide |
 | `list_cdif_examples()` / `get_cdif_example(name)` | Conforming records from real catalogues, as templates |
 
@@ -144,14 +144,26 @@ call is a short string and the server loads the record itself.
   property names. The server resolves that context locally and re-compacts
   the record with CDIF's prefixes (`schema:name`), so no network call is
   needed and the RDF meaning is unchanged.
-- Validation is open-world (unknown properties pass) and covers the JSON
-  Schema only, not the SHACL rules.
+- Validation is open-world (unknown properties pass) for the JSON Schema.
+- SHACL validation (`discoveryDocRules.shacl`, via pyshacl) runs on the
+  record's whole RDF graph, so nested nodes are checked too: a node typed
+  `schema:Dataset` anywhere in the record must meet the Dataset rules.
+  pyshacl runs with `advanced=True`, which is required because the Dataset
+  shapes select their targets with `sh:SPARQLTarget`. Results are grouped
+  by severity, path and message, with a count, because a record with many
+  similar nodes can produce thousands of identical results.
+- `valid` is true only if the JSON Schema passes and SHACL reports no
+  Violations. SHACL Warnings and Info are recommendations. `schema_valid`
+  gives the JSON Schema result alone; pass `shacl=False` to skip SHACL.
+- Of the 47 bundled examples, 46 pass the JSON Schema and 36 meet the SHACL
+  rules (run `test-server.py` for the list). A very large record such as
+  `ncei-ghrsst-mur-sst.jsonld` (30k triples) takes about 15 s to check
+  against the SHACL rules.
 
 ## Limitations and next steps
 
 - Guide search is keyword-based. Replacing it with embedding retrieval over
   the full CDIF book would make it retrieval-augmented generation proper.
-- Add SHACL validation (`discoveryDocRules.shacl`, via pyshacl).
 - Add crosswalk tools (ISO 19115 or DCAT to CDIF).
 
 CDIF artefacts are (c) CODATA, CC-BY-4.0.

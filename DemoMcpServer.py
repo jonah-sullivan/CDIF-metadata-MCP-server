@@ -12,9 +12,12 @@ import tempfile
 from pathlib import Path
 
 import httpx
+import pyshacl
+import rdflib
 from bs4 import BeautifulSoup
 from fastmcp import FastMCP
 from jsonschema.exceptions import best_match
+from rdflib.namespace import SH
 
 # CODATA's composite CDIF Discovery spec (Core + Discovery), cloned into
 # vendor/ (see README).
@@ -22,6 +25,8 @@ PROFILE = Path(__file__).parent / "vendor" / "doc-corediscovery"
 SCHEMA = PROFILE / "CDIFDiscoveryDocStructuredSchema.json"
 FRAME = PROFILE / "CDIFDiscoveryDoc-frame.jsonld"
 GUIDE = PROFILE / "CDIFDiscoveryDocImplementationGuide.md"
+SHAPES = rdflib.Graph().parse(PROFILE / "discoveryDocRules.shacl",
+                              format="turtle")
 
 # CODATA's own framing + validation script. It print()s progress, and on a
 # stdio MCP server stdout IS the protocol channel, so every call into it is
@@ -105,7 +110,8 @@ def _fetch(url: str) -> list[dict]:
 @mcp.tool
 def validate_cdif(record: dict | list[dict] | None = None,
                   example: str | None = None,
-                  url: str | None = None) -> dict:
+                  url: str | None = None,
+                  shacl: bool = True) -> dict:
     """Validate JSON-LD metadata against the CDIF Discovery profile v1.1.
     Give exactly ONE of:
       example: name of a bundled example from list_cdif_examples(), e.g.
@@ -114,9 +120,13 @@ def validate_cdif(record: dict | list[dict] | None = None,
                validated, so there is no need to call fetch_metadata first
       record:  a JSON-LD record, or the list returned by fetch_metadata
     Prefer example or url: they avoid copying a whole record into the call.
-    Returns whether it is valid, which CDIF profiles it declares in
-    dcterms:conformsTo, and a list of problems (JSON path + message). When
-    there are several records, returns {"records": [...]}, one result each."""
+    Two checks run: the CDIF JSON Schema ("problems": JSON path + message)
+    and, unless shacl=False, the CDIF SHACL rules ("shacl": grouped results
+    with severity Violation, Warning or Info). "valid" is true only when the
+    schema passes and there are no SHACL Violations; Warnings and Info are
+    recommendations. Also returns the CDIF profiles the record declares in
+    dcterms:conformsTo. When there are several records, returns
+    {"records": [...]}, one result each."""
     given = [k for k, v in (("record", record), ("example", example),
                             ("url", url)) if v is not None]
     if len(given) != 1:
@@ -127,18 +137,19 @@ def validate_cdif(record: dict | list[dict] | None = None,
     elif url is not None:
         record = _fetch(url)
     if isinstance(record, dict):
-        return _validate_one(record)
+        return _validate_one(record, shacl)
     if not record:
-        return {"valid": False, "problem_count": 1, "problems": [
+        return {"valid": False, "schema_valid": False, "problem_count": 1,
+                "problems": [
             {"path": "$", "message": "Empty list: no JSON-LD records to "
              "validate (the page carries no machine-readable metadata)."}]}
     if len(record) == 1:
-        return _validate_one(record[0])
-    return {"records": [{"index": i, **_validate_one(r)}
+        return _validate_one(record[0], shacl)
+    return {"records": [{"index": i, **_validate_one(r, shacl)}
                         for i, r in enumerate(record)]}
 
 
-def _validate_one(record: dict) -> dict:
+def _validate_one(record: dict, shacl: bool = True) -> dict:
     with tempfile.NamedTemporaryFile("w", suffix=".jsonld", delete=False,
                                      encoding="utf-8") as f:
         pass
@@ -149,7 +160,7 @@ def _validate_one(record: dict) -> dict:
             framed = cdif.frame_cdif_document(f.name, str(FRAME))
             result = cdif.validate_against_schema(framed, str(SCHEMA))
     except Exception as e:  # malformed JSON-LD, unreachable remote context...
-        return {"valid": False, "problems": [
+        return {"valid": False, "schema_valid": False, "problems": [
             {"path": "$", "message": f"Could not process as JSON-LD: {e}"}]}
     finally:
         Path(f.name).unlink(missing_ok=True)
@@ -159,7 +170,8 @@ def _validate_one(record: dict) -> dict:
     # misleading; report the actual cause instead.
     if "@type" not in framed:
         types = doc.get("@type", "none") if isinstance(doc, dict) else "unknown"
-        return {"valid": False, "declared_conformance": [], "problem_count": 1,
+        return {"valid": False, "schema_valid": False,
+                "declared_conformance": [], "problem_count": 1,
                 "problems": [{"path": "$['@type']", "message": (
                     f"No schema:Dataset node found to validate (record @type: "
                     f"{types}). CDIF requires the described resource to be "
@@ -171,8 +183,69 @@ def _validate_one(record: dict) -> dict:
                     "dcterms:conformsTo", [])]
     problems = [{"path": e.json_path, "message": _explain(e)}
                 for e in sorted(result["errors"], key=lambda e: e.json_path)]
-    return {"valid": result["valid"], "declared_conformance": declared,
-            "problem_count": len(problems), "problems": problems[:40]}
+    out = {"valid": result["valid"], "schema_valid": result["valid"],
+           "declared_conformance": declared,
+           "problem_count": len(problems), "problems": problems[:40]}
+    if shacl:
+        out["shacl"] = _shacl(doc)
+        out["valid"] = result["valid"] and out["shacl"]["conforms"]
+    return out
+
+
+SEVERITY_ORDER = {"Violation": 0, "Warning": 1, "Info": 2}
+MAX_SHACL_RESULTS = 40
+
+
+def _shacl(doc: dict) -> dict:
+    """Validate the whole RDF graph of a record against CDIF's SHACL rules.
+
+    Unlike the JSON Schema, which checks the framed main Dataset, SHACL sees
+    every node: a nested node typed schema:Dataset must meet the Dataset
+    rules too. Results are grouped by (severity, path, message), because a
+    record with many similar nodes can produce thousands of identical ones.
+    """
+    try:
+        nquads = cdif.jsonld.to_rdf(doc, {"format": "application/n-quads"})
+        data = rdflib.Graph().parse(data=nquads, format="nt")
+        conforms, report, _ = pyshacl.validate(
+            data, shacl_graph=SHAPES,
+            advanced=True,        # the Dataset shapes use sh:SPARQLTarget
+            inference="none",
+            allow_warnings=True,  # only Violations make conforms False
+        )
+    except Exception as e:
+        return {"conforms": False, "error": f"SHACL validation failed: {e}"}
+
+    groups: dict[tuple, int] = {}
+    for r in report.subjects(SH.resultSeverity, None):
+        severity = str(report.value(r, SH.resultSeverity)).rsplit("#", 1)[-1]
+        path = report.value(r, SH.resultPath)
+        key = (severity,
+               _curie(path) if isinstance(path, rdflib.URIRef) else None,
+               str(report.value(r, SH.resultMessage) or "")[:300])
+        groups[key] = groups.get(key, 0) + 1
+
+    counts = {s: 0 for s in SEVERITY_ORDER}
+    for (severity, _, _), n in groups.items():
+        counts[severity] = counts.get(severity, 0) + n
+    results = [{"severity": s, "path": p, "message": m,
+                **({"count": n} if n > 1 else {})}
+               for (s, p, m), n in sorted(
+                   groups.items(),
+                   key=lambda kv: (SEVERITY_ORDER.get(kv[0][0], 9), -kv[1]))]
+    return {"conforms": conforms, "counts": counts,
+            "results": results[:MAX_SHACL_RESULTS],
+            **({"results_omitted": len(results) - MAX_SHACL_RESULTS}
+               if len(results) > MAX_SHACL_RESULTS else {})}
+
+
+def _curie(iri) -> str:
+    """http://schema.org/name -> schema:name, using the CDIF prefixes."""
+    iri = str(iri)
+    for prefix, ns in sorted(PREFIXES.items(), key=lambda kv: -len(kv[1])):
+        if iri.startswith(ns):
+            return f"{prefix}:{iri[len(ns):]}"
+    return iri
 
 
 def _explain(error) -> str:

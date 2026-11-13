@@ -4,3 +4,4 @@ jsonschema>=4.20
 requests
 httpx
 beautifulsoup4
+pyshacl

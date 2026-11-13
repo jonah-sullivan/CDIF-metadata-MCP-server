@@ -43,19 +43,32 @@ async def main():
         for p in r["problems"]:
             print("  ", p["path"], "|", p["message"][:110])
         assert not r["valid"]
+        s = r["shacl"]
+        print("  SHACL:", s["counts"])
+        for p in s["results"]:
+            print("   ", p["severity"], "|", p["path"], "|", p["message"][:90])
+        assert not s["conforms"] and s["counts"]["Violation"] > 0
+        assert "shacl" not in (await c.call_tool(
+            "validate_cdif", {"record": TYPICAL, "shacl": False})).data
 
         hits = (await c.call_tool(
             "search_cdif_guide", {"query": "subjectOf CatalogRecord"})).data
         print("guide search ->", [h["section"] for h in hits])
         assert hits
 
-        # every example CODATA ships should pass
+        # Shipped examples: report schema and SHACL results separately. Not
+        # every example meets the SHACL rules, so this reports, not asserts.
         names = (await c.call_tool("list_cdif_examples", {})).data
-        bad = []
+        schema_bad, shacl_bad = [], []
         for n in names:
-            rec = (await c.call_tool("get_cdif_example", {"name": n})).data
-            if not (await c.call_tool("validate_cdif", {"record": rec})).data["valid"]:
-                bad.append(n)
-        print(f"shipped examples: {len(names) - len(bad)}/{len(names)} valid", bad)
+            r = (await c.call_tool("validate_cdif", {"example": n})).data
+            if not r["schema_valid"]:
+                schema_bad.append(n)
+            if not r.get("shacl", {}).get("conforms"):
+                shacl_bad.append(n)
+        print(f"shipped examples, schema: {len(names) - len(schema_bad)}"
+              f"/{len(names)} valid", schema_bad)
+        print(f"shipped examples, SHACL:  {len(names) - len(shacl_bad)}"
+              f"/{len(names)} conform", shacl_bad)
 
 asyncio.run(main())
