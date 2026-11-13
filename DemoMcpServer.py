@@ -34,8 +34,9 @@ mcp = FastMCP(
     "cdif-metadata",
     instructions=(
         "Tools for assessing dataset metadata against the CDIF Discovery "
-        "profile. Typical flow: fetch_metadata(url) -> validate_cdif(record) "
-        "-> search_cdif_guide(query) to explain how to fix what failed."
+        "profile. Typical flow: validate_cdif(url=...) or "
+        "validate_cdif(example=...) -> search_cdif_guide(query) to explain "
+        "how to fix what failed."
     ),
 )
 
@@ -75,6 +76,13 @@ def fetch_metadata(url: str) -> list[dict]:
     in it (<script type="application/ld+json">). If the URL itself returns
     JSON-LD, that document is returned. An empty list means the page carries
     no machine-readable metadata, which is itself a finding."""
+    return _fetch(url)
+
+
+def _fetch(url: str) -> list[dict]:
+    if not url.startswith(("http://", "https://")):
+        raise ValueError(f"Not a web URL: {url!r}. For a bundled example "
+                         f"file, pass its name as example= instead.")
     r = httpx.get(url, follow_redirects=True, timeout=30,
                   headers={"Accept": "text/html, application/ld+json;q=0.9",
                            "User-Agent": "cdif-mcp/0.1"})
@@ -95,12 +103,29 @@ def fetch_metadata(url: str) -> list[dict]:
 
 
 @mcp.tool
-def validate_cdif(record: dict | list[dict]) -> dict:
-    """Validate a JSON-LD metadata record against the CDIF Discovery profile
-    v1.1. Accepts one record, or the list returned by fetch_metadata as-is.
+def validate_cdif(record: dict | list[dict] | None = None,
+                  example: str | None = None,
+                  url: str | None = None) -> dict:
+    """Validate JSON-LD metadata against the CDIF Discovery profile v1.1.
+    Give exactly ONE of:
+      example: name of a bundled example from list_cdif_examples(), e.g.
+               "CDIF-aloha-dataset.json" (a name, not a path or URL)
+      url:     a dataset landing page; its embedded JSON-LD is fetched and
+               validated, so there is no need to call fetch_metadata first
+      record:  a JSON-LD record, or the list returned by fetch_metadata
+    Prefer example or url: they avoid copying a whole record into the call.
     Returns whether it is valid, which CDIF profiles it declares in
-    dcterms:conformsTo, and a list of problems (JSON path + message). For a
-    list of several records, returns {"records": [...]}, one result each."""
+    dcterms:conformsTo, and a list of problems (JSON path + message). When
+    there are several records, returns {"records": [...]}, one result each."""
+    given = [k for k, v in (("record", record), ("example", example),
+                            ("url", url)) if v is not None]
+    if len(given) != 1:
+        raise ValueError("Give exactly one of record, example or url "
+                         f"(got: {', '.join(given) or 'none'}).")
+    if example is not None:
+        record = _load_example(example)
+    elif url is not None:
+        record = _fetch(url)
     if isinstance(record, dict):
         return _validate_one(record)
     if not record:
@@ -199,7 +224,14 @@ def list_cdif_examples() -> list[str]:
 @mcp.tool
 def get_cdif_example(name: str) -> dict:
     """Return one conforming CDIF Discovery example record, to use as a
-    template or comparison. name comes from list_cdif_examples()."""
+    template or comparison. name comes from list_cdif_examples(). To check
+    whether it is valid, call validate_cdif(example=name) instead."""
+    return _load_example(name)
+
+
+def _load_example(name: str) -> dict:
+    # Path(name).name drops any directory part, so only files in examples/
+    # can be read (no "../" or absolute paths).
     path = PROFILE / "examples" / Path(name).name
     if not path.is_file():
         raise ValueError(f"No such example: {name}. Call list_cdif_examples().")

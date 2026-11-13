@@ -25,6 +25,19 @@ async def main():
         print("CDIF example ->", r["valid"], r["declared_conformance"])
         assert r["valid"]
 
+        r = (await c.call_tool(
+            "validate_cdif", {"example": "copernicus-sea-ice.jsonld"})).data
+        print("validate by example name ->", r["valid"])
+        assert r["valid"]
+
+        for bad_args in ({}, {"example": "x.json", "url": "https://x"},
+                         {"example": "../../../DemoMcpServer.py"},
+                         {"url": "/etc/passwd"}):
+            res = await c.call_tool("validate_cdif", bad_args,
+                                    raise_on_error=False)
+            assert res.is_error, bad_args
+        print("bad validate_cdif arguments rejected")
+
         r = (await c.call_tool("validate_cdif", {"record": TYPICAL})).data
         print("plain schema.org ->", r["valid"], r["problem_count"], "problems")
         for p in r["problems"]:
