@@ -33,9 +33,15 @@ SYSTEM = (
     "For ISO 19115 XML, use crosswalk_iso19115(url=... or example=...) or "
     "crosswalk_geonetwork_record(catalogue=..., uuid=...), which convert "
     "and validate in one call; pass include_record=false unless the user "
-    "wants the converted record. Never copy a whole record into a tool "
-    "call. Then search_cdif_guide(query) to explain fixes. Base every "
-    "claim on tool results. Be concise."
+    "wants the converted record. When the user asks about identifiers, "
+    "DOIs, ORCIDs, RORs, links or vocabulary terms, call "
+    "check_identifiers(source=...) with the example name or URL, or "
+    "check_geonetwork_identifiers(catalogue=..., uuid=...). The other "
+    "tools do not resolve identifiers, so never say an identifier "
+    "resolves or is correct unless a check result says so. Never copy a "
+    "whole record into a tool call. Then "
+    "search_cdif_guide(query) to explain fixes. Base every claim on tool "
+    "results. Be concise."
 )
 
 

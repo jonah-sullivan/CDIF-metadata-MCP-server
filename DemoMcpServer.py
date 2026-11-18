@@ -23,6 +23,7 @@ from pydantic import Field
 from rdflib.namespace import SH
 
 import crosswalk as xwalk
+import pidcheck
 
 # CODATA's composite CDIF Discovery spec (Core + Discovery), cloned into
 # vendor/ (see README).
@@ -52,7 +53,12 @@ mcp = FastMCP(
         "how to fix what failed. For ISO 19115 XML records (GeoNetwork "
         "catalogues), crosswalk_iso19115(url=... or example=...) or "
         "crosswalk_geonetwork_record(catalogue=..., uuid=...) converts the "
-        "record to CDIF and validates it in one call."
+        "record to CDIF and validates it in one call. To check whether "
+        "identifiers (DOIs, ORCIDs, RORs) resolve and vocabulary terms "
+        "match their vocabularies, use check_identifiers(source=...) or "
+        "check_geonetwork_identifiers(catalogue=..., uuid=...); the "
+        "validation and crosswalk tools resolve nothing unless given "
+        "check_identifiers=true."
     ),
 )
 
@@ -140,6 +146,7 @@ def validate_cdif(
     example: str | None = None,
     url: str | None = None,
     shacl: bool = True,
+    check_identifiers: bool = False,
 ) -> dict:
     """Validate JSON-LD metadata against the CDIF Discovery profile v1.1.
     Give exactly ONE of:
@@ -157,8 +164,13 @@ def validate_cdif(
     "valid" is true only when the
     schema passes and there are no SHACL Violations; Warnings and Info are
     recommendations. Also returns the CDIF profiles the record declares in
-    dcterms:conformsTo. When there are several records, returns
-    {"records": [...]}, one result each."""
+    dcterms:conformsTo. With check_identifiers=True, also returns
+    "identifiers": whether DOIs, ORCIDs, RORs and other identifiers
+    resolve and are what they claim, and whether vocabulary terms match
+    their vocabularies, as a "summary" plus separate "problems",
+    "warnings" and "notes" lists. This makes network requests and is
+    slower. When there are several records, returns {"records": [...]},
+    one result each."""
     given = [
         k
         for k, v in (("record", record), ("example", example), ("url", url))
@@ -174,7 +186,7 @@ def validate_cdif(
     elif url is not None:
         record = _fetch(url)
     if isinstance(record, dict):
-        return _validate_one(record, shacl)
+        return _validate_one(record, shacl, check_identifiers)
     if not record:
         return {
             "valid": False,
@@ -190,16 +202,18 @@ def validate_cdif(
             ],
         }
     if len(record) == 1:
-        return _validate_one(record[0], shacl)
+        return _validate_one(record[0], shacl, check_identifiers)
     return {
         "records": [
-            {"index": i, **_validate_one(r, shacl)}
+            {"index": i, **_validate_one(r, shacl, check_identifiers)}
             for i, r in enumerate(record)
         ]
     }
 
 
-def _validate_one(record: dict, shacl: bool = True) -> dict:
+def _validate_one(
+    record: dict, shacl: bool = True, check_identifiers: bool = False
+) -> dict:
     with tempfile.NamedTemporaryFile(
         "w", suffix=".jsonld", delete=False, encoding="utf-8"
     ) as f:
@@ -269,7 +283,21 @@ def _validate_one(record: dict, shacl: bool = True) -> dict:
     if shacl:
         out["shacl"] = _shacl(doc)
         out["valid"] = result["valid"] and out["shacl"]["conforms"]
+    if check_identifiers:
+        out["identifiers"] = _check_identifiers(doc)
     return out
+
+
+def _pid_resolver() -> pidcheck.Resolver:
+    """The resolver for identifier checks (replaced in tests)."""
+    return pidcheck.default_resolver()
+
+
+def _check_identifiers(record: dict) -> dict:
+    """Identifier and vocabulary checks on a CDIF-form record. These do
+    not change "valid": they are about how well the record works for
+    machines, not about conformance."""
+    return pidcheck.check_record(record, _pid_resolver())
 
 
 SEVERITY_ORDER = {"Violation": 0, "Warning": 1, "Info": 2}
@@ -458,6 +486,16 @@ Validate = Annotated[
 IncludeRecord = Annotated[
     bool, Field(description="Include the converted CDIF JSON-LD in the reply.")
 ]
+CheckIdentifiers = Annotated[
+    bool,
+    Field(
+        description=(
+            "Also check that the record's identifiers (DOIs, ORCIDs, RORs...) "
+            "resolve and its vocabulary terms match their vocabularies. "
+            "Makes network requests, so it is slower."
+        )
+    ),
+]
 
 
 @mcp.tool
@@ -481,6 +519,7 @@ def crosswalk_iso19115(
     ] = None,
     validate: Validate = True,
     include_record: IncludeRecord = True,
+    check_identifiers: CheckIdentifiers = False,
 ) -> dict:
     """Convert an ISO 19115 metadata record (ISO 19115-3 or ISO 19139 XML)
     to CDIF Discovery JSON-LD and validate it. Give exactly ONE of url or
@@ -494,9 +533,11 @@ def crosswalk_iso19115(
               was inferred (an empty list means nothing was)
       missing_required: CDIF required properties the ISO record lacks
       unmapped: ISO sections that were ignored
-    plus "validation" (the validate_cdif result) and "record" (the CDIF
-    JSON-LD). A record that does not describe a dataset (e.g. a service)
-    returns "out_of_scope" instead."""
+    plus "validation" (the validate_cdif result), "record" (the CDIF
+    JSON-LD) and, with check_identifiers=True, "identifiers" (a "summary"
+    plus separate "problems", "warnings" and "notes" lists about the
+    record's identifiers and vocabulary terms). A record that does not
+    describe a dataset (e.g. a service) returns "out_of_scope" instead."""
     if (url is None) == (example is None):
         raise ValueError(
             "Give exactly one of url or example. For a "
@@ -509,10 +550,18 @@ def crosswalk_iso19115(
                 f"No such ISO example: {example}. Call list_iso_examples()."
             )
         return _crosswalk_result(
-            path.read_bytes(), example, None, validate, include_record
+            path.read_bytes(),
+            example,
+            None,
+            validate,
+            include_record,
+            check_identifiers,
         )
     return _crosswalk_fetched(
-        xwalk.record_xml_url(url=url), validate, include_record
+        xwalk.record_xml_url(url=url),
+        validate,
+        include_record,
+        check_identifiers,
     )
 
 
@@ -532,28 +581,35 @@ def crosswalk_geonetwork_record(
     ],
     validate: Validate = True,
     include_record: IncludeRecord = True,
+    check_identifiers: CheckIdentifiers = False,
 ) -> dict:
     """Fetch an ISO 19115 record from a GeoNetwork catalogue by its uuid,
     convert it to CDIF Discovery JSON-LD and validate it. Both catalogue
     and uuid are required. Returns the same as crosswalk_iso19115:
     "crosswalk" (mapped: direct copies; inferences_and_fallbacks: the ONLY
-    inferred values; missing_required; unmapped), "validation" and
-    "record"."""
+    inferred values; missing_required; unmapped), "validation", "record"
+    and, with check_identifiers=True, "identifiers"."""
     return _crosswalk_fetched(
         xwalk.record_xml_url(uuid=uuid, catalogue=catalogue),
         validate,
         include_record,
+        check_identifiers,
     )
 
 
 def _crosswalk_fetched(
-    source: str, validate: bool, include_record: bool
+    source: str,
+    validate: bool,
+    include_record: bool,
+    check_identifiers: bool = False,
 ) -> dict:
     try:
         xml = xwalk.fetch_xml(source)
     except httpx.HTTPError as e:
         raise ValueError(f"Could not fetch {source}: {e}") from None
-    return _crosswalk_result(xml, source, source, validate, include_record)
+    return _crosswalk_result(
+        xml, source, source, validate, include_record, check_identifiers
+    )
 
 
 def _crosswalk_result(
@@ -562,6 +618,7 @@ def _crosswalk_result(
     source: str | None,
     validate: bool,
     include_record: bool,
+    check_identifiers: bool = False,
 ) -> dict:
     with contextlib.redirect_stdout(io.StringIO()):
         out = xwalk.crosswalk(xml, source_url=source)
@@ -570,6 +627,8 @@ def _crosswalk_result(
         return result
     if validate:
         result["validation"] = _validate_one(out["record"])
+    if check_identifiers:
+        result["identifiers"] = _check_identifiers(out["record"])
     if include_record:
         result["record"] = out["record"]
     return result
@@ -601,6 +660,119 @@ def _load_example(name: str) -> dict:
             f"No such example: {name}. Call list_cdif_examples()."
         )
     return json.loads(path.read_text("utf-8"))
+
+
+# Identifier checks as tools of their own. The check_identifiers flag on
+# the tools above suits capable clients, but small models do not reliably
+# pass an optional flag (qwen3.5-9b never did, even when told to); a tool
+# whose only inputs are required is used correctly.
+
+
+@mcp.tool
+def check_identifiers(
+    source: Annotated[
+        str,
+        Field(
+            description=(
+                "What to check: a bundled example name (from "
+                "list_iso_examples() or list_cdif_examples()), a dataset "
+                "landing page URL, an ISO 19115 XML URL, or a GeoNetwork "
+                "record page URL"
+            )
+        ),
+    ],
+) -> dict:
+    """Check a metadata record's identifiers and vocabulary terms: whether
+    its DOIs, ORCIDs, RORs and other identifiers resolve and are what they
+    claim (e.g. a dataset DOI that is really a journal article, an
+    inactive organisation), and whether its keywords and variables match
+    their vocabularies. Works on ISO 19115 XML and on JSON-LD. Returns a
+    "summary" plus separate "problems", "warnings" and "notes" lists. For
+    a record identified by a GeoNetwork uuid, use
+    check_geonetwork_identifiers instead. Makes network requests."""
+    records = _records_for_identifier_check(source)
+    if len(records) == 1:
+        return {"source": source, **_check_identifiers(records[0])}
+    return {
+        "source": source,
+        "records": [
+            {"index": i, **_check_identifiers(r)}
+            for i, r in enumerate(records)
+        ],
+    }
+
+
+@mcp.tool
+def check_geonetwork_identifiers(
+    catalogue: Annotated[
+        str,
+        Field(
+            description=(
+                "Base URL of the GeoNetwork catalogue that holds the record, "
+                "e.g. https://geonetwork.tern.org.au/geonetwork"
+            )
+        ),
+    ],
+    uuid: Annotated[
+        str, Field(description="The record's uuid in that catalogue")
+    ],
+) -> dict:
+    """Check the identifiers and vocabulary terms of an ISO 19115 record
+    in a GeoNetwork catalogue, by its uuid. Both catalogue and uuid are
+    required. Returns the same as check_identifiers."""
+    source = xwalk.record_xml_url(uuid=uuid, catalogue=catalogue)
+    return {"source": source, **_check_identifiers(_iso_record(source))}
+
+
+def _iso_record(url: str, xml: bytes | None = None) -> dict:
+    """ISO 19115 XML (fetched from url unless given) -> CDIF record."""
+    if xml is None:
+        try:
+            xml = xwalk.fetch_xml(url)
+        except httpx.HTTPError as e:
+            raise ValueError(f"Could not fetch {url}: {e}") from None
+    with contextlib.redirect_stdout(io.StringIO()):
+        out = xwalk.crosswalk(xml, source_url=url)
+    if out["record"] is None:
+        raise ValueError(f"Not checked: {out['report']['out_of_scope']}")
+    return out["record"]
+
+
+def _records_for_identifier_check(source: str) -> list[dict]:
+    """A bundled example name or a URL -> CDIF-form records."""
+    if not re.match(r"https?://", source):
+        name = Path(source).name  # no directory traversal
+        if name.endswith(".xml") and (ISO_EXAMPLES / name).is_file():
+            return [_iso_record(name, (ISO_EXAMPLES / name).read_bytes())]
+        if (PROFILE / "examples" / name).is_file():
+            records = [_load_example(name)]
+        else:
+            raise ValueError(
+                f"No such example or URL: {source}. Call list_iso_examples() "
+                f"or list_cdif_examples(), or give a URL."
+            )
+    else:
+        url = xwalk.record_xml_url(url=source)  # GeoNetwork page -> XML
+        if url != source:
+            return [_iso_record(url)]
+        try:
+            r = httpx.get(
+                url,
+                follow_redirects=True,
+                timeout=30,
+                headers={"User-Agent": "cdif-mcp/0.1"},
+            )
+            r.raise_for_status()
+        except httpx.HTTPError as e:
+            raise ValueError(f"Could not fetch {url}: {e}") from None
+        ctype = r.headers.get("content-type", "")
+        if "xml" in ctype and "html" not in ctype:
+            return [_iso_record(url, r.content)]
+        records = _fetch(url)  # JSON-LD, or JSON-LD embedded in HTML
+        if not records:
+            raise ValueError(f"{url} carries no JSON-LD metadata to check.")
+    with contextlib.redirect_stdout(io.StringIO()):
+        return [_to_cdif_form(rec) for rec in records]
 
 
 if __name__ == "__main__":
