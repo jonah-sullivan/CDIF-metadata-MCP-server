@@ -74,17 +74,21 @@ async def main():
             "example": "auscope-gsnsw-wms-service.xml"})).data
         print("ISO service record ->", r["crosswalk"]["out_of_scope"][:50])
         assert "record" not in r and "validation" not in r
-        for bad_args in ({}, {"example": "../../DemoMcpServer.py"},
-                         {"example": "manifest.json"},
-                         {"uuid": "abc"},
-                         {"uuid": "../x", "catalogue": "https://x.org"},
-                         {"url": "file:///etc/passwd"},
-                         {"example": "aodn-sst-l3s.xml",
-                          "catalogue": "https://x.org"}):
-            res = await c.call_tool("crosswalk_iso19115", bad_args,
-                                    raise_on_error=False)
-            assert res.is_error, bad_args
-        print("bad crosswalk_iso19115 arguments rejected")
+        for tool, bad_args in (
+                ("crosswalk_iso19115", {}),
+                ("crosswalk_iso19115", {"example": "../../DemoMcpServer.py"}),
+                ("crosswalk_iso19115", {"example": "manifest.json"}),
+                ("crosswalk_iso19115", {"url": "file:///etc/passwd"}),
+                ("crosswalk_iso19115", {"example": "aodn-sst-l3s.xml",
+                                        "url": "https://x.org"}),
+                ("crosswalk_geonetwork_record", {"uuid": "abc"}),
+                ("crosswalk_geonetwork_record",
+                 {"uuid": "../x", "catalogue": "https://x.org"}),
+                ("crosswalk_geonetwork_record",
+                 {"uuid": "abc", "catalogue": "file:///etc"})):
+            res = await c.call_tool(tool, bad_args, raise_on_error=False)
+            assert res.is_error, (tool, bad_args)
+        print("bad crosswalk arguments rejected")
 
         # Shipped examples: report schema and SHACL results separately. Not
         # every example meets the SHACL rules, so this reports, not asserts.

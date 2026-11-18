@@ -10,6 +10,7 @@ import re
 import sys
 import tempfile
 from pathlib import Path
+from typing import Annotated
 
 import httpx
 import pyshacl
@@ -17,6 +18,7 @@ import rdflib
 from bs4 import BeautifulSoup
 from fastmcp import FastMCP
 from jsonschema.exceptions import best_match
+from pydantic import Field
 from rdflib.namespace import SH
 
 import crosswalk as xwalk
@@ -46,8 +48,9 @@ mcp = FastMCP(
         "profile. Typical flow: validate_cdif(url=...) or "
         "validate_cdif(example=...) -> search_cdif_guide(query) to explain "
         "how to fix what failed. For ISO 19115 XML records (GeoNetwork "
-        "catalogues), crosswalk_iso19115(...) converts the record to CDIF "
-        "and validates it in one call."
+        "catalogues), crosswalk_iso19115(url=... or example=...) or "
+        "crosswalk_geonetwork_record(catalogue=..., uuid=...) converts the "
+        "record to CDIF and validates it in one call."
     ),
 )
 
@@ -308,54 +311,79 @@ def get_cdif_example(name: str) -> dict:
     return _load_example(name)
 
 
+Validate = Annotated[bool, Field(
+    description="Validate the converted record against CDIF.")]
+IncludeRecord = Annotated[bool, Field(
+    description="Include the converted CDIF JSON-LD in the reply.")]
+
+
 @mcp.tool
-def crosswalk_iso19115(url: str | None = None,
-                       uuid: str | None = None,
-                       catalogue: str | None = None,
-                       example: str | None = None,
-                       validate: bool = True,
-                       include_record: bool = True) -> dict:
-    """Convert an ISO 19115 metadata record (ISO 19115-3 or ISO 19139 XML,
-    as served by GeoNetwork catalogues) to CDIF Discovery JSON-LD, and
-    validate the result. Give exactly ONE of:
-      url:     the record's XML URL, or a GeoNetwork record page such as
-               .../srv/eng/catalog.search#/metadata/<uuid> (converted to
-               its XML automatically)
-      uuid + catalogue: a GeoNetwork record id and the catalogue's base
-               URL, e.g. catalogue="https://geonetwork.tern.org.au/geonetwork"
-      example: a bundled ISO record name from list_iso_examples()
+def crosswalk_iso19115(
+        url: Annotated[str | None, Field(description=(
+            "URL of the record's ISO XML, or of a GeoNetwork record page "
+            "(.../catalog.search#/metadata/<uuid>)"))] = None,
+        example: Annotated[str | None, Field(description=(
+            "Name of a bundled ISO record from list_iso_examples()"))] = None,
+        validate: Validate = True,
+        include_record: IncludeRecord = True) -> dict:
+    """Convert an ISO 19115 metadata record (ISO 19115-3 or ISO 19139 XML)
+    to CDIF Discovery JSON-LD and validate it. Give exactly ONE of url or
+    example. For a record identified by a GeoNetwork uuid, use
+    crosswalk_geonetwork_record instead.
     Returns "crosswalk": the CDIF properties produced and their ISO
     sources ("mapped"), CDIF required properties the ISO record cannot
     supply ("missing_required"), ISO sections that were ignored
     ("unmapped") and notes on fallbacks and inferences; "validation": the
-    validate_cdif result for the converted record (skip with
-    validate=False); and "record": the CDIF JSON-LD (omit with
-    include_record=False for a shorter reply). A record that does not
-    describe a dataset (e.g. a service) returns "out_of_scope" instead."""
-    given = [k for k, v in (("url", url), ("uuid", uuid),
-                            ("example", example)) if v is not None]
-    if len(given) != 1:
-        raise ValueError("Give exactly one of url, uuid (with catalogue) or "
-                         f"example (got: {', '.join(given) or 'none'}).")
-    if catalogue is not None and uuid is None:
-        raise ValueError("catalogue is only used together with uuid.")
-    source = None
+    validate_cdif result; and "record": the CDIF JSON-LD. A record that
+    does not describe a dataset (e.g. a service) returns "out_of_scope"
+    instead."""
+    if (url is None) == (example is None):
+        raise ValueError("Give exactly one of url or example. For a "
+                         "GeoNetwork uuid, use crosswalk_geonetwork_record.")
     if example is not None:
         path = ISO_EXAMPLES / Path(example).name  # no directory traversal
         if path.suffix != ".xml" or not path.is_file():
             raise ValueError(f"No such ISO example: {example}. Call "
                              f"list_iso_examples().")
-        xml = path.read_bytes()
-    else:
-        source = xwalk.record_xml_url(url=url, uuid=uuid, catalogue=catalogue)
-        try:
-            xml = xwalk.fetch_xml(source)
-        except httpx.HTTPError as e:
-            raise ValueError(f"Could not fetch {source}: {e}") from None
+        return _crosswalk_result(path.read_bytes(), example, None,
+                                 validate, include_record)
+    return _crosswalk_fetched(xwalk.record_xml_url(url=url),
+                              validate, include_record)
 
+
+@mcp.tool
+def crosswalk_geonetwork_record(
+        catalogue: Annotated[str, Field(description=(
+            "Base URL of the GeoNetwork catalogue that holds the record, "
+            "e.g. https://geonetwork.tern.org.au/geonetwork"))],
+        uuid: Annotated[str, Field(description=(
+            "The record's uuid in that catalogue"))],
+        validate: Validate = True,
+        include_record: IncludeRecord = True) -> dict:
+    """Fetch an ISO 19115 record from a GeoNetwork catalogue by its uuid,
+    convert it to CDIF Discovery JSON-LD and validate it. Both catalogue
+    and uuid are required. Returns the same as crosswalk_iso19115:
+    "crosswalk" (mapped, missing_required, unmapped, notes),
+    "validation" and "record"."""
+    return _crosswalk_fetched(
+        xwalk.record_xml_url(uuid=uuid, catalogue=catalogue),
+        validate, include_record)
+
+
+def _crosswalk_fetched(source: str, validate: bool,
+                       include_record: bool) -> dict:
+    try:
+        xml = xwalk.fetch_xml(source)
+    except httpx.HTTPError as e:
+        raise ValueError(f"Could not fetch {source}: {e}") from None
+    return _crosswalk_result(xml, source, source, validate, include_record)
+
+
+def _crosswalk_result(xml: bytes, label: str, source: str | None,
+                      validate: bool, include_record: bool) -> dict:
     with contextlib.redirect_stdout(io.StringIO()):
         out = xwalk.crosswalk(xml, source_url=source)
-    result = {"source": source or example, "crosswalk": out["report"]}
+    result = {"source": label, "crosswalk": out["report"]}
     if out["record"] is None:
         return result
     if validate:
