@@ -1702,9 +1702,11 @@ def crosswalk(xml: bytes | str, source_url: str | None = None) -> dict:
     """Crosswalk one ISO 19115-3 or ISO 19139 record to CDIF Discovery.
 
     Returns {"record": <CDIF JSON-LD or None>, "report": {...}}. The report
-    gives the dialect and scope, the CDIF properties produced (with their
-    ISO sources), CDIF required properties that could not be filled, ISO
-    sections the crosswalk ignored, and notes on fallbacks and inferences.
+    gives the dialect and scope, the CDIF properties produced and the ISO
+    elements they were copied from ("mapped"), CDIF required properties
+    that could not be filled ("missing_required"), ISO sections the
+    crosswalk ignored ("unmapped"), and every value that was inferred or
+    taken from a fallback source ("inferences_and_fallbacks").
     "record" is None when the ISO record does not describe a dataset (e.g.
     a service record); "out_of_scope" then says why.
     """
@@ -1751,6 +1753,6 @@ def crosswalk(xml: bytes | str, source_url: str | None = None) -> dict:
         ],
         missing_required=_missing_required(record),
         unmapped=b.unmapped(),
-        notes=b.notes,
+        inferences_and_fallbacks=b.notes,
     )
     return {"record": record, "report": report}

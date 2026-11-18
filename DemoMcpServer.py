@@ -3,6 +3,7 @@ against the CDIF Discovery profile (https://w3id.org/cdif/discovery/1.1).
 
 Run:  python server.py        (stdio transport, for Claude Desktop etc.)
 """
+
 import contextlib
 import io
 import json
@@ -31,8 +32,9 @@ FRAME = PROFILE / "CDIFDiscoveryDoc-frame.jsonld"
 GUIDE = PROFILE / "CDIFDiscoveryDocImplementationGuide.md"
 # ISO 19115 records from NCRIS facility catalogues (see its README).
 ISO_EXAMPLES = Path(__file__).parent / "tests" / "fixtures" / "iso"
-SHAPES = rdflib.Graph().parse(PROFILE / "discoveryDocRules.shacl",
-                              format="turtle")
+SHAPES = rdflib.Graph().parse(
+    PROFILE / "discoveryDocRules.shacl", format="turtle"
+)
 
 # CODATA's own framing + validation script. It print()s progress, and on a
 # stdio MCP server stdout IS the protocol channel, so every call into it is
@@ -54,10 +56,17 @@ mcp = FastMCP(
     ),
 )
 
-SCHEMA_ORG = {"http://schema.org", "http://schema.org/",
-              "https://schema.org", "https://schema.org/"}
-PREFIXES = {k: v for k, v in json.loads(FRAME.read_text("utf-8"))["@context"]
-            .items() if isinstance(v, str)}
+SCHEMA_ORG = {
+    "http://schema.org",
+    "http://schema.org/",
+    "https://schema.org",
+    "https://schema.org/",
+}
+PREFIXES = {
+    k: v
+    for k, v in json.loads(FRAME.read_text("utf-8"))["@context"].items()
+    if isinstance(v, str)
+}
 
 
 def _to_cdif_form(doc: dict) -> dict:
@@ -95,18 +104,27 @@ def fetch_metadata(url: str) -> list[dict]:
 
 def _fetch(url: str) -> list[dict]:
     if not url.startswith(("http://", "https://")):
-        raise ValueError(f"Not a web URL: {url!r}. For a bundled example "
-                         f"file, pass its name as example= instead.")
-    r = httpx.get(url, follow_redirects=True, timeout=30,
-                  headers={"Accept": "text/html, application/ld+json;q=0.9",
-                           "User-Agent": "cdif-mcp/0.1"})
+        raise ValueError(
+            f"Not a web URL: {url!r}. For a bundled example "
+            f"file, pass its name as example= instead."
+        )
+    r = httpx.get(
+        url,
+        follow_redirects=True,
+        timeout=30,
+        headers={
+            "Accept": "text/html, application/ld+json;q=0.9",
+            "User-Agent": "cdif-mcp/0.1",
+        },
+    )
     r.raise_for_status()
     if "json" in r.headers.get("content-type", ""):
         data = r.json()
         return data if isinstance(data, list) else [data]
     records = []
     for tag in BeautifulSoup(r.text, "html.parser").find_all(
-            "script", type="application/ld+json"):
+        "script", type="application/ld+json"
+    ):
         try:
             raw = re.sub(r"<!--.*?-->", "", tag.string or "", flags=re.DOTALL)
             data = json.loads(raw)
@@ -117,10 +135,12 @@ def _fetch(url: str) -> list[dict]:
 
 
 @mcp.tool
-def validate_cdif(record: dict | list[dict] | None = None,
-                  example: str | None = None,
-                  url: str | None = None,
-                  shacl: bool = True) -> dict:
+def validate_cdif(
+    record: dict | list[dict] | None = None,
+    example: str | None = None,
+    url: str | None = None,
+    shacl: bool = True,
+) -> dict:
     """Validate JSON-LD metadata against the CDIF Discovery profile v1.1.
     Give exactly ONE of:
       example: name of a bundled example from list_cdif_examples(), e.g.
@@ -131,16 +151,24 @@ def validate_cdif(record: dict | list[dict] | None = None,
     Prefer example or url: they avoid copying a whole record into the call.
     Two checks run: the CDIF JSON Schema ("problems": JSON path + message)
     and, unless shacl=False, the CDIF SHACL rules ("shacl": grouped results
-    with severity Violation, Warning or Info). "valid" is true only when the
+    with severity Violation, Warning or Info, and "node": which part of the
+    record each result is about; results about the metadata record in
+    schema:subjectOf are listed separately in "catalog_record_results").
+    "valid" is true only when the
     schema passes and there are no SHACL Violations; Warnings and Info are
     recommendations. Also returns the CDIF profiles the record declares in
     dcterms:conformsTo. When there are several records, returns
     {"records": [...]}, one result each."""
-    given = [k for k, v in (("record", record), ("example", example),
-                            ("url", url)) if v is not None]
+    given = [
+        k
+        for k, v in (("record", record), ("example", example), ("url", url))
+        if v is not None
+    ]
     if len(given) != 1:
-        raise ValueError("Give exactly one of record, example or url "
-                         f"(got: {', '.join(given) or 'none'}).")
+        raise ValueError(
+            "Give exactly one of record, example or url "
+            f"(got: {', '.join(given) or 'none'})."
+        )
     if example is not None:
         record = _load_example(example)
     elif url is not None:
@@ -148,19 +176,33 @@ def validate_cdif(record: dict | list[dict] | None = None,
     if isinstance(record, dict):
         return _validate_one(record, shacl)
     if not record:
-        return {"valid": False, "schema_valid": False, "problem_count": 1,
-                "problems": [
-            {"path": "$", "message": "Empty list: no JSON-LD records to "
-             "validate (the page carries no machine-readable metadata)."}]}
+        return {
+            "valid": False,
+            "schema_valid": False,
+            "problem_count": 1,
+            "problems": [
+                {
+                    "path": "$",
+                    "message": "Empty list: no JSON-LD records to "
+                    "validate (the page carries no machine-readable "
+                    "metadata).",
+                }
+            ],
+        }
     if len(record) == 1:
         return _validate_one(record[0], shacl)
-    return {"records": [{"index": i, **_validate_one(r, shacl)}
-                        for i, r in enumerate(record)]}
+    return {
+        "records": [
+            {"index": i, **_validate_one(r, shacl)}
+            for i, r in enumerate(record)
+        ]
+    }
 
 
 def _validate_one(record: dict, shacl: bool = True) -> dict:
-    with tempfile.NamedTemporaryFile("w", suffix=".jsonld", delete=False,
-                                     encoding="utf-8") as f:
+    with tempfile.NamedTemporaryFile(
+        "w", suffix=".jsonld", delete=False, encoding="utf-8"
+    ) as f:
         pass
     try:
         with contextlib.redirect_stdout(io.StringIO()):
@@ -168,9 +210,17 @@ def _validate_one(record: dict, shacl: bool = True) -> dict:
             Path(f.name).write_text(json.dumps(doc), "utf-8")
             framed = cdif.frame_cdif_document(f.name, str(FRAME))
             result = cdif.validate_against_schema(framed, str(SCHEMA))
-    except Exception as e:  # malformed JSON-LD, unreachable remote context...
-        return {"valid": False, "schema_valid": False, "problems": [
-            {"path": "$", "message": f"Could not process as JSON-LD: {e}"}]}
+    # Deliberately broad: pyld, the CODATA script and jsonschema raise many
+    # exception types on malformed or unreachable input, and every one
+    # should become a validation result rather than a failed tool call.
+    except Exception as e:  # noqa: BLE001
+        return {
+            "valid": False,
+            "schema_valid": False,
+            "problems": [
+                {"path": "$", "message": f"Could not process as JSON-LD: {e}"}
+            ],
+        }
     finally:
         Path(f.name).unlink(missing_ok=True)
 
@@ -178,23 +228,44 @@ def _validate_one(record: dict, shacl: bool = True) -> dict:
     # schema would report every required property as missing, which is
     # misleading; report the actual cause instead.
     if "@type" not in framed:
-        types = doc.get("@type", "none") if isinstance(doc, dict) else "unknown"
-        return {"valid": False, "schema_valid": False,
-                "declared_conformance": [], "problem_count": 1,
-                "problems": [{"path": "$['@type']", "message": (
-                    f"No schema:Dataset node found to validate (record @type: "
-                    f"{types}). CDIF requires the described resource to be "
-                    f"typed schema:Dataset; other types may be listed "
-                    f"alongside it.")}]}
+        types = (
+            doc.get("@type", "none") if isinstance(doc, dict) else "unknown"
+        )
+        return {
+            "valid": False,
+            "schema_valid": False,
+            "declared_conformance": [],
+            "problem_count": 1,
+            "problems": [
+                {
+                    "path": "$['@type']",
+                    "message": (
+                        f"No schema:Dataset node found to validate "
+                        f"(record @type: {types}). CDIF requires the "
+                        f"described resource to be typed schema:Dataset; "
+                        f"other types may be listed alongside it."
+                    ),
+                }
+            ],
+        }
 
-    declared = [c.get("@id", c) if isinstance(c, dict) else c
-                for c in (framed.get("schema:subjectOf") or {}).get(
-                    "dcterms:conformsTo", [])]
-    problems = [{"path": e.json_path, "message": _explain(e)}
-                for e in sorted(result["errors"], key=lambda e: e.json_path)]
-    out = {"valid": result["valid"], "schema_valid": result["valid"],
-           "declared_conformance": declared,
-           "problem_count": len(problems), "problems": problems[:40]}
+    declared = [
+        c.get("@id", c) if isinstance(c, dict) else c
+        for c in (framed.get("schema:subjectOf") or {}).get(
+            "dcterms:conformsTo", []
+        )
+    ]
+    problems = [
+        {"path": e.json_path, "message": _explain(e)}
+        for e in sorted(result["errors"], key=lambda e: e.json_path)
+    ]
+    out = {
+        "valid": result["valid"],
+        "schema_valid": result["valid"],
+        "declared_conformance": declared,
+        "problem_count": len(problems),
+        "problems": problems[:40],
+    }
     if shacl:
         out["shacl"] = _shacl(doc)
         out["valid"] = result["valid"] and out["shacl"]["conforms"]
@@ -210,42 +281,110 @@ def _shacl(doc: dict) -> dict:
 
     Unlike the JSON Schema, which checks the framed main Dataset, SHACL sees
     every node: a nested node typed schema:Dataset must meet the Dataset
-    rules too. Results are grouped by (severity, path, message), because a
-    record with many similar nodes can produce thousands of identical ones.
+    rules too. Results are grouped by (severity, node, path, message),
+    because a record with many similar nodes can produce thousands of
+    identical ones. "node" says which part of the record a result is about,
+    so that a reader does not mistake a result about, say, the catalog
+    record for one about the dataset.
     """
     try:
         nquads = cdif.jsonld.to_rdf(doc, {"format": "application/n-quads"})
         data = rdflib.Graph().parse(data=nquads, format="nt")
         conforms, report, _ = pyshacl.validate(
-            data, shacl_graph=SHAPES,
-            advanced=True,        # the Dataset shapes use sh:SPARQLTarget
+            data,
+            shacl_graph=SHAPES,
+            advanced=True,  # the Dataset shapes use sh:SPARQLTarget
             inference="none",
             allow_warnings=True,  # only Violations make conforms False
         )
-    except Exception as e:
+    # Deliberately broad, for the same reason as in _validate_one: any
+    # failure in RDF conversion or pyshacl is reported, not raised.
+    except Exception as e:  # noqa: BLE001
         return {"conforms": False, "error": f"SHACL validation failed: {e}"}
 
+    node_role = _node_roles(data)
     groups: dict[tuple, int] = {}
     for r in report.subjects(SH.resultSeverity, None):
         severity = str(report.value(r, SH.resultSeverity)).rsplit("#", 1)[-1]
         path = report.value(r, SH.resultPath)
-        key = (severity,
-               _curie(path) if isinstance(path, rdflib.URIRef) else None,
-               str(report.value(r, SH.resultMessage) or "")[:300])
+        key = (
+            severity,
+            node_role(report.value(r, SH.focusNode)),
+            _curie(path) if isinstance(path, rdflib.URIRef) else None,
+            str(report.value(r, SH.resultMessage) or "")[:300],
+        )
         groups[key] = groups.get(key, 0) + 1
 
     counts = {s: 0 for s in SEVERITY_ORDER}
-    for (severity, _, _), n in groups.items():
+    for (severity, *_), n in groups.items():
         counts[severity] = counts.get(severity, 0) + n
-    results = [{"severity": s, "path": p, "message": m,
-                **({"count": n} if n > 1 else {})}
-               for (s, p, m), n in sorted(
-                   groups.items(),
-                   key=lambda kv: (SEVERITY_ORDER.get(kv[0][0], 9), -kv[1]))]
-    return {"conforms": conforms, "counts": counts,
-            "results": results[:MAX_SHACL_RESULTS],
-            **({"results_omitted": len(results) - MAX_SHACL_RESULTS}
-               if len(results) > MAX_SHACL_RESULTS else {})}
+    results = [
+        {
+            "severity": s,
+            "node": node,
+            "path": p,
+            "message": m,
+            **({"count": n} if n > 1 else {}),
+        }
+        for (s, node, p, m), n in sorted(
+            groups.items(),
+            key=lambda kv: (
+                SEVERITY_ORDER.get(kv[0][0], 9),
+                kv[0][1] != DATASET_NODE,
+                -kv[1],
+            ),
+        )
+    ]
+    # Results about the catalog record are kept apart: they come from
+    # Dataset rules applied to the record node and are easily misread
+    # (by people and models) as gaps in the dataset itself.
+    about_record = [r for r in results if r["node"] == RECORD_NODE]
+    results = [r for r in results if r["node"] != RECORD_NODE]
+    out = {
+        "conforms": conforms,
+        "counts": counts,
+        "results": results[:MAX_SHACL_RESULTS],
+        **(
+            {"results_omitted": len(results) - MAX_SHACL_RESULTS}
+            if len(results) > MAX_SHACL_RESULTS
+            else {}
+        ),
+    }
+    if about_record:
+        out["catalog_record_results"] = about_record[:MAX_SHACL_RESULTS]
+        out["catalog_record_note"] = (
+            "catalog_record_results are about the metadata record in "
+            "schema:subjectOf, NOT the dataset. CDIF types the catalog "
+            "record as schema:Dataset, so Dataset recommendations "
+            "(creator, description, keywords...) are also checked on it. "
+            "Do not report them as missing from the dataset."
+        )
+    return out
+
+
+SDO = rdflib.Namespace("http://schema.org/")
+CATALOG_RECORD = rdflib.URIRef("http://www.w3.org/ns/dcat#CatalogRecord")
+DATASET_NODE = "dataset"
+RECORD_NODE = "catalog record"
+
+
+def _node_roles(data: rdflib.Graph):
+    """-> function naming the part of the record a node is: the described
+    dataset, its catalog record, or otherwise the node's type."""
+    datasets = set(data.subjects(SDO.subjectOf, None))
+    records = set(data.objects(None, SDO.subjectOf)) | set(
+        data.subjects(SDO.additionalType, CATALOG_RECORD)
+    )
+
+    def role(node) -> str:
+        if node in records:
+            return RECORD_NODE
+        if node in datasets:
+            return DATASET_NODE
+        types = sorted(_curie(t) for t in data.objects(node, rdflib.RDF.type))
+        return f"{types[0]} node" if types else "untyped node"
+
+    return role
 
 
 def _curie(iri) -> str:
@@ -253,7 +392,7 @@ def _curie(iri) -> str:
     iri = str(iri)
     for prefix, ns in sorted(PREFIXES.items(), key=lambda kv: -len(kv[1])):
         if iri.startswith(ns):
-            return f"{prefix}:{iri[len(ns):]}"
+            return f"{prefix}:{iri[len(ns) :]}"
     return iri
 
 
@@ -293,7 +432,9 @@ def search_cdif_guide(query: str, max_sections: int = 3) -> list[dict]:
         if hits:
             scored.append((hits / (len(words) + 50) ** 0.5, heading, text))
     scored.sort(reverse=True)
-    return [{"section": h, "text": t[:6000]} for _, h, t in scored[:max_sections]]
+    return [
+        {"section": h, "text": t[:6000]} for _, h, t in scored[:max_sections]
+    ]
 
 
 @mcp.tool
@@ -311,67 +452,103 @@ def get_cdif_example(name: str) -> dict:
     return _load_example(name)
 
 
-Validate = Annotated[bool, Field(
-    description="Validate the converted record against CDIF.")]
-IncludeRecord = Annotated[bool, Field(
-    description="Include the converted CDIF JSON-LD in the reply.")]
+Validate = Annotated[
+    bool, Field(description="Validate the converted record against CDIF.")
+]
+IncludeRecord = Annotated[
+    bool, Field(description="Include the converted CDIF JSON-LD in the reply.")
+]
 
 
 @mcp.tool
 def crosswalk_iso19115(
-        url: Annotated[str | None, Field(description=(
-            "URL of the record's ISO XML, or of a GeoNetwork record page "
-            "(.../catalog.search#/metadata/<uuid>)"))] = None,
-        example: Annotated[str | None, Field(description=(
-            "Name of a bundled ISO record from list_iso_examples()"))] = None,
-        validate: Validate = True,
-        include_record: IncludeRecord = True) -> dict:
+    url: Annotated[
+        str | None,
+        Field(
+            description=(
+                "URL of the record's ISO XML, or of a GeoNetwork record page "
+                "(.../catalog.search#/metadata/<uuid>)"
+            )
+        ),
+    ] = None,
+    example: Annotated[
+        str | None,
+        Field(
+            description=(
+                "Name of a bundled ISO record from list_iso_examples()"
+            )
+        ),
+    ] = None,
+    validate: Validate = True,
+    include_record: IncludeRecord = True,
+) -> dict:
     """Convert an ISO 19115 metadata record (ISO 19115-3 or ISO 19139 XML)
     to CDIF Discovery JSON-LD and validate it. Give exactly ONE of url or
     example. For a record identified by a GeoNetwork uuid, use
     crosswalk_geonetwork_record instead.
-    Returns "crosswalk": the CDIF properties produced and their ISO
-    sources ("mapped"), CDIF required properties the ISO record cannot
-    supply ("missing_required"), ISO sections that were ignored
-    ("unmapped") and notes on fallbacks and inferences; "validation": the
-    validate_cdif result; and "record": the CDIF JSON-LD. A record that
-    does not describe a dataset (e.g. a service) returns "out_of_scope"
-    instead."""
+    Returns "crosswalk" with:
+      mapped: CDIF properties produced and the ISO elements they were
+              copied from (direct mappings, not inferences)
+      inferences_and_fallbacks: the ONLY values that were inferred or
+              taken from a fallback source; report these when asked what
+              was inferred (an empty list means nothing was)
+      missing_required: CDIF required properties the ISO record lacks
+      unmapped: ISO sections that were ignored
+    plus "validation" (the validate_cdif result) and "record" (the CDIF
+    JSON-LD). A record that does not describe a dataset (e.g. a service)
+    returns "out_of_scope" instead."""
     if (url is None) == (example is None):
-        raise ValueError("Give exactly one of url or example. For a "
-                         "GeoNetwork uuid, use crosswalk_geonetwork_record.")
+        raise ValueError(
+            "Give exactly one of url or example. For a "
+            "GeoNetwork uuid, use crosswalk_geonetwork_record."
+        )
     if example is not None:
         path = ISO_EXAMPLES / Path(example).name  # no directory traversal
         if path.suffix != ".xml" or not path.is_file():
-            raise ValueError(f"No such ISO example: {example}. Call "
-                             f"list_iso_examples().")
-        return _crosswalk_result(path.read_bytes(), example, None,
-                                 validate, include_record)
-    return _crosswalk_fetched(xwalk.record_xml_url(url=url),
-                              validate, include_record)
+            raise ValueError(
+                f"No such ISO example: {example}. Call list_iso_examples()."
+            )
+        return _crosswalk_result(
+            path.read_bytes(), example, None, validate, include_record
+        )
+    return _crosswalk_fetched(
+        xwalk.record_xml_url(url=url), validate, include_record
+    )
 
 
 @mcp.tool
 def crosswalk_geonetwork_record(
-        catalogue: Annotated[str, Field(description=(
-            "Base URL of the GeoNetwork catalogue that holds the record, "
-            "e.g. https://geonetwork.tern.org.au/geonetwork"))],
-        uuid: Annotated[str, Field(description=(
-            "The record's uuid in that catalogue"))],
-        validate: Validate = True,
-        include_record: IncludeRecord = True) -> dict:
+    catalogue: Annotated[
+        str,
+        Field(
+            description=(
+                "Base URL of the GeoNetwork catalogue that holds the record, "
+                "e.g. https://geonetwork.tern.org.au/geonetwork"
+            )
+        ),
+    ],
+    uuid: Annotated[
+        str, Field(description=("The record's uuid in that catalogue"))
+    ],
+    validate: Validate = True,
+    include_record: IncludeRecord = True,
+) -> dict:
     """Fetch an ISO 19115 record from a GeoNetwork catalogue by its uuid,
     convert it to CDIF Discovery JSON-LD and validate it. Both catalogue
     and uuid are required. Returns the same as crosswalk_iso19115:
-    "crosswalk" (mapped, missing_required, unmapped, notes),
-    "validation" and "record"."""
+    "crosswalk" (mapped: direct copies; inferences_and_fallbacks: the ONLY
+    inferred values; missing_required; unmapped), "validation" and
+    "record"."""
     return _crosswalk_fetched(
         xwalk.record_xml_url(uuid=uuid, catalogue=catalogue),
-        validate, include_record)
+        validate,
+        include_record,
+    )
 
 
-def _crosswalk_fetched(source: str, validate: bool,
-                       include_record: bool) -> dict:
+def _crosswalk_fetched(
+    source: str, validate: bool, include_record: bool
+) -> dict:
     try:
         xml = xwalk.fetch_xml(source)
     except httpx.HTTPError as e:
@@ -379,8 +556,13 @@ def _crosswalk_fetched(source: str, validate: bool,
     return _crosswalk_result(xml, source, source, validate, include_record)
 
 
-def _crosswalk_result(xml: bytes, label: str, source: str | None,
-                      validate: bool, include_record: bool) -> dict:
+def _crosswalk_result(
+    xml: bytes,
+    label: str,
+    source: str | None,
+    validate: bool,
+    include_record: bool,
+) -> dict:
     with contextlib.redirect_stdout(io.StringIO()):
         out = xwalk.crosswalk(xml, source_url=source)
     result = {"source": label, "crosswalk": out["report"]}
@@ -399,9 +581,15 @@ def list_iso_examples() -> list[dict]:
     AuScope GeoNetwork catalogues) that crosswalk_iso19115(example=...)
     accepts, with the feature each one exercises."""
     manifest = json.loads((ISO_EXAMPLES / "manifest.json").read_text("utf-8"))
-    return [{"name": r["file"], "facility": r["catalogue"],
-             "standard": r["standard"], "why": r["why"]}
-            for r in manifest["records"]]
+    return [
+        {
+            "name": r["file"],
+            "facility": r["catalogue"],
+            "standard": r["standard"],
+            "why": r["why"],
+        }
+        for r in manifest["records"]
+    ]
 
 
 def _load_example(name: str) -> dict:
@@ -409,7 +597,9 @@ def _load_example(name: str) -> dict:
     # can be read (no "../" or absolute paths).
     path = PROFILE / "examples" / Path(name).name
     if not path.is_file():
-        raise ValueError(f"No such example: {name}. Call list_cdif_examples().")
+        raise ValueError(
+            f"No such example: {name}. Call list_cdif_examples()."
+        )
     return json.loads(path.read_text("utf-8"))
 
 

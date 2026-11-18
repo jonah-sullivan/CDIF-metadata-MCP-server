@@ -199,21 +199,29 @@ def test_aodn_no_identifier_is_reported():
     assert record["schema:identifier"]["schema:value"] == (
         "334592c9-991a-4e55-aba1-0b3247387a03"
     )
-    assert any("no identifier" in n for n in report["notes"])
+    assert any(
+        "no identifier" in n for n in report["inferences_and_fallbacks"]
+    )
 
 
 def test_aodn_principal_investigator_as_creator():
     _, report = run("aodn-sst-l3s.xml")
-    assert any("principal investigators" in n for n in report["notes"])
+    assert any(
+        "principal investigators" in n
+        for n in report["inferences_and_fallbacks"]
+    )
 
 
 def test_auscope_doi_from_online_resource():
     record, report = run("auscope-rosebery-3d-model.xml")
     assert record["@id"].startswith("https://doi.org/10.")
     assert any(
-        "DOI taken from an online resource" in n for n in report["notes"]
+        "DOI taken from an online resource" in n
+        for n in report["inferences_and_fallbacks"]
     )
-    assert any("No resource scope" in n for n in report["notes"])
+    assert any(
+        "No resource scope" in n for n in report["inferences_and_fallbacks"]
+    )
 
 
 def test_auscope_licence_in_generic_constraints():
@@ -407,9 +415,26 @@ def test_polygon_axis_order_latitude_first():
     wkt = place["geosparql:hasGeometry"]["geosparql:asWKT"]["@value"]
     assert wkt == "POLYGON((20 -10, 30 -10, 30 -20, 20 -20, 20 -10))"
     assert place["schema:geo"]["schema:box"] == "-20 20 -10 30"
-    assert any("axis order assumed lat/lon" in n for n in report["notes"])
+    assert any(
+        "axis order assumed lat/lon" in n
+        for n in report["inferences_and_fallbacks"]
+    )
 
 
 def test_parse_returns_md_metadata():
     root = parse(minimal())
     assert root.tag.endswith("MD_Metadata")
+
+
+def test_shacl_results_name_their_node():
+    """Dataset rules also fire on the catalog record (CDIF types it
+    schema:Dataset); results must say so, so they are not misread as
+    gaps in the dataset."""
+    import DemoMcpServer as srv
+
+    record, _ = run("tern-cmrset-evapotranspiration.xml")
+    shacl = srv._validate_one(record)["shacl"]
+    assert not [r for r in shacl["results"] if r["node"] == "catalog record"]
+    on_record = shacl["catalog_record_results"]
+    assert "schema:creator" in {r["path"] for r in on_record}
+    assert "NOT the dataset" in shacl["catalog_record_note"]
