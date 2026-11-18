@@ -164,8 +164,10 @@ def not_implemented_section() -> list[str]:
     out = [
         "## Not mapped yet",
         "",
-        "CODATA crosswalk rows with an ISO source that this tool does not "
-        "map yet.",
+        (
+            "CODATA crosswalk rows with an ISO source that this tool does not "
+            "map yet."
+        ),
         "",
         "| CDIF property | ISO source | CODATA rows | Why |",
         "| --- | --- | --- | --- |",
@@ -219,14 +221,18 @@ def results_section() -> list[str]:
     out = [
         "## Results on NCRIS facility records",
         "",
-        f"The {len(manifest['records'])} bundled records from the TERN, "
-        "IMOS/AODN and AuScope GeoNetwork catalogues (see "
-        "`tests/fixtures/iso/`), converted and checked with the MCP "
-        "server's validator (CDIF JSON Schema and SHACL rules). SHACL "
-        "counts include results on the catalog record.",
+        (
+            f"The {len(manifest['records'])} bundled records from the TERN, "
+            "IMOS/AODN and AuScope GeoNetwork catalogues (see "
+            "`tests/fixtures/iso/`), converted and checked with the MCP "
+            "server's validator (CDIF JSON Schema and SHACL rules). SHACL "
+            "counts include results on the catalog record."
+        ),
         "",
-        "| Record | Dialect | CDIF | SHACL violations / warnings / info "
-        "| Missing required | Inferences |",
+        (
+            "| Record | Dialect | CDIF | SHACL violations / warnings / info "
+            "| Missing required | Inferences |"
+        ),
         "| --- | --- | --- | --- | --- | --- |",
         *rows,
         "",
@@ -236,8 +242,10 @@ def results_section() -> list[str]:
         "",
         "### Inferences and fallbacks",
         "",
-        f"How often each was needed, across the {converted} converted "
-        "records:",
+        (
+            f"How often each was needed, across the {converted} converted "
+            "records:"
+        ),
         "",
         "| Records | Inference or fallback |",
         "| --- | --- |",
@@ -250,8 +258,10 @@ def results_section() -> list[str]:
         "",
         "### ISO sections left unmapped",
         "",
-        f"Sections ignored by the crosswalk, and in how many of the "
-        f"{converted} converted records they occur:",
+        (
+            f"Sections ignored by the crosswalk, and in how many of the "
+            f"{converted} converted records they occur:"
+        ),
         "",
         "| Records | ISO section |",
         "| --- | --- |",

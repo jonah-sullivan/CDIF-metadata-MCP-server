@@ -70,7 +70,7 @@ def main() -> int:
                 manifest["catalogues"][rec["catalogue"]], rec["uuid"]
             )
             found = dialect(xml)
-        except Exception as e:
+        except (httpx.HTTPError, etree.XMLSyntaxError) as e:
             print(f"FAIL {rec['file']}: {e}", file=sys.stderr)
             failed += 1
             continue
