@@ -479,6 +479,36 @@
       "body": "rva-vocabulary-tern.json",
       "trimmed": false,
       "why": "RVA-registered, served by TERN (web page AP)"
+    },
+    {
+      "name": "rva-vocabulary-anzsrc",
+      "request": {
+        "url": "https://vocabs.ardc.edu.au/registry/api/resource/vocabularies/316?includeVersions=true&includeAccessPoints=true",
+        "accept": "application/json",
+        "method": "GET"
+      },
+      "hops": [],
+      "final_url": "https://vocabs.ardc.edu.au/registry/api/resource/vocabularies/316?includeVersions=true&includeAccessPoints=true",
+      "status": 200,
+      "content_type": "application/json",
+      "body": "rva-vocabulary-anzsrc.json",
+      "trimmed": false,
+      "why": "RVA-hosted vocabulary with a single-segment linked-data path"
+    },
+    {
+      "name": "rva-vocabularies",
+      "request": {
+        "url": "https://vocabs.ardc.edu.au/registry/api/resource/vocabularies",
+        "accept": "application/json",
+        "method": "GET"
+      },
+      "hops": [],
+      "final_url": "https://vocabs.ardc.edu.au/registry/api/resource/vocabularies",
+      "status": 200,
+      "content_type": "application/json",
+      "body": "rva-vocabularies.json",
+      "trimmed": true,
+      "why": "RVA vocabulary listing (575 KB), cut to the vocabularies used here"
     }
   ]
 }

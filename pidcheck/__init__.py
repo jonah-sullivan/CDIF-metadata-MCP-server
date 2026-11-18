@@ -7,5 +7,13 @@ from .identifiers import (
     extract,
 )
 from .resolve import Resolver
+from .vocab import check_vocabulary
 
-__all__ = ["Identifier", "Resolver", "check_offline", "classify", "extract"]
+__all__ = [
+    "Identifier",
+    "Resolver",
+    "check_offline",
+    "check_vocabulary",
+    "classify",
+    "extract",
+]

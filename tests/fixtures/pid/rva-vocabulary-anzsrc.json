@@ -1,0 +1,97 @@
+{
+    "subject": [
+        {
+            "source": "anzsrc-for",
+            "label": "Organisation of Information and Knowledge Resources",
+            "notation": "080707",
+            "iri": "http://purl.org/au-research/vocabulary/anzsrc-for/2008/080707"
+        }
+    ],
+    "version": [
+        {
+            "browse-flag": [
+                "maySortByNotation",
+                "defaultSortByNotation",
+                "notationAlpha",
+                "defaultDisplayNotation",
+                "mayResolveResources"
+            ],
+            "access-point": [
+                {
+                    "ap-api-sparql": {
+                        "url": "https://vocabs.ardc.edu.au/repository/api/sparql/anzsrc-2020-for"
+                    },
+                    "id": 1436,
+                    "source": "user",
+                    "discriminator": "apiSparql"
+                },
+                {
+                    "ap-sissvoc": {
+                        "url-prefix": "https://vocabs.ardc.edu.au/repository/api/lda/anzsrc-2020-for"
+                    },
+                    "id": 1437,
+                    "source": "user",
+                    "discriminator": "sissvoc"
+                },
+                {
+                    "ap-file": {
+                        "format": "TTL",
+                        "upload-id": 147,
+                        "url": "https://vocabs.ardc.edu.au/registry/api/resource/downloads/1438/anzsrc-2020-for-20210429.ttl"
+                    },
+                    "id": 1438,
+                    "source": "user",
+                    "discriminator": "file"
+                }
+            ],
+            "id": 536,
+            "status": "current",
+            "title": "2020",
+            "slug": "2020",
+            "release-date": "2021-04-29",
+            "do-poolparty-harvest": false,
+            "do-import": false,
+            "do-publish": false
+        }
+    ],
+    "other-language": [],
+    "top-concept": [],
+    "related-entity-ref": [
+        {
+            "relation": [
+                "implementedBy"
+            ],
+            "id": 204
+        },
+        {
+            "relation": [
+                "publishedBy"
+            ],
+            "id": 205
+        }
+    ],
+    "related-vocabulary-ref": [
+        {
+            "relation": [
+                "hasAssociationWith"
+            ],
+            "id": 20
+        },
+        {
+            "relation": [
+                "hasAssociationWith"
+            ],
+            "id": 317
+        }
+    ],
+    "id": 316,
+    "status": "published",
+    "owner": "ARDC-Curated",
+    "slug": "anzsrc-2020-for",
+    "title": "Australian and New Zealand Standard Research Classification 2020: Fields of Research",
+    "acronym": "ANZSRC-2020-FoR",
+    "description": "The Australian and New Zealand Standard Research Classification (ANZSRC) 2020 is the collective name for a set of three related classifications developed for use in the measurement and analysis of research and experimental development (R&amp;D) undertaken in Australia and New Zealand. The ANZSRC is jointly produced by the Australian Bureau of Statistics (ABS) and Statistics New Zealand (Statistics NZ). The use of the three constituent classifications in the ANZSRC ensures that R&amp;D statistics collected are useful to governments, educational institutions, international organisations, scientific, professional or business organisations, business enterprises, community groups and private individuals in Australia and New Zealand. The three constituent classifications included in the ANZSRC are: Type of Activity (TOA), Fields of Research (FoR), and Socio-economic Objectives (SEO). This vocabulary record covers only the FoR Classification. \n<br> \n<br>The FoR classification allows research and development (R&amp;D) activity to be categorised according to the methodology used in the R&amp;D, rather than the activity of the unit performing the R&amp;D or the purpose of the R&amp;D. The categories in the classification include major fields and related sub-fields of research and emerging areas of study investigated by businesses, universities, tertiary institutions, national research institutions and other organisations. This classification allows the categorisation of fields of research activity within Australia and New Zealand. \n<br> \n<br> For more information, visit \n<a href=\"https://www.abs.gov.au/statistics/classifications/australian-and-new-zealand-standard-research-classification-anzsrc/2020\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">https://www.abs.gov.au/statistics/classifications/australian-and-new-zealand-standard-research-classification-anzsrc/2020</a>",
+    "note": "Please refer to \n<a href=\"https://documentation.ardc.edu.au/display/DOC/ANZSRC+2020\" target=\"_blank\" rel=\"nofollow noopener noreferrer\">https://documentation.ardc.edu.au/display/DOC/ANZSRC+2020</a> for information about the encoding of the vocabulary into RDF and SKOS.",
+    "creation-date": "2020-06-30",
+    "primary-language": "en"
+}

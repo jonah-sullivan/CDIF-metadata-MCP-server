@@ -1,0 +1,39 @@
+{
+ "vocabulary": [
+  {
+   "id": 316,
+   "slug": "anzsrc-2020-for",
+   "title": "Australian and New Zealand Standard Research Classification 2020: Fields of Research",
+   "owner": "ARDC-Curated",
+   "status": "published"
+  },
+  {
+   "id": 61,
+   "slug": "aodn-geographic-extents-vocabulary",
+   "title": "AODN Geographic Extents Vocabulary",
+   "owner": "AODN",
+   "status": "published"
+  },
+  {
+   "id": 641,
+   "slug": "tern-vocabularies",
+   "title": "TERN Controlled Vocabularies",
+   "owner": "TERN",
+   "status": "published"
+  },
+  {
+   "id": 22,
+   "slug": "aodn-discovery-parameter-vocabulary",
+   "title": "AODN Discovery Parameter Vocabulary",
+   "owner": "AODN",
+   "status": "published"
+  },
+  {
+   "id": 25,
+   "slug": "aodn-platform-vocabulary",
+   "title": "AODN Platform Vocabulary",
+   "owner": "AODN",
+   "status": "published"
+  }
+ ]
+}

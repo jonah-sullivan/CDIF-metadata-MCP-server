@@ -260,13 +260,50 @@ RECORDINGS = [
         None,
         "RVA-registered, served by TERN (web page AP)",
     ),
+    (
+        "rva-vocabulary-anzsrc",
+        "https://vocabs.ardc.edu.au/registry/api/resource/vocabularies/316"
+        "?includeVersions=true&includeAccessPoints=true",
+        JSON,
+        "GET",
+        None,
+        "RVA-hosted vocabulary with a single-segment linked-data path",
+    ),
+    (
+        "rva-vocabularies",
+        "https://vocabs.ardc.edu.au/registry/api/resource/vocabularies",
+        JSON,
+        "GET",
+        lambda d: {
+            "vocabulary": [
+                {
+                    k: v[k]
+                    for k in ("id", "slug", "title", "owner", "status")
+                    if k in v
+                }
+                for v in d["vocabulary"]
+                if v.get("slug") in RVA_SLUGS
+            ]
+        },
+        "RVA vocabulary listing (575 KB), cut to the vocabularies used here",
+    ),
 ]
+RVA_SLUGS = {
+    "aodn-discovery-parameter-vocabulary",
+    "aodn-geographic-extents-vocabulary",
+    "aodn-platform-vocabulary",
+    "anzsrc-2020-for",
+    "tern-vocabularies",
+}
 
 
 def trim(data, keep):
-    """Keep only the given keys (nested dicts give keys per level)."""
+    """Keep only the given keys (nested dicts give keys per level), or
+    apply keep if it is a function."""
     if keep is None:
         return data
+    if callable(keep):
+        return keep(data)
     if isinstance(keep, list):
         return {k: data[k] for k in keep if k in data}
     return {k: trim(data.get(k, {}), sub) for k, sub in keep.items()}
