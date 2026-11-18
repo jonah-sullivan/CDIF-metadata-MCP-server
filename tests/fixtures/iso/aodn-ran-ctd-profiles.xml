@@ -1,0 +1,1111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdb:MD_Metadata xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:mmi="http://standards.iso.org/iso/19115/-3/mmi/1.0" xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0" xmlns:msr="http://standards.iso.org/iso/19115/-3/msr/2.0" xmlns:mac="http://standards.iso.org/iso/19115/-3/mac/2.0" xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" xmlns:cat="http://standards.iso.org/iso/19115/-3/cat/1.0" xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0" xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0" xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0" xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0" xmlns:mas="http://standards.iso.org/iso/19115/-3/mas/1.0" xmlns:mrd="http://standards.iso.org/iso/19115/-3/mrd/1.0" xmlns:mrc="http://standards.iso.org/iso/19115/-3/mrc/2.0" xmlns:mex="http://standards.iso.org/iso/19115/-3/mex/1.0" xmlns:mpc="http://standards.iso.org/iso/19115/-3/mpc/1.0" xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0" xmlns:mrl="http://standards.iso.org/iso/19115/-3/mrl/2.0" xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/1.0" xmlns:mrs="http://standards.iso.org/iso/19115/-3/mrs/1.0" xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.0" xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0" xmlns:mdt="http://standards.iso.org/iso/19115/-3/mdt/1.0" xmlns:mds="http://standards.iso.org/iso/19115/-3/mds/1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://standards.iso.org/iso/19115/-3/cat/1.0 http://standards.iso.org/iso/19115/-3/cat/1.0/cat.xsd http://standards.iso.org/iso/19115/-3/cit/2.0 http://standards.iso.org/iso/19115/-3/cit/2.0/cit.xsd http://standards.iso.org/iso/19115/-3/gcx/1.0 http://standards.iso.org/iso/19115/-3/gcx/1.0/gcx.xsd http://standards.iso.org/iso/19115/-3/gex/1.0 http://standards.iso.org/iso/19115/-3/gex/1.0/gex.xsd http://standards.iso.org/iso/19115/-3/lan/1.0 http://standards.iso.org/iso/19115/-3/lan/1.0/lan.xsd http://standards.iso.org/iso/19115/-3/srv/2.0 http://standards.iso.org/iso/19115/-3/srv/2.0/srv.xsd http://standards.iso.org/iso/19115/-3/mas/1.0 http://standards.iso.org/iso/19115/-3/mas/1.0/mas.xsd http://standards.iso.org/iso/19115/-3/mcc/1.0 http://standards.iso.org/iso/19115/-3/mcc/1.0/mcc.xsd http://standards.iso.org/iso/19115/-3/mco/1.0 http://standards.iso.org/iso/19115/-3/mco/1.0/mco.xsd http://standards.iso.org/iso/19115/-3/mda/2.0 http://standards.iso.org/iso/19115/-3/mda/2.0/mda.xsd http://standards.iso.org/iso/19115/-3/mdb/2.0 http://standards.iso.org/iso/19115/-3/mdb/2.0/mdb.xsd http://standards.iso.org/iso/19115/-3/mds/2.0 http://standards.iso.org/iso/19115/-3/mds/2.0/mds.xsd http://standards.iso.org/iso/19115/-3/mdt/2.0 http://standards.iso.org/iso/19115/-3/mdt/2.0/mdt.xsd http://standards.iso.org/iso/19115/-3/mex/1.0 http://standards.iso.org/iso/19115/-3/mex/1.0/mex.xsd http://standards.iso.org/iso/19115/-3/mmi/1.0 http://standards.iso.org/iso/19115/-3/mmi/1.0/mmi.xsd http://standards.iso.org/iso/19115/-3/mpc/1.0 http://standards.iso.org/iso/19115/-3/mpc/1.0/mpc.xsd http://standards.iso.org/iso/19115/-3/mrc/2.0 http://standards.iso.org/iso/19115/-3/mrc/2.0/mrc.xsd http://standards.iso.org/iso/19115/-3/mrd/1.0 http://standards.iso.org/iso/19115/-3/mrd/1.0/mrd.xsd http://standards.iso.org/iso/19115/-3/mri/1.0 http://standards.iso.org/iso/19115/-3/mri/1.0/mri.xsd http://standards.iso.org/iso/19115/-3/mrl/2.0 http://standards.iso.org/iso/19115/-3/mrl/2.0/mrl.xsd http://standards.iso.org/iso/19115/-3/mrs/1.0 http://standards.iso.org/iso/19115/-3/mrs/1.0/mrs.xsd http://standards.iso.org/iso/19115/-3/msr/2.0 http://standards.iso.org/iso/19115/-3/msr/2.0/msr.xsd http://standards.iso.org/iso/19157/-2/mdq/1.0 http://standards.iso.org/iso/19157/-2/mdq/1.0/mdq.xsd http://standards.iso.org/iso/19115/-3/mac/2.0 http://standards.iso.org/iso/19115/-3/mac/2.0/mac.xsd http://standards.iso.org/iso/19115/-3/gco/1.0 http://standards.iso.org/iso/19115/-3/gco/1.0/gco.xsd http://standards.iso.org/iso/19115/-3/gmw/1.0 http://standards.iso.org/iso/19115/-3/gmw/1.0/gmw.xsd http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd http://www.w3.org/1999/xlink http://www.w3.org/1999/xlink.xsd">
+  <mdb:metadataIdentifier>
+    <mcc:MD_Identifier>
+      <mcc:code>
+        <gco:CharacterString>bc6e10a6-4dda-41c0-8639-5c96411efc5a</gco:CharacterString>
+      </mcc:code>
+    </mcc:MD_Identifier>
+  </mdb:metadataIdentifier>
+  <mdb:defaultLocale>
+    <lan:PT_Locale>
+      <lan:language>
+        <lan:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng" />
+      </lan:language>
+      <lan:characterEncoding>
+        <lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode" codeListValue="utf8" />
+      </lan:characterEncoding>
+    </lan:PT_Locale>
+  </mdb:defaultLocale>
+  <mdb:metadataScope>
+    <mdb:MD_MetadataScope>
+      <mdb:resourceScope>
+        <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="dataset" />
+      </mdb:resourceScope>
+      <mdb:name>
+        <gco:CharacterString />
+      </mdb:name>
+    </mdb:MD_MetadataScope>
+  </mdb:metadataScope>
+  <mdb:contact>
+    <cit:CI_Responsibility>
+      <cit:role>
+        <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="distributor" />
+      </cit:role>
+      <cit:party>
+        <cit:CI_Organisation>
+          <cit:name>
+            <gco:CharacterString>Integrated Marine Observing System (IMOS)</gco:CharacterString>
+          </cit:name>
+          <cit:individual>
+            <cit:CI_Individual>
+              <cit:contactInfo>
+                <cit:CI_Contact>
+                  <cit:phone>
+                    <cit:CI_Telephone>
+                      <cit:number>
+                        <gco:CharacterString>61 3 6226 7488</gco:CharacterString>
+                      </cit:number>
+                      <cit:numberType>
+                        <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice" />
+                      </cit:numberType>
+                    </cit:CI_Telephone>
+                  </cit:phone>
+                  <cit:phone>
+                    <cit:CI_Telephone>
+                      <cit:number>
+                        <gco:CharacterString>61 3 6226 2107</gco:CharacterString>
+                      </cit:number>
+                      <cit:numberType>
+                        <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="facsimile" />
+                      </cit:numberType>
+                    </cit:CI_Telephone>
+                  </cit:phone>
+                  <cit:address>
+                    <cit:CI_Address>
+                      <cit:deliveryPoint>
+                        <gco:CharacterString>University of Tasmania</gco:CharacterString>
+                      </cit:deliveryPoint>
+                      <cit:deliveryPoint>
+                        <gco:CharacterString>Private Bag 110</gco:CharacterString>
+                      </cit:deliveryPoint>
+                      <cit:city>
+                        <gco:CharacterString>Hobart</gco:CharacterString>
+                      </cit:city>
+                      <cit:administrativeArea>
+                        <gco:CharacterString>Tasmania</gco:CharacterString>
+                      </cit:administrativeArea>
+                      <cit:postalCode>
+                        <gco:CharacterString>7001</gco:CharacterString>
+                      </cit:postalCode>
+                      <cit:country>
+                        <gco:CharacterString>Australia</gco:CharacterString>
+                      </cit:country>
+                      <cit:electronicMailAddress>
+                        <gco:CharacterString>info@aodn.org.au</gco:CharacterString>
+                      </cit:electronicMailAddress>
+                    </cit:CI_Address>
+                  </cit:address>
+                  <cit:onlineResource>
+                    <cit:CI_OnlineResource>
+                      <cit:linkage>
+                        <gco:CharacterString>http://imos.org.au/aodn.html</gco:CharacterString>
+                      </cit:linkage>
+                      <cit:protocol>
+                        <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                      </cit:protocol>
+                      <cit:name>
+                        <gco:CharacterString>Website of the Australian Ocean Data Network (AODN)</gco:CharacterString>
+                      </cit:name>
+                    </cit:CI_OnlineResource>
+                  </cit:onlineResource>
+                </cit:CI_Contact>
+              </cit:contactInfo>
+              <cit:positionName>
+                <gco:CharacterString>Data Officer</gco:CharacterString>
+              </cit:positionName>
+            </cit:CI_Individual>
+          </cit:individual>
+        </cit:CI_Organisation>
+      </cit:party>
+    </cit:CI_Responsibility>
+  </mdb:contact>
+  <mdb:dateInfo>
+    <cit:CI_Date>
+      <cit:date>
+        <gco:DateTime>2019-11-29T10:59:16</gco:DateTime>
+      </cit:date>
+      <cit:dateType>
+        <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="creation" />
+      </cit:dateType>
+    </cit:CI_Date>
+  </mdb:dateInfo>
+  <mdb:dateInfo>
+    <cit:CI_Date>
+      <cit:date>
+        <gco:DateTime>2019-11-29T10:59:16</gco:DateTime>
+      </cit:date>
+      <cit:dateType>
+        <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="revision" />
+      </cit:dateType>
+    </cit:CI_Date>
+  </mdb:dateInfo>
+  <mdb:metadataStandard>
+    <cit:CI_Citation>
+      <cit:title>
+        <gco:CharacterString>ISO 19115-3:2018</gco:CharacterString>
+      </cit:title>
+    </cit:CI_Citation>
+  </mdb:metadataStandard>
+  <mdb:metadataLinkage>
+    <cit:CI_OnlineResource>
+      <cit:linkage>
+        <gco:CharacterString>https://catalogue-imos.aodn.org.au:443/geonetwork/srv/api/records/bc6e10a6-4dda-41c0-8639-5c96411efc5a</gco:CharacterString>
+      </cit:linkage>
+      <cit:protocol>
+        <gco:CharacterString>WWW:LINK-1.0-http--metadata-URL</gco:CharacterString>
+      </cit:protocol>
+      <cit:description>
+        <gco:CharacterString>Point of truth URL of this metadata record</gco:CharacterString>
+      </cit:description>
+    </cit:CI_OnlineResource>
+  </mdb:metadataLinkage>
+  <mdb:referenceSystemInfo>
+    <mrs:MD_ReferenceSystem>
+      <mrs:referenceSystemIdentifier>
+        <mcc:MD_Identifier>
+          <mcc:code>
+            <gco:CharacterString>EPSG:4326</gco:CharacterString>
+          </mcc:code>
+        </mcc:MD_Identifier>
+      </mrs:referenceSystemIdentifier>
+    </mrs:MD_ReferenceSystem>
+  </mdb:referenceSystemInfo>
+  <mdb:identificationInfo>
+    <mri:MD_DataIdentification>
+      <mri:citation>
+        <cit:CI_Citation>
+          <cit:title>
+            <gco:CharacterString>Royal Australian Navy (RAN) - CTD profiles</gco:CharacterString>
+          </cit:title>
+          <cit:date>
+            <cit:CI_Date>
+              <cit:date>
+                <gco:DateTime>2015-02-18T00:00:00</gco:DateTime>
+              </cit:date>
+              <cit:dateType>
+                <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="creation" />
+              </cit:dateType>
+            </cit:CI_Date>
+          </cit:date>
+          <cit:citedResponsibleParty>
+            <cit:CI_Responsibility>
+              <cit:role>
+                <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="custodian" />
+              </cit:role>
+              <cit:party>
+                <cit:CI_Organisation>
+                  <cit:name>
+                    <gco:CharacterString>Australian Hydrographic Office (AHO)</gco:CharacterString>
+                  </cit:name>
+                  <cit:individual>
+                    <cit:CI_Individual>
+                      <cit:contactInfo>
+                        <cit:CI_Contact>
+                          <cit:phone>
+                            <cit:CI_Telephone>
+                              <cit:number>
+                                <gco:CharacterString>+61 2 9359 3129</gco:CharacterString>
+                              </cit:number>
+                              <cit:numberType>
+                                <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice" />
+                              </cit:numberType>
+                            </cit:CI_Telephone>
+                          </cit:phone>
+                          <cit:phone>
+                            <cit:CI_Telephone>
+                              <cit:number>
+                                <gco:CharacterString>+61 2 9359 3120</gco:CharacterString>
+                              </cit:number>
+                              <cit:numberType>
+                                <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="facsimile" />
+                              </cit:numberType>
+                            </cit:CI_Telephone>
+                          </cit:phone>
+                          <cit:address>
+                            <cit:CI_Address>
+                              <cit:deliveryPoint>
+                                <gco:CharacterString>Garden Island, Wylde Street, Potts Point</gco:CharacterString>
+                              </cit:deliveryPoint>
+                              <cit:city>
+                                <gco:CharacterString>Sydney</gco:CharacterString>
+                              </cit:city>
+                              <cit:administrativeArea>
+                                <gco:CharacterString>New South Wales</gco:CharacterString>
+                              </cit:administrativeArea>
+                              <cit:postalCode>
+                                <gco:CharacterString>2011</gco:CharacterString>
+                              </cit:postalCode>
+                              <cit:country>
+                                <gco:CharacterString>Australia</gco:CharacterString>
+                              </cit:country>
+                            </cit:CI_Address>
+                          </cit:address>
+                        </cit:CI_Contact>
+                      </cit:contactInfo>
+                      <cit:positionName>
+                        <gco:CharacterString>Hydrography and METOC Branch</gco:CharacterString>
+                      </cit:positionName>
+                    </cit:CI_Individual>
+                  </cit:individual>
+                </cit:CI_Organisation>
+              </cit:party>
+            </cit:CI_Responsibility>
+          </cit:citedResponsibleParty>
+        </cit:CI_Citation>
+      </mri:citation>
+      <mri:abstract>
+        <gco:CharacterString>The Royal Australian Navy (RAN) collected vertical profiles of pressure, temperature and salinity measured by a Conductivity, Temperature and Depth (CTD) probe from RAN Hydrographic Survey cruises, between 2004 and 2016. There were 2 types of CTD used, the 'HS_CTD' used on smaller vessels which is lowered by a hand driven winch and the 'MVP200' CTD used on larger vessels and lowered by an electric winch. The CTD data is available as quality controlled netCDF files online at the AODN THREDDS server at http://thredds.aodn.org.au/thredds/ and also through a Web Map Service (WMS) at http://geoserver-123.aodn.org.au/geoserver. There are also metadata records, 1 per ship cruise, available at http://www.http://catalogue.aodn.org.au/geonetwork. The 2 CTD types are distinguished from one another by netCDF file naming or in the metadata record title element Data from the HS_CTD will have '_H' in the filename while MVP200 will have '_M'. HS_CTD The HS_CTD probe is manufactured by Falmouth Scientific and is the "2-inch Micro CTD" model. This CTD type is referred to operationally as the HS_CTD. This CTD is fitted within an inductive type conductivity cell, a platinum thermometer and silicon pressure sensor. The CTD temperature sensor is calibrated on the ITS-90 temperature scale against a master CTD using a controlled temperature bath. The pressure sensor is calibrated using a Druck Pressure Calibrator. The conductivity sensor is calibrated in a temperature controlled bath against seawater samples of known conductivity. The HS_CTD is lowered and raised by a hand winch sampling at a rate of 1.83 Hz. Data files were recorded in the downcast and upcast direction but most data is from downcasts due to higher quality. Raw CTD pressure data is not always monotonic due to transient up/down motion of winch/ship. Raw pressure data is subsetted to give a monotonic (increasing) sequence and then linearly interpolated to 1 decibar pressure intervals and converted to netCDF format files. Data is then flagged with quality control flags after visual inspection and comparison to average climatology and historical CTD casts. MVP200 CTD The MVP200 CTD is manufactured by Applied Microsystems Limited and is the "Micro CTD" model. This CTD type is referred to operationally as the MVP200_CTD. This CTD is fitted with a 4 electrode platinized conductivity cell, thermistor temperature sensor and a semiconductor strain gauge pressure sensor. The CTD sensors are calibrated at the manufacturer Applied Microsystems Limited on a 12-18 month schedule. The CTD temperature sensor is calibrated against 'Hart' temperature standards. The pressure sensor is calibrated using 'Budenburg Deadweight' standards. The conductivity sensor is calibrated using 'Hart' temperature standards and seawater samples of known conductivity. The CTD sensors are mounted to a fish-shape probe. The probe is controlled by an electric winch (MVP200 type). For downcasts the fish is allowed to free-fall (winch is in 'free-wheel' mode) under its own weight at about 2-3 ms-1 and then is winched back. Data is recorded in downcast and usually in upcast direction at a sampling rate of 25 Hz. The downcast data is of higher quality because sensors encounter undisturbed seawater so most data available are downcast files. This type of CTD is prone to a phenomenon called 'salinity spiking' caused by a mismatch between the response times of the temperature and conductivity sensor. Data undergoes a salinity de-spiking routine to correct for this. See the 'Data Quality - Lineage section' for further details on the salinity de-spiking process. Raw CTD pressure data is not always monotonic due to transient up/down motion of winch/ship. Raw pressure data is subsetted to give a monotonic (increasing) sequence and then linearly interpolated to 1 decibar pressure intervals. Data is then flagged with quality control flags after visual inspection and comparison to average climatology and historical CTD casts.</gco:CharacterString>
+      </mri:abstract>
+      <mri:credit>
+        <gco:CharacterString>CSIRO Oceans &amp; Atmosphere Flagship</gco:CharacterString>
+      </mri:credit>
+      <mri:credit>
+        <gco:CharacterString>Department of Defence, Hydrography and METOC Branch</gco:CharacterString>
+      </mri:credit>
+      <mri:status>
+        <mcc:MD_ProgressCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ProgressCode" codeListValue="completed" />
+      </mri:status>
+      <mri:pointOfContact>
+        <cit:CI_Responsibility>
+          <cit:role>
+            <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="distributor" />
+          </cit:role>
+          <cit:party>
+            <cit:CI_Organisation>
+              <cit:name>
+                <gco:CharacterString>Integrated Marine Observing System (IMOS)</gco:CharacterString>
+              </cit:name>
+              <cit:individual>
+                <cit:CI_Individual>
+                  <cit:contactInfo>
+                    <cit:CI_Contact>
+                      <cit:phone>
+                        <cit:CI_Telephone>
+                          <cit:number>
+                            <gco:CharacterString>61 3 6226 7488</gco:CharacterString>
+                          </cit:number>
+                          <cit:numberType>
+                            <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice" />
+                          </cit:numberType>
+                        </cit:CI_Telephone>
+                      </cit:phone>
+                      <cit:phone>
+                        <cit:CI_Telephone>
+                          <cit:number>
+                            <gco:CharacterString>61 3 6226 2107</gco:CharacterString>
+                          </cit:number>
+                          <cit:numberType>
+                            <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="facsimile" />
+                          </cit:numberType>
+                        </cit:CI_Telephone>
+                      </cit:phone>
+                      <cit:address>
+                        <cit:CI_Address>
+                          <cit:deliveryPoint>
+                            <gco:CharacterString>University of Tasmania</gco:CharacterString>
+                          </cit:deliveryPoint>
+                          <cit:deliveryPoint>
+                            <gco:CharacterString>Private Bag 110</gco:CharacterString>
+                          </cit:deliveryPoint>
+                          <cit:city>
+                            <gco:CharacterString>Hobart</gco:CharacterString>
+                          </cit:city>
+                          <cit:administrativeArea>
+                            <gco:CharacterString>Tasmania</gco:CharacterString>
+                          </cit:administrativeArea>
+                          <cit:postalCode>
+                            <gco:CharacterString>7001</gco:CharacterString>
+                          </cit:postalCode>
+                          <cit:country>
+                            <gco:CharacterString>Australia</gco:CharacterString>
+                          </cit:country>
+                          <cit:electronicMailAddress>
+                            <gco:CharacterString>info@aodn.org.au</gco:CharacterString>
+                          </cit:electronicMailAddress>
+                        </cit:CI_Address>
+                      </cit:address>
+                      <cit:onlineResource>
+                        <cit:CI_OnlineResource>
+                          <cit:linkage>
+                            <gco:CharacterString>http://imos.org.au/aodn.html</gco:CharacterString>
+                          </cit:linkage>
+                          <cit:protocol>
+                            <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                          </cit:protocol>
+                          <cit:name>
+                            <gco:CharacterString>Website of the Australian Ocean Data Network (AODN)</gco:CharacterString>
+                          </cit:name>
+                        </cit:CI_OnlineResource>
+                      </cit:onlineResource>
+                    </cit:CI_Contact>
+                  </cit:contactInfo>
+                  <cit:positionName>
+                    <gco:CharacterString>Data Officer</gco:CharacterString>
+                  </cit:positionName>
+                </cit:CI_Individual>
+              </cit:individual>
+            </cit:CI_Organisation>
+          </cit:party>
+        </cit:CI_Responsibility>
+      </mri:pointOfContact>
+      <mri:spatialRepresentationType>
+        <mcc:MD_SpatialRepresentationTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_SpatialRepresentationTypeCode" codeListValue="vector" />
+      </mri:spatialRepresentationType>
+      <mri:topicCategory>
+        <mri:MD_TopicCategoryCode>oceans</mri:MD_TopicCategoryCode>
+      </mri:topicCategory>
+      <mri:extent>
+        <gex:EX_Extent>
+          <gex:geographicElement>
+            <gex:EX_BoundingPolygon>
+              <gex:polygon>
+                <gml:Polygon gml:id="polygon12" srsName="CRS:84">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList srsDimension="2">150 -24 150 -22 148 -22 148 -20 146 -20 146 -18 144 -18 144 -14 148 -14 148 -18 150 -18 150 -20 152 -20 152 -24 150 -24</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gex:polygon>
+            </gex:EX_BoundingPolygon>
+          </gex:geographicElement>
+          <gex:geographicElement>
+            <gex:EX_BoundingPolygon>
+              <gex:polygon>
+                <gml:Polygon gml:id="polygon11" srsName="CRS:84">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList srsDimension="2">126 -16 126 -14 122 -14 122 -12 128 -12 128 -10 134 -10 134 -12 132 -12 132 -14 130 -14 130 -16 126 -16</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gex:polygon>
+            </gex:EX_BoundingPolygon>
+          </gex:geographicElement>
+          <gex:geographicElement>
+            <gex:EX_BoundingPolygon>
+              <gex:polygon>
+                <gml:Polygon gml:id="polygon10" srsName="CRS:84">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList srsDimension="2">152 -10 154 -10 154 -12 150 -12 150 -10 146 -10 146 -8 152 -8 152 -10</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gex:polygon>
+            </gex:EX_BoundingPolygon>
+          </gex:geographicElement>
+          <gex:geographicElement>
+            <gex:EX_BoundingPolygon>
+              <gex:polygon>
+                <gml:Polygon gml:id="polygon9" srsName="CRS:84">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList srsDimension="2">152 -6 152 -4 154 -4 154 -6 152 -6</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gex:polygon>
+            </gex:EX_BoundingPolygon>
+          </gex:geographicElement>
+          <gex:geographicElement>
+            <gex:EX_BoundingPolygon>
+              <gex:polygon>
+                <gml:Polygon gml:id="polygon8" srsName="CRS:84">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList srsDimension="2">146 -6 146 -4 148 -4 148 -6 146 -6</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gex:polygon>
+            </gex:EX_BoundingPolygon>
+          </gex:geographicElement>
+          <gex:geographicElement>
+            <gex:EX_BoundingPolygon>
+              <gex:polygon>
+                <gml:Polygon gml:id="polygon7" srsName="CRS:84">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList srsDimension="2">140 -12 140 -10 142 -10 142 -8 144 -8 144 -12 140 -12</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gex:polygon>
+            </gex:EX_BoundingPolygon>
+          </gex:geographicElement>
+          <gex:geographicElement>
+            <gex:EX_BoundingPolygon>
+              <gex:polygon>
+                <gml:Polygon gml:id="polygon6" srsName="CRS:84">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList srsDimension="2">168 -18 168 -16 170 -16 170 -18 168 -18</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gex:polygon>
+            </gex:EX_BoundingPolygon>
+          </gex:geographicElement>
+          <gex:geographicElement>
+            <gex:EX_BoundingPolygon>
+              <gex:polygon>
+                <gml:Polygon gml:id="polygon5" srsName="CRS:84">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList srsDimension="2">112 -26 112 -24 114 -24 114 -26 112 -26</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gex:polygon>
+            </gex:EX_BoundingPolygon>
+          </gex:geographicElement>
+          <gex:geographicElement>
+            <gex:EX_BoundingPolygon>
+              <gex:polygon>
+                <gml:Polygon gml:id="polygon4" srsName="CRS:84">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList srsDimension="2">114 -22 114 -20 116 -20 116 -22 114 -22</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gex:polygon>
+            </gex:EX_BoundingPolygon>
+          </gex:geographicElement>
+          <gex:geographicElement>
+            <gex:EX_BoundingPolygon>
+              <gex:polygon>
+                <gml:Polygon gml:id="polygon3" srsName="CRS:84">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList srsDimension="2">148 -40 150 -40 150 -42 146 -42 146 -38 148 -38 148 -40</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gex:polygon>
+            </gex:EX_BoundingPolygon>
+          </gex:geographicElement>
+          <gex:geographicElement>
+            <gex:EX_BoundingPolygon>
+              <gex:polygon>
+                <gml:Polygon gml:id="polygon2" srsName="CRS:84">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList srsDimension="2">140 -40 140 -38 138 -38 138 -36 142 -36 142 -40 140 -40</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gex:polygon>
+            </gex:EX_BoundingPolygon>
+          </gex:geographicElement>
+          <gex:geographicElement>
+            <gex:EX_BoundingPolygon>
+              <gex:polygon>
+                <gml:Polygon gml:id="polygon1" srsName="CRS:84">
+                  <gml:exterior>
+                    <gml:LinearRing>
+                      <gml:posList srsDimension="2">152 -36 152 -34 154 -34 154 -36 152 -36</gml:posList>
+                    </gml:LinearRing>
+                  </gml:exterior>
+                </gml:Polygon>
+              </gex:polygon>
+            </gex:EX_BoundingPolygon>
+          </gex:geographicElement>
+          <gex:temporalElement>
+            <gex:EX_TemporalExtent>
+              <gex:extent>
+                <gml:TimePeriod gml:id="N10315">
+                  <gml:begin>
+                    <gml:TimeInstant gml:id="N1031B">
+                      <gml:timePosition>2004-01-25T00:38:00</gml:timePosition>
+                    </gml:TimeInstant>
+                  </gml:begin>
+                  <gml:end>
+                    <gml:TimeInstant gml:id="N10326">
+                      <gml:timePosition>2016-03-05T07:08:00</gml:timePosition>
+                    </gml:TimeInstant>
+                  </gml:end>
+                </gml:TimePeriod>
+              </gex:extent>
+            </gex:EX_TemporalExtent>
+          </gex:temporalElement>
+        </gex:EX_Extent>
+      </mri:extent>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords>
+          <mri:keyword>
+            <gco:CharacterString>Oceans | Ocean Temperature | Water Temperature</gco:CharacterString>
+          </mri:keyword>
+          <mri:keyword>
+            <gco:CharacterString>Oceans | Salinity/Density | Salinity</gco:CharacterString>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="theme" />
+          </mri:type>
+          <mri:thesaurusName>
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>NASA/Global Change Master Directory (GCMD) Earth Science Keywords. Version 5.3.8</gco:CharacterString>
+              </cit:title>
+              <cit:date>
+                <cit:CI_Date>
+                  <cit:date>
+                    <gco:DateTime>2006-01-01T00:00:00</gco:DateTime>
+                  </cit:date>
+                  <cit:dateType>
+                    <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="revision" />
+                  </cit:dateType>
+                </cit:CI_Date>
+              </cit:date>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords>
+          <mri:keyword>
+            <gco:CharacterString>Global / Oceans | Pacific Ocean</gco:CharacterString>
+          </mri:keyword>
+          <mri:keyword>
+            <gco:CharacterString>Global / Oceans | Indian Ocean</gco:CharacterString>
+          </mri:keyword>
+          <mri:keyword>
+            <gco:CharacterString>Global / Oceans | Southern Ocean</gco:CharacterString>
+          </mri:keyword>
+          <mri:keyword>
+            <gco:CharacterString>Regional Seas | Tasman Sea</gco:CharacterString>
+          </mri:keyword>
+          <mri:keyword>
+            <gco:CharacterString>Regional Seas | Coral Sea</gco:CharacterString>
+          </mri:keyword>
+          <mri:keyword>
+            <gco:CharacterString>Marine Features (Australia) | Bass Strait, TAS/VIC</gco:CharacterString>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="place" />
+          </mri:type>
+          <mri:thesaurusName>
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>AODN Geographic Extents Vocabulary</gco:CharacterString>
+              </cit:title>
+              <cit:date>
+                <cit:CI_Date>
+                  <cit:date>
+                    <gco:DateTime>2017-06-15T00:00:00</gco:DateTime>
+                  </cit:date>
+                  <cit:dateType>
+                    <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="revision" />
+                  </cit:dateType>
+                </cit:CI_Date>
+              </cit:date>
+              <cit:otherCitationDetails>
+                <gco:CharacterString>https://vocabs.ands.org.au/aodn-geographic-extents-vocabulary</gco:CharacterString>
+              </cit:otherCitationDetails>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords>
+          <mri:keyword>
+            <gco:CharacterString>Countries | Australia</gco:CharacterString>
+          </mri:keyword>
+          <mri:keyword>
+            <gco:CharacterString>Countries | Papua New Guinea</gco:CharacterString>
+          </mri:keyword>
+          <mri:keyword>
+            <gco:CharacterString>Countries | Timor-Leste</gco:CharacterString>
+          </mri:keyword>
+          <mri:keyword>
+            <gco:CharacterString>Countries | New Caledonia</gco:CharacterString>
+          </mri:keyword>
+          <mri:keyword>
+            <gco:CharacterString>Countries | New Zealand</gco:CharacterString>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="place" />
+          </mri:type>
+          <mri:thesaurusName>
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>AODN Geographic Extents Vocabulary</gco:CharacterString>
+              </cit:title>
+              <cit:date>
+                <cit:CI_Date>
+                  <cit:date>
+                    <gco:DateTime>2017-06-15T00:00:00</gco:DateTime>
+                  </cit:date>
+                  <cit:dateType>
+                    <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="revision" />
+                  </cit:dateType>
+                </cit:CI_Date>
+              </cit:date>
+              <cit:otherCitationDetails>
+                <gco:CharacterString>https://vocabs.ands.org.au/aodn-geographic-extents-vocabulary</gco:CharacterString>
+              </cit:otherCitationDetails>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords>
+          <mri:keyword>
+            <gcx:Anchor xlink:href="http://vocab.nerc.ac.uk/collection/L06/current/39">naval vessel</gcx:Anchor>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="platform" />
+          </mri:type>
+          <mri:thesaurusName>
+            <cit:CI_Citation>
+              <cit:title>
+                <gcx:Anchor>AODN Platform Vocabulary</gcx:Anchor>
+              </cit:title>
+              <cit:date>
+                <cit:CI_Date>
+                  <cit:date>
+                    <gco:Date>2020-03-03</gco:Date>
+                  </cit:date>
+                  <cit:dateType>
+                    <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="publication" />
+                  </cit:dateType>
+                </cit:CI_Date>
+              </cit:date>
+              <cit:identifier>
+                <mcc:MD_Identifier>
+                  <mcc:code>
+                    <gcx:Anchor xlink:href="https://catalogue-imos.aodn.org.au:443/geonetwork/srv/eng/thesaurus.download?ref=external.theme.aodn_aodn-platform-vocabulary">geonetwork.thesaurus.external.theme.aodn_aodn-platform-vocabulary</gcx:Anchor>
+                  </mcc:code>
+                </mcc:MD_Identifier>
+              </cit:identifier>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords>
+          <mri:keyword>
+            <gcx:Anchor xlink:href="http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01">Temperature of the water body</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:href="http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01">Practical salinity of the water body</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:href="http://vocab.aodn.org.au/def/discovery_parameter/entity/565">Pressure (measured variable) in the water body exerted by overlying sea water and any medium above it</gcx:Anchor>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="theme" />
+          </mri:type>
+          <mri:thesaurusName>
+            <cit:CI_Citation>
+              <cit:title>
+                <gcx:Anchor>AODN Discovery Parameter Vocabulary</gcx:Anchor>
+              </cit:title>
+              <cit:date>
+                <cit:CI_Date>
+                  <cit:date>
+                    <gco:Date>2020-03-03</gco:Date>
+                  </cit:date>
+                  <cit:dateType>
+                    <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="publication" />
+                  </cit:dateType>
+                </cit:CI_Date>
+              </cit:date>
+              <cit:identifier>
+                <mcc:MD_Identifier>
+                  <mcc:code>
+                    <gcx:Anchor xlink:href="https://catalogue-imos.aodn.org.au:443/geonetwork/srv/eng/thesaurus.download?ref=external.theme.aodn_aodn-discovery-parameter-vocabulary">geonetwork.thesaurus.external.theme.aodn_aodn-discovery-parameter-vocabulary</gcx:Anchor>
+                  </mcc:code>
+                </mcc:MD_Identifier>
+              </cit:identifier>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords>
+          <mri:keyword>
+            <gcx:Anchor xlink:href="http://vocab.nerc.ac.uk/collection/L05/current/130">CTD</gcx:Anchor>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="instrument" />
+          </mri:type>
+          <mri:thesaurusName>
+            <cit:CI_Citation>
+              <cit:title>
+                <gcx:Anchor>AODN Instrument Vocabulary</gcx:Anchor>
+              </cit:title>
+              <cit:date>
+                <cit:CI_Date>
+                  <cit:date>
+                    <gco:Date>2020-03-03</gco:Date>
+                  </cit:date>
+                  <cit:dateType>
+                    <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="publication" />
+                  </cit:dateType>
+                </cit:CI_Date>
+              </cit:date>
+              <cit:identifier>
+                <mcc:MD_Identifier>
+                  <mcc:code>
+                    <gcx:Anchor xlink:href="https://catalogue-imos.aodn.org.au:443/geonetwork/srv/eng/thesaurus.download?ref=external.theme.aodn_aodn-instrument-vocabulary">geonetwork.thesaurus.external.theme.aodn_aodn-instrument-vocabulary</gcx:Anchor>
+                  </mcc:code>
+                </mcc:MD_Identifier>
+              </cit:identifier>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:resourceConstraints>
+        <mco:MD_Constraints>
+          <mco:useLimitation>
+            <gco:CharacterString>While every effort has been made to ensure the accuracy of this data, no responsibility can be accepted by the Department of Defence for any consequential loss or damage arising from its use.</gco:CharacterString>
+          </mco:useLimitation>
+        </mco:MD_Constraints>
+      </mri:resourceConstraints>
+      <mri:resourceConstraints>
+        <mco:MD_LegalConstraints>
+          <mco:graphic>
+            <mcc:MD_BrowseGraphic>
+              <mcc:fileName gco:nilReason="inapplicable" />
+              <mcc:linkage>
+                <cit:CI_OnlineResource>
+                  <cit:linkage>
+                    <gco:CharacterString>https://licensebuttons.net/l/by/4.0/88x31.png</gco:CharacterString>
+                  </cit:linkage>
+                  <cit:protocol>
+                    <gco:CharacterString>WWW:LINK-1.0-http--related</gco:CharacterString>
+                  </cit:protocol>
+                  <cit:description>
+                    <gco:CharacterString>License Graphic</gco:CharacterString>
+                  </cit:description>
+                </cit:CI_OnlineResource>
+              </mcc:linkage>
+            </mcc:MD_BrowseGraphic>
+          </mco:graphic>
+          <mco:reference>
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>Creative Commons Attribution 4.0 International License</gco:CharacterString>
+              </cit:title>
+              <cit:citedResponsibleParty>
+                <cit:CI_Responsibility>
+                  <cit:role>
+                    <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="" />
+                  </cit:role>
+                  <cit:party>
+                    <cit:CI_Organisation>
+                      <cit:name gco:nilReason="missing">
+                        <gco:CharacterString />
+                      </cit:name>
+                      <cit:contactInfo>
+                        <cit:CI_Contact>
+                          <cit:address>
+                            <cit:CI_Address>
+                              <cit:electronicMailAddress gco:nilReason="missing">
+                                <gco:CharacterString />
+                              </cit:electronicMailAddress>
+                            </cit:CI_Address>
+                          </cit:address>
+                          <cit:onlineResource>
+                            <cit:CI_OnlineResource>
+                              <cit:linkage>
+                                <gco:CharacterString>http://creativecommons.org/international/</gco:CharacterString>
+                              </cit:linkage>
+                              <cit:protocol>
+                                <gco:CharacterString>WWW:LINK-1.0-http--related</gco:CharacterString>
+                              </cit:protocol>
+                              <cit:name gco:nilReason="missing">
+                                <gco:CharacterString />
+                              </cit:name>
+                              <cit:description gco:nilReason="missing">
+                                <gco:CharacterString />
+                              </cit:description>
+                            </cit:CI_OnlineResource>
+                          </cit:onlineResource>
+                        </cit:CI_Contact>
+                      </cit:contactInfo>
+                    </cit:CI_Organisation>
+                  </cit:party>
+                </cit:CI_Responsibility>
+              </cit:citedResponsibleParty>
+              <cit:onlineResource>
+                <cit:CI_OnlineResource>
+                  <cit:linkage>
+                    <gco:CharacterString>http://creativecommons.org/licenses/by/4.0/</gco:CharacterString>
+                  </cit:linkage>
+                  <cit:protocol>
+                    <gco:CharacterString>WWW:LINK-1.0-http--related</gco:CharacterString>
+                  </cit:protocol>
+                  <cit:description>
+                    <gco:CharacterString>License Text</gco:CharacterString>
+                  </cit:description>
+                </cit:CI_OnlineResource>
+              </cit:onlineResource>
+            </cit:CI_Citation>
+          </mco:reference>
+          <mco:otherConstraints>
+            <gco:CharacterString>The citation to be used in publications which use this data should follow the format: Department of Defence, Hydrography AND METOC Branch, http://www.catalogue-imos.aodn.org.au, accessed at dd-MMM-YYYY</gco:CharacterString>
+          </mco:otherConstraints>
+        </mco:MD_LegalConstraints>
+      </mri:resourceConstraints>
+      <mri:defaultLocale>
+        <lan:PT_Locale>
+          <lan:language>
+            <lan:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng" />
+          </lan:language>
+          <lan:characterEncoding>
+            <lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode" codeListValue="utf8" />
+          </lan:characterEncoding>
+        </lan:PT_Locale>
+      </mri:defaultLocale>
+    </mri:MD_DataIdentification>
+  </mdb:identificationInfo>
+  <mdb:contentInfo>
+    <mrc:MD_CoverageDescription>
+      <mrc:attributeDescription gco:nilReason="inapplicable" />
+      <mrc:attributeGroup>
+        <mrc:MD_AttributeGroup>
+          <mrc:contentType>
+            <mrc:MD_CoverageContentTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CoverageContentTypeCode" codeListValue="physicalMeasurement" />
+          </mrc:contentType>
+          <mrc:attribute>
+            <mrc:MD_SampleDimension>
+              <mrc:name>
+                <mcc:MD_Identifier>
+                  <mcc:code>
+                    <gcx:Anchor xlink:href="http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01">Temperature of the water body</gcx:Anchor>
+                  </mcc:code>
+                </mcc:MD_Identifier>
+              </mrc:name>
+              <mrc:units>
+                <gml:BaseUnit gml:id="d20e378">
+                  <gml:identifier codeSpace="unknown">http://vocab.nerc.ac.uk/collection/P06/current/UPAA</gml:identifier>
+                  <gml:name>Degrees Celsius</gml:name>
+                  <gml:unitsSystem />
+                </gml:BaseUnit>
+              </mrc:units>
+            </mrc:MD_SampleDimension>
+          </mrc:attribute>
+          <mrc:attribute>
+            <mrc:MD_SampleDimension>
+              <mrc:name>
+                <mcc:MD_Identifier>
+                  <mcc:code>
+                    <gcx:Anchor xlink:href="http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01">Practical salinity of the water body</gcx:Anchor>
+                  </mcc:code>
+                </mcc:MD_Identifier>
+              </mrc:name>
+              <mrc:units>
+                <gml:BaseUnit gml:id="d20e428">
+                  <gml:identifier codeSpace="unknown">http://vocab.aodn.org.au/def/unitsofmeasure/entity/481</gml:identifier>
+                  <gml:name>Practical Salinity Unit</gml:name>
+                  <gml:unitsSystem />
+                </gml:BaseUnit>
+              </mrc:units>
+            </mrc:MD_SampleDimension>
+          </mrc:attribute>
+          <mrc:attribute>
+            <mrc:MD_SampleDimension>
+              <mrc:name>
+                <mcc:MD_Identifier>
+                  <mcc:code>
+                    <gcx:Anchor xlink:href="http://vocab.aodn.org.au/def/discovery_parameter/entity/565">Pressure (measured variable) in the water body exerted by overlying sea water and any medium above it</gcx:Anchor>
+                  </mcc:code>
+                </mcc:MD_Identifier>
+              </mrc:name>
+              <mrc:units>
+                <gml:BaseUnit gml:id="d20e474">
+                  <gml:identifier codeSpace="unknown">http://vocab.nerc.ac.uk/collection/P06/current/UPDB</gml:identifier>
+                  <gml:name>Decibars</gml:name>
+                  <gml:unitsSystem />
+                </gml:BaseUnit>
+              </mrc:units>
+            </mrc:MD_SampleDimension>
+          </mrc:attribute>
+        </mrc:MD_AttributeGroup>
+      </mrc:attributeGroup>
+    </mrc:MD_CoverageDescription>
+  </mdb:contentInfo>
+  <mdb:distributionInfo>
+    <mrd:MD_Distribution>
+      <mrd:distributionFormat>
+        <mrd:MD_Format>
+          <mrd:formatSpecificationCitation>
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>netCDF</gco:CharacterString>
+              </cit:title>
+              <cit:alternateTitle />
+              <cit:date gco:nilReason="unknown" />
+              <cit:edition>
+                <gco:CharacterString>netCDF 3 (classic)</gco:CharacterString>
+              </cit:edition>
+            </cit:CI_Citation>
+          </mrd:formatSpecificationCitation>
+        </mrd:MD_Format>
+      </mrd:distributionFormat>
+      <mrd:transferOptions>
+        <mrd:MD_DigitalTransferOptions>
+          <mrd:onLine>
+            <cit:CI_OnlineResource>
+              <cit:linkage>
+                <gco:CharacterString>http://thredds.aodn.org.au/thredds/catalog/Department_of_Defence/RAN/CTD/catalog.html</gco:CharacterString>
+              </cit:linkage>
+              <cit:protocol>
+                <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+              </cit:protocol>
+              <cit:name>
+                <gco:CharacterString>NetCDF files via THREDDS catalog</gco:CharacterString>
+              </cit:name>
+            </cit:CI_OnlineResource>
+          </mrd:onLine>
+          <mrd:onLine>
+            <cit:CI_OnlineResource>
+              <cit:linkage>
+                <gco:CharacterString>http://data.aodn.org.au/?prefix=Department_of_Defence/RAN/CTD/</gco:CharacterString>
+              </cit:linkage>
+              <cit:protocol gco:nilReason="missing">
+                <gco:CharacterString />
+              </cit:protocol>
+              <cit:name>
+                <gco:CharacterString>Link to access Data Quality file for each cruise</gco:CharacterString>
+              </cit:name>
+            </cit:CI_OnlineResource>
+          </mrd:onLine>
+          <mrd:onLine>
+            <cit:CI_OnlineResource>
+              <cit:linkage>
+                <gco:CharacterString>https://portal.aodn.org.au/search?uuid=bc6e10a6-4dda-41c0-8639-5c96411efc5a</gco:CharacterString>
+              </cit:linkage>
+              <cit:protocol>
+                <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+              </cit:protocol>
+              <cit:name>
+                <gco:CharacterString>View and download data though the AODN Portal</gco:CharacterString>
+              </cit:name>
+            </cit:CI_OnlineResource>
+          </mrd:onLine>
+          <mrd:onLine>
+            <cit:CI_OnlineResource>
+              <cit:linkage>
+                <gco:CharacterString>http://geoserver-123.aodn.org.au/geoserver/wms</gco:CharacterString>
+              </cit:linkage>
+              <cit:protocol>
+                <gco:CharacterString>OGC:WMS-1.1.1-http-get-map</gco:CharacterString>
+              </cit:protocol>
+              <cit:name>
+                <gco:CharacterString>aodn:aodn_ran_ctd_map</gco:CharacterString>
+              </cit:name>
+              <cit:description>
+                <gco:CharacterString>RAN CTD</gco:CharacterString>
+              </cit:description>
+            </cit:CI_OnlineResource>
+          </mrd:onLine>
+          <mrd:onLine>
+            <cit:CI_OnlineResource>
+              <cit:linkage>
+                <gco:CharacterString>http://geoserver-123.aodn.org.au/geoserver/ows</gco:CharacterString>
+              </cit:linkage>
+              <cit:protocol>
+                <gco:CharacterString>OGC:WFS-1.0.0-http-get-capabilities</gco:CharacterString>
+              </cit:protocol>
+              <cit:name>
+                <gco:CharacterString>aodn:aodn_ran_ctd_data</gco:CharacterString>
+              </cit:name>
+              <cit:description>
+                <gco:CharacterString>This OGC WFS service returns filtered geographic information. The returned data is available in multiple formats including CSV.</gco:CharacterString>
+              </cit:description>
+            </cit:CI_OnlineResource>
+          </mrd:onLine>
+          <mrd:onLine>
+            <cit:CI_OnlineResource>
+              <cit:linkage>
+                <gco:CharacterString>https://help.aodn.org.au/web-services/ogc-wfs/</gco:CharacterString>
+              </cit:linkage>
+              <cit:protocol>
+                <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+              </cit:protocol>
+              <cit:name>
+                <gco:CharacterString>OGC WFS help documentation</gco:CharacterString>
+              </cit:name>
+            </cit:CI_OnlineResource>
+          </mrd:onLine>
+          <mrd:onLine>
+            <cit:CI_OnlineResource>
+              <cit:linkage>
+                <gco:CharacterString>http://geoserver-123.aodn.org.au/geoserver/ows</gco:CharacterString>
+              </cit:linkage>
+              <cit:protocol>
+                <gco:CharacterString>IMOS:AGGREGATION--bodaac</gco:CharacterString>
+              </cit:protocol>
+              <cit:name>
+                <gco:CharacterString>aodn_ran_ctd_map#url</gco:CharacterString>
+              </cit:name>
+              <cit:description>
+                <gco:CharacterString>The ncUrlList is a WFS service that returns a list of URLs matching a query.</gco:CharacterString>
+              </cit:description>
+            </cit:CI_OnlineResource>
+          </mrd:onLine>
+          <mrd:onLine>
+            <cit:CI_OnlineResource>
+              <cit:linkage>
+                <gco:CharacterString>https://help.aodn.org.au/web-services/ncurllist-service/</gco:CharacterString>
+              </cit:linkage>
+              <cit:protocol>
+                <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+              </cit:protocol>
+              <cit:name>
+                <gco:CharacterString>ncUrlList help documentation</gco:CharacterString>
+              </cit:name>
+            </cit:CI_OnlineResource>
+          </mrd:onLine>
+        </mrd:MD_DigitalTransferOptions>
+      </mrd:transferOptions>
+    </mrd:MD_Distribution>
+  </mdb:distributionInfo>
+  <mdb:resourceLineage>
+    <mrl:LI_Lineage>
+      <mrl:statement>
+        <gco:CharacterString>Initial Processing Incoming data undergoes gross range checks and removal of any corrupted or unrealistic data. Some CTD data is subject to a pressure offset error generally less than 1 decibar. A pressure offset error occurs when the pressure sensor does not read 0 dbar in air. In cases where the pressure offset error was observed before the CTD cast the pressure readings have been corrected for the offset which is stored in the global netCDF attribute named 'CTD_pressure_offset'. Salinity on the PSS-78 scale is computed from conductivity, temperature and pressure using the UNESCO (1983) algorithm with temperature corrected from the ITS-90 scale to the ITS-68 scale used by the algorithm. For the MVP200 CTD model the response time (time constant) of the temperature sensor (100 ms) is slower than the conductivity cell (25ms). This leads to a phenomenon called 'salinity spiking' in the salinity data. Spiking is caused by the fact that calculated salinity is a function of conductivity, temperature and pressure [S=f(C,T,z)]. The temperature response lags the conductivity response resulting an error in the calculation of salinity. This is evident as noticeable spikes in the salinity profiles especially at depths where temperature is rapidly changing e.g in the ocean thermocline. The spiking was reduced reduced by applying a 2.5 sample time shift (0.1 s) to the temperature values and using the shifted temperature value in the re-computation of the salinity. An array of raw pressure, temperature and de-spiked salinity is then passed to the next processing stage. The HS_CTD samples at a lower rate of 1.83 Hz compared to the MVP200 CTD at 25 Hz and is not subject to the salinity spiking issue. The raw CTD data contains a non-monotonic sequence of pressures due to up/down motion of ship/winch. A sequence of unique monotonic pressures up to the maximum value is extracted and then linearly interpolated to 1 decibar pressure levels with the corresponding interpolated temperature and salinity. Finally the interpolated files are converted to a set of netCDF files ready for QC. Quality Control Quality control (QC) involves viewing location of the data on a map, visual inspection of each profile of temperature and salinity and comparison with nearest neighbours and climatology. CTD profiles are checked for any density inversions i.e. density decreasing with depth by computing sigma-t density. A density inversion may indicate unrealistic salinity and/or temperature values. QC flags are applied to indicate whether data is good, suspect, bad or not tested. QC flags may apply at the 'whole profile' level or individual pressure levels. CTD cast positions and times undergo a land and ship speed check. Casts with position on land or unrealistic speed between casts are flagged as failed position or time. Temperature and salinity profiles are then visually compared against a 3 standard deviation envelope from the CSIRO-CARS (2009) atlas. Profiles or segments of profiles with data outside the envelope are flagged as doubtful or failed. Profiles are also checked for consistency or doubtful features by comparing with previous/next casts (buddies) and also by comparison with historical CTD casts taken in the same area and season.</gco:CharacterString>
+      </mrl:statement>
+      <mrl:scope>
+        <mcc:MD_Scope>
+          <mcc:level>
+            <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="dataset" />
+          </mcc:level>
+        </mcc:MD_Scope>
+      </mrl:scope>
+    </mrl:LI_Lineage>
+  </mdb:resourceLineage>
+  <mdb:acquisitionInformation>
+    <mac:MI_AcquisitionInformation>
+      <mac:scope>
+        <mcc:MD_Scope>
+          <mcc:level>
+            <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="dataset" />
+          </mcc:level>
+        </mcc:MD_Scope>
+      </mac:scope>
+      <mac:platform>
+        <mac:MI_Platform>
+          <mac:identifier>
+            <mcc:MD_Identifier>
+              <mcc:code>
+                <gcx:Anchor xlink:href="http://vocab.nerc.ac.uk/collection/L06/current/39">naval vessel</gcx:Anchor>
+              </mcc:code>
+            </mcc:MD_Identifier>
+          </mac:identifier>
+          <mac:description gco:nilReason="missing" />
+          <mac:instrument>
+            <mac:MI_Instrument>
+              <mac:identifier>
+                <mcc:MD_Identifier>
+                  <mcc:code>
+                    <gcx:Anchor xlink:href="http://vocab.nerc.ac.uk/collection/L05/current/130">CTD</gcx:Anchor>
+                  </mcc:code>
+                </mcc:MD_Identifier>
+              </mac:identifier>
+              <mac:type gco:nilReason="missing">
+                <gco:CharacterString />
+              </mac:type>
+            </mac:MI_Instrument>
+          </mac:instrument>
+        </mac:MI_Platform>
+      </mac:platform>
+    </mac:MI_AcquisitionInformation>
+  </mdb:acquisitionInformation>
+</mdb:MD_Metadata>
+

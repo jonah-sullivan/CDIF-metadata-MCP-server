@@ -1,0 +1,821 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdb:MD_Metadata xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cat="http://standards.iso.org/iso/19115/-3/cat/1.0" xmlns:gfc="http://standards.iso.org/iso/19110/gfc/1.1" xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0" xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0" xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0" xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0" xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.0" xmlns:mas="http://standards.iso.org/iso/19115/-3/mas/1.0" xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0" xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0" xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/1.0" xmlns:mds="http://standards.iso.org/iso/19115/-3/mds/2.0" xmlns:mdt="http://standards.iso.org/iso/19115/-3/mdt/2.0" xmlns:mex="http://standards.iso.org/iso/19115/-3/mex/1.0" xmlns:mmi="http://standards.iso.org/iso/19115/-3/mmi/1.0" xmlns:mpc="http://standards.iso.org/iso/19115/-3/mpc/1.0" xmlns:mrc="http://standards.iso.org/iso/19115/-3/mrc/2.0" xmlns:mrd="http://standards.iso.org/iso/19115/-3/mrd/1.0" xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0" xmlns:mrl="http://standards.iso.org/iso/19115/-3/mrl/2.0" xmlns:mrs="http://standards.iso.org/iso/19115/-3/mrs/1.0" xmlns:msr="http://standards.iso.org/iso/19115/-3/msr/2.0" xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0" xmlns:dqm="http://standards.iso.org/iso/19157/-2/dqm/1.0" xmlns:mac="http://standards.iso.org/iso/19115/-3/mac/2.0" xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://standards.iso.org/iso/19115/-3/mds/2.0 http://standards.iso.org/iso/19115/-3/mds/2.0/mds.xsd">
+  <mdb:metadataIdentifier>
+    <mcc:MD_Identifier>
+      <mcc:code>
+        <gco:CharacterString>d73d2881-e518-4311-8373-423b5bc8d7ae</gco:CharacterString>
+      </mcc:code>
+      <mcc:codeSpace>
+        <gco:CharacterString>urn:uuid</gco:CharacterString>
+      </mcc:codeSpace>
+    </mcc:MD_Identifier>
+  </mdb:metadataIdentifier>
+  <mdb:defaultLocale xlink:type="simple">
+    <lan:PT_Locale id="EN">
+      <lan:language>
+        <lan:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="en" />
+      </lan:language>
+      <lan:characterEncoding>
+        <lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode" codeListValue="UTF-8" />
+      </lan:characterEncoding>
+    </lan:PT_Locale>
+  </mdb:defaultLocale>
+  <mdb:metadataScope xlink:type="simple">
+    <mdb:MD_MetadataScope>
+      <mdb:resourceScope>
+        <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="dataset" />
+      </mdb:resourceScope>
+      <mdb:name>
+        <gco:CharacterString>Dataset</gco:CharacterString>
+      </mdb:name>
+    </mdb:MD_MetadataScope>
+  </mdb:metadataScope>
+  <mdb:contact xlink:type="simple">
+    <cit:CI_Responsibility>
+      <cit:role>
+        <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="publisher" />
+      </cit:role>
+      <cit:party xlink:type="simple">
+        <cit:CI_Organisation>
+          <cit:name>
+            <gco:CharacterString>AuScope Data Repository</gco:CharacterString>
+          </cit:name>
+          <cit:contactInfo xlink:type="simple">
+            <cit:CI_Contact>
+              <cit:phone xlink:type="simple" />
+              <cit:address xlink:type="simple">
+                <cit:CI_Address>
+                  <cit:deliveryPoint gco:nilReason="missing">
+                    <gco:CharacterString />
+                  </cit:deliveryPoint>
+                  <cit:electronicMailAddress>
+                    <gco:CharacterString>help@data.auscope.org.au</gco:CharacterString>
+                  </cit:electronicMailAddress>
+                </cit:CI_Address>
+              </cit:address>
+              <cit:onlineResource xlink:type="simple" />
+              <cit:hoursOfService />
+            </cit:CI_Contact>
+          </cit:contactInfo>
+        </cit:CI_Organisation>
+      </cit:party>
+    </cit:CI_Responsibility>
+  </mdb:contact>
+  <mdb:dateInfo xlink:type="simple">
+    <cit:CI_Date>
+      <cit:date>
+        <gco:DateTime>2025-04-22T06:51:10</gco:DateTime>
+      </cit:date>
+      <cit:dateType>
+        <cit:CI_DateTypeCode codeList="" codeListValue="creation">creation</cit:CI_DateTypeCode>
+      </cit:dateType>
+    </cit:CI_Date>
+  </mdb:dateInfo>
+  <mdb:dateInfo>
+    <cit:CI_Date>
+      <cit:date>
+        <gco:DateTime>2025-06-19T02:58:43.152852Z</gco:DateTime>
+      </cit:date>
+      <cit:dateType>
+        <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="revision" />
+      </cit:dateType>
+    </cit:CI_Date>
+  </mdb:dateInfo>
+  <mdb:metadataStandard xlink:type="simple">
+    <cit:CI_Citation>
+      <cit:title>
+        <gco:CharacterString>ISO 19115</gco:CharacterString>
+      </cit:title>
+      <cit:edition>
+        <gco:CharacterString>2016</gco:CharacterString>
+      </cit:edition>
+    </cit:CI_Citation>
+  </mdb:metadataStandard>
+  <mdb:metadataLinkage xlink:type="simple">
+    <cit:CI_OnlineResource>
+      <cit:linkage>
+        <gco:CharacterString>https://repository.data.auscope.org.au/dataset/d73d2881-e518-4311-8373-423b5bc8d7ae</gco:CharacterString>
+      </cit:linkage>
+      <cit:protocol>
+        <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+      </cit:protocol>
+      <cit:name>
+        <gco:CharacterString>AuScope Data Repository</gco:CharacterString>
+      </cit:name>
+      <cit:description>
+        <gco:CharacterString>Metadata landing page URL</gco:CharacterString>
+      </cit:description>
+      <cit:function>
+        <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="completeMetadata" />
+      </cit:function>
+    </cit:CI_OnlineResource>
+  </mdb:metadataLinkage>
+  <mdb:referenceSystemInfo xlink:type="simple">
+    <mrs:MD_ReferenceSystem>
+      <mrs:referenceSystemIdentifier xlink:type="simple">
+        <mcc:MD_Identifier>
+          <mcc:authority xlink:type="simple">
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>WGS 84</gco:CharacterString>
+              </cit:title>
+            </cit:CI_Citation>
+          </mcc:authority>
+          <mcc:code>
+            <gco:CharacterString>EPSG:4326</gco:CharacterString>
+          </mcc:code>
+          <mcc:codeSpace>
+            <gco:CharacterString>European Petroleum Survey Group Geodetic Parameter Dataset</gco:CharacterString>
+          </mcc:codeSpace>
+          <mcc:description>
+            <gco:CharacterString>WGS 84 - World Geodetic System 1984</gco:CharacterString>
+          </mcc:description>
+        </mcc:MD_Identifier>
+      </mrs:referenceSystemIdentifier>
+    </mrs:MD_ReferenceSystem>
+  </mdb:referenceSystemInfo>
+  <mdb:identificationInfo xlink:type="simple">
+    <mri:MD_DataIdentification>
+      <mri:citation xlink:type="simple">
+        <cit:CI_Citation>
+          <cit:title>
+            <gco:CharacterString>Calperum Critical Zone Observatory (CZO) Heat Needle Monitoring Program Feb 2024-ongoing</gco:CharacterString>
+          </cit:title>
+          <cit:date xlink:type="simple">
+            <cit:CI_Date>
+              <cit:date>
+                <gco:DateTime>2025-06-04T05:59:14</gco:DateTime>
+              </cit:date>
+              <cit:dateType>
+                <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="publication" />
+              </cit:dateType>
+            </cit:CI_Date>
+          </cit:date>
+          <cit:date xlink:type="simple">
+            <cit:CI_Date>
+              <cit:date>
+                <gco:DateTime>2025-04-22T06:51:10</gco:DateTime>
+              </cit:date>
+              <cit:dateType>
+                <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="creation" />
+              </cit:dateType>
+            </cit:CI_Date>
+          </cit:date>
+          <cit:identifier xlink:type="simple">
+            <mcc:MD_Identifier>
+              <mcc:code>
+                <gco:CharacterString>https://doi.org/10.60623/3159pc3b</gco:CharacterString>
+              </mcc:code>
+              <mcc:codeSpace>
+                <gco:CharacterString>doi.org</gco:CharacterString>
+              </mcc:codeSpace>
+            </mcc:MD_Identifier>
+          </cit:identifier>
+          <cit:citedResponsibleParty xlink:type="simple">
+            <cit:CI_Responsibility>
+              <cit:role>
+                <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="author" />
+              </cit:role>
+              <cit:party xlink:type="simple">
+                <cit:CI_Organisation>
+                  <cit:name>
+                    <gco:CharacterString>The University of Melbourne</gco:CharacterString>
+                  </cit:name>
+                  <cit:partyIdentifier xlink:type="simple">
+                    <mcc:MD_Identifier>
+                      <mcc:code>
+                        <gco:CharacterString>https://ror.org/01ej9dk98</gco:CharacterString>
+                      </mcc:code>
+                      <mcc:codeSpace>
+                        <gco:CharacterString>ROR</gco:CharacterString>
+                      </mcc:codeSpace>
+                    </mcc:MD_Identifier>
+                  </cit:partyIdentifier>
+                  <cit:individual xlink:type="simple">
+                    <cit:CI_Individual>
+                      <cit:name>
+                        <gco:CharacterString>Graeme Beardsmore</gco:CharacterString>
+                      </cit:name>
+                      <cit:contactInfo xlink:type="simple">
+                        <cit:CI_Contact>
+                          <cit:phone xlink:type="simple" />
+                          <cit:address xlink:type="simple">
+                            <cit:CI_Address>
+                              <cit:deliveryPoint gco:nilReason="missing">
+                                <gco:CharacterString />
+                              </cit:deliveryPoint>
+                              <cit:electronicMailAddress>
+                                <gco:CharacterString>g.beardsmore@unimelb.edu.au</gco:CharacterString>
+                              </cit:electronicMailAddress>
+                            </cit:CI_Address>
+                          </cit:address>
+                          <cit:onlineResource xlink:type="simple" />
+                          <cit:hoursOfService />
+                        </cit:CI_Contact>
+                      </cit:contactInfo>
+                      <cit:partyIdentifier xlink:type="simple">
+                        <mcc:MD_Identifier>
+                          <mcc:code>
+                            <gco:CharacterString>https://orcid.org/0000-0003-4812-1146</gco:CharacterString>
+                          </mcc:code>
+                          <mcc:codeSpace>
+                            <gco:CharacterString>ORCID</gco:CharacterString>
+                          </mcc:codeSpace>
+                        </mcc:MD_Identifier>
+                      </cit:partyIdentifier>
+                    </cit:CI_Individual>
+                  </cit:individual>
+                </cit:CI_Organisation>
+              </cit:party>
+            </cit:CI_Responsibility>
+          </cit:citedResponsibleParty>
+          <cit:citedResponsibleParty xlink:type="simple">
+            <cit:CI_Responsibility>
+              <cit:role>
+                <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="coAuthor" />
+              </cit:role>
+              <cit:party xlink:type="simple">
+                <cit:CI_Organisation>
+                  <cit:name>
+                    <gco:CharacterString>The University of Melbourne</gco:CharacterString>
+                  </cit:name>
+                  <cit:partyIdentifier xlink:type="simple">
+                    <mcc:MD_Identifier>
+                      <mcc:code>
+                        <gco:CharacterString>https://ror.org/01ej9dk98</gco:CharacterString>
+                      </mcc:code>
+                      <mcc:codeSpace>
+                        <gco:CharacterString>ROR</gco:CharacterString>
+                      </mcc:codeSpace>
+                    </mcc:MD_Identifier>
+                  </cit:partyIdentifier>
+                  <cit:individual xlink:type="simple">
+                    <cit:CI_Individual>
+                      <cit:name>
+                        <gco:CharacterString>Ehdena Khomami</gco:CharacterString>
+                      </cit:name>
+                      <cit:contactInfo xlink:type="simple">
+                        <cit:CI_Contact>
+                          <cit:phone xlink:type="simple" />
+                          <cit:address xlink:type="simple">
+                            <cit:CI_Address>
+                              <cit:deliveryPoint gco:nilReason="missing">
+                                <gco:CharacterString />
+                              </cit:deliveryPoint>
+                              <cit:electronicMailAddress>
+                                <gco:CharacterString>Ehdena.khomami@unimelb.edu.au</gco:CharacterString>
+                              </cit:electronicMailAddress>
+                            </cit:CI_Address>
+                          </cit:address>
+                          <cit:onlineResource xlink:type="simple" />
+                          <cit:hoursOfService />
+                        </cit:CI_Contact>
+                      </cit:contactInfo>
+                      <cit:partyIdentifier xlink:type="simple">
+                        <mcc:MD_Identifier>
+                          <mcc:code>
+                            <gco:CharacterString>https://orcid.org/0009-0000-4544-8528</gco:CharacterString>
+                          </mcc:code>
+                          <mcc:codeSpace>
+                            <gco:CharacterString>ORCID</gco:CharacterString>
+                          </mcc:codeSpace>
+                        </mcc:MD_Identifier>
+                      </cit:partyIdentifier>
+                    </cit:CI_Individual>
+                  </cit:individual>
+                </cit:CI_Organisation>
+              </cit:party>
+            </cit:CI_Responsibility>
+          </cit:citedResponsibleParty>
+          <cit:citedResponsibleParty xlink:type="simple">
+            <cit:CI_Responsibility>
+              <cit:role>
+                <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="coAuthor" />
+              </cit:role>
+              <cit:party xlink:type="simple">
+                <cit:CI_Organisation>
+                  <cit:name>
+                    <gco:CharacterString>The University of Adelaide</gco:CharacterString>
+                  </cit:name>
+                  <cit:partyIdentifier xlink:type="simple">
+                    <mcc:MD_Identifier>
+                      <mcc:code>
+                        <gco:CharacterString>https://ror.org/00892tw58</gco:CharacterString>
+                      </mcc:code>
+                      <mcc:codeSpace>
+                        <gco:CharacterString>ROR</gco:CharacterString>
+                      </mcc:codeSpace>
+                    </mcc:MD_Identifier>
+                  </cit:partyIdentifier>
+                  <cit:individual xlink:type="simple">
+                    <cit:CI_Individual>
+                      <cit:name>
+                        <gco:CharacterString>David B. Baker</gco:CharacterString>
+                      </cit:name>
+                      <cit:contactInfo xlink:type="simple">
+                        <cit:CI_Contact>
+                          <cit:phone xlink:type="simple" />
+                          <cit:address xlink:type="simple">
+                            <cit:CI_Address>
+                              <cit:deliveryPoint gco:nilReason="missing">
+                                <gco:CharacterString />
+                              </cit:deliveryPoint>
+                              <cit:electronicMailAddress>
+                                <gco:CharacterString>david.baker@adelaide.edu.au</gco:CharacterString>
+                              </cit:electronicMailAddress>
+                            </cit:CI_Address>
+                          </cit:address>
+                          <cit:onlineResource xlink:type="simple" />
+                          <cit:hoursOfService />
+                        </cit:CI_Contact>
+                      </cit:contactInfo>
+                      <cit:partyIdentifier xlink:type="simple">
+                        <mcc:MD_Identifier>
+                          <mcc:code>
+                            <gco:CharacterString>https://orcid.org/0000-0002-7591-0303</gco:CharacterString>
+                          </mcc:code>
+                          <mcc:codeSpace>
+                            <gco:CharacterString>ORCID</gco:CharacterString>
+                          </mcc:codeSpace>
+                        </mcc:MD_Identifier>
+                      </cit:partyIdentifier>
+                    </cit:CI_Individual>
+                  </cit:individual>
+                </cit:CI_Organisation>
+              </cit:party>
+            </cit:CI_Responsibility>
+          </cit:citedResponsibleParty>
+          <cit:citedResponsibleParty xlink:type="simple">
+            <cit:CI_Responsibility>
+              <cit:role>
+                <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="funder" />
+              </cit:role>
+              <cit:party xlink:type="simple">
+                <cit:CI_Organisation>
+                  <cit:name>
+                    <gco:CharacterString>AuScope</gco:CharacterString>
+                  </cit:name>
+                  <cit:contactInfo xlink:type="simple">
+                    <cit:CI_Contact>
+                      <cit:phone xlink:type="simple" />
+                      <cit:address xlink:type="simple">
+                        <cit:CI_Address>
+                          <cit:deliveryPoint>
+                            <gco:CharacterString>Melbourne Connect Co-working Level 2, 700 Swanston Street</gco:CharacterString>
+                          </cit:deliveryPoint>
+                          <cit:city>
+                            <gco:CharacterString>Carlton</gco:CharacterString>
+                          </cit:city>
+                          <cit:administrativeArea>
+                            <gco:CharacterString>Victoria</gco:CharacterString>
+                          </cit:administrativeArea>
+                          <cit:postalCode>
+                            <gco:CharacterString>3053</gco:CharacterString>
+                          </cit:postalCode>
+                          <cit:country>
+                            <gco:CharacterString>Australia</gco:CharacterString>
+                          </cit:country>
+                          <cit:electronicMailAddress>
+                            <gco:CharacterString>info@auscope.org.au</gco:CharacterString>
+                          </cit:electronicMailAddress>
+                        </cit:CI_Address>
+                      </cit:address>
+                      <cit:onlineResource xlink:type="simple" />
+                      <cit:hoursOfService />
+                    </cit:CI_Contact>
+                  </cit:contactInfo>
+                  <cit:partyIdentifier xlink:type="simple">
+                    <mcc:MD_Identifier>
+                      <mcc:code gco:nilReason="missing">
+                        <gco:CharacterString />
+                      </mcc:code>
+                      <mcc:description>
+                        <gco:CharacterString>AuScope is Australia's provider of research infrastructure to the national geoscience community working on fundamental geoscience questions and grand challenges — climate change, natural resources security and natural hazards. We are funded by the Australian Government via the Department of Education (NCRIS). You can find our team, tools, data, analytics and services at Geoscience Australia, CSIRO, state and territory geological surveys and universities across the Australian continent.</gco:CharacterString>
+                      </mcc:description>
+                    </mcc:MD_Identifier>
+                  </cit:partyIdentifier>
+                  <cit:logo xlink:type="simple">
+                    <mcc:MD_BrowseGraphic>
+                      <mcc:fileName>
+                        <gco:CharacterString>https://images.squarespace-cdn.com/content/v1/5b440dc18ab722131f76b631/1544673461662-GWIIUQIW3A490WP1RHBV/AuScope+Logo_no+space_+-+horizontal+tagline_+-+horizontal+tagline.png</gco:CharacterString>
+                      </mcc:fileName>
+                      <mcc:fileDescription>
+                        <gco:CharacterString>AuScope Logo</gco:CharacterString>
+                      </mcc:fileDescription>
+                      <mcc:fileType>
+                        <gco:CharacterString>PNG</gco:CharacterString>
+                      </mcc:fileType>
+                    </mcc:MD_BrowseGraphic>
+                  </cit:logo>
+                </cit:CI_Organisation>
+              </cit:party>
+            </cit:CI_Responsibility>
+          </cit:citedResponsibleParty>
+          <cit:citedResponsibleParty xlink:type="simple">
+            <cit:CI_Responsibility>
+              <cit:role>
+                <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="publisher" />
+              </cit:role>
+              <cit:party xlink:type="simple">
+                <cit:CI_Organisation>
+                  <cit:name>
+                    <gco:CharacterString>AuScope</gco:CharacterString>
+                  </cit:name>
+                  <cit:contactInfo xlink:type="simple">
+                    <cit:CI_Contact>
+                      <cit:phone xlink:type="simple" />
+                      <cit:address xlink:type="simple">
+                        <cit:CI_Address>
+                          <cit:deliveryPoint>
+                            <gco:CharacterString>Melbourne Connect Co-working Level 2, 700 Swanston Street</gco:CharacterString>
+                          </cit:deliveryPoint>
+                          <cit:city>
+                            <gco:CharacterString>Carlton</gco:CharacterString>
+                          </cit:city>
+                          <cit:administrativeArea>
+                            <gco:CharacterString>Victoria</gco:CharacterString>
+                          </cit:administrativeArea>
+                          <cit:postalCode>
+                            <gco:CharacterString>3053</gco:CharacterString>
+                          </cit:postalCode>
+                          <cit:country>
+                            <gco:CharacterString>Australia</gco:CharacterString>
+                          </cit:country>
+                          <cit:electronicMailAddress>
+                            <gco:CharacterString>info@auscope.org.au</gco:CharacterString>
+                          </cit:electronicMailAddress>
+                        </cit:CI_Address>
+                      </cit:address>
+                      <cit:onlineResource xlink:type="simple" />
+                      <cit:hoursOfService />
+                    </cit:CI_Contact>
+                  </cit:contactInfo>
+                  <cit:partyIdentifier xlink:type="simple">
+                    <mcc:MD_Identifier>
+                      <mcc:code gco:nilReason="missing">
+                        <gco:CharacterString />
+                      </mcc:code>
+                      <mcc:description>
+                        <gco:CharacterString>AuScope is Australia's provider of research infrastructure to the national geoscience community working on fundamental geoscience questions and grand challenges — climate change, natural resources security and natural hazards. We are funded by the Australian Government via the Department of Education (NCRIS). You can find our team, tools, data, analytics and services at Geoscience Australia, CSIRO, state and territory geological surveys and universities across the Australian continent.</gco:CharacterString>
+                      </mcc:description>
+                    </mcc:MD_Identifier>
+                  </cit:partyIdentifier>
+                  <cit:logo xlink:type="simple">
+                    <mcc:MD_BrowseGraphic>
+                      <mcc:fileName>
+                        <gco:CharacterString>https://images.squarespace-cdn.com/content/v1/5b440dc18ab722131f76b631/1544673461662-GWIIUQIW3A490WP1RHBV/AuScope+Logo_no+space_+-+horizontal+tagline_+-+horizontal+tagline.png</gco:CharacterString>
+                      </mcc:fileName>
+                      <mcc:fileDescription>
+                        <gco:CharacterString>AuScope Logo</gco:CharacterString>
+                      </mcc:fileDescription>
+                      <mcc:fileType>
+                        <gco:CharacterString>PNG</gco:CharacterString>
+                      </mcc:fileType>
+                    </mcc:MD_BrowseGraphic>
+                  </cit:logo>
+                </cit:CI_Organisation>
+              </cit:party>
+            </cit:CI_Responsibility>
+          </cit:citedResponsibleParty>
+        </cit:CI_Citation>
+      </mri:citation>
+      <mri:abstract>
+        <gco:CharacterString>The dataset is ground temperature and thermal conductivity data recorded at the Calperum Critical Zone observatory with AuScope Heat Needle devices. 
+
+It comprises two file types. TLOG files record ground temperature at millikelvin resolution at seven depths from surface to 1.1 m continuously at 15-minute intervals. TCLOG files record temperatures during periodic one-hour heating tests for the purpose of thermal conductivity measurements. 
+
+Data Releases - The data is accumulated over time in newer releases. Each subsequent release will include new data appended to all prior data from previous releases, with no changes to the previous data. A “readme.txt” file is provided in the dataset, which explains the structure and content of the dataset. It includes details about using metadata and generating processed files.</gco:CharacterString>
+      </mri:abstract>
+      <mri:credit>
+        <gco:CharacterString>Anyone downloading and presenting or republishing these data should acknowledge AuScope by: “These data were enabled by AuScope and the Australian Government via the National Collaborative Research Infrastructure Strategy (NCRIS): auscope.org.au”</gco:CharacterString>
+      </mri:credit>
+      <mri:extent xlink:type="simple">
+        <gex:EX_Extent>
+          <gex:geographicElement xlink:type="simple">
+            <gex:EX_GeographicDescription>
+              <gex:geographicIdentifier xlink:type="simple">
+                <mcc:MD_Identifier>
+                  <mcc:code gco:nilReason="missing">
+                    <gco:CharacterString />
+                  </mcc:code>
+                  <mcc:description>
+                    <gco:CharacterString>Calperum Mallee SuperSite</gco:CharacterString>
+                  </mcc:description>
+                </mcc:MD_Identifier>
+              </gex:geographicIdentifier>
+            </gex:EX_GeographicDescription>
+          </gex:geographicElement>
+          <gex:geographicElement xlink:type="simple">
+            <gex:EX_GeographicBoundingBox>
+              <gex:extentTypeCode>
+                <gco:Boolean>true</gco:Boolean>
+              </gex:extentTypeCode>
+              <gex:westBoundLongitude>
+                <gco:Decimal>140.587723</gco:Decimal>
+              </gex:westBoundLongitude>
+              <gex:eastBoundLongitude>
+                <gco:Decimal>140.587723</gco:Decimal>
+              </gex:eastBoundLongitude>
+              <gex:southBoundLatitude>
+                <gco:Decimal>-34.002355</gco:Decimal>
+              </gex:southBoundLatitude>
+              <gex:northBoundLatitude>
+                <gco:Decimal>-34.002355</gco:Decimal>
+              </gex:northBoundLatitude>
+            </gex:EX_GeographicBoundingBox>
+          </gex:geographicElement>
+          <gex:geographicElement xlink:type="simple">
+            <gex:EX_GeographicBoundingBox>
+              <gex:extentTypeCode>
+                <gco:Boolean>true</gco:Boolean>
+              </gex:extentTypeCode>
+              <gex:westBoundLongitude>
+                <gco:Decimal>140.587511</gco:Decimal>
+              </gex:westBoundLongitude>
+              <gex:eastBoundLongitude>
+                <gco:Decimal>140.587511</gco:Decimal>
+              </gex:eastBoundLongitude>
+              <gex:southBoundLatitude>
+                <gco:Decimal>-34.002461</gco:Decimal>
+              </gex:southBoundLatitude>
+              <gex:northBoundLatitude>
+                <gco:Decimal>-34.002461</gco:Decimal>
+              </gex:northBoundLatitude>
+            </gex:EX_GeographicBoundingBox>
+          </gex:geographicElement>
+          <gex:geographicElement xlink:type="simple">
+            <gex:EX_GeographicBoundingBox>
+              <gex:extentTypeCode>
+                <gco:Boolean>true</gco:Boolean>
+              </gex:extentTypeCode>
+              <gex:westBoundLongitude>
+                <gco:Decimal>140.58776</gco:Decimal>
+              </gex:westBoundLongitude>
+              <gex:eastBoundLongitude>
+                <gco:Decimal>140.58776</gco:Decimal>
+              </gex:eastBoundLongitude>
+              <gex:southBoundLatitude>
+                <gco:Decimal>-34.002525</gco:Decimal>
+              </gex:southBoundLatitude>
+              <gex:northBoundLatitude>
+                <gco:Decimal>-34.002525</gco:Decimal>
+              </gex:northBoundLatitude>
+            </gex:EX_GeographicBoundingBox>
+          </gex:geographicElement>
+          <gex:temporalElement xlink:type="simple">
+            <gex:EX_TemporalExtent>
+              <gex:extent xlink:type="simple">
+                <gml:TimePeriod frame="#ISO-8601" gml:id="time-id">
+                  <gml:metaDataProperty xlink:type="simple" />
+                  <gml:relatedTime xlink:type="simple" owns="false" />
+                  <gml:beginPosition frame="#ISO-8601">2024-02-18</gml:beginPosition>
+                  <gml:endPosition frame="#ISO-8601" />
+                </gml:TimePeriod>
+              </gex:extent>
+            </gex:EX_TemporalExtent>
+          </gex:temporalElement>
+          <gex:verticalElement xlink:type="simple">
+            <gex:EX_VerticalExtent>
+              <gex:minimumValue>
+                <gco:Real>0.0</gco:Real>
+              </gex:minimumValue>
+              <gex:maximumValue>
+                <gco:Real>0.0</gco:Real>
+              </gex:maximumValue>
+              <gex:verticalCRSId xlink:type="simple">
+                <mrs:MD_ReferenceSystem>
+                  <mrs:referenceSystemIdentifier xlink:type="simple">
+                    <mcc:MD_Identifier>
+                      <mcc:authority xlink:type="simple">
+                        <cit:CI_Citation>
+                          <cit:title>
+                            <gco:CharacterString>MSL Height</gco:CharacterString>
+                          </cit:title>
+                        </cit:CI_Citation>
+                      </mcc:authority>
+                      <mcc:code>
+                        <gco:CharacterString>EPSG:5714</gco:CharacterString>
+                      </mcc:code>
+                      <mcc:codeSpace>
+                        <gco:CharacterString>European Petroleum Survey Group Geodetic Parameter Dataset</gco:CharacterString>
+                      </mcc:codeSpace>
+                      <mcc:description>
+                        <gco:CharacterString>Mean Sea Level Height</gco:CharacterString>
+                      </mcc:description>
+                    </mcc:MD_Identifier>
+                  </mrs:referenceSystemIdentifier>
+                  <mrs:referenceSystemType>
+                    <mrs:MD_ReferenceSystemTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ReferenceSystemTypeCode" codeListValue="vertical" />
+                  </mrs:referenceSystemType>
+                </mrs:MD_ReferenceSystem>
+              </gex:verticalCRSId>
+            </gex:EX_VerticalExtent>
+          </gex:verticalElement>
+        </gex:EX_Extent>
+      </mri:extent>
+      <mri:additionalDocumentation xlink:type="simple" />
+      <mri:descriptiveKeywords xlink:type="simple">
+        <mri:MD_Keywords>
+          <mri:keyword>
+            <gco:CharacterString>Heat Flow</gco:CharacterString>
+          </mri:keyword>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords xlink:type="simple">
+        <mri:MD_Keywords>
+          <mri:keyword>
+            <gco:CharacterString>Heat Needle</gco:CharacterString>
+          </mri:keyword>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords xlink:type="simple">
+        <mri:MD_Keywords>
+          <mri:keyword>
+            <gco:CharacterString>Land Surface Temperature</gco:CharacterString>
+          </mri:keyword>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords xlink:type="simple">
+        <mri:MD_Keywords>
+          <mri:keyword>
+            <gco:CharacterString>Soil Temperature</gco:CharacterString>
+          </mri:keyword>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords xlink:type="simple">
+        <mri:MD_Keywords>
+          <mri:keyword>
+            <gco:CharacterString>Thermal Conductivity</gco:CharacterString>
+          </mri:keyword>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords xlink:type="simple">
+        <mri:MD_Keywords>
+          <mri:keyword>
+            <gco:CharacterString>Thermal Diffusivity</gco:CharacterString>
+          </mri:keyword>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords xlink:type="simple">
+        <mri:MD_Keywords>
+          <mri:keyword>
+            <gco:CharacterString>AuScope Data Repository</gco:CharacterString>
+          </mri:keyword>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords xlink:type="simple">
+        <mri:MD_Keywords>
+          <mri:keyword>
+            <gcx:Anchor xlink:type="simple">Geothermics and radiometrics</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:type="simple">Soil physics</gcx:Anchor>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="theme" />
+          </mri:type>
+          <mri:thesaurusName xlink:type="simple">
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>ANZSRC Fields of Research</gco:CharacterString>
+              </cit:title>
+              <cit:otherCitationDetails>
+                <gco:CharacterString>Australian Bureau of Statistics (2020): Australian and New Zealand Standard Research Classification (ANZSRC). https://www.abs.gov.au</gco:CharacterString>
+              </cit:otherCitationDetails>
+              <cit:onlineResource xlink:type="simple">
+                <cit:CI_OnlineResource>
+                  <cit:linkage>
+                    <gco:CharacterString>https://www.abs.gov.au/statistics/classifications/australian-and-new-zealand-standard-research-classification-anzsrc/2020</gco:CharacterString>
+                  </cit:linkage>
+                  <cit:protocol>
+                    <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                  </cit:protocol>
+                  <cit:function>
+                    <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="information" />
+                  </cit:function>
+                </cit:CI_OnlineResource>
+              </cit:onlineResource>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords xlink:type="simple">
+        <mri:MD_Keywords>
+          <mri:keyword>
+            <gcx:Anchor xlink:type="simple">GEOTHERMAL TEMPERATURE</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:type="simple">HEAT FLUX</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:type="simple">LAND SURFACE TEMPERATURE</gcx:Anchor>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="theme" />
+          </mri:type>
+          <mri:thesaurusName xlink:type="simple">
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>GCMD Science Keywords</gco:CharacterString>
+              </cit:title>
+              <cit:otherCitationDetails>
+                <gco:CharacterString>Global Change Master Directory (2021): GCMD Keywords. Version 11.3. Greenbelt, MD: Earth Science Data and Information System, Earth Science Projects Division, Goddard Space Flight Center (GSFC) National Aeronautics and Space Administration (NASA). URL (GCMD Keyword Forum Page): https://earthdata.nasa.gov/gcmd-forum</gco:CharacterString>
+              </cit:otherCitationDetails>
+              <cit:onlineResource xlink:type="simple">
+                <cit:CI_OnlineResource>
+                  <cit:linkage>
+                    <gco:CharacterString>https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords</gco:CharacterString>
+                  </cit:linkage>
+                  <cit:protocol>
+                    <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                  </cit:protocol>
+                  <cit:function>
+                    <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="information" />
+                  </cit:function>
+                </cit:CI_OnlineResource>
+              </cit:onlineResource>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:resourceConstraints xlink:type="simple">
+        <mco:MD_Constraints>
+          <mco:useLimitation>
+            <gco:CharacterString>CC-BY-4.0</gco:CharacterString>
+          </mco:useLimitation>
+          <mco:graphic xlink:type="simple" />
+          <mco:reference xlink:type="simple">
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>CC BY 4.0 International</gco:CharacterString>
+              </cit:title>
+              <cit:onlineResource xlink:type="simple">
+                <cit:CI_OnlineResource>
+                  <cit:linkage>
+                    <gco:CharacterString>https://creativecommons.org/licenses/by/4.0/</gco:CharacterString>
+                  </cit:linkage>
+                  <cit:protocol>
+                    <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                  </cit:protocol>
+                </cit:CI_OnlineResource>
+              </cit:onlineResource>
+            </cit:CI_Citation>
+          </mco:reference>
+          <mco:responsibleParty xlink:type="simple" />
+        </mco:MD_Constraints>
+      </mri:resourceConstraints>
+      <mri:associatedResource xlink:type="simple">
+        <mri:MD_AssociatedResource>
+          <mri:name xlink:type="simple">
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>Critical Zone Exploration Network</gco:CharacterString>
+              </cit:title>
+              <cit:identifier xlink:type="simple">
+                <mcc:MD_Identifier>
+                  <mcc:code>
+                    <gco:CharacterString>https://www.czen.org/content/calperum-mallee-supersite</gco:CharacterString>
+                  </mcc:code>
+                </mcc:MD_Identifier>
+              </cit:identifier>
+            </cit:CI_Citation>
+          </mri:name>
+          <mri:associationType>
+            <mri:DS_AssociationTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#DS_AssociationTypeCode" codeListValue="crossReference" />
+          </mri:associationType>
+        </mri:MD_AssociatedResource>
+      </mri:associatedResource>
+      <mri:associatedResource xlink:type="simple">
+        <mri:MD_AssociatedResource>
+          <mri:name xlink:type="simple">
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>The Heat Needle developed by Hot Dry Rocks Pty Ltd</gco:CharacterString>
+              </cit:title>
+              <cit:identifier xlink:type="simple">
+                <mcc:MD_Identifier>
+                  <mcc:code>
+                    <gco:CharacterString>https://www.hotdryrocks.com/the-heat-needle</gco:CharacterString>
+                  </mcc:code>
+                </mcc:MD_Identifier>
+              </cit:identifier>
+            </cit:CI_Citation>
+          </mri:name>
+          <mri:associationType>
+            <mri:DS_AssociationTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#DS_AssociationTypeCode" codeListValue="crossReference" />
+          </mri:associationType>
+        </mri:MD_AssociatedResource>
+      </mri:associatedResource>
+    </mri:MD_DataIdentification>
+  </mdb:identificationInfo>
+  <mdb:resourceLineage xlink:type="simple">
+    <mrl:LI_Lineage>
+      <mrl:statement>
+        <gco:CharacterString>The data are collected every 2 to 3 months from three different stations at Calperum Critical Zone Observatory (CZO), using three Heat Needle instruments. 
+
+One Heat Needle is deployed at each station and each Heat Needle has its own calibration coefficients to convert digital sensor readings to actual temperature values. Therefore, the dataset includes raw data files that contain digital Heat Needle sensor readings, and processed data files that contain the conversion to temperatures.</gco:CharacterString>
+      </mrl:statement>
+    </mrl:LI_Lineage>
+  </mdb:resourceLineage>
+</mdb:MD_Metadata>
+

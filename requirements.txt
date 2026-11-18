@@ -5,3 +5,4 @@ requests
 httpx
 beautifulsoup4
 pyshacl
+lxml

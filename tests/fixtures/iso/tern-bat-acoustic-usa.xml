@@ -1,0 +1,1703 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdb:MD_Metadata xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cat="http://standards.iso.org/iso/19115/-3/cat/1.0" xmlns:gfc="http://standards.iso.org/iso/19110/gfc/1.1" xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0" xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0" xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0" xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0" xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.0" xmlns:mas="http://standards.iso.org/iso/19115/-3/mas/1.0" xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0" xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0" xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/1.0" xmlns:mds="http://standards.iso.org/iso/19115/-3/mds/2.0" xmlns:mdt="http://standards.iso.org/iso/19115/-3/mdt/2.0" xmlns:mex="http://standards.iso.org/iso/19115/-3/mex/1.0" xmlns:mmi="http://standards.iso.org/iso/19115/-3/mmi/1.0" xmlns:mpc="http://standards.iso.org/iso/19115/-3/mpc/1.0" xmlns:mrc="http://standards.iso.org/iso/19115/-3/mrc/2.0" xmlns:mrd="http://standards.iso.org/iso/19115/-3/mrd/1.0" xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0" xmlns:mrl="http://standards.iso.org/iso/19115/-3/mrl/2.0" xmlns:mrs="http://standards.iso.org/iso/19115/-3/mrs/1.0" xmlns:msr="http://standards.iso.org/iso/19115/-3/msr/2.0" xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0" xmlns:dqm="http://standards.iso.org/iso/19157/-2/dqm/1.0" xmlns:mac="http://standards.iso.org/iso/19115/-3/mac/2.0" xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="                  http://standards.iso.org/iso/19115/-3/cat/1.0 https://schemas.isotc211.org/19115/-3/cat/1.0/cat.xsd                  http://standards.iso.org/iso/19115/-3/cit/2.0 https://schemas.isotc211.org/19115/-3/cit/2.0/cit.xsd                  http://standards.iso.org/iso/19115/-3/gcx/1.0 https://schemas.isotc211.org/19115/-3/gcx/1.0/gcx.xsd                  http://standards.iso.org/iso/19115/-3/gex/1.0 https://schemas.isotc211.org/19115/-3/gex/1.0/gex.xsd                  http://standards.iso.org/iso/19115/-3/lan/1.0 https://schemas.isotc211.org/19115/-3/lan/1.0/lan.xsd                  http://standards.iso.org/iso/19115/-3/srv/2.0 https://schemas.isotc211.org/19115/-3/srv/2.0/srv.xsd                  http://standards.iso.org/iso/19115/-3/mas/1.0 https://schemas.isotc211.org/19115/-3/mas/1.0/mas.xsd                  http://standards.iso.org/iso/19115/-3/mcc/1.0 https://schemas.isotc211.org/19115/-3/mcc/1.0/mcc.xsd                  http://standards.iso.org/iso/19115/-3/mco/1.0 https://schemas.isotc211.org/19115/-3/mco/1.0/mco.xsd                  http://standards.iso.org/iso/19115/-3/mda/2.0 https://schemas.isotc211.org/19115/-3/mda/2.0/mda.xsd                  http://standards.iso.org/iso/19115/-3/mdb/2.0 https://schemas.isotc211.org/19115/-3/mdb/2.0/mdb.xsd                  http://standards.iso.org/iso/19115/-3/mds/2.0 https://schemas.isotc211.org/19115/-3/mds/2.0/mds.xsd                  http://standards.iso.org/iso/19115/-3/mdt/1.0 https://schemas.isotc211.org/19115/-3/mdt/1.0/mdt.xsd                  http://standards.iso.org/iso/19115/-3/mex/1.0 https://schemas.isotc211.org/19115/-3/mex/1.0/mex.xsd                  http://standards.iso.org/iso/19115/-3/mmi/1.0 https://schemas.isotc211.org/19115/-3/mmi/1.0/mmi.xsd                  http://standards.iso.org/iso/19115/-3/mpc/1.0 https://schemas.isotc211.org/19115/-3/mpc/1.0/mpc.xsd                  http://standards.iso.org/iso/19115/-3/mrd/1.0 https://schemas.isotc211.org/19115/-3/mrd/1.0/mrd.xsd                  http://standards.iso.org/iso/19115/-3/mri/1.0 https://schemas.isotc211.org/19115/-3/mri/1.0/mri.xsd                  http://standards.iso.org/iso/19115/-3/mrl/2.0 https://schemas.isotc211.org/19115/-3/mrl/2.0/mrl.xsd                  http://standards.iso.org/iso/19115/-3/mrs/1.0 https://schemas.isotc211.org/19115/-3/mrs/1.0/mrs.xsd                  http://standards.iso.org/iso/19115/-3/msr/2.0 https://schemas.isotc211.org/19115/-3/msr/2.0/msr.xsd                  http://standards.iso.org/iso/19157/-2/mdq/1.0 https://schemas.isotc211.org/19157/-2/mdq/1.0/mdq.xsd                  http://standards.iso.org/iso/19115/-3/mac/2.0 https://schemas.isotc211.org/19115/-3/mac/2.0/mac.xsd                  http://standards.iso.org/iso/19115/-3/gco/1.0 https://schemas.isotc211.org/19115/-3/gco/1.0/gco.xsd                  http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd                  http://www.w3.org/1999/xlink http://www.w3.org/1999/xlink.xsd">
+  <mdb:metadataIdentifier xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/2.0">
+    <mcc:MD_Identifier>
+      <mcc:authority>
+        <cit:CI_Citation>
+          <cit:title>
+            <gco:CharacterString>TERN GeoNetwork UUID</gco:CharacterString>
+          </cit:title>
+        </cit:CI_Citation>
+      </mcc:authority>
+      <mcc:code>
+        <gco:CharacterString>1f2ee475-1cd1-499f-bb93-492b8fa3d3a0</gco:CharacterString>
+      </mcc:code>
+      <mcc:codeSpace>
+        <gco:CharacterString>urn:uuid</gco:CharacterString>
+      </mcc:codeSpace>
+      <mcc:description>
+        <gco:CharacterString>Data was submitted via the TERN SHaRED Data Submission Tool
+        https://shared.tern.org.au/</gco:CharacterString>
+      </mcc:description>
+    </mcc:MD_Identifier>
+  </mdb:metadataIdentifier>
+  <mdb:defaultLocale xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/2.0">
+    <lan:PT_Locale id="EN">
+      <lan:language>
+        <lan:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng" />
+      </lan:language>
+      <lan:characterEncoding>
+        <lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode" codeListValue="utf8" />
+      </lan:characterEncoding>
+    </lan:PT_Locale>
+  </mdb:defaultLocale>
+  <mdb:metadataScope xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/2.0">
+    <mdb:MD_MetadataScope>
+      <mdb:resourceScope>
+        <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="dataset" />
+      </mdb:resourceScope>
+    </mdb:MD_MetadataScope>
+  </mdb:metadataScope>
+  <mdb:contact xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/2.0">
+    <cit:CI_Responsibility>
+      <cit:role>
+        <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="pointOfContact" />
+      </cit:role>
+      <cit:party>
+        <cit:CI_Organisation>
+          <cit:name>
+            <gco:CharacterString>Terrestrial Ecosystem Research Network</gco:CharacterString>
+          </cit:name>
+          <cit:contactInfo>
+            <cit:CI_Contact>
+              <cit:phone>
+                <cit:CI_Telephone>
+                  <cit:number>
+                    <gco:CharacterString>+61 7 3365 9097</gco:CharacterString>
+                  </cit:number>
+                  <cit:numberType>
+                    <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice" />
+                  </cit:numberType>
+                </cit:CI_Telephone>
+              </cit:phone>
+              <cit:address>
+                <cit:CI_Address>
+                  <cit:deliveryPoint>
+                    <gco:CharacterString>80 Meiers Road, Indooroopilly, Queensland, 4068, Australia</gco:CharacterString>
+                  </cit:deliveryPoint>
+                  <cit:city>
+                    <gco:CharacterString>Indooroopilly</gco:CharacterString>
+                  </cit:city>
+                  <cit:administrativeArea>
+                    <gco:CharacterString>Queensland</gco:CharacterString>
+                  </cit:administrativeArea>
+                  <cit:postalCode>
+                    <gco:CharacterString>4068</gco:CharacterString>
+                  </cit:postalCode>
+                  <cit:country>
+                    <gco:CharacterString>Australia</gco:CharacterString>
+                  </cit:country>
+                  <cit:electronicMailAddress>
+                    <gco:CharacterString>esupport@tern.org.au</gco:CharacterString>
+                  </cit:electronicMailAddress>
+                </cit:CI_Address>
+              </cit:address>
+            </cit:CI_Contact>
+          </cit:contactInfo>
+          <cit:partyIdentifier>
+            <mcc:MD_Identifier>
+              <mcc:code>
+                <gcx:Anchor xlink:role="uri" xlink:href="https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66#https://w3id.org/tern/resources/fa56a1ed-ec38-4294-90ae-ab203a25d5ad" xlink:show="new">https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66#https://w3id.org/tern/resources/fa56a1ed-ec38-4294-90ae-ab203a25d5ad</gcx:Anchor>
+              </mcc:code>
+              <mcc:codeSpace>
+                <gco:CharacterString>https://w3id.org/tern/resources</gco:CharacterString>
+              </mcc:codeSpace>
+            </mcc:MD_Identifier>
+          </cit:partyIdentifier>
+          <cit:logo>
+            <mcc:MD_BrowseGraphic>
+              <mcc:fileName>
+                <gco:CharacterString>tern-logo.png</gco:CharacterString>
+              </mcc:fileName>
+              <mcc:fileDescription>
+                <gco:CharacterString>TERN Logo</gco:CharacterString>
+              </mcc:fileDescription>
+              <mcc:linkage>
+                <cit:CI_OnlineResource>
+                  <cit:linkage>
+                    <gco:CharacterString>https://w3id.org/tern/static/tern-web/img/tern-logo.png</gco:CharacterString>
+                  </cit:linkage>
+                  <cit:protocol>
+                    <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                  </cit:protocol>
+                  <cit:function>
+                    <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="browseGraphic" />
+                  </cit:function>
+                </cit:CI_OnlineResource>
+              </mcc:linkage>
+            </mcc:MD_BrowseGraphic>
+          </cit:logo>
+        </cit:CI_Organisation>
+      </cit:party>
+    </cit:CI_Responsibility>
+  </mdb:contact>
+  <mdb:dateInfo xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/2.0">
+    <cit:CI_Date>
+      <cit:date>
+        <gco:DateTime>2025-07-30T23:47:26.189131+00:00</gco:DateTime>
+      </cit:date>
+      <cit:dateType>
+        <cit:CI_DateTypeCode codeList="https://schemas.isotc211.org/19115/resources/Codelist/cat/codelists.xml#CI_DateTypeCode" codeListValue="creation" />
+      </cit:dateType>
+    </cit:CI_Date>
+  </mdb:dateInfo>
+  <mdb:dateInfo>
+    <cit:CI_Date>
+      <cit:date>
+        <gco:DateTime>2026-11-02T02:47:08.630449Z</gco:DateTime>
+      </cit:date>
+      <cit:dateType>
+        <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="revision" />
+      </cit:dateType>
+    </cit:CI_Date>
+  </mdb:dateInfo>
+  <mdb:metadataStandard xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/2.0">
+    <cit:CI_Citation>
+      <cit:title>
+        <gco:CharacterString>ISO 19115-1:2014/AMD 1:2018 Geographic information - Metadata - Fundamentals</gco:CharacterString>
+      </cit:title>
+      <cit:edition>
+        <gco:CharacterString>1</gco:CharacterString>
+      </cit:edition>
+    </cit:CI_Citation>
+  </mdb:metadataStandard>
+  <mdb:metadataStandard xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/2.0">
+    <cit:CI_Citation>
+      <cit:title>
+        <gco:CharacterString>ISO/TS 19115-3:2016</gco:CharacterString>
+      </cit:title>
+      <cit:edition>
+        <gco:CharacterString>1.0</gco:CharacterString>
+      </cit:edition>
+    </cit:CI_Citation>
+  </mdb:metadataStandard>
+  <mdb:metadataStandard xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/2.0">
+    <cit:CI_Citation>
+      <cit:title>
+        <gco:CharacterString>ISO/TS 19157-2:2016</gco:CharacterString>
+      </cit:title>
+      <cit:edition>
+        <gco:CharacterString>1.0</gco:CharacterString>
+      </cit:edition>
+    </cit:CI_Citation>
+  </mdb:metadataStandard>
+  <mdb:metadataProfile xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/2.0">
+    <cit:CI_Citation>
+      <cit:title>
+        <gco:CharacterString>Terrestrial Ecosystem Research Network (TERN) Metadata Profile of ISO 19115-3:2016 and ISO 19157-2:2016</gco:CharacterString>
+      </cit:title>
+      <cit:date>
+        <cit:CI_Date>
+          <cit:date>
+            <gco:Date>2021</gco:Date>
+          </cit:date>
+          <cit:dateType>
+            <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="publication" />
+          </cit:dateType>
+        </cit:CI_Date>
+      </cit:date>
+      <cit:edition>
+        <gco:CharacterString>1.0</gco:CharacterString>
+      </cit:edition>
+      <cit:identifier>
+        <mcc:MD_Identifier>
+          <mcc:code>
+            <gcx:Anchor xlink:role="uri" xlink:href="https://doi.org/10.5281/zenodo.5652221" xlink:show="new">10.5281/zenodo.5652221</gcx:Anchor>
+          </mcc:code>
+        </mcc:MD_Identifier>
+      </cit:identifier>
+      <cit:onlineResource>
+        <cit:CI_OnlineResource>
+          <cit:linkage>
+            <gco:CharacterString>https://github.com/ternaustralia/TERN-ISO19115/releases/tag/v1.0</gco:CharacterString>
+          </cit:linkage>
+          <cit:protocol>
+            <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+          </cit:protocol>
+          <cit:function>
+            <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="information" />
+          </cit:function>
+        </cit:CI_OnlineResource>
+      </cit:onlineResource>
+    </cit:CI_Citation>
+  </mdb:metadataProfile>
+  <mdb:metadataLinkage xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/2.0">
+    <cit:CI_OnlineResource>
+      <cit:linkage>
+        <gco:CharacterString>https://geonetwork.tern.org.au/geonetwork/srv/api/records/1f2ee475-1cd1-499f-bb93-492b8fa3d3a0?language=all</gco:CharacterString>
+      </cit:linkage>
+      <cit:protocol>
+        <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+      </cit:protocol>
+      <cit:description>
+        <gco:CharacterString>Point-of-truth metadata URL</gco:CharacterString>
+      </cit:description>
+      <cit:function>
+        <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="completeMetadata" />
+      </cit:function>
+    </cit:CI_OnlineResource>
+  </mdb:metadataLinkage>
+  <mdb:referenceSystemInfo xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/2.0">
+    <mrs:MD_ReferenceSystem>
+      <mrs:referenceSystemIdentifier>
+        <mcc:MD_Identifier>
+          <mcc:code>
+            <gco:CharacterString>EPSG:4326</gco:CharacterString>
+          </mcc:code>
+          <mcc:codeSpace>
+            <gco:CharacterString>EPSG</gco:CharacterString>
+          </mcc:codeSpace>
+          <mcc:version>
+            <gco:CharacterString>2007.08</gco:CharacterString>
+          </mcc:version>
+          <mcc:description>
+            <gco:CharacterString>WGS 84</gco:CharacterString>
+          </mcc:description>
+        </mcc:MD_Identifier>
+      </mrs:referenceSystemIdentifier>
+      <mrs:referenceSystemType>
+        <mrs:MD_ReferenceSystemTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ReferenceSystemTypeCode" codeListValue="geodeticGeographic2D" />
+      </mrs:referenceSystemType>
+    </mrs:MD_ReferenceSystem>
+  </mdb:referenceSystemInfo>
+  <mdb:identificationInfo xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/2.0">
+    <mri:MD_DataIdentification>
+      <mri:citation>
+        <cit:CI_Citation>
+          <cit:title>
+            <gco:CharacterString>Global Bat Acoustic Data Collection: United States of America</gco:CharacterString>
+          </cit:title>
+          <cit:date>
+            <cit:CI_Date>
+              <cit:date>
+                <gco:Date>2025-02-04</gco:Date>
+              </cit:date>
+              <cit:dateType>
+                <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="creation" />
+              </cit:dateType>
+            </cit:CI_Date>
+          </cit:date>
+          <cit:date>
+            <cit:CI_Date>
+              <cit:date>
+                <gco:Date>2026-04-23</gco:Date>
+              </cit:date>
+              <cit:dateType>
+                <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="publication" />
+              </cit:dateType>
+            </cit:CI_Date>
+          </cit:date>
+          <cit:date>
+            <cit:CI_Date>
+              <cit:date>
+                <gco:Date>2026-10-11</gco:Date>
+              </cit:date>
+              <cit:dateType>
+                <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="revision" />
+              </cit:dateType>
+            </cit:CI_Date>
+          </cit:date>
+          <cit:edition>
+            <gco:CharacterString>1</gco:CharacterString>
+          </cit:edition>
+          <cit:citedResponsibleParty>
+            <cit:CI_Responsibility>
+              <cit:role>
+                <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="publisher" />
+              </cit:role>
+              <cit:party>
+                <cit:CI_Organisation>
+                  <cit:name>
+                    <gco:CharacterString>Terrestrial Ecosystem Research Network</gco:CharacterString>
+                  </cit:name>
+                  <cit:contactInfo>
+                    <cit:CI_Contact>
+                      <cit:phone>
+                        <cit:CI_Telephone>
+                          <cit:number>
+                            <gco:CharacterString>+61 7 3365 9097</gco:CharacterString>
+                          </cit:number>
+                          <cit:numberType>
+                            <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice" />
+                          </cit:numberType>
+                        </cit:CI_Telephone>
+                      </cit:phone>
+                      <cit:address>
+                        <cit:CI_Address>
+                          <cit:deliveryPoint>
+                            <gco:CharacterString>80 Meiers Road, Indooroopilly, Queensland, 4068, Australia</gco:CharacterString>
+                          </cit:deliveryPoint>
+                          <cit:city>
+                            <gco:CharacterString>Indooroopilly</gco:CharacterString>
+                          </cit:city>
+                          <cit:administrativeArea>
+                            <gco:CharacterString>Queensland</gco:CharacterString>
+                          </cit:administrativeArea>
+                          <cit:postalCode>
+                            <gco:CharacterString>4068</gco:CharacterString>
+                          </cit:postalCode>
+                          <cit:country>
+                            <gco:CharacterString>Australia</gco:CharacterString>
+                          </cit:country>
+                          <cit:electronicMailAddress>
+                            <gco:CharacterString>esupport@tern.org.au</gco:CharacterString>
+                          </cit:electronicMailAddress>
+                        </cit:CI_Address>
+                      </cit:address>
+                    </cit:CI_Contact>
+                  </cit:contactInfo>
+                  <cit:partyIdentifier>
+                    <mcc:MD_Identifier>
+                      <mcc:code>
+                        <gcx:Anchor xlink:role="uri" xlink:href="https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66#https://w3id.org/tern/resources/fa56a1ed-ec38-4294-90ae-ab203a25d5ad" xlink:show="new">https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66#https://w3id.org/tern/resources/fa56a1ed-ec38-4294-90ae-ab203a25d5ad</gcx:Anchor>
+                      </mcc:code>
+                      <mcc:codeSpace>
+                        <gco:CharacterString>https://w3id.org/tern/resources</gco:CharacterString>
+                      </mcc:codeSpace>
+                    </mcc:MD_Identifier>
+                  </cit:partyIdentifier>
+                </cit:CI_Organisation>
+              </cit:party>
+            </cit:CI_Responsibility>
+          </cit:citedResponsibleParty>
+          <cit:citedResponsibleParty>
+            <cit:CI_Responsibility>
+              <cit:role>
+                <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="author" />
+              </cit:role>
+              <cit:party>
+                <cit:CI_Organisation>
+                  <cit:name>
+                    <gco:CharacterString>Australian Bat Call Data Consortium</gco:CharacterString>
+                  </cit:name>
+                  <cit:contactInfo>
+                    <cit:CI_Contact>
+                      <cit:address>
+                        <cit:CI_Address>
+                          <cit:deliveryPoint>
+                            <gco:CharacterString>80 Meiers Road, Indooroopilly, Queensland, 4068, Australia</gco:CharacterString>
+                          </cit:deliveryPoint>
+                          <cit:city>
+                            <gco:CharacterString>Indooroopilly</gco:CharacterString>
+                          </cit:city>
+                          <cit:administrativeArea>
+                            <gco:CharacterString>Queensland</gco:CharacterString>
+                          </cit:administrativeArea>
+                          <cit:postalCode>
+                            <gco:CharacterString>4068</gco:CharacterString>
+                          </cit:postalCode>
+                          <cit:country>
+                            <gco:CharacterString>Australia</gco:CharacterString>
+                          </cit:country>
+                        </cit:CI_Address>
+                      </cit:address>
+                    </cit:CI_Contact>
+                  </cit:contactInfo>
+                  <cit:partyIdentifier>
+                    <mcc:MD_Identifier>
+                      <mcc:code>
+                        <gcx:Anchor xlink:role="uri" xlink:href="https://w3id.org/tern/resources/cc344ad8-0e61-4b5e-ac04-c7a75f2a3d0c#https://w3id.org/tern/resources/fa56a1ed-ec38-4294-90ae-ab203a25d5ad" xlink:show="new">https://w3id.org/tern/resources/cc344ad8-0e61-4b5e-ac04-c7a75f2a3d0c#https://w3id.org/tern/resources/fa56a1ed-ec38-4294-90ae-ab203a25d5ad</gcx:Anchor>
+                      </mcc:code>
+                      <mcc:codeSpace>
+                        <gco:CharacterString>https://w3id.org/tern/resources</gco:CharacterString>
+                      </mcc:codeSpace>
+                    </mcc:MD_Identifier>
+                  </cit:partyIdentifier>
+                  <cit:individual>
+                    <cit:CI_Individual>
+                      <cit:name>
+                        <gco:CharacterString>Corben, Chris</gco:CharacterString>
+                      </cit:name>
+                      <cit:contactInfo>
+                        <cit:CI_Contact>
+                          <cit:address>
+                            <cit:CI_Address>
+                              <cit:electronicMailAddress>
+                                <gco:CharacterString>cjcorben@hoarybat.com</gco:CharacterString>
+                              </cit:electronicMailAddress>
+                            </cit:CI_Address>
+                          </cit:address>
+                        </cit:CI_Contact>
+                      </cit:contactInfo>
+                      <cit:partyIdentifier>
+                        <mcc:MD_Identifier>
+                          <mcc:code>
+                            <gcx:Anchor xlink:role="uri" xlink:href="https://w3id.org/tern/resources/a8aac4ad-d708-4321-8ee6-b7414f1f45f9" xlink:show="new">https://w3id.org/tern/resources/a8aac4ad-d708-4321-8ee6-b7414f1f45f9</gcx:Anchor>
+                          </mcc:code>
+                          <mcc:codeSpace>
+                            <gco:CharacterString>https://w3id.org/tern/resources</gco:CharacterString>
+                          </mcc:codeSpace>
+                        </mcc:MD_Identifier>
+                      </cit:partyIdentifier>
+                      <cit:positionName />
+                    </cit:CI_Individual>
+                  </cit:individual>
+                </cit:CI_Organisation>
+              </cit:party>
+            </cit:CI_Responsibility>
+          </cit:citedResponsibleParty>
+          <cit:citedResponsibleParty>
+            <cit:CI_Responsibility>
+              <cit:role>
+                <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="author" />
+              </cit:role>
+              <cit:party>
+                <cit:CI_Organisation>
+                  <cit:name>
+                    <gco:CharacterString>Central Queensland University</gco:CharacterString>
+                  </cit:name>
+                  <cit:contactInfo>
+                    <cit:CI_Contact>
+                      <cit:address>
+                        <cit:CI_Address>
+                          <cit:deliveryPoint>
+                            <gco:CharacterString>114-190 Canning Street, The Range, 4700, Queensland, Australia</gco:CharacterString>
+                          </cit:deliveryPoint>
+                          <cit:city>
+                            <gco:CharacterString>The Range</gco:CharacterString>
+                          </cit:city>
+                          <cit:administrativeArea>
+                            <gco:CharacterString>Queensland</gco:CharacterString>
+                          </cit:administrativeArea>
+                          <cit:postalCode>
+                            <gco:CharacterString>4700</gco:CharacterString>
+                          </cit:postalCode>
+                          <cit:country>
+                            <gco:CharacterString>Australia</gco:CharacterString>
+                          </cit:country>
+                          <cit:electronicMailAddress>
+                            <gco:CharacterString>tasac@cqu.edu.au</gco:CharacterString>
+                          </cit:electronicMailAddress>
+                        </cit:CI_Address>
+                      </cit:address>
+                    </cit:CI_Contact>
+                  </cit:contactInfo>
+                  <cit:partyIdentifier>
+                    <mcc:MD_Identifier>
+                      <mcc:code>
+                        <gcx:Anchor xlink:role="uri" xlink:href="https://w3id.org/tern/resources/79aaa5bb-4b2b-46b7-b20a-612c5b6621fc#https://w3id.org/tern/resources/e90eefe7-141d-4ac1-9846-401ed3e47871" xlink:show="new">https://w3id.org/tern/resources/79aaa5bb-4b2b-46b7-b20a-612c5b6621fc#https://w3id.org/tern/resources/e90eefe7-141d-4ac1-9846-401ed3e47871</gcx:Anchor>
+                      </mcc:code>
+                      <mcc:codeSpace>
+                        <gco:CharacterString>https://w3id.org/tern/resources</gco:CharacterString>
+                      </mcc:codeSpace>
+                    </mcc:MD_Identifier>
+                  </cit:partyIdentifier>
+                  <cit:individual>
+                    <cit:CI_Individual>
+                      <cit:name>
+                        <gco:CharacterString>Robson, Simon</gco:CharacterString>
+                      </cit:name>
+                      <cit:contactInfo>
+                        <cit:CI_Contact>
+                          <cit:address>
+                            <cit:CI_Address>
+                              <cit:electronicMailAddress>
+                                <gco:CharacterString>simon.robson99@gmail.com</gco:CharacterString>
+                              </cit:electronicMailAddress>
+                            </cit:CI_Address>
+                          </cit:address>
+                        </cit:CI_Contact>
+                      </cit:contactInfo>
+                      <cit:partyIdentifier>
+                        <mcc:MD_Identifier>
+                          <mcc:code>
+                            <gcx:Anchor xlink:role="uri" xlink:href="https://w3id.org/tern/resources/69a1e008-b5ef-4603-92cd-0525c873c5c6" xlink:show="new">https://w3id.org/tern/resources/69a1e008-b5ef-4603-92cd-0525c873c5c6</gcx:Anchor>
+                          </mcc:code>
+                          <mcc:codeSpace>
+                            <gco:CharacterString>https://w3id.org/tern/resources</gco:CharacterString>
+                          </mcc:codeSpace>
+                        </mcc:MD_Identifier>
+                      </cit:partyIdentifier>
+                      <cit:positionName />
+                    </cit:CI_Individual>
+                  </cit:individual>
+                </cit:CI_Organisation>
+              </cit:party>
+            </cit:CI_Responsibility>
+          </cit:citedResponsibleParty>
+          <cit:citedResponsibleParty>
+            <cit:CI_Responsibility>
+              <cit:role>
+                <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="author" />
+              </cit:role>
+              <cit:party>
+                <cit:CI_Organisation>
+                  <cit:name>
+                    <gco:CharacterString>Central Queensland University</gco:CharacterString>
+                  </cit:name>
+                  <cit:contactInfo>
+                    <cit:CI_Contact>
+                      <cit:address>
+                        <cit:CI_Address>
+                          <cit:deliveryPoint>
+                            <gco:CharacterString>114-190 Canning Street, The Range, 4700, Queensland, Australia</gco:CharacterString>
+                          </cit:deliveryPoint>
+                          <cit:city>
+                            <gco:CharacterString>The Range</gco:CharacterString>
+                          </cit:city>
+                          <cit:administrativeArea>
+                            <gco:CharacterString>Queensland</gco:CharacterString>
+                          </cit:administrativeArea>
+                          <cit:postalCode>
+                            <gco:CharacterString>4700</gco:CharacterString>
+                          </cit:postalCode>
+                          <cit:country>
+                            <gco:CharacterString>Australia</gco:CharacterString>
+                          </cit:country>
+                          <cit:electronicMailAddress>
+                            <gco:CharacterString>tasac@cqu.edu.au</gco:CharacterString>
+                          </cit:electronicMailAddress>
+                        </cit:CI_Address>
+                      </cit:address>
+                    </cit:CI_Contact>
+                  </cit:contactInfo>
+                  <cit:partyIdentifier>
+                    <mcc:MD_Identifier>
+                      <mcc:code>
+                        <gcx:Anchor xlink:role="uri" xlink:href="https://w3id.org/tern/resources/79aaa5bb-4b2b-46b7-b20a-612c5b6621fc#https://w3id.org/tern/resources/e90eefe7-141d-4ac1-9846-401ed3e47871" xlink:show="new">https://w3id.org/tern/resources/79aaa5bb-4b2b-46b7-b20a-612c5b6621fc#https://w3id.org/tern/resources/e90eefe7-141d-4ac1-9846-401ed3e47871</gcx:Anchor>
+                      </mcc:code>
+                      <mcc:codeSpace>
+                        <gco:CharacterString>https://w3id.org/tern/resources</gco:CharacterString>
+                      </mcc:codeSpace>
+                    </mcc:MD_Identifier>
+                  </cit:partyIdentifier>
+                </cit:CI_Organisation>
+              </cit:party>
+            </cit:CI_Responsibility>
+          </cit:citedResponsibleParty>
+          <cit:onlineResource>
+            <cit:CI_OnlineResource>
+              <cit:linkage>
+                <gco:CharacterString>https://portal.tern.org.au/metadata/1f2ee475-1cd1-499f-bb93-492b8fa3d3a0</gco:CharacterString>
+              </cit:linkage>
+              <cit:protocol>
+                <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+              </cit:protocol>
+              <cit:name>
+                <gco:CharacterString>Dataset Landing Page</gco:CharacterString>
+              </cit:name>
+              <cit:function>
+                <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </cit:function>
+            </cit:CI_OnlineResource>
+          </cit:onlineResource>
+          <cit:onlineResource>
+            <cit:CI_OnlineResource>
+              <cit:linkage>
+                <gco:CharacterString>https://www.tern.org.au/</gco:CharacterString>
+              </cit:linkage>
+              <cit:protocol>
+                <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+              </cit:protocol>
+              <cit:function>
+                <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </cit:function>
+            </cit:CI_OnlineResource>
+          </cit:onlineResource>
+        </cit:CI_Citation>
+      </mri:citation>
+      <mri:abstract>
+        <gco:CharacterString>&lt;p&gt;This dataset is a collection of echolocation calls recorded from the United States of America. Users should note that some audio files may contain calls from multiple species, and in certain cases, only one of the present species has been identified.&lt;/p&gt;
+&lt;p&gt;The collection includes bat call files in .zc and .wav formats, encompassing both identified and unidentified calls. Each call file contains embedded information, such as collection date, GPS location, species identification (where available), and contributor details, which is extracted and used to create searchable filter options in TERN Ecoacoustic Recordings. This enables users to efficiently search for, explore, and download call files based on specific criteria through the dashboard.&lt;/p&gt;</gco:CharacterString>
+      </mri:abstract>
+      <mri:purpose>
+        <gco:CharacterString>&lt;p&gt;The Global Bat Acoustic Data Collection has two goals:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;To demonstrate the feasibility and value of long-term acoustic monitoring of echolocating bats.&lt;/li&gt;
+&lt;li&gt;To develop an open-access online repository of bat calls and analytical techniques that captures the within and between-species diversity in call structure worldwide, in order to improve our capacity to identify bat species based on their echolocation calls.&lt;/li&gt;
+&lt;/ul&gt;</gco:CharacterString>
+      </mri:purpose>
+      <mri:credit>
+        <gco:CharacterString>We at TERN acknowledge the Traditional Owners and Custodians throughout Australia, New Zealand and all nations. We honour their profound connections to land, water, biodiversity and culture and pay our respects to their Elders past, present and emerging.</gco:CharacterString>
+      </mri:credit>
+      <mri:credit>
+        <gco:CharacterString>&lt;p&gt;This work was jointly funded by the Terrestrial Ecosystem Research Network (TERN), an Australian Government National Collaborative Research Infrastructure Strategy (NCRIS) project, New South Wales Government Department of Environment and Conservation, and Parks and Wildlife Commission of the Northern Territory.&lt;/p&gt;</gco:CharacterString>
+      </mri:credit>
+      <mri:status>
+        <mcc:MD_ProgressCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ProgressCode" codeListValue="onGoing" />
+      </mri:status>
+      <mri:pointOfContact>
+        <cit:CI_Responsibility>
+          <cit:role>
+            <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="pointOfContact" />
+          </cit:role>
+          <cit:party>
+            <cit:CI_Organisation>
+              <cit:name>
+                <gco:CharacterString>Central Queensland University</gco:CharacterString>
+              </cit:name>
+              <cit:contactInfo>
+                <cit:CI_Contact>
+                  <cit:address>
+                    <cit:CI_Address>
+                      <cit:deliveryPoint>
+                        <gco:CharacterString>114-190 Canning Street, The Range, 4700, Queensland, Australia</gco:CharacterString>
+                      </cit:deliveryPoint>
+                      <cit:deliveryPoint>
+                        <gco:CharacterString>114-190 Canning Street</gco:CharacterString>
+                      </cit:deliveryPoint>
+                      <cit:city>
+                        <gco:CharacterString>The Range</gco:CharacterString>
+                      </cit:city>
+                      <cit:administrativeArea>
+                        <gco:CharacterString>Queensland</gco:CharacterString>
+                      </cit:administrativeArea>
+                      <cit:postalCode>
+                        <gco:CharacterString>4700</gco:CharacterString>
+                      </cit:postalCode>
+                      <cit:country>
+                        <gco:CharacterString>Australia</gco:CharacterString>
+                      </cit:country>
+                      <cit:electronicMailAddress>
+                        <gco:CharacterString>tasac@cqu.edu.au</gco:CharacterString>
+                      </cit:electronicMailAddress>
+                    </cit:CI_Address>
+                  </cit:address>
+                </cit:CI_Contact>
+              </cit:contactInfo>
+              <cit:partyIdentifier>
+                <mcc:MD_Identifier>
+                  <mcc:code>
+                    <gcx:Anchor xlink:role="uri" xlink:href="https://w3id.org/tern/resources/79aaa5bb-4b2b-46b7-b20a-612c5b6621fc#https://w3id.org/tern/resources/e90eefe7-141d-4ac1-9846-401ed3e47871" xlink:show="new">https://w3id.org/tern/resources/79aaa5bb-4b2b-46b7-b20a-612c5b6621fc#https://w3id.org/tern/resources/e90eefe7-141d-4ac1-9846-401ed3e47871</gcx:Anchor>
+                  </mcc:code>
+                  <mcc:codeSpace>
+                    <gco:CharacterString>https://w3id.org/tern/resources</gco:CharacterString>
+                  </mcc:codeSpace>
+                </mcc:MD_Identifier>
+              </cit:partyIdentifier>
+              <cit:individual>
+                <cit:CI_Individual>
+                  <cit:name>
+                    <gco:CharacterString>Robson, Simon</gco:CharacterString>
+                  </cit:name>
+                  <cit:contactInfo>
+                    <cit:CI_Contact>
+                      <cit:address>
+                        <cit:CI_Address>
+                          <cit:electronicMailAddress>
+                            <gco:CharacterString>simon.robson99@gmail.com</gco:CharacterString>
+                          </cit:electronicMailAddress>
+                        </cit:CI_Address>
+                      </cit:address>
+                    </cit:CI_Contact>
+                  </cit:contactInfo>
+                  <cit:partyIdentifier>
+                    <mcc:MD_Identifier>
+                      <mcc:code>
+                        <gcx:Anchor xlink:role="uri" xlink:href="https://w3id.org/tern/resources/69a1e008-b5ef-4603-92cd-0525c873c5c6" xlink:show="new">https://w3id.org/tern/resources/69a1e008-b5ef-4603-92cd-0525c873c5c6</gcx:Anchor>
+                      </mcc:code>
+                      <mcc:codeSpace>
+                        <gco:CharacterString>https://w3id.org/tern/resources</gco:CharacterString>
+                      </mcc:codeSpace>
+                    </mcc:MD_Identifier>
+                  </cit:partyIdentifier>
+                  <cit:positionName />
+                </cit:CI_Individual>
+              </cit:individual>
+            </cit:CI_Organisation>
+          </cit:party>
+        </cit:CI_Responsibility>
+      </mri:pointOfContact>
+      <mri:pointOfContact>
+        <cit:CI_Responsibility>
+          <cit:role>
+            <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="pointOfContact" />
+          </cit:role>
+          <cit:party>
+            <cit:CI_Organisation>
+              <cit:name>
+                <gco:CharacterString>Central Queensland University</gco:CharacterString>
+              </cit:name>
+              <cit:contactInfo>
+                <cit:CI_Contact>
+                  <cit:address>
+                    <cit:CI_Address>
+                      <cit:deliveryPoint>
+                        <gco:CharacterString>114-190 Canning Street, The Range, 4700, Queensland, Australia</gco:CharacterString>
+                      </cit:deliveryPoint>
+                      <cit:deliveryPoint>
+                        <gco:CharacterString>114-190 Canning Street</gco:CharacterString>
+                      </cit:deliveryPoint>
+                      <cit:city>
+                        <gco:CharacterString>The Range</gco:CharacterString>
+                      </cit:city>
+                      <cit:administrativeArea>
+                        <gco:CharacterString>Queensland</gco:CharacterString>
+                      </cit:administrativeArea>
+                      <cit:postalCode>
+                        <gco:CharacterString>4700</gco:CharacterString>
+                      </cit:postalCode>
+                      <cit:country>
+                        <gco:CharacterString>Australia</gco:CharacterString>
+                      </cit:country>
+                      <cit:electronicMailAddress>
+                        <gco:CharacterString>tasac@cqu.edu.au</gco:CharacterString>
+                      </cit:electronicMailAddress>
+                    </cit:CI_Address>
+                  </cit:address>
+                </cit:CI_Contact>
+              </cit:contactInfo>
+              <cit:partyIdentifier>
+                <mcc:MD_Identifier>
+                  <mcc:code>
+                    <gcx:Anchor xlink:role="uri" xlink:href="https://w3id.org/tern/resources/79aaa5bb-4b2b-46b7-b20a-612c5b6621fc#https://w3id.org/tern/resources/e90eefe7-141d-4ac1-9846-401ed3e47871" xlink:show="new">https://w3id.org/tern/resources/79aaa5bb-4b2b-46b7-b20a-612c5b6621fc#https://w3id.org/tern/resources/e90eefe7-141d-4ac1-9846-401ed3e47871</gcx:Anchor>
+                  </mcc:code>
+                  <mcc:codeSpace>
+                    <gco:CharacterString>https://w3id.org/tern/resources</gco:CharacterString>
+                  </mcc:codeSpace>
+                </mcc:MD_Identifier>
+              </cit:partyIdentifier>
+            </cit:CI_Organisation>
+          </cit:party>
+        </cit:CI_Responsibility>
+      </mri:pointOfContact>
+      <mri:topicCategory>
+        <mri:MD_TopicCategoryCode>biota</mri:MD_TopicCategoryCode>
+      </mri:topicCategory>
+      <mri:topicCategory>
+        <mri:MD_TopicCategoryCode>environment</mri:MD_TopicCategoryCode>
+      </mri:topicCategory>
+      <mri:extent>
+        <gex:EX_Extent>
+          <gex:description>
+            <gco:CharacterString>United States of America</gco:CharacterString>
+          </gex:description>
+          <gex:geographicElement>
+            <gex:EX_GeographicBoundingBox>
+              <gex:westBoundLongitude>
+                <gco:Decimal>-124.7331</gco:Decimal>
+              </gex:westBoundLongitude>
+              <gex:eastBoundLongitude>
+                <gco:Decimal>-66.9497</gco:Decimal>
+              </gex:eastBoundLongitude>
+              <gex:southBoundLatitude>
+                <gco:Decimal>24.5208</gco:Decimal>
+              </gex:southBoundLatitude>
+              <gex:northBoundLatitude>
+                <gco:Decimal>49.3844</gco:Decimal>
+              </gex:northBoundLatitude>
+            </gex:EX_GeographicBoundingBox>
+          </gex:geographicElement>
+          <gex:geographicElement>
+            <gex:EX_GeographicBoundingBox>
+              <gex:westBoundLongitude>
+                <gco:Decimal>-172.4417</gco:Decimal>
+              </gex:westBoundLongitude>
+              <gex:eastBoundLongitude>
+                <gco:Decimal>-129.9742</gco:Decimal>
+              </gex:eastBoundLongitude>
+              <gex:southBoundLatitude>
+                <gco:Decimal>51.2167</gco:Decimal>
+              </gex:southBoundLatitude>
+              <gex:northBoundLatitude>
+                <gco:Decimal>71.3875</gco:Decimal>
+              </gex:northBoundLatitude>
+            </gex:EX_GeographicBoundingBox>
+          </gex:geographicElement>
+          <gex:geographicElement>
+            <gex:EX_GeographicBoundingBox>
+              <gex:westBoundLongitude>
+                <gco:Decimal>-178.3667</gco:Decimal>
+              </gex:westBoundLongitude>
+              <gex:eastBoundLongitude>
+                <gco:Decimal>-154.8</gco:Decimal>
+              </gex:eastBoundLongitude>
+              <gex:southBoundLatitude>
+                <gco:Decimal>18.9161</gco:Decimal>
+              </gex:southBoundLatitude>
+              <gex:northBoundLatitude>
+                <gco:Decimal>28.45</gco:Decimal>
+              </gex:northBoundLatitude>
+            </gex:EX_GeographicBoundingBox>
+          </gex:geographicElement>
+          <gex:temporalElement>
+            <gex:EX_TemporalExtent>
+              <gex:extent>
+                <gml:TimePeriod gml:id="bcf969df-6213-4e5c-86d4-64e3b53de64a">
+                  <gml:beginPosition>1992-07-10</gml:beginPosition>
+                  <gml:endPosition />
+                </gml:TimePeriod>
+              </gex:extent>
+            </gex:EX_TemporalExtent>
+          </gex:temporalElement>
+          <gex:verticalElement />
+        </gex:EX_Extent>
+      </mri:extent>
+      <mri:additionalDocumentation>
+        <cit:CI_Citation>
+          <cit:title>
+            <gco:CharacterString>Bat calls of New South Wales : region based guide to the echolocation of microchiropteran bats</gco:CharacterString>
+          </cit:title>
+          <cit:onlineResource>
+            <cit:CI_OnlineResource>
+              <cit:linkage>
+                <gco:CharacterString>https://www.environment.nsw.gov.au/resources/nature/batcallsofnsw.pdf</gco:CharacterString>
+              </cit:linkage>
+              <cit:protocol>
+                <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+              </cit:protocol>
+              <cit:name>
+                <gco:CharacterString>Bat calls of New South Wales : region based guide to the echolocation of microchiropteran bats</gco:CharacterString>
+              </cit:name>
+              <cit:description>
+                <gco:CharacterString>Related documentation</gco:CharacterString>
+              </cit:description>
+              <cit:function>
+                <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </cit:function>
+            </cit:CI_OnlineResource>
+          </cit:onlineResource>
+        </cit:CI_Citation>
+      </mri:additionalDocumentation>
+      <mri:additionalDocumentation>
+        <cit:CI_Citation>
+          <cit:title>
+            <gco:CharacterString>Key to the bat calls of the top end of the Northern Territory</gco:CharacterString>
+          </cit:title>
+          <cit:onlineResource>
+            <cit:CI_OnlineResource>
+              <cit:linkage>
+                <gco:CharacterString>https://landresources.nt.gov.au/__data/assets/pdf_file/0011/254909/Milne2002NTBatCallKey1.01.pdf</gco:CharacterString>
+              </cit:linkage>
+              <cit:protocol>
+                <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+              </cit:protocol>
+              <cit:name>
+                <gco:CharacterString>Key to the bat calls of the top end of the Northern Territory</gco:CharacterString>
+              </cit:name>
+              <cit:description>
+                <gco:CharacterString>Related documentation</gco:CharacterString>
+              </cit:description>
+              <cit:function>
+                <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </cit:function>
+            </cit:CI_OnlineResource>
+          </cit:onlineResource>
+        </cit:CI_Citation>
+      </mri:additionalDocumentation>
+      <mri:resourceMaintenance>
+        <mmi:MD_MaintenanceInformation>
+          <mmi:maintenanceAndUpdateFrequency>
+            <mmi:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_MaintenanceFrequencyCode" codeListValue="asNeeded" />
+          </mmi:maintenanceAndUpdateFrequency>
+        </mmi:MD_MaintenanceInformation>
+      </mri:resourceMaintenance>
+      <mri:graphicOverview />
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords id="gcmd_science">
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:href="https://gcmd.earthdata.nasa.gov/kms/concept/9db9cb8c-7d18-4922-990c-b610d22356eb" xlink:show="new">BATS</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:href="https://gcmd.earthdata.nasa.gov/kms/concept/c8be7a1c-0f83-4993-9d73-8c46e68cc705" xlink:show="new">SPECIES DISTRIBUTION</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:href="https://gcmd.earthdata.nasa.gov/kms/concept/cffe377f-d840-4bcf-9223-8379b72defe7" xlink:show="new">FAUNA</gcx:Anchor>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="theme" />
+          </mri:type>
+          <mri:thesaurusName>
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>GCMD Science Keywords</gco:CharacterString>
+              </cit:title>
+              <cit:otherCitationDetails>
+                <gco:CharacterString>Global Change Master Directory (2021): GCMD Keywords. Version 11.3. Greenbelt, MD: Earth Science Data and Information System, Earth Science Projects Division, Goddard Space Flight Center (GSFC) National Aeronautics and Space Administration (NASA). URL (GCMD Keyword Forum Page): https://earthdata.nasa.gov/gcmd-forum</gco:CharacterString>
+              </cit:otherCitationDetails>
+              <cit:onlineResource>
+                <cit:CI_OnlineResource>
+                  <cit:linkage>
+                    <gco:CharacterString>https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords</gco:CharacterString>
+                  </cit:linkage>
+                  <cit:protocol>
+                    <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                  </cit:protocol>
+                  <cit:function>
+                    <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="information" />
+                  </cit:function>
+                </cit:CI_OnlineResource>
+              </cit:onlineResource>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords id="anzsrc_for">
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:href="https://linked.data.gov.au/def/anzsrc-for/2020/310302" xlink:show="new">Community ecology (excl. invasive species ecology)</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:href="https://linked.data.gov.au/def/anzsrc-for/2020/310901" xlink:show="new">Animal behaviour</gcx:Anchor>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="theme" />
+          </mri:type>
+          <mri:thesaurusName>
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>ANZSRC Fields of Research</gco:CharacterString>
+              </cit:title>
+              <cit:otherCitationDetails>
+                <gco:CharacterString>Australian Bureau of Statistics (2020): Australian and New Zealand Standard Research Classification (ANZSRC). https://www.abs.gov.au</gco:CharacterString>
+              </cit:otherCitationDetails>
+              <cit:onlineResource>
+                <cit:CI_OnlineResource>
+                  <cit:linkage>
+                    <gco:CharacterString>https://www.abs.gov.au/statistics/classifications/australian-and-new-zealand-standard-research-classification-anzsrc/2020</gco:CharacterString>
+                  </cit:linkage>
+                  <cit:protocol>
+                    <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                  </cit:protocol>
+                  <cit:function>
+                    <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="information" />
+                  </cit:function>
+                </cit:CI_OnlineResource>
+              </cit:onlineResource>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords id="project">
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:href="https://w3id.org/tern/resources/c42a21ea-62af-4ce2-b25b-85fdc6e606e8" xlink:show="new">Microbat biodiversity</gcx:Anchor>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="theme" />
+          </mri:type>
+          <mri:thesaurusName>
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>TERN Project Vocabulary</gco:CharacterString>
+              </cit:title>
+              <cit:otherCitationDetails>
+                <gco:CharacterString>TERN (2026): TERN Project Vocabulary. Terrestrial Ecosystem Research Network (TERN). https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66</gco:CharacterString>
+              </cit:otherCitationDetails>
+              <cit:onlineResource>
+                <cit:CI_OnlineResource>
+                  <cit:linkage>
+                    <gco:CharacterString>https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66</gco:CharacterString>
+                  </cit:linkage>
+                  <cit:protocol>
+                    <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                  </cit:protocol>
+                  <cit:function>
+                    <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="information" />
+                  </cit:function>
+                </cit:CI_OnlineResource>
+              </cit:onlineResource>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords id="datastream">
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:href="http://linked.data.gov.au/def/tern-cv/7a19710a-04a5-40b2-8b63-0f10e29730d5" xlink:show="new">EcoAcoustics</gcx:Anchor>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="theme" />
+          </mri:type>
+          <mri:thesaurusName>
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>TERN Datastream Vocabulary</gco:CharacterString>
+              </cit:title>
+              <cit:otherCitationDetails>
+                <gco:CharacterString>TERN (2026): TERN Datastream Vocabulary. Terrestrial Ecosystem Research Network (TERN). http://linked.data.gov.au/def/tern-cv/df7e3d39-4808-4875-bde5-32ecc8c5828c</gco:CharacterString>
+              </cit:otherCitationDetails>
+              <cit:onlineResource>
+                <cit:CI_OnlineResource>
+                  <cit:linkage>
+                    <gco:CharacterString>http://linked.data.gov.au/def/tern-cv/df7e3d39-4808-4875-bde5-32ecc8c5828c</gco:CharacterString>
+                  </cit:linkage>
+                  <cit:protocol>
+                    <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                  </cit:protocol>
+                  <cit:function>
+                    <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="information" />
+                  </cit:function>
+                </cit:CI_OnlineResource>
+              </cit:onlineResource>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords id="instrument">
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:href="http://linked.data.gov.au/def/tern-cv/2c5f1fe9-4d62-49b4-9c13-0bb38a7dbadc" xlink:show="new">Titley Scientific Anabat Scout</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:href="http://linked.data.gov.au/def/tern-cv/4b4e18fe-cefe-4601-abce-70d440f64ce4" xlink:show="new">Titley Scientific Anabat Walkabout</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:href="http://linked.data.gov.au/def/tern-cv/3d485bed-965c-4e67-b4fb-3a9de9ac4eb2" xlink:show="new">Titley Scientific Anabat Swift</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:href="http://linked.data.gov.au/def/tern-cv/c40567b6-0aaf-494b-a704-98144fad5d5c" xlink:show="new">Wildlife Acoustic Echo Meter Touch 2</gcx:Anchor>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="instrument" />
+          </mri:type>
+          <mri:thesaurusName>
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>TERN Instrument Vocabulary</gco:CharacterString>
+              </cit:title>
+              <cit:otherCitationDetails>
+                <gco:CharacterString>TERN (2020): TERN Instrument Vocabulary. Terrestrial Ecosystem Research Network (TERN). https://linkeddata.tern.org.au/</gco:CharacterString>
+              </cit:otherCitationDetails>
+              <cit:onlineResource>
+                <cit:CI_OnlineResource>
+                  <cit:linkage>
+                    <gco:CharacterString>http://linked.data.gov.au/def/tern-cv/a3088b5c-622d-4e25-8a75-4c4961b0dfe8</gco:CharacterString>
+                  </cit:linkage>
+                  <cit:protocol>
+                    <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                  </cit:protocol>
+                  <cit:function>
+                    <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="information" />
+                  </cit:function>
+                </cit:CI_OnlineResource>
+              </cit:onlineResource>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords id="parameter">
+          <mri:keyword>
+            <gcx:Anchor xlink:title="Parameter" xlink:role="uri" xlink:type="simple" xlink:href="http://linked.data.gov.au/def/tern-cv/82599bba-f54c-41a1-aa1d-46ba0df00254" xlink:show="new">pulse count (bat acoustic)</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="UOM" xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/NUM" xlink:show="new">Number</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="Parameter" xlink:role="uri" xlink:type="simple" xlink:href="http://linked.data.gov.au/def/tern-cv/b8e1c1ab-99ac-4180-affb-937c222d8a4b" xlink:show="new">pulse duration (bat acoustic)</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="UOM" xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/MilliSEC" xlink:show="new">Millisecond</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="Parameter" xlink:role="uri" xlink:type="simple" xlink:href="http://linked.data.gov.au/def/tern-cv/cbf35b06-3372-46d0-8f7a-6a6aea4b9cd4" xlink:show="new">time between pulse (bat acoustic)</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="UOM" xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/MilliSEC" xlink:show="new">Millisecond</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="Parameter" xlink:role="uri" xlink:type="simple" xlink:href="http://linked.data.gov.au/def/tern-cv/f78d7113-414f-4366-90e6-b6902f758168" xlink:show="new">characteristic frequency (bat acoustic)</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="UOM" xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/KiloHZ" xlink:show="new">Kilohertz</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="Parameter" xlink:role="uri" xlink:type="simple" xlink:href="http://linked.data.gov.au/def/tern-cv/577adfe2-5b93-406a-9f10-44cca9a0e553" xlink:show="new">knee frequency (bat acoustic)</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="UOM" xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/KiloHZ" xlink:show="new">Kilohertz</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="Parameter" xlink:role="uri" xlink:type="simple" xlink:href="http://linked.data.gov.au/def/tern-cv/427944a3-f5d3-4c46-af9c-776c3697d5da" xlink:show="new">start frequency (bat acoustic)</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="UOM" xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/KiloHZ" xlink:show="new">Kilohertz</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="Parameter" xlink:role="uri" xlink:type="simple" xlink:href="http://linked.data.gov.au/def/tern-cv/f7ffbf9c-92bf-418e-9f64-7be9014b752f" xlink:show="new">end frequency (bat acoustic)</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="UOM" xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/KiloHZ" xlink:show="new">Kilohertz</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="Parameter" xlink:role="uri" xlink:type="simple" xlink:href="http://linked.data.gov.au/def/tern-cv/a3caaab3-3058-4b29-8738-c0653589b666" xlink:show="new">mean frequency (bat acoustic)</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="UOM" xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/KiloHZ" xlink:show="new">Kilohertz</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="Parameter" xlink:role="uri" xlink:type="simple" xlink:href="http://linked.data.gov.au/def/tern-cv/e71f5efa-0ca4-4132-8c89-de3078c6a19e" xlink:show="new">minimum frequency (bat acoustic)</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="UOM" xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/KiloHZ" xlink:show="new">Kilohertz</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="Parameter" xlink:role="uri" xlink:type="simple" xlink:href="http://linked.data.gov.au/def/tern-cv/c0378949-eecf-4a20-809f-79dc72baf334" xlink:show="new">maximum frequency (bat acoustic)</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="UOM" xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/KiloHZ" xlink:show="new">Kilohertz</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="Parameter" xlink:role="uri" xlink:type="simple" xlink:href="http://linked.data.gov.au/def/tern-cv/0bb08f90-a2c3-4565-91f3-42dbe3ea6006" xlink:show="new">characteristic slope (bat acoustic)</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="UOM" xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/OCTET-PER-SEC" xlink:show="new">Octet per Second</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="Parameter" xlink:role="uri" xlink:type="simple" xlink:href="http://linked.data.gov.au/def/tern-cv/720feb7b-2d4f-4447-b8d2-9af23025d613" xlink:show="new">minimum slope (bat acoustic)</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="UOM" xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/OCTET-PER-SEC" xlink:show="new">Octet per Second</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="Parameter" xlink:role="uri" xlink:type="simple" xlink:href="http://linked.data.gov.au/def/tern-cv/bcf03f0b-0137-4cf1-a070-7467f7cbec80" xlink:show="new">maximum slope (bat acoustic)</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="UOM" xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/OCTET-PER-SEC" xlink:show="new">Octet per Second</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="Parameter" xlink:role="uri" xlink:type="simple" xlink:href="http://linked.data.gov.au/def/tern-cv/f5c75d78-9959-48c5-a22b-e4278a42e4fb" xlink:show="new">initial slope (bat acoustic)</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="UOM" xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/OCTET-PER-SEC" xlink:show="new">Octet per Second</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="Parameter" xlink:role="uri" xlink:type="simple" xlink:href="http://linked.data.gov.au/def/tern-cv/b3a23920-cf04-4da7-a9fb-506b7f4e6384" xlink:show="new">end slope (bat acoustic)</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="UOM" xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/OCTET-PER-SEC" xlink:show="new">Octet per Second</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="Parameter" xlink:role="uri" xlink:type="simple" xlink:href="http://linked.data.gov.au/def/tern-cv/f919f4dd-339d-41a0-a9de-fc2f8f5b33f4" xlink:show="new">curvature (bat acoustic)</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="UOM" xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/UNITLESS" xlink:show="new">Unitless</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="Parameter" xlink:role="uri" xlink:type="simple" xlink:href="http://linked.data.gov.au/def/tern-cv/e3846165-2d61-4a66-8e88-b4031e1ae61e" xlink:show="new">time-to-characteristic section</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="UOM" xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/MilliSEC" xlink:show="new">Millisecond</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="Parameter" xlink:role="uri" xlink:type="simple" xlink:href="http://linked.data.gov.au/def/tern-cv/0ee4b7aa-283f-40d6-bec4-17874c696e1d" xlink:show="new">time-to-knee</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:title="UOM" xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/MilliSEC" xlink:show="new">Millisecond</gcx:Anchor>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="theme" />
+          </mri:type>
+          <mri:thesaurusName>
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>TERN Parameter Vocabulary</gco:CharacterString>
+              </cit:title>
+              <cit:otherCitationDetails>
+                <gco:CharacterString>TERN (2020). TERN Parameter Vocabulary. Terrestrial Ecosystem Research Network (TERN). http://linked.data.gov.au/def/tern-cv/5699eca7-9ef0-47a6-bcfb-9306e0e2b85e</gco:CharacterString>
+              </cit:otherCitationDetails>
+              <cit:onlineResource>
+                <cit:CI_OnlineResource>
+                  <cit:linkage>
+                    <gco:CharacterString>http://linked.data.gov.au/def/tern-cv/5699eca7-9ef0-47a6-bcfb-9306e0e2b85e</gco:CharacterString>
+                  </cit:linkage>
+                  <cit:protocol>
+                    <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                  </cit:protocol>
+                  <cit:function>
+                    <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="information" />
+                  </cit:function>
+                </cit:CI_OnlineResource>
+              </cit:onlineResource>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords id="qudt_uom">
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/NUM" xlink:show="new">Number</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/MilliSEC" xlink:show="new">Millisecond</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/MilliSEC" xlink:show="new">Millisecond</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/KiloHZ" xlink:show="new">Kilohertz</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/KiloHZ" xlink:show="new">Kilohertz</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/KiloHZ" xlink:show="new">Kilohertz</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/KiloHZ" xlink:show="new">Kilohertz</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/KiloHZ" xlink:show="new">Kilohertz</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/KiloHZ" xlink:show="new">Kilohertz</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/KiloHZ" xlink:show="new">Kilohertz</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/OCTET-PER-SEC" xlink:show="new">Octet per Second</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/OCTET-PER-SEC" xlink:show="new">Octet per Second</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/OCTET-PER-SEC" xlink:show="new">Octet per Second</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/OCTET-PER-SEC" xlink:show="new">Octet per Second</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/OCTET-PER-SEC" xlink:show="new">Octet per Second</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/UNITLESS" xlink:show="new">Unitless</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/MilliSEC" xlink:show="new">Millisecond</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:type="simple" xlink:href="http://qudt.org/vocab/unit/MilliSEC" xlink:show="new">Millisecond</gcx:Anchor>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="theme" />
+          </mri:type>
+          <mri:thesaurusName>
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>QUDT Units 2.1</gco:CharacterString>
+              </cit:title>
+              <cit:otherCitationDetails>
+                <gco:CharacterString>QUDT.org (2020): Units of Measure. https://doi.org/10.25504/FAIRsharing.d3pqw7</gco:CharacterString>
+              </cit:otherCitationDetails>
+              <cit:onlineResource>
+                <cit:CI_OnlineResource>
+                  <cit:linkage>
+                    <gco:CharacterString>http://qudt.org/2.1/vocab/unit</gco:CharacterString>
+                  </cit:linkage>
+                  <cit:protocol>
+                    <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                  </cit:protocol>
+                  <cit:function>
+                    <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="information" />
+                  </cit:function>
+                </cit:CI_OnlineResource>
+              </cit:onlineResource>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords id="horizontal_resolution">
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:href="https://gcmd.earthdata.nasa.gov/kms/concept/abf43d91-a65d-4b3b-a6dd-593e211b2c7b" xlink:show="new">1 meter - &lt; 30 meters</gcx:Anchor>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="theme" />
+          </mri:type>
+          <mri:thesaurusName>
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>GCMD Horizontal Resolution Ranges</gco:CharacterString>
+              </cit:title>
+              <cit:otherCitationDetails>
+                <gco:CharacterString>Global Change Master Directory (2021): GCMD Keywords. Version 11.3. Greenbelt, MD: Earth Science Data and Information System, Earth Science Projects Division, Goddard Space Flight Center (GSFC) National Aeronautics and Space Administration (NASA). URL (GCMD Keyword Forum Page): https://earthdata.nasa.gov/gcmd-forum</gco:CharacterString>
+              </cit:otherCitationDetails>
+              <cit:onlineResource>
+                <cit:CI_OnlineResource>
+                  <cit:linkage>
+                    <gco:CharacterString>https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/horizontalresolutionrange</gco:CharacterString>
+                  </cit:linkage>
+                  <cit:protocol>
+                    <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                  </cit:protocol>
+                  <cit:function>
+                    <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="information" />
+                  </cit:function>
+                </cit:CI_OnlineResource>
+              </cit:onlineResource>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords id="temporal_resolution">
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:href="http://linked.data.gov.au/def/tern-cv/709f6d91-525c-410b-a107-e14235e1481f" xlink:show="new">irregular</gcx:Anchor>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="dataResolution" />
+          </mri:type>
+          <mri:thesaurusName>
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>GCMD Temporal Resolution Ranges</gco:CharacterString>
+              </cit:title>
+              <cit:otherCitationDetails>
+                <gco:CharacterString>Global Change Master Directory (2021): GCMD Keywords, Version 11.3. Greenbelt, MD: Earth Science Data and Information System, Earth Science Projects Division, Goddard Space Flight Center (GSFC) National Aeronautics and Space Administration (NASA). URL (GCMD Keyword Forum Page): https://earthdata.nasa.gov/gcmd-forum</gco:CharacterString>
+              </cit:otherCitationDetails>
+              <cit:onlineResource>
+                <cit:CI_OnlineResource>
+                  <cit:linkage>
+                    <gco:CharacterString>https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/temporalresolutionrange</gco:CharacterString>
+                  </cit:linkage>
+                  <cit:protocol>
+                    <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                  </cit:protocol>
+                  <cit:function>
+                    <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="information" />
+                  </cit:function>
+                </cit:CI_OnlineResource>
+              </cit:onlineResource>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords id="fauna">
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:href="https://biodiversity.org.au/afd/taxa/CHIROPTERA" xlink:show="new">CHIROPTERA</gcx:Anchor>
+          </mri:keyword>
+          <mri:keyword>
+            <gcx:Anchor xlink:role="uri" xlink:href="https://biodiversity.org.au/afd/taxa/MICROCHIROPTERA" xlink:show="new">MICROCHIROPTERA</gcx:Anchor>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="taxon" />
+          </mri:type>
+          <mri:thesaurusName>
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>Australian Faunal Directory</gco:CharacterString>
+              </cit:title>
+              <cit:alternateTitle>
+                <gco:CharacterString>AFD</gco:CharacterString>
+              </cit:alternateTitle>
+              <cit:otherCitationDetails>
+                <gco:CharacterString>ABRS (2020): Australian Faunal Directory. Australian Biological Resources Study, Canberra. https://biodiversity.org.au/afd/home</gco:CharacterString>
+              </cit:otherCitationDetails>
+              <cit:onlineResource>
+                <cit:CI_OnlineResource>
+                  <cit:linkage>
+                    <gco:CharacterString>https://biodiversity.org.au/afd/home</gco:CharacterString>
+                  </cit:linkage>
+                  <cit:protocol>
+                    <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                  </cit:protocol>
+                  <cit:function>
+                    <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="information" />
+                  </cit:function>
+                </cit:CI_OnlineResource>
+              </cit:onlineResource>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords>
+          <mri:keyword>
+            <gco:CharacterString>Bat Echolocation Call</gco:CharacterString>
+          </mri:keyword>
+          <mri:keyword>
+            <gco:CharacterString>Microbat</gco:CharacterString>
+          </mri:keyword>
+          <mri:keyword>
+            <gco:CharacterString>Ultrasound</gco:CharacterString>
+          </mri:keyword>
+          <mri:keyword>
+            <gco:CharacterString>Bat Reference Call Library</gco:CharacterString>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="discipline" />
+          </mri:type>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:resourceConstraints>
+        <mco:MD_LegalConstraints>
+          <mco:useLimitation>
+            <gco:CharacterString>The Creative Commons Attribution 4.0 International (CC BY 4.0) license allows others to copy, distribute, display, and create derivative works provided that they credit the original source and any other nominated parties. Details are provided at https://creativecommons.org/licenses/by/4.0/</gco:CharacterString>
+          </mco:useLimitation>
+          <mco:graphic>
+            <mcc:MD_BrowseGraphic>
+              <mcc:fileName>
+                <gco:CharacterString>88x31.png</gco:CharacterString>
+              </mcc:fileName>
+              <mcc:fileDescription>
+                <gco:CharacterString>CCBy Logo from creativecommons.org</gco:CharacterString>
+              </mcc:fileDescription>
+              <mcc:fileType>
+                <gco:CharacterString>png</gco:CharacterString>
+              </mcc:fileType>
+              <mcc:linkage>
+                <cit:CI_OnlineResource>
+                  <cit:linkage>
+                    <gco:CharacterString>https://w3id.org/tern/static/cc-by/88x31.png</gco:CharacterString>
+                  </cit:linkage>
+                  <cit:protocol>
+                    <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                  </cit:protocol>
+                  <cit:function>
+                    <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="browseGraphic" />
+                  </cit:function>
+                </cit:CI_OnlineResource>
+              </mcc:linkage>
+            </mcc:MD_BrowseGraphic>
+          </mco:graphic>
+          <mco:reference>
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>Creative Commons Attribution 4.0 International</gco:CharacterString>
+              </cit:title>
+              <cit:alternateTitle>
+                <gco:CharacterString>CC-BY</gco:CharacterString>
+              </cit:alternateTitle>
+              <cit:edition>
+                <gco:CharacterString>4.0</gco:CharacterString>
+              </cit:edition>
+              <cit:onlineResource>
+                <cit:CI_OnlineResource>
+                  <cit:linkage>
+                    <gco:CharacterString>https://creativecommons.org/licenses/by/4.0/</gco:CharacterString>
+                  </cit:linkage>
+                  <cit:protocol>
+                    <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                  </cit:protocol>
+                  <cit:function>
+                    <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="information" />
+                  </cit:function>
+                </cit:CI_OnlineResource>
+              </cit:onlineResource>
+            </cit:CI_Citation>
+          </mco:reference>
+          <mco:accessConstraints>
+            <mco:MD_RestrictionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_RestrictionCode" codeListValue="license" />
+          </mco:accessConstraints>
+          <mco:useConstraints>
+            <mco:MD_RestrictionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions" />
+          </mco:useConstraints>
+          <mco:otherConstraints>
+            <gco:CharacterString>TERN services are provided on an "as-is" and "as available" basis. Users use any TERN services at their discretion and risk.
+            They will be solely responsible for any damage or loss whatsoever that results from such use including use of any data obtained through TERN and any analysis performed using the TERN infrastructure.
+            &lt;br /&gt;Web links to and from external, third party websites should not be construed as implying any relationships with and/or endorsement of the external site or its content by TERN.
+            &lt;br /&gt;&lt;br /&gt;Please advise any work or publications that use this data via the online form at https://www.tern.org.au/research-publications/#reporting</gco:CharacterString>
+          </mco:otherConstraints>
+          <mco:otherConstraints>
+            <gco:CharacterString>Please cite this dataset as {Author} ({PublicationYear}). {Title}. {Version, as appropriate}. Terrestrial Ecosystem Research Network. Dataset. {Identifier}.</gco:CharacterString>
+          </mco:otherConstraints>
+        </mco:MD_LegalConstraints>
+      </mri:resourceConstraints>
+      <mri:resourceConstraints>
+        <mco:MD_SecurityConstraints>
+          <mco:classification>
+            <mco:MD_ClassificationCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ClassificationCode" codeListValue="unclassified" />
+          </mco:classification>
+        </mco:MD_SecurityConstraints>
+      </mri:resourceConstraints>
+    </mri:MD_DataIdentification>
+  </mdb:identificationInfo>
+  <mdb:distributionInfo xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/2.0">
+    <mrd:MD_Distribution>
+      <mrd:distributionFormat>
+        <mrd:MD_Format>
+          <mrd:formatSpecificationCitation />
+        </mrd:MD_Format>
+      </mrd:distributionFormat>
+      <mrd:distributor>
+        <mrd:MD_Distributor>
+          <mrd:distributorContact>
+            <cit:CI_Responsibility>
+              <cit:role>
+                <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="distributor" />
+              </cit:role>
+              <cit:party>
+                <cit:CI_Organisation>
+                  <cit:name>
+                    <gco:CharacterString>Terrestrial Ecosystem Research Network</gco:CharacterString>
+                  </cit:name>
+                  <cit:contactInfo>
+                    <cit:CI_Contact>
+                      <cit:address>
+                        <cit:CI_Address>
+                          <cit:deliveryPoint>
+                            <gco:CharacterString>80 Meiers Road, Indooroopilly, Queensland, 4068, Australia</gco:CharacterString>
+                          </cit:deliveryPoint>
+                          <cit:city>
+                            <gco:CharacterString>Indooroopilly</gco:CharacterString>
+                          </cit:city>
+                          <cit:administrativeArea>
+                            <gco:CharacterString>Queensland</gco:CharacterString>
+                          </cit:administrativeArea>
+                          <cit:postalCode>
+                            <gco:CharacterString>4068</gco:CharacterString>
+                          </cit:postalCode>
+                          <cit:country>
+                            <gco:CharacterString>Australia</gco:CharacterString>
+                          </cit:country>
+                          <cit:electronicMailAddress>
+                            <gco:CharacterString>esupport@tern.org.au</gco:CharacterString>
+                          </cit:electronicMailAddress>
+                        </cit:CI_Address>
+                      </cit:address>
+                    </cit:CI_Contact>
+                  </cit:contactInfo>
+                  <cit:partyIdentifier>
+                    <mcc:MD_Identifier>
+                      <mcc:code>
+                        <gcx:Anchor xlink:role="uri" xlink:href="https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66#https://w3id.org/tern/resources/fa56a1ed-ec38-4294-90ae-ab203a25d5ad" xlink:show="new">https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66#https://w3id.org/tern/resources/fa56a1ed-ec38-4294-90ae-ab203a25d5ad</gcx:Anchor>
+                      </mcc:code>
+                      <mcc:codeSpace>
+                        <gco:CharacterString>https://w3id.org/tern/resources</gco:CharacterString>
+                      </mcc:codeSpace>
+                    </mcc:MD_Identifier>
+                  </cit:partyIdentifier>
+                </cit:CI_Organisation>
+              </cit:party>
+            </cit:CI_Responsibility>
+          </mrd:distributorContact>
+        </mrd:MD_Distributor>
+      </mrd:distributor>
+      <mrd:transferOptions>
+        <mrd:MD_DigitalTransferOptions>
+          <mrd:onLine>
+            <cit:CI_OnlineResource>
+              <cit:linkage>
+                <gco:CharacterString>https://ecoacoustics.tern.org.au/dashboard?country=http%3A%2F%2Flinked.data.gov.au%2Fdataset%2Fworldcountries2025%2FUSA</gco:CharacterString>
+              </cit:linkage>
+              <cit:protocol>
+                <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+              </cit:protocol>
+              <cit:name>
+                <gco:CharacterString>Ecoacoustic Recordings - USA Bat Call Collection</gco:CharacterString>
+              </cit:name>
+              <cit:description />
+              <cit:function>
+                <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="fileAccess" />
+              </cit:function>
+            </cit:CI_OnlineResource>
+          </mrd:onLine>
+        </mrd:MD_DigitalTransferOptions>
+      </mrd:transferOptions>
+    </mrd:MD_Distribution>
+  </mdb:distributionInfo>
+  <mdb:distributionInfo xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/2.0">
+    <mrd:MD_Distribution>
+      <mrd:distributionFormat>
+        <mrd:MD_Format>
+          <mrd:formatSpecificationCitation />
+        </mrd:MD_Format>
+      </mrd:distributionFormat>
+      <mrd:distributor>
+        <mrd:MD_Distributor>
+          <mrd:distributorContact>
+            <cit:CI_Responsibility>
+              <cit:role>
+                <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="distributor" />
+              </cit:role>
+              <cit:party>
+                <cit:CI_Organisation>
+                  <cit:name>
+                    <gco:CharacterString>Terrestrial Ecosystem Research Network</gco:CharacterString>
+                  </cit:name>
+                  <cit:contactInfo>
+                    <cit:CI_Contact>
+                      <cit:address>
+                        <cit:CI_Address>
+                          <cit:deliveryPoint>
+                            <gco:CharacterString>80 Meiers Road, Indooroopilly, Queensland, 4068, Australia</gco:CharacterString>
+                          </cit:deliveryPoint>
+                          <cit:city>
+                            <gco:CharacterString>Indooroopilly</gco:CharacterString>
+                          </cit:city>
+                          <cit:administrativeArea>
+                            <gco:CharacterString>Queensland</gco:CharacterString>
+                          </cit:administrativeArea>
+                          <cit:postalCode>
+                            <gco:CharacterString>4068</gco:CharacterString>
+                          </cit:postalCode>
+                          <cit:country>
+                            <gco:CharacterString>Australia</gco:CharacterString>
+                          </cit:country>
+                          <cit:electronicMailAddress>
+                            <gco:CharacterString>esupport@tern.org.au</gco:CharacterString>
+                          </cit:electronicMailAddress>
+                        </cit:CI_Address>
+                      </cit:address>
+                    </cit:CI_Contact>
+                  </cit:contactInfo>
+                  <cit:partyIdentifier>
+                    <mcc:MD_Identifier>
+                      <mcc:code>
+                        <gcx:Anchor xlink:role="uri" xlink:href="https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66#https://w3id.org/tern/resources/fa56a1ed-ec38-4294-90ae-ab203a25d5ad" xlink:show="new">https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66#https://w3id.org/tern/resources/fa56a1ed-ec38-4294-90ae-ab203a25d5ad</gcx:Anchor>
+                      </mcc:code>
+                      <mcc:codeSpace>
+                        <gco:CharacterString>https://w3id.org/tern/resources</gco:CharacterString>
+                      </mcc:codeSpace>
+                    </mcc:MD_Identifier>
+                  </cit:partyIdentifier>
+                </cit:CI_Organisation>
+              </cit:party>
+            </cit:CI_Responsibility>
+          </mrd:distributorContact>
+        </mrd:MD_Distributor>
+      </mrd:distributor>
+      <mrd:transferOptions>
+        <mrd:MD_DigitalTransferOptions>
+          <mrd:onLine>
+            <cit:CI_OnlineResource>
+              <cit:linkage>
+                <gco:CharacterString>https://shared.tern.org.au/rocrate/1f2ee475-1cd1-499f-bb93-492b8fa3d3a0/download</gco:CharacterString>
+              </cit:linkage>
+              <cit:protocol>
+                <gco:CharacterString>WWW:DOWNLOAD-1.0-http--download</gco:CharacterString>
+              </cit:protocol>
+              <cit:name>
+                <gco:CharacterString>ro-crate-metadata.json</gco:CharacterString>
+              </cit:name>
+              <cit:description />
+              <cit:function>
+                <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="fileAccess" />
+              </cit:function>
+            </cit:CI_OnlineResource>
+          </mrd:onLine>
+        </mrd:MD_DigitalTransferOptions>
+      </mrd:transferOptions>
+    </mrd:MD_Distribution>
+  </mdb:distributionInfo>
+  <mdb:dataQualityInfo xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/2.0">
+    <mdq:DQ_DataQuality>
+      <mdq:scope>
+        <mcc:MD_Scope>
+          <mcc:level>
+            <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="dataset" />
+          </mcc:level>
+          <mcc:levelDescription>
+            <mcc:MD_ScopeDescription>
+              <mcc:other>
+                <gco:CharacterString>&lt;p&gt;The following steps were taken to minimise the error rate associated with call identification:&lt;/p&gt;
+&lt;p style="padding-left: 30px;"&gt;All identified calls included the following metadata fields:&lt;br /&gt; 
+a) "Identified by" &amp;ndash; the name of the individual who identified the call&lt;br /&gt; 
+b) "ID method" &amp;ndash; the method used to identify the call, such as observation of the call file ("Manual Call ID"), observation of the bat when the recording was made ("Visual"), identification of the bat in hand after capture ("Capture"), the name of any Auto-ID software used to classify species (&amp;ldquo;Auto Call ID&amp;rdquo;). Other fields, such as "DNA" would also be possible.&lt;br /&gt; 
+c) "Record context" &amp;ndash; the default for this is most likely 'free flying', but possible entries include "Release", "Enclosure", "In bag", "Cave entrance", etc. This field separates interpretation of call function from call location.&lt;/p&gt;
+&lt;p&gt;The logic for these fields is that information on who collected the data, who identified the calls, how they identified them, and where the calls were recorded can together be used to determine the validity of individual identifications (more details can be found in &lt;a href="https://ternaus.atlassian.net/wiki/spaces/TERNSup/pages/2821554221/Ecoacoustic+Calls+Submission+Instructions"&gt;Ecoacoustic Calls Submission Instructions&lt;/a&gt;).&lt;/p&gt;</gco:CharacterString>
+              </mcc:other>
+            </mcc:MD_ScopeDescription>
+          </mcc:levelDescription>
+        </mcc:MD_Scope>
+      </mdq:scope>
+      <mdq:report>
+        <mdq:DQ_QuantitativeAttributeAccuracy>
+          <mdq:result>
+            <mdq:DQ_DescriptiveResult>
+              <mdq:statement />
+            </mdq:DQ_DescriptiveResult>
+          </mdq:result>
+        </mdq:DQ_QuantitativeAttributeAccuracy>
+      </mdq:report>
+    </mdq:DQ_DataQuality>
+  </mdb:dataQualityInfo>
+  <mdb:resourceLineage xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/2.0">
+    <mrl:LI_Lineage>
+      <mrl:statement>
+        <gco:CharacterString>&lt;p&gt;Bat echolocation calls were recorded using a variety of ultrasonic detectors capable of capturing high-frequency calls. As this dataset was contributed by multiple individuals over time, equipment models and survey methods varied, but all recordings followed the general approach of deploying bat detectors in the field to capture active bat calls. The brand and type of instrument used to record individual files is indicated within a specific metadata field and and can be viewed and/or selected using the Filters/Instrument menu on the Bat Dashboard. The majority of calls have been recorded with Titley Electronic bat detectors but this change as recording from other manufacturers are submitted to the data base&lt;/p&gt;</gco:CharacterString>
+      </mrl:statement>
+      <mrl:scope>
+        <mcc:MD_Scope>
+          <mcc:level>
+            <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="dataset" />
+          </mcc:level>
+        </mcc:MD_Scope>
+      </mrl:scope>
+    </mrl:LI_Lineage>
+  </mdb:resourceLineage>
+</mdb:MD_Metadata>
+

@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdb:MD_Metadata xmlns:mdb="http://standards.iso.org/iso/19115/-3/mdb/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cat="http://standards.iso.org/iso/19115/-3/cat/1.0" xmlns:gfc="http://standards.iso.org/iso/19110/gfc/1.1" xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/2.0" xmlns:gcx="http://standards.iso.org/iso/19115/-3/gcx/1.0" xmlns:gex="http://standards.iso.org/iso/19115/-3/gex/1.0" xmlns:lan="http://standards.iso.org/iso/19115/-3/lan/1.0" xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.0" xmlns:mas="http://standards.iso.org/iso/19115/-3/mas/1.0" xmlns:mcc="http://standards.iso.org/iso/19115/-3/mcc/1.0" xmlns:mco="http://standards.iso.org/iso/19115/-3/mco/1.0" xmlns:mda="http://standards.iso.org/iso/19115/-3/mda/1.0" xmlns:mds="http://standards.iso.org/iso/19115/-3/mds/2.0" xmlns:mdt="http://standards.iso.org/iso/19115/-3/mdt/2.0" xmlns:mex="http://standards.iso.org/iso/19115/-3/mex/1.0" xmlns:mmi="http://standards.iso.org/iso/19115/-3/mmi/1.0" xmlns:mpc="http://standards.iso.org/iso/19115/-3/mpc/1.0" xmlns:mrc="http://standards.iso.org/iso/19115/-3/mrc/2.0" xmlns:mrd="http://standards.iso.org/iso/19115/-3/mrd/1.0" xmlns:mri="http://standards.iso.org/iso/19115/-3/mri/1.0" xmlns:mrl="http://standards.iso.org/iso/19115/-3/mrl/2.0" xmlns:mrs="http://standards.iso.org/iso/19115/-3/mrs/1.0" xmlns:msr="http://standards.iso.org/iso/19115/-3/msr/2.0" xmlns:mdq="http://standards.iso.org/iso/19157/-2/mdq/1.0" xmlns:dqm="http://standards.iso.org/iso/19157/-2/dqm/1.0" xmlns:mac="http://standards.iso.org/iso/19115/-3/mac/2.0" xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://standards.iso.org/iso/19115/-3/mds/2.0 http://standards.iso.org/iso/19115/-3/mds/2.0/mds.xsd">
+  <mdb:metadataIdentifier xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.1">
+    <mcc:MD_Identifier>
+      <mcc:code>
+        <gco:CharacterString>c20396fc-6cee-437d-bec3-1b3608641574</gco:CharacterString>
+      </mcc:code>
+      <mcc:codeSpace>
+        <gco:CharacterString>urn:uuid</gco:CharacterString>
+      </mcc:codeSpace>
+    </mcc:MD_Identifier>
+  </mdb:metadataIdentifier>
+  <mdb:defaultLocale xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.1">
+    <lan:PT_Locale id="EN">
+      <lan:language>
+        <lan:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng" />
+      </lan:language>
+      <lan:characterEncoding>
+        <lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode" codeListValue="utf8" />
+      </lan:characterEncoding>
+    </lan:PT_Locale>
+  </mdb:defaultLocale>
+  <mdb:contact xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.1">
+    <cit:CI_Responsibility>
+      <cit:role>
+        <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="pointOfContact" />
+      </cit:role>
+      <cit:party>
+        <cit:CI_Organisation>
+          <cit:name>
+            <gco:CharacterString>Mineral Resources Tasmania</gco:CharacterString>
+          </cit:name>
+          <cit:contactInfo>
+            <cit:CI_Contact>
+              <cit:phone>
+                <cit:CI_Telephone>
+                  <cit:number>
+                    <gco:CharacterString>+61 3 6165 4714</gco:CharacterString>
+                  </cit:number>
+                  <cit:numberType>
+                    <cit:CI_TelephoneTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_TelephoneTypeCode" codeListValue="voice" />
+                  </cit:numberType>
+                </cit:CI_Telephone>
+              </cit:phone>
+              <cit:address>
+                <cit:CI_Address>
+                  <cit:deliveryPoint>
+                    <gco:CharacterString>PO Box 56</gco:CharacterString>
+                  </cit:deliveryPoint>
+                  <cit:city>
+                    <gco:CharacterString>Rosny Park</gco:CharacterString>
+                  </cit:city>
+                  <cit:administrativeArea>
+                    <gco:CharacterString>Tasmania</gco:CharacterString>
+                  </cit:administrativeArea>
+                  <cit:postalCode>
+                    <gco:CharacterString>7018</gco:CharacterString>
+                  </cit:postalCode>
+                  <cit:country>
+                    <gco:CharacterString>Australia</gco:CharacterString>
+                  </cit:country>
+                  <cit:electronicMailAddress>
+                    <gco:CharacterString>info@mrt.tas.gov.au</gco:CharacterString>
+                  </cit:electronicMailAddress>
+                </cit:CI_Address>
+              </cit:address>
+            </cit:CI_Contact>
+          </cit:contactInfo>
+          <cit:individual>
+            <cit:CI_Individual>
+              <cit:name>
+                <gco:CharacterString>Daniel Bombardieri</gco:CharacterString>
+              </cit:name>
+              <cit:positionName>
+                <gco:CharacterString>Project Geoscientist</gco:CharacterString>
+              </cit:positionName>
+            </cit:CI_Individual>
+          </cit:individual>
+        </cit:CI_Organisation>
+      </cit:party>
+    </cit:CI_Responsibility>
+  </mdb:contact>
+  <mdb:dateInfo xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.1">
+    <cit:CI_Date>
+      <cit:date>
+        <gco:DateTime>2022-11-03T06:15:08</gco:DateTime>
+      </cit:date>
+      <cit:dateType>
+        <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="creation" />
+      </cit:dateType>
+    </cit:CI_Date>
+  </mdb:dateInfo>
+  <mdb:dateInfo>
+    <cit:CI_Date>
+      <cit:date>
+        <gco:DateTime>2025-06-19T02:58:58.846147Z</gco:DateTime>
+      </cit:date>
+      <cit:dateType>
+        <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="revision" />
+      </cit:dateType>
+    </cit:CI_Date>
+  </mdb:dateInfo>
+  <mdb:metadataStandard xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.1">
+    <cit:CI_Citation>
+      <cit:title>
+        <gco:CharacterString>ISO 19115-3</gco:CharacterString>
+      </cit:title>
+    </cit:CI_Citation>
+  </mdb:metadataStandard>
+  <mdb:metadataLinkage xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.1">
+    <cit:CI_OnlineResource>
+      <cit:linkage>
+        <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">https://portal.auscope.org.au/geonetwork/srv/eng/catalog.search#/metadata/c20396fc-6cee-437d-bec3-1b3608641574</gco:CharacterString>
+      </cit:linkage>
+      <cit:function>
+        <cit:CI_OnLineFunctionCode xmlns:cit="http://standards.iso.org/iso/19115/-3/cit/1.0" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="completeMetadata" />
+      </cit:function>
+    </cit:CI_OnlineResource>
+  </mdb:metadataLinkage>
+  <mdb:identificationInfo xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.1">
+    <mri:MD_DataIdentification>
+      <mri:citation>
+        <cit:CI_Citation>
+          <cit:title>
+            <gco:CharacterString>3D Geological Model of Rosebery Mt Lyell</gco:CharacterString>
+          </cit:title>
+          <cit:date>
+            <cit:CI_Date>
+              <cit:date>
+                <gco:Date>2010-01-01</gco:Date>
+              </cit:date>
+            </cit:CI_Date>
+          </cit:date>
+        </cit:CI_Citation>
+      </mri:citation>
+      <mri:abstract>
+        <gco:CharacterString>The Rosebery-Lyell 3D geological and geophysical model is an extension and refinement of previous MRT 3D models in the region.  It expresses a new structural synthesis based on mapping and multiple cross sections produced by numerous geologists over several decades. It extends to a depth of 10 km within the area depicted at left.  The model is constrained by 3D geophysical modelling using MRT's gravity and magnetic survey data coupled with drilling and rock physical property databases.   This information has been used to derive uncertainty estimates for each element in the model volume.  The model files also include nominal density and magnetic susceptibility estimates obtained for each voxel, thus incorporating intra-unit variations.</gco:CharacterString>
+      </mri:abstract>
+      <mri:pointOfContact>
+        <cit:CI_Responsibility>
+          <cit:role>
+            <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="custodian" />
+          </cit:role>
+          <cit:party>
+            <cit:CI_Individual>
+              <cit:name>
+                <gco:CharacterString>Daniel Bombardieri</gco:CharacterString>
+              </cit:name>
+            </cit:CI_Individual>
+          </cit:party>
+        </cit:CI_Responsibility>
+      </mri:pointOfContact>
+      <mri:extent>
+        <gex:EX_Extent>
+          <gex:geographicElement>
+            <gex:EX_GeographicBoundingBox>
+              <gex:westBoundLongitude>
+                <gco:Decimal>145.22452006</gco:Decimal>
+              </gex:westBoundLongitude>
+              <gex:eastBoundLongitude>
+                <gco:Decimal>145.80020084</gco:Decimal>
+              </gex:eastBoundLongitude>
+              <gex:southBoundLatitude>
+                <gco:Decimal>-42.26579909</gco:Decimal>
+              </gex:southBoundLatitude>
+              <gex:northBoundLatitude>
+                <gco:Decimal>-41.58299022</gco:Decimal>
+              </gex:northBoundLatitude>
+            </gex:EX_GeographicBoundingBox>
+          </gex:geographicElement>
+        </gex:EX_Extent>
+      </mri:extent>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords>
+          <mri:keyword>
+            <gco:CharacterString>Mt Lyell</gco:CharacterString>
+          </mri:keyword>
+          <mri:keyword>
+            <gco:CharacterString>Earth Science</gco:CharacterString>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeListValue="place" codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" />
+          </mri:type>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords>
+          <mri:keyword>
+            <gco:CharacterString>3D Geological Models</gco:CharacterString>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="theme" />
+          </mri:type>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords xsi:schemaLocation="http://standards.iso.org/iso/19115/-3/mri/1.0/mri.xsd">
+        <mri:MD_Keywords>
+          <mri:keyword>
+            <gco:CharacterString>Earth Sciences</gco:CharacterString>
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="theme" />
+          </mri:type>
+          <mri:thesaurusName>
+            <cit:CI_Citation>
+              <cit:title>
+                <gco:CharacterString>Australian and New Zealand Standard Research Classification (ANZSRC): Fields of Research</gco:CharacterString>
+              </cit:title>
+              <cit:date>
+                <cit:CI_Date>
+                  <cit:date>
+                    <gco:Date>2023-07-25</gco:Date>
+                  </cit:date>
+                  <cit:dateType>
+                    <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="publication" />
+                  </cit:dateType>
+                </cit:CI_Date>
+              </cit:date>
+              <cit:identifier>
+                <mcc:MD_Identifier>
+                  <mcc:code>
+                    <gcx:Anchor xlink:href="https://portal.auscope.org.au/geonetwork/srv/eng/thesaurus.download?ref=local.theme.ANZSRC">geonetwork.thesaurus.local.theme.ANZSRC</gcx:Anchor>
+                  </mcc:code>
+                </mcc:MD_Identifier>
+              </cit:identifier>
+              <cit:onlineResource>
+                <cit:CI_OnlineResource>
+                  <cit:linkage>
+                    <gco:CharacterString>https://www.abs.gov.au/statistics/classifications/australian-and-new-zealand-standard-research-classification-anzsrc/latest-release</gco:CharacterString>
+                  </cit:linkage>
+                  <cit:protocol>
+                    <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+                  </cit:protocol>
+                </cit:CI_OnlineResource>
+              </cit:onlineResource>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords />
+      </mri:descriptiveKeywords>
+      <mri:resourceConstraints>
+        <mco:MD_LegalConstraints>
+          <mco:useLimitation>
+            <gco:CharacterString>https://creativecommons.org/licenses/by/4.0/</gco:CharacterString>
+          </mco:useLimitation>
+          <mco:accessConstraints>
+            <mco:MD_RestrictionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_RestrictionCode" codeListValue="license" />
+          </mco:accessConstraints>
+          <mco:useConstraints>
+            <mco:MD_RestrictionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_RestrictionCode" codeListValue="license" />
+          </mco:useConstraints>
+        </mco:MD_LegalConstraints>
+      </mri:resourceConstraints>
+      <mri:resourceConstraints>
+        <mco:MD_SecurityConstraints>
+          <mco:classification>
+            <mco:MD_ClassificationCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ClassificationCode" codeListValue="unclassified" />
+          </mco:classification>
+        </mco:MD_SecurityConstraints>
+      </mri:resourceConstraints>
+    </mri:MD_DataIdentification>
+  </mdb:identificationInfo>
+  <mdb:distributionInfo xmlns:srv="http://standards.iso.org/iso/19115/-3/srv/2.1">
+    <mrd:MD_Distribution>
+      <mrd:transferOptions>
+        <mrd:MD_DigitalTransferOptions>
+          <mrd:onLine>
+            <cit:CI_OnlineResource>
+              <cit:linkage>
+                <gco:CharacterString>https://geomodels.auscope.org/model/rosebery</gco:CharacterString>
+              </cit:linkage>
+              <cit:protocol>
+                <gco:CharacterString>WWW:LINK-1.0-http--link</gco:CharacterString>
+              </cit:protocol>
+              <cit:name>
+                <gco:CharacterString>View 3D Geological Model</gco:CharacterString>
+              </cit:name>
+              <cit:description gco:nilReason="missing">
+                <gco:CharacterString />
+              </cit:description>
+            </cit:CI_OnlineResource>
+          </mrd:onLine>
+          <mrd:onLine>
+            <cit:CI_OnlineResource>
+              <cit:linkage>
+                <gco:CharacterString>https://www.mrt.tas.gov.au/geoscience/3d_geological_and_geophysical_modelling/west_tasmania_3d_geological_and_geophysical_modelling</gco:CharacterString>
+              </cit:linkage>
+              <cit:protocol>
+                <gco:CharacterString>WWW:LINK</gco:CharacterString>
+              </cit:protocol>
+              <cit:name>
+                <gco:CharacterString>Model Information Page</gco:CharacterString>
+              </cit:name>
+              <cit:function>
+                <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="download" />
+              </cit:function>
+            </cit:CI_OnlineResource>
+          </mrd:onLine>
+          <mrd:onLine>
+            <cit:CI_OnlineResource>
+              <cit:linkage>
+                <gco:CharacterString>https://doi.org/10.3390/min11111195</gco:CharacterString>
+              </cit:linkage>
+              <cit:protocol>
+                <gco:CharacterString>DOI</gco:CharacterString>
+              </cit:protocol>
+              <cit:name>
+                <gco:CharacterString>Bombardieri, D., Duffett, M., McNeill, A., Cracknell, M. and Reading, A. 2021. Insights and Lessons from 3D Geological and Geophysical Modeling of Mineralized Terranes in Tasmania. Minerals, 11(11):1195.</gco:CharacterString>
+              </cit:name>
+              <cit:description>
+                <gco:CharacterString>Citation Information</gco:CharacterString>
+              </cit:description>
+              <cit:function>
+                <cit:CI_OnLineFunctionCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_OnLineFunctionCode" codeListValue="doi" />
+              </cit:function>
+            </cit:CI_OnlineResource>
+          </mrd:onLine>
+        </mrd:MD_DigitalTransferOptions>
+      </mrd:transferOptions>
+    </mrd:MD_Distribution>
+  </mdb:distributionInfo>
+</mdb:MD_Metadata>
+

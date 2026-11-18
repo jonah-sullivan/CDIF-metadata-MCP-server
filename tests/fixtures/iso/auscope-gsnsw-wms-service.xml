@@ -1,0 +1,1705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/csw/2.0.2/profiles/apiso/1.0.0/apiso.xsd">
+  <gmd:fileIdentifier>
+    <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">05d0af6b0f65f004e2e66b92e6edc1204b4585e2</gco:CharacterString>
+  </gmd:fileIdentifier>
+  <gmd:language>
+    <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng" />
+  </gmd:language>
+  <gmd:characterSet>
+    <gmd:MD_CharacterSetCode codeList="./resources/codeList.xml#MD_CharacterSetCode" codeListValue="utf8" />
+  </gmd:characterSet>
+  <gmd:hierarchyLevel>
+    <gmd:MD_ScopeCode codeList="./resources/codeList.xml#MD_ScopeCode" codeListValue="service" />
+  </gmd:hierarchyLevel>
+  <gmd:contact>
+    <gmd:CI_ResponsibleParty>
+      <gmd:organisationName>
+        <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Geological Survey of NSW</gco:CharacterString>
+      </gmd:organisationName>
+      <gmd:positionName>
+        <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">MinView support team</gco:CharacterString>
+      </gmd:positionName>
+      <gmd:contactInfo>
+        <gmd:CI_Contact>
+          <gmd:phone>
+            <gmd:CI_Telephone>
+              <gmd:voice>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">+61 2 4063 6700</gco:CharacterString>
+              </gmd:voice>
+            </gmd:CI_Telephone>
+          </gmd:phone>
+          <gmd:address>
+            <gmd:CI_Address>
+              <gmd:deliveryPoint>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">516 High Street</gco:CharacterString>
+              </gmd:deliveryPoint>
+              <gmd:city>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Maitland</gco:CharacterString>
+              </gmd:city>
+              <gmd:administrativeArea>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">New South Wales</gco:CharacterString>
+              </gmd:administrativeArea>
+              <gmd:postalCode>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">2320</gco:CharacterString>
+              </gmd:postalCode>
+              <gmd:country>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Australia</gco:CharacterString>
+              </gmd:country>
+              <gmd:electronicMailAddress>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">minview.info@geoscience.nsw.gov.au</gco:CharacterString>
+              </gmd:electronicMailAddress>
+            </gmd:CI_Address>
+          </gmd:address>
+          <gmd:onlineResource>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://www.resources.nsw.gov.au/geological-survey</gmd:URL>
+              </gmd:linkage>
+            </gmd:CI_OnlineResource>
+          </gmd:onlineResource>
+        </gmd:CI_Contact>
+      </gmd:contactInfo>
+      <gmd:role>
+        <gmd:CI_RoleCode codeList="./resources/codeList.xml#CI_RoleCode" codeListValue="pointOfContact" />
+      </gmd:role>
+    </gmd:CI_ResponsibleParty>
+  </gmd:contact>
+  <gmd:dateStamp>
+    <gco:DateTime xmlns:gco="http://www.isotc211.org/2005/gco">2026-06-17T00:00:13</gco:DateTime>
+  </gmd:dateStamp>
+  <gmd:metadataStandardName>
+    <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">ISO 19119/2005</gco:CharacterString>
+  </gmd:metadataStandardName>
+  <gmd:metadataStandardVersion>
+    <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">1.0</gco:CharacterString>
+  </gmd:metadataStandardVersion>
+  <gmd:identificationInfo>
+    <srv:SV_ServiceIdentification xmlns:srv="http://www.isotc211.org/2005/srv">
+      <gmd:citation>
+        <gmd:CI_Citation>
+          <gmd:title>
+            <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Geological Survey NSW GeoServer Web Map Service</gco:CharacterString>
+          </gmd:title>
+          <gmd:date>
+            <gmd:CI_Date>
+              <gmd:date>
+                <gco:DateTime xmlns:gco="http://www.isotc211.org/2005/gco">2026-06-17T00:00:13</gco:DateTime>
+              </gmd:date>
+              <gmd:dateType>
+                <gmd:CI_DateTypeCode codeList="./resources/codeList.xml#CI_DateTypeCode" codeListValue="revision" />
+              </gmd:dateType>
+            </gmd:CI_Date>
+          </gmd:date>
+        </gmd:CI_Citation>
+      </gmd:citation>
+      <gmd:abstract>
+        <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">This Geoserver Web Map Service (WMS) contains layers derived from the NSW Geoscientific Data Warehouse (GDW).</gco:CharacterString>
+      </gmd:abstract>
+      <gmd:status>
+        <gmd:MD_ProgressCode codeList="./resources/codeList.xml#MD_ProgressCode" codeListValue="completed" />
+      </gmd:status>
+      <gmd:pointOfContact>
+        <gmd:CI_ResponsibleParty>
+          <gmd:organisationName>
+            <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Geological Survey of NSW</gco:CharacterString>
+          </gmd:organisationName>
+          <gmd:positionName>
+            <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">MinView support team</gco:CharacterString>
+          </gmd:positionName>
+          <gmd:contactInfo>
+            <gmd:CI_Contact>
+              <gmd:phone>
+                <gmd:CI_Telephone>
+                  <gmd:voice>
+                    <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">+61 2 4063 6700</gco:CharacterString>
+                  </gmd:voice>
+                </gmd:CI_Telephone>
+              </gmd:phone>
+              <gmd:address>
+                <gmd:CI_Address>
+                  <gmd:deliveryPoint>
+                    <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">516 High Street</gco:CharacterString>
+                  </gmd:deliveryPoint>
+                  <gmd:city>
+                    <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Maitland</gco:CharacterString>
+                  </gmd:city>
+                  <gmd:administrativeArea>
+                    <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">New South Wales</gco:CharacterString>
+                  </gmd:administrativeArea>
+                  <gmd:postalCode>
+                    <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">2320</gco:CharacterString>
+                  </gmd:postalCode>
+                  <gmd:country>
+                    <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Australia</gco:CharacterString>
+                  </gmd:country>
+                  <gmd:electronicMailAddress>
+                    <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">minview.info@geoscience.nsw.gov.au</gco:CharacterString>
+                  </gmd:electronicMailAddress>
+                </gmd:CI_Address>
+              </gmd:address>
+              <gmd:onlineResource>
+                <gmd:CI_OnlineResource>
+                  <gmd:linkage>
+                    <gmd:URL>https://www.resources.nsw.gov.au/geological-survey</gmd:URL>
+                  </gmd:linkage>
+                </gmd:CI_OnlineResource>
+              </gmd:onlineResource>
+            </gmd:CI_Contact>
+          </gmd:contactInfo>
+          <gmd:role>
+            <gmd:CI_RoleCode codeList="./resources/codeList.xml#CI_RoleCode" codeListValue="pointOfContact" />
+          </gmd:role>
+        </gmd:CI_ResponsibleParty>
+      </gmd:pointOfContact>
+      <gmd:descriptiveKeywords>
+        <gmd:MD_Keywords>
+          <gmd:keyword>
+            <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">WMS</gco:CharacterString>
+          </gmd:keyword>
+          <gmd:keyword>
+            <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">GEOSERVER</gco:CharacterString>
+          </gmd:keyword>
+          <gmd:keyword>
+            <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Borehole</gco:CharacterString>
+          </gmd:keyword>
+          <gmd:keyword>
+            <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Tenement</gco:CharacterString>
+          </gmd:keyword>
+          <gmd:keyword>
+            <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Petroleum Tenement</gco:CharacterString>
+          </gmd:keyword>
+          <gmd:keyword>
+            <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Earth Resource</gco:CharacterString>
+          </gmd:keyword>
+          <gmd:type>
+            <gmd:MD_KeywordTypeCode codeList="./resources/codeList.xml#MD_KeywordTypeCode" codeListValue="theme" />
+          </gmd:type>
+        </gmd:MD_Keywords>
+      </gmd:descriptiveKeywords>
+      <gmd:resourceConstraints>
+        <gmd:MD_LegalConstraints>
+          <gmd:accessConstraints>
+            <gmd:MD_RestrictionCode codeList="http://standards.iso.org/iso/19139/resources/gmxCodelists.xml#MD_RestrictionCode" codeListValue="otherRestrictions" />
+          </gmd:accessConstraints>
+          <gmd:otherConstraints>
+            <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">CC-BY-4.0 International Attribution</gco:CharacterString>
+          </gmd:otherConstraints>
+        </gmd:MD_LegalConstraints>
+      </gmd:resourceConstraints>
+      <srv:serviceType>
+        <gco:LocalName xmlns:gco="http://www.isotc211.org/2005/gco" codeSpace="www.w3c.org">OGC:WMS</gco:LocalName>
+      </srv:serviceType>
+      <srv:serviceTypeVersion>
+        <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">1.3.0</gco:CharacterString>
+      </srv:serviceTypeVersion>
+      <srv:accessProperties>
+        <gmd:MD_StandardOrderProcess>
+          <gmd:fees>
+            <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">NONE</gco:CharacterString>
+          </gmd:fees>
+        </gmd:MD_StandardOrderProcess>
+      </srv:accessProperties>
+      <srv:extent>
+        <gmd:EX_Extent>
+          <gmd:geographicElement>
+            <gmd:EX_GeographicBoundingBox>
+              <gmd:westBoundLongitude>
+                <gco:Decimal xmlns:gco="http://www.isotc211.org/2005/gco">-81.6711883544922</gco:Decimal>
+              </gmd:westBoundLongitude>
+              <gmd:eastBoundLongitude>
+                <gco:Decimal xmlns:gco="http://www.isotc211.org/2005/gco">165.434310913086</gco:Decimal>
+              </gmd:eastBoundLongitude>
+              <gmd:southBoundLatitude>
+                <gco:Decimal xmlns:gco="http://www.isotc211.org/2005/gco">-75.2358932495117</gco:Decimal>
+              </gmd:southBoundLatitude>
+              <gmd:northBoundLatitude>
+                <gco:Decimal xmlns:gco="http://www.isotc211.org/2005/gco">17.9826354980469</gco:Decimal>
+              </gmd:northBoundLatitude>
+            </gmd:EX_GeographicBoundingBox>
+          </gmd:geographicElement>
+        </gmd:EX_Extent>
+      </srv:extent>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>3f46f5db93d5bce879d5b451618f1a83046d189d</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>minview-context:admin_mapblock</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>b97147028a03acd1966d649a87224ed7b1151a12</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geochemistry:geochemistry_assay_surface</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>dfa72457896e3dcaf50e487c1e2fcd1313ebb204</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-surveys:geophysics_250k_suite</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>31792e5531511ddeafff6db3630b1aeb1c83a7a9</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-rad-uppm-25m</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>645022c8d6a5a13c13746a39dd14d27d970f97e2</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geochemistry:geochemistry_assay_drillhole</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>6391fd1dff8d5a8bd204aa48454a2081521dfca2</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-grav-air-on-tilt-mag</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>3545f16c006d40fd7024530a805925c94c2a5e9e</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-mag-tmi-rtp</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>4019eda7bf3133abfe1aa018c47a1c38e4ffbb01</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-auslamp-100km-depth</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>ded8e77507ab0f45aa5dc9827b670ca84d984800</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-rad-udivth-25m</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>a06f7febf5b270f81ee53eed5df51ed29396718a</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>mining-and-exploration:admin_mineral_allocation_areas</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>ae526a9a743e7e1f81e78e88b14a954261ab5435</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-mag-tmi-rtp-uc-500m-1vd</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>1ad542f8753463a775fffcdba3ddf6074e70b524</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-grav-isostatic-residual-grav</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>a5af41e447cb89db525cd44e47c084f14f5132c1</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-surveys:geophysics_surveys_government_air</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>5653474368b45823bc6ccb3db627a2f0111fc420</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-mag-tmi-rtp-on-tilt</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>fecdab7f4e048a2c1c26f3d05a5b50b7215ed27b</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geology-misc:geology_provinces_basins</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>aa42c02d0fa8839b36cadeb3eafab56212c2aabd</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>mining-and-exploration:titles_title_historic</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>90b5f0ab8cb77279aceffe2de62fc6159af304ee</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-dem-25m-greyscale</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>e80dcd5158e8b91ba76fd763eb718aa26d82d3ba</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>mineral-occurrence:mineral_occurrence</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>7bb440656d8ac56b26320515400c6049310fd3b0</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-rad-thdivk-25m</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>96044a8fc6de4e121570a8c8bb3406a8d76bb51b</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geochemistry:geochemistry_whole_rock_hydro</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>4bfb6e383e81cc3f94ebd16de1777543f771b922</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-auslamp-20km-depth</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>7cd69d58c66227d1ac547f0e116e09b79839b888</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geochemistry:geochemistry_whole_rock_drillhole</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>8aedb4762c69f4a5af1fce993574fa3ed6338e4f</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-grav-air-1vd</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>a64229eed36a9b139637a31cc21066c6bef8fb20</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>drilling:drilling_drillholes_hyperspectral</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>e9053f96fabeb460a372417dedc0a7a336d5c91a</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-surveys:geophysics_surveys_company_air</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>b2b6e4ac7237875c0e6f316a75f2e19028dcf360</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-rad-kthu-25m</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>841623147f27faabc49fc5582543db1613ee1ad1</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>minview-context:admin_bounds_fossicking_districts</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>eee78910262a8afb0ce0a8d70a831d7404676a61</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-grav-air</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>8410c7ede747bbbf225d57d1bb27071cfe2773b9</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-rad-kthu-dem-25m</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>f6d80236a39425f8b08c02cf1d7fa589f0d39e8f</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>drilling:drilling_drillholes</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>a7538988abc54a8656226f157233ce00e7c33f74</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-mag-tmi-rtp-tilt</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>03919e98e72886ac9161144a04befc8867841122</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>drilling:drilling_drillholes_core_library</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>aa627ed487ca9204bc8270a35a16daf723a60580</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>mining-and-exploration:titles_title_granted</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>57a54fc82e4b881ff0b72940493168c2f03e690c</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>drilling:drilling_drillholes_petroleum</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>fd08382770195261cf3400f6ec66082f4dc87b98</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-rad-u2divth-25m</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>dddb1aba8d46cf455195ed76989393cd327ab550</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geochemistry:geochemistry_whole_rock_surface</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>667ca981d2e8f20b3b03886507520e0faa2ddc7c</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>minview-context:admin_bounds_lots_commonwealth_land</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>46f80479908232417f85c2f4f426bf93b297ae22</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-dem-25m</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>8fa5b2b08215d082bc4df5c05077b266487a9d33</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-surveys:geophysics_surveys_company_ground</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>ff2a9318021b27e1d79ef8556fed0553fdf74f75</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-mag-tmi-rtp-uc-250m-1vd</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>265cc4d3e6447bc7bf2f4c9a6eddf71cc2a5711a</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-surveys:geophysics_surveys_company_air_no_download</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>40917e659385232da4469fe46af93476a97b826a</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-grav-air-isostatic-on-tilt-mag</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>fc91b7c0fe1468bbefde496f5d94965769ca7d2e</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-mag-tmi-rtp-1vd</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>aa712c4eb34faf931c2dca54c974321fff195f8c</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-auslamp-10km-depth</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>93493450f086173d27b4b85b190591b0664622d3</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>mining-and-exploration:titles_ancillary_mining_areas</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>1111a1eb1f7c4102d4c52892bab9686890c02254</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-auslamp-150km-depth</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>43611b7fefa9efd055b80b0f8a85f2667fe63938</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-rad-thppm-25m</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>ca1e869f25a72c34a7cd508f25b777d029291ffe</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>drilling:drilling_drillholes_csg</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>2120a62fbb42ef1d8308d169db03658714c60fc2</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>mining-and-exploration:titles_title_applications</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>3c96dfc6fc1aa92e8a6f5ea217d671713cb5f2e8</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geochemistry:geochemistry_isotope</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>6995329da26d3f9172f193c7c9a62230b0f10405</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>drilling:drilling_drillholes_minerals</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>8114025adcad032d2f6c7d08aa0cfe5cbce06474</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>drilling:drilling_drillholes_coal</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>f4a19b182a363a1eb6319614bcf5beacaceb8937</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>mineral-occurrence:mineral_occurrence_operating_mines</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>507f9e0fedfdada13d33731b086310e609be30a1</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-surveys:geophysics_seismic_lines</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>2da78fc3f749e0a510655f45933dc7f43139a9e3</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-grav-air-isostatic</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>e4ad55fb0c90627329c9a57b9a6fb6f8f51a03c5</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>mineral-occurrence:mineral_occurrence_deposit_class</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>74f61f147f457de650cab8325f0815632c77c766</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-surveys:geophysics_surveys_government_ground</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>ac17102e022dca368729aed9901f715d76ddad31</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-rad-doserate-25m</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>fd8636f2c5b9efe7c3e4373b29248b25812635f4</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>minview-context:admin_mapunit</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>802176016c6c8b4c609405f0bc1de7a181c571f8</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-grav-air-isostatic-1vd</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>a8e53ab393792087663968f29c2543117bd23750</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-surveys:geophysics_seismic_lines_limited</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>4de4df35685f75424881931c0fdd55e44450ba7a</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-rad-kperc-25m</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>224ac82b5c47ea33cd1925a94ce8b10f6d195b73</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-grav-on-tilt-mag</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>31f27d9ff9c1c4fef2905065413c91437155d0aa</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-auslamp-40km-depth</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>154e3c2ab7da17ac20e7ef2eb2366ba97be236b3</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>field-observations:field_observations</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>53034aadda69c23a53e6cd5e3f7f683d37b3183e</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-surveys:geophysics_seismic_surveys</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>0d769749d147f1b8fbef539f71c9678a6a015bd2</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-mag-tmi-rtp-2vd</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>1e0311b0ac9edf48dc25f098ae79c6e39be7c830</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-rad-udivk-25m</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:coupledResource xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="synchronizedFromOGC">
+        <srv:SV_CoupledResource>
+          <srv:operationName>
+            <gco:CharacterString>GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:identifier>
+            <gco:CharacterString>b7234d30f5e1ad6e2b9c9dd432ede0d380280cf3</gco:CharacterString>
+          </srv:identifier>
+          <gco:ScopedName>geophys-imagery-statewide:geophys-mag-tmi</gco:ScopedName>
+        </srv:SV_CoupledResource>
+      </srv:coupledResource>
+      <srv:couplingType>
+        <srv:SV_CouplingType codeList="./resources/codeList.xml#SV_CouplingType" codeListValue="tight" />
+      </srv:couplingType>
+      <srv:containsOperations>
+        <srv:SV_OperationMetadata>
+          <srv:operationName>
+            <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">GetCapabilities</gco:CharacterString>
+          </srv:operationName>
+          <srv:DCP>
+            <srv:DCPList codeList="./resources/codeList.xml#DCPList" codeListValue="&#xA;                      HTTP-GET&#xA;                    " />
+          </srv:DCP>
+          <srv:DCP>
+            <srv:DCPList codeList="./resources/codeList.xml#DCPList" codeListValue="&#xA;                      HTTP-POST&#xA;                    " />
+          </srv:DCP>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">text/xml</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    text/xml</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+        </srv:SV_OperationMetadata>
+      </srv:containsOperations>
+      <srv:containsOperations>
+        <srv:SV_OperationMetadata>
+          <srv:operationName>
+            <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">GetMap</gco:CharacterString>
+          </srv:operationName>
+          <srv:DCP>
+            <srv:DCPList codeList="./resources/codeList.xml#DCPList" codeListValue="&#xA;                      HTTP-GET&#xA;                    " />
+          </srv:DCP>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">image/png</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    image/png</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">application/atom+xml</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    application/atom+xml</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">application/json;type=geojson</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    application/json;type=geojson</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">application/json;type=topojson</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    application/json;type=topojson</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">application/json;type=utfgrid</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    application/json;type=utfgrid</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">application/pdf</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    application/pdf</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">application/rss+xml</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    application/rss+xml</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">application/vnd.google-earth.kml+xml</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    application/vnd.google-earth.kml+xml</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">application/vnd.google-earth.kml+xml;mode=networklink</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    application/vnd.google-earth.kml+xml;mode=networklink</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">application/vnd.google-earth.kmz</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    application/vnd.google-earth.kmz</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">application/vnd.mapbox-vector-tile</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    application/vnd.mapbox-vector-tile</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">image/geotiff</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    image/geotiff</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">image/geotiff8</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    image/geotiff8</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">image/gif</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    image/gif</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">image/jpeg</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    image/jpeg</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">image/png; mode=8bit</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    image/png; mode=8bit</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">image/svg+xml</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    image/svg+xml</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">image/tiff</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    image/tiff</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">image/tiff8</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    image/tiff8</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">image/vnd.jpeg-png</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    image/vnd.jpeg-png</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">image/vnd.jpeg-png8</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    image/vnd.jpeg-png8</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">text/html; subtype=openlayers</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    text/html; subtype=openlayers</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">text/html; subtype=openlayers2</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    text/html; subtype=openlayers2</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">text/html; subtype=openlayers3</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    text/html; subtype=openlayers3</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+        </srv:SV_OperationMetadata>
+      </srv:containsOperations>
+      <srv:containsOperations>
+        <srv:SV_OperationMetadata>
+          <srv:operationName>
+            <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">GetFeatureInfo</gco:CharacterString>
+          </srv:operationName>
+          <srv:DCP>
+            <srv:DCPList codeList="./resources/codeList.xml#DCPList" codeListValue="&#xA;                      HTTP-GET&#xA;                    " />
+          </srv:DCP>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">text/plain</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    text/plain</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">application/vnd.ogc.gml</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    application/vnd.ogc.gml</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">text/xml</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    text/xml</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">application/vnd.ogc.gml/3.1.1</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    application/vnd.ogc.gml/3.1.1</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">text/xml; subtype=gml/3.1.1</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    text/xml; subtype=gml/3.1.1</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">text/html</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    text/html</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">text/javascript</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    text/javascript</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+          <srv:connectPoint>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">application/json</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">Format :
+                    application/json</gco:CharacterString>
+              </gmd:description>
+              <gmd:function>
+                <gmd:CI_OnLineFunctionCode codeList="./resources/codeList.xml#CI_OnLineFunctionCode" codeListValue="information" />
+              </gmd:function>
+            </gmd:CI_OnlineResource>
+          </srv:connectPoint>
+        </srv:SV_OperationMetadata>
+      </srv:containsOperations>
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="b7234d30f5e1ad6e2b9c9dd432ede0d380280cf3" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/b7234d30f5e1ad6e2b9c9dd432ede0d380280cf3/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="1e0311b0ac9edf48dc25f098ae79c6e39be7c830" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/1e0311b0ac9edf48dc25f098ae79c6e39be7c830/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="0d769749d147f1b8fbef539f71c9678a6a015bd2" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/0d769749d147f1b8fbef539f71c9678a6a015bd2/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="53034aadda69c23a53e6cd5e3f7f683d37b3183e" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/53034aadda69c23a53e6cd5e3f7f683d37b3183e/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="154e3c2ab7da17ac20e7ef2eb2366ba97be236b3" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/154e3c2ab7da17ac20e7ef2eb2366ba97be236b3/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="31f27d9ff9c1c4fef2905065413c91437155d0aa" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/31f27d9ff9c1c4fef2905065413c91437155d0aa/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="224ac82b5c47ea33cd1925a94ce8b10f6d195b73" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/224ac82b5c47ea33cd1925a94ce8b10f6d195b73/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="4de4df35685f75424881931c0fdd55e44450ba7a" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/4de4df35685f75424881931c0fdd55e44450ba7a/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="a8e53ab393792087663968f29c2543117bd23750" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/a8e53ab393792087663968f29c2543117bd23750/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="802176016c6c8b4c609405f0bc1de7a181c571f8" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/802176016c6c8b4c609405f0bc1de7a181c571f8/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="fd8636f2c5b9efe7c3e4373b29248b25812635f4" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/fd8636f2c5b9efe7c3e4373b29248b25812635f4/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="ac17102e022dca368729aed9901f715d76ddad31" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/ac17102e022dca368729aed9901f715d76ddad31/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="74f61f147f457de650cab8325f0815632c77c766" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/74f61f147f457de650cab8325f0815632c77c766/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="e4ad55fb0c90627329c9a57b9a6fb6f8f51a03c5" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/e4ad55fb0c90627329c9a57b9a6fb6f8f51a03c5/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="2da78fc3f749e0a510655f45933dc7f43139a9e3" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/2da78fc3f749e0a510655f45933dc7f43139a9e3/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="507f9e0fedfdada13d33731b086310e609be30a1" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/507f9e0fedfdada13d33731b086310e609be30a1/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="f4a19b182a363a1eb6319614bcf5beacaceb8937" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/f4a19b182a363a1eb6319614bcf5beacaceb8937/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="8114025adcad032d2f6c7d08aa0cfe5cbce06474" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/8114025adcad032d2f6c7d08aa0cfe5cbce06474/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="6995329da26d3f9172f193c7c9a62230b0f10405" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/6995329da26d3f9172f193c7c9a62230b0f10405/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="3c96dfc6fc1aa92e8a6f5ea217d671713cb5f2e8" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/3c96dfc6fc1aa92e8a6f5ea217d671713cb5f2e8/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="2120a62fbb42ef1d8308d169db03658714c60fc2" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/2120a62fbb42ef1d8308d169db03658714c60fc2/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="ca1e869f25a72c34a7cd508f25b777d029291ffe" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/ca1e869f25a72c34a7cd508f25b777d029291ffe/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="43611b7fefa9efd055b80b0f8a85f2667fe63938" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/43611b7fefa9efd055b80b0f8a85f2667fe63938/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="1111a1eb1f7c4102d4c52892bab9686890c02254" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/1111a1eb1f7c4102d4c52892bab9686890c02254/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="93493450f086173d27b4b85b190591b0664622d3" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/93493450f086173d27b4b85b190591b0664622d3/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="aa712c4eb34faf931c2dca54c974321fff195f8c" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/aa712c4eb34faf931c2dca54c974321fff195f8c/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="fc91b7c0fe1468bbefde496f5d94965769ca7d2e" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/fc91b7c0fe1468bbefde496f5d94965769ca7d2e/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="40917e659385232da4469fe46af93476a97b826a" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/40917e659385232da4469fe46af93476a97b826a/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="265cc4d3e6447bc7bf2f4c9a6eddf71cc2a5711a" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/265cc4d3e6447bc7bf2f4c9a6eddf71cc2a5711a/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="ff2a9318021b27e1d79ef8556fed0553fdf74f75" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/ff2a9318021b27e1d79ef8556fed0553fdf74f75/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="8fa5b2b08215d082bc4df5c05077b266487a9d33" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/8fa5b2b08215d082bc4df5c05077b266487a9d33/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="46f80479908232417f85c2f4f426bf93b297ae22" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/46f80479908232417f85c2f4f426bf93b297ae22/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="667ca981d2e8f20b3b03886507520e0faa2ddc7c" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/667ca981d2e8f20b3b03886507520e0faa2ddc7c/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="dddb1aba8d46cf455195ed76989393cd327ab550" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/dddb1aba8d46cf455195ed76989393cd327ab550/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="fd08382770195261cf3400f6ec66082f4dc87b98" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/fd08382770195261cf3400f6ec66082f4dc87b98/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="57a54fc82e4b881ff0b72940493168c2f03e690c" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/57a54fc82e4b881ff0b72940493168c2f03e690c/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="aa627ed487ca9204bc8270a35a16daf723a60580" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/aa627ed487ca9204bc8270a35a16daf723a60580/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="03919e98e72886ac9161144a04befc8867841122" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/03919e98e72886ac9161144a04befc8867841122/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="a7538988abc54a8656226f157233ce00e7c33f74" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/a7538988abc54a8656226f157233ce00e7c33f74/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="f6d80236a39425f8b08c02cf1d7fa589f0d39e8f" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/f6d80236a39425f8b08c02cf1d7fa589f0d39e8f/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="8410c7ede747bbbf225d57d1bb27071cfe2773b9" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/8410c7ede747bbbf225d57d1bb27071cfe2773b9/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="eee78910262a8afb0ce0a8d70a831d7404676a61" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/eee78910262a8afb0ce0a8d70a831d7404676a61/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="841623147f27faabc49fc5582543db1613ee1ad1" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/841623147f27faabc49fc5582543db1613ee1ad1/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="b2b6e4ac7237875c0e6f316a75f2e19028dcf360" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/b2b6e4ac7237875c0e6f316a75f2e19028dcf360/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="e9053f96fabeb460a372417dedc0a7a336d5c91a" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/e9053f96fabeb460a372417dedc0a7a336d5c91a/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="a64229eed36a9b139637a31cc21066c6bef8fb20" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/a64229eed36a9b139637a31cc21066c6bef8fb20/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="8aedb4762c69f4a5af1fce993574fa3ed6338e4f" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/8aedb4762c69f4a5af1fce993574fa3ed6338e4f/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="7cd69d58c66227d1ac547f0e116e09b79839b888" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/7cd69d58c66227d1ac547f0e116e09b79839b888/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="4bfb6e383e81cc3f94ebd16de1777543f771b922" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/4bfb6e383e81cc3f94ebd16de1777543f771b922/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="96044a8fc6de4e121570a8c8bb3406a8d76bb51b" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/96044a8fc6de4e121570a8c8bb3406a8d76bb51b/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="7bb440656d8ac56b26320515400c6049310fd3b0" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/7bb440656d8ac56b26320515400c6049310fd3b0/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="e80dcd5158e8b91ba76fd763eb718aa26d82d3ba" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/e80dcd5158e8b91ba76fd763eb718aa26d82d3ba/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="90b5f0ab8cb77279aceffe2de62fc6159af304ee" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/90b5f0ab8cb77279aceffe2de62fc6159af304ee/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="aa42c02d0fa8839b36cadeb3eafab56212c2aabd" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/aa42c02d0fa8839b36cadeb3eafab56212c2aabd/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="fecdab7f4e048a2c1c26f3d05a5b50b7215ed27b" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/fecdab7f4e048a2c1c26f3d05a5b50b7215ed27b/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="5653474368b45823bc6ccb3db627a2f0111fc420" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/5653474368b45823bc6ccb3db627a2f0111fc420/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="a5af41e447cb89db525cd44e47c084f14f5132c1" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/a5af41e447cb89db525cd44e47c084f14f5132c1/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="1ad542f8753463a775fffcdba3ddf6074e70b524" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/1ad542f8753463a775fffcdba3ddf6074e70b524/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="ae526a9a743e7e1f81e78e88b14a954261ab5435" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/ae526a9a743e7e1f81e78e88b14a954261ab5435/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="a06f7febf5b270f81ee53eed5df51ed29396718a" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/a06f7febf5b270f81ee53eed5df51ed29396718a/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="ded8e77507ab0f45aa5dc9827b670ca84d984800" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/ded8e77507ab0f45aa5dc9827b670ca84d984800/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="4019eda7bf3133abfe1aa018c47a1c38e4ffbb01" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/4019eda7bf3133abfe1aa018c47a1c38e4ffbb01/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="3545f16c006d40fd7024530a805925c94c2a5e9e" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/3545f16c006d40fd7024530a805925c94c2a5e9e/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="6391fd1dff8d5a8bd204aa48454a2081521dfca2" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/6391fd1dff8d5a8bd204aa48454a2081521dfca2/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="645022c8d6a5a13c13746a39dd14d27d970f97e2" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/645022c8d6a5a13c13746a39dd14d27d970f97e2/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="31792e5531511ddeafff6db3630b1aeb1c83a7a9" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/31792e5531511ddeafff6db3630b1aeb1c83a7a9/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="dfa72457896e3dcaf50e487c1e2fcd1313ebb204" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/dfa72457896e3dcaf50e487c1e2fcd1313ebb204/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="b97147028a03acd1966d649a87224ed7b1151a12" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/b97147028a03acd1966d649a87224ed7b1151a12/formatters/xml" />
+      <srv:operatesOn xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xlink="http://www.w3.org/1999/xlink" gco:nilReason="synchronizedFromOGC" uuidref="3f46f5db93d5bce879d5b451618f1a83046d189d" xlink:href="https://portal.auscope.org.au/geonetwork/srv/api/records/3f46f5db93d5bce879d5b451618f1a83046d189d/formatters/xml" />
+    </srv:SV_ServiceIdentification>
+  </gmd:identificationInfo>
+  <gmd:distributionInfo>
+    <gmd:MD_Distribution>
+      <gmd:distributionFormat>
+        <gmd:MD_Format>
+          <gmd:name xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="missing">
+            <gco:CharacterString />
+          </gmd:name>
+          <gmd:version xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="missing">
+            <gco:CharacterString />
+          </gmd:version>
+        </gmd:MD_Format>
+      </gmd:distributionFormat>
+      <gmd:transferOptions>
+        <gmd:MD_DigitalTransferOptions>
+          <gmd:onLine>
+            <gmd:CI_OnlineResource>
+              <gmd:linkage>
+                <gmd:URL>https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gmd:URL>
+              </gmd:linkage>
+              <gmd:protocol>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">application/vnd.ogc.wms_xml</gco:CharacterString>
+              </gmd:protocol>
+              <gmd:description>
+                <gco:CharacterString xmlns:gco="http://www.isotc211.org/2005/gco">https://public-gs.geoscience.nsw.gov.au/geoserver/ows?SERVICE=WMS&amp;</gco:CharacterString>
+              </gmd:description>
+            </gmd:CI_OnlineResource>
+          </gmd:onLine>
+        </gmd:MD_DigitalTransferOptions>
+      </gmd:transferOptions>
+    </gmd:MD_Distribution>
+  </gmd:distributionInfo>
+  <gmd:dataQualityInfo>
+    <gmd:DQ_DataQuality>
+      <gmd:scope>
+        <gmd:DQ_Scope>
+          <gmd:level>
+            <gmd:MD_ScopeCode codeListValue="service" codeList="./resources/codeList.xml#MD_ScopeCode" />
+          </gmd:level>
+          <gmd:levelDescription>
+            <gmd:MD_ScopeDescription>
+              <gmd:attributes />
+            </gmd:MD_ScopeDescription>
+          </gmd:levelDescription>
+        </gmd:DQ_Scope>
+      </gmd:scope>
+      <gmd:lineage>
+        <gmd:LI_Lineage>
+          <gmd:statement xmlns:gco="http://www.isotc211.org/2005/gco" gco:nilReason="missing">
+            <gco:CharacterString />
+          </gmd:statement>
+        </gmd:LI_Lineage>
+      </gmd:lineage>
+    </gmd:DQ_DataQuality>
+  </gmd:dataQualityInfo>
+</gmd:MD_Metadata>
+

@@ -1,0 +1,110 @@
+{
+  "description": "ISO 19115 records from Australian NCRIS facility GeoNetwork catalogues, used as crosswalk fixtures. Regenerate with scripts/fetch_iso_fixtures.py.",
+  "catalogues": {
+    "tern": "https://geonetwork.tern.org.au/geonetwork",
+    "aodn": "https://catalogue-imos.aodn.org.au/geonetwork",
+    "auscope": "https://portal.auscope.org.au/geonetwork"
+  },
+  "records": [
+    {
+      "file": "tern-awra-canopy-conductance.xml",
+      "catalogue": "tern",
+      "uuid": "089c56eb-af02-42eb-9bce-c3bdc17f01c1",
+      "standard": "iso19115-3",
+      "why": "Simple gridded model output; 8 responsible parties with different roles",
+      "source": "https://geonetwork.tern.org.au/geonetwork/srv/api/records/089c56eb-af02-42eb-9bce-c3bdc17f01c1/formatters/xml",
+      "fetched": "2026-11-18",
+      "sha256": "f29e6b9786595cfe2b01769fe2f43afbc4477cc1ddc25dd6c4413f77ad51befb"
+    },
+    {
+      "file": "tern-cmrset-evapotranspiration.xml",
+      "catalogue": "tern",
+      "uuid": "9fefa68b-dbed-4c20-88db-a9429fb4ba97",
+      "standard": "iso19115-3",
+      "why": "OGC WMS plus download links; many keywords",
+      "source": "https://geonetwork.tern.org.au/geonetwork/srv/api/records/9fefa68b-dbed-4c20-88db-a9429fb4ba97/formatters/xml",
+      "fetched": "2026-11-18",
+      "sha256": "dccd5826d2f27fbd025d76e0939930f6c92ba7d2a55067b840fe7f369473eabc"
+    },
+    {
+      "file": "tern-bat-acoustic-usa.xml",
+      "catalogue": "tern",
+      "uuid": "1f2ee475-1cd1-499f-bb93-492b8fa3d3a0",
+      "standard": "iso19115-3",
+      "why": "Three bounding boxes; 48 keywords",
+      "source": "https://geonetwork.tern.org.au/geonetwork/srv/api/records/1f2ee475-1cd1-499f-bb93-492b8fa3d3a0/formatters/xml",
+      "fetched": "2026-11-18",
+      "sha256": "1c637ae8a4272533fdf7c936df719c2ad8e6263cb22dd5bbe377d6b2f0a36aa9"
+    },
+    {
+      "file": "aodn-glider-yamba.xml",
+      "catalogue": "aodn",
+      "uuid": "334592c9-991a-4e55-aba1-0b3247387a03",
+      "standard": "iso19115-3",
+      "why": "Typical single IMOS deployment record",
+      "source": "https://catalogue-imos.aodn.org.au/geonetwork/srv/api/records/334592c9-991a-4e55-aba1-0b3247387a03/formatters/xml",
+      "fetched": "2026-11-18",
+      "sha256": "17641d90326c594d54d6301df86c66d582e90f7f9abd3f2543556d92c9de6e95"
+    },
+    {
+      "file": "aodn-ran-ctd-profiles.xml",
+      "catalogue": "aodn",
+      "uuid": "bc6e10a6-4dda-41c0-8639-5c96411efc5a",
+      "standard": "iso19115-3",
+      "why": "OGC WMS and WFS links plus an IMOS-specific aggregation protocol",
+      "source": "https://catalogue-imos.aodn.org.au/geonetwork/srv/api/records/bc6e10a6-4dda-41c0-8639-5c96411efc5a/formatters/xml",
+      "fetched": "2026-11-18",
+      "sha256": "618aa6c71d5f6a2e3330f34c9369fbfda8afac372c646d3709fa075c7b7689b1"
+    },
+    {
+      "file": "aodn-sst-l3s.xml",
+      "catalogue": "aodn",
+      "uuid": "671c53fa-b114-4a1c-af18-c131b11b8c85",
+      "standard": "iso19115-3",
+      "why": "Satellite product; two bounding boxes; 45 keywords",
+      "source": "https://catalogue-imos.aodn.org.au/geonetwork/srv/api/records/671c53fa-b114-4a1c-af18-c131b11b8c85/formatters/xml",
+      "fetched": "2026-11-18",
+      "sha256": "3d6b609a26f0dfc25917af3bf68b6ebc1dddc14315ec7802adcc2a5bafea5558"
+    },
+    {
+      "file": "auscope-rosebery-3d-model.xml",
+      "catalogue": "auscope",
+      "uuid": "c20396fc-6cee-437d-bec3-1b3608641574",
+      "standard": "iso19115-3",
+      "why": "Geoscience model with a DOI",
+      "source": "https://portal.auscope.org.au/geonetwork/srv/api/records/c20396fc-6cee-437d-bec3-1b3608641574/formatters/xml",
+      "fetched": "2026-11-18",
+      "sha256": "1e48ab2a500abda5b4304a09b25d8fdfdbccc558f028935730611d9e759f013f"
+    },
+    {
+      "file": "auscope-calperum-czo.xml",
+      "catalogue": "auscope",
+      "uuid": "d73d2881-e518-4311-8373-423b5bc8d7ae",
+      "standard": "iso19115-3",
+      "why": "Three bounding boxes and no indexed contacts: tests missing-required reporting",
+      "source": "https://portal.auscope.org.au/geonetwork/srv/api/records/d73d2881-e518-4311-8373-423b5bc8d7ae/formatters/xml",
+      "fetched": "2026-11-18",
+      "sha256": "1884d002b8641b3a472bcbf8704426e83c2213afa503df8e6bc7a21d51dc35db"
+    },
+    {
+      "file": "auscope-gsv-mineral-occurrences.xml",
+      "catalogue": "auscope",
+      "uuid": "85567239a54b255984fed4a551abf1a7854efa48",
+      "standard": "iso19139",
+      "why": "ISO 19139 dataset record with an OGC WMS link",
+      "source": "https://portal.auscope.org.au/geonetwork/srv/api/records/85567239a54b255984fed4a551abf1a7854efa48/formatters/xml",
+      "fetched": "2026-11-18",
+      "sha256": "7eef45cbc6fc106f75d78f4b3571628659023cbe9b6c86fb6fd24cb07da22e90"
+    },
+    {
+      "file": "auscope-gsnsw-wms-service.xml",
+      "catalogue": "auscope",
+      "uuid": "05d0af6b0f65f004e2e66b92e6edc1204b4585e2",
+      "standard": "iso19139",
+      "why": "Service record (SV_ServiceIdentification): should be reported as out of scope",
+      "source": "https://portal.auscope.org.au/geonetwork/srv/api/records/05d0af6b0f65f004e2e66b92e6edc1204b4585e2/formatters/xml",
+      "fetched": "2026-11-18",
+      "sha256": "9bf796feb65125f2830630afec7c3998d97f86fed18c7034e8a30fd7b7f0b097"
+    }
+  ]
+}
