@@ -1,0 +1,30 @@
+{
+    "responseCode": 1,
+    "handle": "10.25901/gg27-ck96",
+    "values": [
+        {
+            "index": 100,
+            "type": "HS_ADMIN",
+            "data": {
+                "format": "admin",
+                "value": {
+                    "handle": "10.admin/codata",
+                    "index": 300,
+                    "permissions": "111111111111"
+                }
+            },
+            "ttl": 86400,
+            "timestamp": "2021-07-23T01:13:34Z"
+        },
+        {
+            "index": 1,
+            "type": "URL",
+            "data": {
+                "format": "string",
+                "value": "https://portal.tern.org.au/metadata/TERN/9fefa68b-dbed-4c20-88db-a9429fb4ba97"
+            },
+            "ttl": 86400,
+            "timestamp": "2023-11-08T00:38:35Z"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:gcmd="https://gcmd.earthdata.nasa.gov/kms#" xmlns:dcterms="http://purl.org/dc/terms/" xml:base="https://gcmd.earthdata.nasa.gov/kms/concept/">
+  <gcmd:gcmd>
+    <gcmd:termsOfUse>https://cdn.earthdata.nasa.gov/conduit/upload/5182/KeywordsCommunityGuide_Baseline_v1_SIGNED_FINAL.pdf</gcmd:termsOfUse>
+    <gcmd:keywordVersion>25.3</gcmd:keywordVersion>
+    <gcmd:schemeVersion>2026-11-16T15:46:10.057Z</gcmd:schemeVersion>
+    <gcmd:viewer>https://gcmd.earthdata.nasa.gov/KeywordViewer/scheme/sciencekeywords/9db9cb8c-7d18-4922-990c-b610d22356eb</gcmd:viewer>
+  </gcmd:gcmd>
+  <skos:Concept rdf:about="9db9cb8c-7d18-4922-990c-b610d22356eb">
+    <skos:broader rdf:resource="f5161094-3593-4bc1-85ea-c8c2ecab1d9a"/>
+    <skos:prefLabel xml:lang="en">BATS</skos:prefLabel>
+    <skos:changeNote>Date=2017-03-15 User Id=mgenazzi Entity=Definition Operation=INSERT 
+User Note=Definition added
+System Note=insert Definition
+New Value=id: null
+text: Phylum Chordata. Class Mammalia. Order Chiroptera. Bats forelimbs form wedded wings with long spread-out digits covered by a thin membrane flapped in flying making them the only mammals capable of sustained flight. Bats have a highly adapted lung system, use echolocation as they have poorly developed eyes and most are nocturnal
+language code: en</skos:changeNote>
+    <gcmd:reference gcmd:text="Bat Conservation International" xml:lang="en"/>
+    <skos:definition xml:lang="en">Phylum Chordata. Class Mammalia. Order Chiroptera. Bats forelimbs form wedded wings with long spread-out digits covered by a thin membrane flapped in flying making them the only mammals capable of sustained flight. Bats have a highly adapted lung system, use echolocation as they have poorly developed eyes and most are nocturnal</skos:definition>
+    <dcterms:modified>2017-03-15 08:44:21.0</dcterms:modified>
+    <skos:inScheme rdf:resource="https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords"/>
+  </skos:Concept>
+</rdf:RDF>

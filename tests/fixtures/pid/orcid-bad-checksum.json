@@ -1,0 +1,7 @@
+{
+    "response-code": 404,
+    "developer-message": "404 Not Found: The resource was not found.",
+    "user-message": "The resource was not found.",
+    "error-code": 9016,
+    "more-info": "https://members.orcid.org/api/resources/troubleshooting"
+}

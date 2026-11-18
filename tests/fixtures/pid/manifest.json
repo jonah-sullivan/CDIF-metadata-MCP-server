@@ -1,0 +1,454 @@
+{
+  "recorded": "2026-11-19",
+  "entries": [
+    {
+      "name": "doi-handle-found",
+      "request": {
+        "url": "https://doi.org/api/handles/10.25901/gg27-ck96",
+        "accept": "application/json",
+        "method": "GET"
+      },
+      "hops": [],
+      "final_url": "https://doi.org/api/handles/10.25901/gg27-ck96",
+      "status": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "body": "doi-handle-found.json",
+      "trimmed": false,
+      "why": "DOI handle API: DOI exists (responseCode 1)"
+    },
+    {
+      "name": "doi-handle-missing",
+      "request": {
+        "url": "https://doi.org/api/handles/10.9999/does-not-exist",
+        "accept": "application/json",
+        "method": "GET"
+      },
+      "hops": [],
+      "final_url": "https://doi.org/api/handles/10.9999/does-not-exist",
+      "status": 404,
+      "content_type": "application/json;charset=UTF-8",
+      "body": "doi-handle-missing.json",
+      "trimmed": false,
+      "why": "DOI handle API: no such DOI (responseCode 100)"
+    },
+    {
+      "name": "doi-ra",
+      "request": {
+        "url": "https://doi.org/ra/10.25901/gg27-ck96,10.3390/min11111195",
+        "accept": "application/json",
+        "method": "GET"
+      },
+      "hops": [],
+      "final_url": "https://doi.org/ra/10.25901/gg27-ck96,10.3390/min11111195",
+      "status": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "body": "doi-ra.json",
+      "trimmed": false,
+      "why": "Registration agency: DataCite vs Crossref"
+    },
+    {
+      "name": "datacite-dataset",
+      "request": {
+        "url": "https://api.datacite.org/dois/10.25901/gg27-ck96",
+        "accept": "application/json",
+        "method": "GET"
+      },
+      "hops": [],
+      "final_url": "https://api.datacite.org/dois/10.25901/gg27-ck96",
+      "status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "body": "datacite-dataset.json",
+      "trimmed": true,
+      "why": "DataCite DOI with resourceTypeGeneral Dataset"
+    },
+    {
+      "name": "crossref-article",
+      "request": {
+        "url": "https://api.crossref.org/works/10.3390/min11111195",
+        "accept": "application/json",
+        "method": "GET"
+      },
+      "hops": [],
+      "final_url": "https://api.crossref.org/works/10.3390/min11111195",
+      "status": 200,
+      "content_type": "application/json",
+      "body": "crossref-article.json",
+      "trimmed": true,
+      "why": "Crossref DOI for a journal article, used as a dataset @id"
+    },
+    {
+      "name": "orcid-found",
+      "request": {
+        "url": "https://pub.orcid.org/v3.0/0000-0002-7591-0303/person",
+        "accept": "application/json",
+        "method": "GET"
+      },
+      "hops": [],
+      "final_url": "https://pub.orcid.org/v3.0/0000-0002-7591-0303/person",
+      "status": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "body": "orcid-found.json",
+      "trimmed": true,
+      "why": "ORCID public API, anonymous (name only kept)"
+    },
+    {
+      "name": "orcid-bad-checksum",
+      "request": {
+        "url": "https://pub.orcid.org/v3.0/0000-0002-7591-0304/person",
+        "accept": "application/json",
+        "method": "GET"
+      },
+      "hops": [],
+      "final_url": "https://pub.orcid.org/v3.0/0000-0002-7591-0304/person",
+      "status": 404,
+      "content_type": "application/json;charset=UTF-8",
+      "body": "orcid-bad-checksum.json",
+      "trimmed": false,
+      "why": "ORCID iD with an invalid checksum: 404"
+    },
+    {
+      "name": "ror-active",
+      "request": {
+        "url": "https://api.ror.org/v2/organizations/01ej9dk98",
+        "accept": "application/json",
+        "method": "GET"
+      },
+      "hops": [],
+      "final_url": "https://api.ror.org/v2/organizations/01ej9dk98",
+      "status": 200,
+      "content_type": "application/json",
+      "body": "ror-active.json",
+      "trimmed": true,
+      "why": "Active ROR organisation"
+    },
+    {
+      "name": "ror-inactive",
+      "request": {
+        "url": "https://api.ror.org/v2/organizations/00892tw58",
+        "accept": "application/json",
+        "method": "GET"
+      },
+      "hops": [],
+      "final_url": "https://api.ror.org/v2/organizations/00892tw58",
+      "status": 200,
+      "content_type": "application/json",
+      "body": "ror-inactive.json",
+      "trimmed": true,
+      "why": "Inactive ROR organisation with a successor"
+    },
+    {
+      "name": "ror-missing",
+      "request": {
+        "url": "https://api.ror.org/v2/organizations/00000zz00",
+        "accept": "application/json",
+        "method": "GET"
+      },
+      "hops": [],
+      "final_url": "https://api.ror.org/v2/organizations/00000zz00",
+      "status": 404,
+      "content_type": "application/json",
+      "body": "ror-missing.json",
+      "trimmed": false,
+      "why": "Unknown ROR ID: 404"
+    },
+    {
+      "name": "nvs-p01",
+      "request": {
+        "url": "http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01",
+        "accept": "text/turtle",
+        "method": "GET"
+      },
+      "hops": [
+        {
+          "url": "http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01",
+          "status": 301,
+          "location": "http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/"
+        }
+      ],
+      "final_url": "http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/",
+      "status": 200,
+      "content_type": "text/turtle",
+      "body": "nvs-p01.ttl",
+      "trimmed": false,
+      "why": "NVS concept; canonical URI has a trailing slash"
+    },
+    {
+      "name": "nvs-l06",
+      "request": {
+        "url": "http://vocab.nerc.ac.uk/collection/L06/current/39",
+        "accept": "text/turtle",
+        "method": "GET"
+      },
+      "hops": [
+        {
+          "url": "http://vocab.nerc.ac.uk/collection/L06/current/39",
+          "status": 301,
+          "location": "http://vocab.nerc.ac.uk/collection/L06/current/39/"
+        }
+      ],
+      "final_url": "http://vocab.nerc.ac.uk/collection/L06/current/39/",
+      "status": 200,
+      "content_type": "text/turtle",
+      "body": "nvs-l06.ttl",
+      "trimmed": false,
+      "why": "NVS concept with no skos:inScheme"
+    },
+    {
+      "name": "gcmd-concept",
+      "request": {
+        "url": "https://gcmd.earthdata.nasa.gov/kms/concept/9db9cb8c-7d18-4922-990c-b610d22356eb",
+        "accept": "text/turtle",
+        "method": "GET"
+      },
+      "hops": [
+        {
+          "url": "https://gcmd.earthdata.nasa.gov/kms/concept/9db9cb8c-7d18-4922-990c-b610d22356eb",
+          "status": 301,
+          "location": "https://cmr.earthdata.nasa.gov/kms/concept/9db9cb8c-7d18-4922-990c-b610d22356eb"
+        }
+      ],
+      "final_url": "https://cmr.earthdata.nasa.gov/kms/concept/9db9cb8c-7d18-4922-990c-b610d22356eb",
+      "status": 200,
+      "content_type": "application/xml; charset=utf-8",
+      "body": "gcmd-concept.xml",
+      "trimmed": false,
+      "why": "GCMD: RDF/XML served as application/xml"
+    },
+    {
+      "name": "anzsrc-for",
+      "request": {
+        "url": "https://linked.data.gov.au/def/anzsrc-for/2020/310302",
+        "accept": "text/turtle",
+        "method": "GET"
+      },
+      "hops": [
+        {
+          "url": "https://linked.data.gov.au/def/anzsrc-for/2020/310302",
+          "status": 302,
+          "location": "https://vocabs.ardc.edu.au/repository/api/lda/anzsrc-2020-for/resource.ttl?uri=https://linked.data.gov.au/def/anzsrc-for/2020/310302"
+        }
+      ],
+      "final_url": "https://vocabs.ardc.edu.au/repository/api/lda/anzsrc-2020-for/resource.ttl?uri=https://linked.data.gov.au/def/anzsrc-for/2020/310302",
+      "status": 200,
+      "content_type": "text/turtle;charset=utf-8",
+      "body": "anzsrc-for.ttl",
+      "trimmed": false,
+      "why": "ANZSRC 2020 FoR, hosted in RVA's linked-data API"
+    },
+    {
+      "name": "tern-cv",
+      "request": {
+        "url": "http://linked.data.gov.au/def/tern-cv/903c614e-e036-4d50-ba50-9ec477c25654",
+        "accept": "text/turtle",
+        "method": "GET"
+      },
+      "hops": [
+        {
+          "url": "http://linked.data.gov.au/def/tern-cv/903c614e-e036-4d50-ba50-9ec477c25654",
+          "status": 301,
+          "location": "https://linked.data.gov.au/def/tern-cv/903c614e-e036-4d50-ba50-9ec477c25654"
+        },
+        {
+          "url": "https://linked.data.gov.au/def/tern-cv/903c614e-e036-4d50-ba50-9ec477c25654",
+          "status": 302,
+          "location": "https://linkeddata.tern.org.au/viewer/tern/id/http://linked.data.gov.au/def/tern-cv/903c614e-e036-4d50-ba50-9ec477c25654?format=text/turtle"
+        },
+        {
+          "url": "https://linkeddata.tern.org.au/viewer/tern/id/http://linked.data.gov.au/def/tern-cv/903c614e-e036-4d50-ba50-9ec477c25654?format=text/turtle",
+          "status": 302,
+          "location": "/api/resource/export?uri=http%3A%2F%2Flinked.data.gov.au%2Fdef%2Ftern-cv%2F903c614e-e036-4d50-ba50-9ec477c25654&format=application%2Fx-turtle"
+        }
+      ],
+      "final_url": "https://linkeddata.tern.org.au/api/resource/export?uri=http%3A%2F%2Flinked.data.gov.au%2Fdef%2Ftern-cv%2F903c614e-e036-4d50-ba50-9ec477c25654&format=application%2Fx-turtle",
+      "status": 200,
+      "content_type": "application/x-turtle; charset=utf-8",
+      "body": "tern-cv.ttl",
+      "trimmed": false,
+      "why": "TERN CV: 3 redirects, application/x-turtle"
+    },
+    {
+      "name": "aodn-html",
+      "request": {
+        "url": "http://vocab.aodn.org.au/def/discovery_parameter/entity/565",
+        "accept": "text/turtle",
+        "method": "GET"
+      },
+      "hops": [
+        {
+          "url": "http://vocab.aodn.org.au/def/discovery_parameter/entity/565",
+          "status": 301,
+          "location": "https://vocab.aodn.org.au/def/discovery_parameter/entity/565"
+        },
+        {
+          "url": "https://vocab.aodn.org.au/def/discovery_parameter/entity/565",
+          "status": 302,
+          "location": "https://vocabs.ardc.edu.au/repository/api/lda/aodn/aodn-discovery-parameter-vocabulary/version-1-7/resource.html?uri=http://vocab.aodn.org.au/def/discovery_parameter/entity/565"
+        }
+      ],
+      "final_url": "https://vocabs.ardc.edu.au/repository/api/lda/aodn/aodn-discovery-parameter-vocabulary/version-1-7/resource.html?uri=http://vocab.aodn.org.au/def/discovery_parameter/entity/565",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "body": "aodn-html.html",
+      "trimmed": true,
+      "why": "AODN term: redirect to RVA resource.html, HTML despite Accept"
+    },
+    {
+      "name": "aodn-ttl",
+      "request": {
+        "url": "https://vocabs.ardc.edu.au/repository/api/lda/aodn/aodn-discovery-parameter-vocabulary/version-1-7/resource?uri=http://vocab.aodn.org.au/def/discovery_parameter/entity/565&_format=ttl",
+        "accept": "text/turtle",
+        "method": "GET"
+      },
+      "hops": [],
+      "final_url": "https://vocabs.ardc.edu.au/repository/api/lda/aodn/aodn-discovery-parameter-vocabulary/version-1-7/resource?uri=http://vocab.aodn.org.au/def/discovery_parameter/entity/565&_format=ttl",
+      "status": 200,
+      "content_type": "text/turtle;charset=utf-8",
+      "body": "aodn-ttl.ttl",
+      "trimmed": false,
+      "why": "The same term from RVA with _format=ttl"
+    },
+    {
+      "name": "qudt-unit",
+      "request": {
+        "url": "http://qudt.org/vocab/unit/NUM",
+        "accept": "text/turtle",
+        "method": "GET"
+      },
+      "hops": [
+        {
+          "url": "http://qudt.org/vocab/unit/NUM",
+          "status": 302,
+          "location": "https://qudt.org/vocab/unit/NUM"
+        }
+      ],
+      "final_url": "https://qudt.org/vocab/unit/NUM",
+      "status": 200,
+      "content_type": "text/turtle; charset=utf-8",
+      "body": "qudt-unit.ttl",
+      "trimmed": false,
+      "why": "QUDT unit: Turtle only, rdfs:label, not a skos:Concept"
+    },
+    {
+      "name": "afd-taxon",
+      "request": {
+        "url": "https://biodiversity.org.au/afd/taxa/CHIROPTERA",
+        "accept": "text/turtle",
+        "method": "GET"
+      },
+      "hops": [],
+      "final_url": "https://biodiversity.org.au/afd/taxa/CHIROPTERA",
+      "status": 504,
+      "content_type": "text/html",
+      "body": "afd-taxon.html",
+      "trimmed": true,
+      "why": "AFD: gateway timeout (504) when recorded"
+    },
+    {
+      "name": "tern-party",
+      "request": {
+        "url": "https://w3id.org/tern/resources/7b838abc-8023-4a2a-ad2e-92a79be93104",
+        "accept": "text/turtle",
+        "method": "GET"
+      },
+      "hops": [
+        {
+          "url": "https://w3id.org/tern/resources/7b838abc-8023-4a2a-ad2e-92a79be93104",
+          "status": 302,
+          "location": "https://linkeddata.tern.org.au/api/v1.0/viewer/resource?uri=https://w3id.org/tern/resources/7b838abc-8023-4a2a-ad2e-92a79be93104&sparql_endpoint=https://graphdb.tern.org.au/repositories/knowledge_graph_core&output=text/turtle"
+        }
+      ],
+      "final_url": "https://linkeddata.tern.org.au/api/v1.0/viewer/resource?uri=https://w3id.org/tern/resources/7b838abc-8023-4a2a-ad2e-92a79be93104&sparql_endpoint=https://graphdb.tern.org.au/repositories/knowledge_graph_core&output=text/turtle",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "body": "tern-party.html",
+      "trimmed": true,
+      "why": "TERN w3id party: resolves to an HTML viewer only"
+    },
+    {
+      "name": "cf-standard-names",
+      "request": {
+        "url": "http://cf-pcmdi.llnl.gov/documents/cf-standard-names",
+        "accept": "*/*",
+        "method": "GET"
+      },
+      "hops": [
+        {
+          "url": "http://cf-pcmdi.llnl.gov/documents/cf-standard-names",
+          "status": 302,
+          "location": "https://cf-pcmdi.llnl.gov/documents/cf-standard-names"
+        },
+        {
+          "url": "https://cf-pcmdi.llnl.gov/documents/cf-standard-names",
+          "status": 302,
+          "location": "https://pcmdi.llnl.gov/documents/cf-standard-names"
+        }
+      ],
+      "final_url": "https://pcmdi.llnl.gov/documents/cf-standard-names",
+      "status": 404,
+      "content_type": "text/html; charset=iso-8859-1",
+      "body": "cf-standard-names.html",
+      "trimmed": true,
+      "why": "Dead codeSpace URL (404)"
+    },
+    {
+      "name": "nci-persons-head",
+      "request": {
+        "url": "https://geonetwork.nci.org.au/geonetwork/srv/resources/persons/",
+        "accept": "*/*",
+        "method": "HEAD"
+      },
+      "hops": [],
+      "final_url": "https://geonetwork.nci.org.au/geonetwork/srv/resources/persons/",
+      "status": 400,
+      "content_type": "application/xml;charset=ISO-8859-1",
+      "body": null,
+      "trimmed": false,
+      "why": "HEAD returns 400 where GET returns 200"
+    },
+    {
+      "name": "nci-persons-get",
+      "request": {
+        "url": "https://geonetwork.nci.org.au/geonetwork/srv/resources/persons/",
+        "accept": "*/*",
+        "method": "GET"
+      },
+      "hops": [],
+      "final_url": "https://geonetwork.nci.org.au/geonetwork/srv/resources/persons/",
+      "status": 200,
+      "content_type": "text/html;charset=utf-8",
+      "body": "nci-persons-get.html",
+      "trimmed": true,
+      "why": "A directory URL used as a party identifier"
+    },
+    {
+      "name": "rva-vocabulary-aodn",
+      "request": {
+        "url": "https://vocabs.ardc.edu.au/registry/api/resource/vocabularies/22?includeVersions=true&includeAccessPoints=true",
+        "accept": "application/json",
+        "method": "GET"
+      },
+      "hops": [],
+      "final_url": "https://vocabs.ardc.edu.au/registry/api/resource/vocabularies/22?includeVersions=true&includeAccessPoints=true",
+      "status": 200,
+      "content_type": "application/json",
+      "body": "rva-vocabulary-aodn.json",
+      "trimmed": false,
+      "why": "RVA-hosted vocabulary: versions, access points"
+    },
+    {
+      "name": "rva-vocabulary-tern",
+      "request": {
+        "url": "https://vocabs.ardc.edu.au/registry/api/resource/vocabularies/641?includeVersions=true&includeAccessPoints=true",
+        "accept": "application/json",
+        "method": "GET"
+      },
+      "hops": [],
+      "final_url": "https://vocabs.ardc.edu.au/registry/api/resource/vocabularies/641?includeVersions=true&includeAccessPoints=true",
+      "status": 200,
+      "content_type": "application/json",
+      "body": "rva-vocabulary-tern.json",
+      "trimmed": false,
+      "why": "RVA-registered, served by TERN (web page AP)"
+    }
+  ]
+}

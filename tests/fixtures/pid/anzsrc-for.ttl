@@ -1,0 +1,29 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix api:   <http://purl.org/linked-data/api/vocab#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+
+<https://linked.data.gov.au/def/anzsrc-for/2020/31>
+        skos:narrowerTransitive  <https://linked.data.gov.au/def/anzsrc-for/2020/310302> .
+
+<https://linked.data.gov.au/def/anzsrc-for/2020/310302>
+        a                       skos:Concept ;
+        skos:broader            <https://linked.data.gov.au/def/anzsrc-for/2020/3103> ;
+        skos:broaderTransitive  <https://linked.data.gov.au/def/anzsrc-for/2020/31> , <https://linked.data.gov.au/def/anzsrc-for/2020/3103> ;
+        skos:inScheme           <https://linked.data.gov.au/def/anzsrc-for/2020> ;
+        skos:notation           "310302"@en ;
+        skos:prefLabel          "Community ecology (excl. invasive species ecology)"@en .
+
+<https://linked.data.gov.au/def/anzsrc-for/2020>
+        rdfs:label  "1297.0 ANZSRC - Australian and New Zealand Standard Research Classification, 2020: Fields of Research (FoR)"@en .
+
+<https://linked.data.gov.au/def/anzsrc-for/2020/3103>
+        skos:narrower            <https://linked.data.gov.au/def/anzsrc-for/2020/310302> ;
+        skos:narrowerTransitive  <https://linked.data.gov.au/def/anzsrc-for/2020/310302> .
+
+<https://vocabs.ardc.edu.au/repository/api/lda/anzsrc-2020-for/resource.ttl?uri=https://linked.data.gov.au/def/anzsrc-for/2020/310302>
+        a                            api:ItemEndpoint , api:Page ;
+        api:definition               <https://vocabs.ardc.edu.au/repository/api/lda/anzsrc-2020-for/resource.ttl?uri=https://linked.data.gov.au/def/anzsrc-for/2020/310302> ;
+        api:extendedMetadataVersion  <https://vocabs.ardc.edu.au/repository/api/lda/anzsrc-2020-for/resource.ttl?_metadata=all&uri=https://linked.data.gov.au/def/anzsrc-for/2020/310302> ;
+        foaf:primaryTopic            <https://linked.data.gov.au/def/anzsrc-for/2020/310302> .

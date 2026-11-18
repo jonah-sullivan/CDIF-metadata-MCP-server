@@ -1,0 +1,13 @@
+@prefix rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:	<http://www.w3.org/2004/02/skos/core#> .
+<http://linked.data.gov.au/def/tern-cv/903c614e-e036-4d50-ba50-9ec477c25654>	rdf:type	skos:Concept .
+@prefix xsd:	<http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms:	<http://purl.org/dc/terms/> .
+<http://linked.data.gov.au/def/tern-cv/903c614e-e036-4d50-ba50-9ec477c25654>	dcterms:created	"2026-05-13T00:00:00"^^xsd:dateTime .
+@prefix ns4:	<http://linked.data.gov.au/def/tern-cv/> .
+<http://linked.data.gov.au/def/tern-cv/903c614e-e036-4d50-ba50-9ec477c25654>	skos:topConceptOf	ns4:df7e3d39-4808-4875-bde5-32ecc8c5828c ;
+	skos:definition	"Climatic and bioclimatic data derived from global and national models." ;
+	skos:inScheme	ns4:df7e3d39-4808-4875-bde5-32ecc8c5828c ;
+	skos:prefLabel	"Climate and Bioclimate" ,
+		"Climate and Bioclimate"@en ;
+	skos:note	"These datasets are provided through the National Computational Infrastructure (NCI) and are derived from ANUCLIM." .

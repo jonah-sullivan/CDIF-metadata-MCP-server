@@ -1,0 +1,35 @@
+{
+ "id": "https://ror.org/00892tw58",
+ "status": "inactive",
+ "names": [
+  {
+   "lang": "en",
+   "types": [
+    "alias"
+   ],
+   "value": "Adelaide Uni"
+  },
+  {
+   "lang": "en",
+   "types": [
+    "label",
+    "ror_display"
+   ],
+   "value": "The University of Adelaide"
+  },
+  {
+   "lang": "en",
+   "types": [
+    "alias"
+   ],
+   "value": "University of Adelaide"
+  }
+ ],
+ "relationships": [
+  {
+   "label": "Adelaide University",
+   "type": "successor",
+   "id": "https://ror.org/028g18b61"
+  }
+ ]
+}

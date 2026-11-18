@@ -1,0 +1,23 @@
+{
+ "data": {
+  "attributes": {
+   "types": {
+    "ris": "DATA",
+    "bibtex": "misc",
+    "citeproc": "dataset",
+    "schemaOrg": "Dataset",
+    "resourceType": "dataset",
+    "resourceTypeGeneral": "Dataset"
+   },
+   "state": "findable",
+   "url": "https://portal.tern.org.au/metadata/TERN/9fefa68b-dbed-4c20-88db-a9429fb4ba97",
+   "titles": [
+    {
+     "lang": "en",
+     "title": "Actual Evapotranspiration for Australia using CMRSET algorithm",
+     "titleType": null
+    }
+   ]
+  }
+ }
+}

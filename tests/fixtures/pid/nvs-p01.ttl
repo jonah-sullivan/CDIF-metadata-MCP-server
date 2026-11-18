@@ -1,0 +1,44 @@
+PREFIX cpm:    <http://purl.org/voc/cpm#>
+PREFIX dc:     <http://purl.org/dc/terms/>
+PREFIX dcat:   <http://www.w3.org/ns/dcat#>
+PREFIX dce:    <http://purl.org/dc/elements/1.1/>
+PREFIX dct:    <http://purl.org/dc/terms/>
+PREFIX grg:    <http://www.isotc211.org/schemas/grg/>
+PREFIX iop:    <https://w3id.org/iadopt/ont#>
+PREFIX ns0:    <http://www.w3.org/ns/dx/conneg/altr#>
+PREFIX ns1:    <http://www.w3.org/ns/dx/prof/>
+PREFIX owl:    <http://www.w3.org/2002/07/owl#>
+PREFIX pav:    <http://purl.org/pav/>
+PREFIX prov:   <https://www.w3.org/ns/prov#>
+PREFIX puv:    <https://w3id.org/env/puv#>
+PREFIX qudt:   <https://qudt.org/2.1/schema/qudt#>
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX reg:    <http://purl.org/linked-data/registry#>
+PREFIX semapv: <http://w3id.org/semapv/vocab/>
+PREFIX skos:   <http://www.w3.org/2004/02/skos/core#>
+PREFIX sssom:  <https://w3id.org/sssom/schema/>
+PREFIX void:   <http://rdfs.org/ns/void#>
+
+<http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/>
+        rdf:type               skos:Concept;
+        dce:identifier         "SDN:P01::TEMPPR01";
+        dc:date                "2009-11-03 16:19:38.0";
+        dc:identifier          "SDN:P01::TEMPPR01";
+        dc:replaces            <http://vocab.nerc.ac.uk/collection/P01/current/PSSTZZ01/> , <http://vocab.nerc.ac.uk/collection/P01/current/PTMAZZ01/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPZZXX/>;
+        pav:authoredOn         "2009-11-03 16:19:38.0";
+        pav:hasCurrentVersion  <http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/1/>;
+        pav:version            "1";
+        void:inDataset         <http://vocab.nerc.ac.uk/.well-known/void>;
+        owl:deprecated         "false";
+        owl:sameAs             <http://vocab.nerc.ac.uk/collection/P09/current/TEMP/> , <http://vocab.nerc.ac.uk/collection/P09/current/TE06/> , <http://vocab.nerc.ac.uk/collection/P09/current/TE03/> , <http://vocab.nerc.ac.uk/collection/P09/current/TE08/> , <http://vocab.nerc.ac.uk/collection/P09/current/TE11/> , <http://vocab.nerc.ac.uk/collection/P09/current/TE12/> , <http://vocab.nerc.ac.uk/collection/P09/current/TE01/> , <http://vocab.nerc.ac.uk/collection/P09/current/TE02/> , <http://vocab.nerc.ac.uk/collection/P09/current/TE10/> , <http://vocab.nerc.ac.uk/collection/P09/current/TE05/> , <http://vocab.nerc.ac.uk/collection/P09/current/TE04/> , <http://vocab.nerc.ac.uk/collection/P09/current/TE07/> , <http://vocab.nerc.ac.uk/collection/P09/current/TE09/>;
+        owl:versionInfo        "1";
+        skos:altLabel          "Temp";
+        skos:broader           <http://vocab.nerc.ac.uk/collection/P33/current/WATERTEMPERATURE/> , <http://vocab.nerc.ac.uk/collection/S06/current/S0600082/> , <http://vocab.nerc.ac.uk/collection/P35/current/WATERTEMP/> , <http://vocab.nerc.ac.uk/collection/S26/current/MAT00640/> , <http://vocab.nerc.ac.uk/collection/A05/current/EV_SEATEMP/> , <http://vocab.nerc.ac.uk/collection/P25/current/WTEMP/> , <http://vocab.nerc.ac.uk/collection/P02/current/TEMP/>;
+        skos:definition        "The degree of hotness of the water column expressed against a standard scale.  Includes both IPTS-68 and ITS-90 scales."@en;
+        skos:inScheme          <http://vocab.nerc.ac.uk/scheme/NETMAR_OCEAN/current/> , <http://vocab.nerc.ac.uk/scheme/NETOC_PARAM/current/>;
+        skos:narrower          <http://vocab.nerc.ac.uk/collection/P01/current/TEMPTC05/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPCC02/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPTC14/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPCU01/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPBT01/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPSG01/> , <http://vocab.nerc.ac.uk/collection/P01/current/TMCLCCI1/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPTC03/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPSZ01/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPHGNX/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPTC06/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPMT01/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPMC01/> , <http://vocab.nerc.ac.uk/collection/P01/current/TMCLCCL1/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPHU01/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPCU02/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPSB35/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPSU01/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPTB01/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPRTNX/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPTC10/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR03/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPTC11/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPHG01/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPTC13/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPET01/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPPH01/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPTC15/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPTC02/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPST02/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPTC12/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPPP01/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPCC01/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPTC01/> , <http://vocab.nerc.ac.uk/collection/P01/current/PSSTTS01/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPTC08/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPHU02/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPDTNX/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPAPRT/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR02/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPPP02/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPMV01/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPTC07/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPTC04/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPTC09/> , <http://vocab.nerc.ac.uk/collection/OG1/current/TEMP/> , <http://vocab.nerc.ac.uk/collection/P01/current/TEMPST01/>;
+        skos:notation          "SDN:P01::TEMPPR01";
+        skos:note              "accepted"@en;
+        skos:prefLabel         "Temperature of the water body"@en;
+        skos:related           <http://vocab.nerc.ac.uk/collection/L22/current/TOOL0105/> , <http://vocab.nerc.ac.uk/collection/P06/current/UPAA/> , <http://vocab.nerc.ac.uk/collection/L22/current/TOOL0017/> , <http://vocab.nerc.ac.uk/collection/S02/current/S032/> , <http://vocab.nerc.ac.uk/collection/L22/current/TOOL0022/> , <http://vocab.nerc.ac.uk/collection/L22/current/TOOL0053/> , <http://vocab.nerc.ac.uk/collection/L22/current/TOOL0019/> , <http://vocab.nerc.ac.uk/collection/L22/current/TOOL0018/> , <http://vocab.nerc.ac.uk/collection/L22/current/TOOL0122/> , <http://vocab.nerc.ac.uk/collection/L22/current/TOOL0024/> , <http://vocab.nerc.ac.uk/collection/L22/current/TOOL0025/> , <http://vocab.nerc.ac.uk/collection/L22/current/TOOL0267/> , <http://vocab.nerc.ac.uk/collection/L22/current/TOOL0121/> , <http://vocab.nerc.ac.uk/collection/L22/current/TOOL0153/> , <http://vocab.nerc.ac.uk/collection/L22/current/TOOL0383/> , <http://vocab.nerc.ac.uk/collection/L22/current/TOOL0580/> .

@@ -1,0 +1,5 @@
+{
+    "responseCode": 100,
+    "message": "HandleException (SERVICE_NOT_FOUND) Unable to find service for prefix 0.NA/10.9999; prefix resolution response: Error(100): HANDLE NOT FOUND",
+    "handle": "10.9999/does-not-exist"
+}

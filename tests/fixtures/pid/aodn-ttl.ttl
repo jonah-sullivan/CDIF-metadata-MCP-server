@@ -1,0 +1,33 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix api:   <http://purl.org/linked-data/api/vocab#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<http://vocab.aodn.org.au/def/discovery_parameter/1>
+        skos:hasTopConcept  <http://vocab.aodn.org.au/def/discovery_parameter/entity/565> .
+
+<http://vocab.aodn.org.au/def/discovery_parameter/entity/565>
+        a                    rdfs:Resource , skos:Concept ;
+        dc:publisher         "eMarine Information Infrastructure (eMII)"^^xsd:string ;
+        dc:source            "Australian Ocean Data Network discovery parameter register"^^xsd:string ;
+        dcterms:contributor  <http://editor.vocabs.ands.org.au/user/eMII_Atkins.Natalia> ;
+        dcterms:created      "2015-05-11T00:00:00.000Z"^^xsd:dateTime ;
+        dcterms:creator      <http://editor.vocabs.ands.org.au/user/Sebastien-Mancini> ;
+        dcterms:modified     "2018-10-24T02:21:47.000Z"^^xsd:dateTime ;
+        skos:broadMatch      <http://vocab.aodn.org.au/def/parameter_classes/category/25> ;
+        skos:definition      "The force per unit area exerted by the overlying sea water, sea ice, air and any other medium that may be present on a sensor located in the water column."@en ;
+        skos:hiddenLabel     "PRES"@en ;
+        skos:inScheme        <http://vocab.aodn.org.au/def/discovery_parameter/1> ;
+        skos:prefLabel       "Pressure (measured variable) in the water body exerted by overlying sea water and any medium above it"@en ;
+        skos:relatedMatch    <http://vocab.nerc.ac.uk/collection/P07/current/CFSN0330/> ;
+        skos:topConceptOf    <http://vocab.aodn.org.au/def/discovery_parameter/1> .
+
+<https://vocabs.ardc.edu.au/repository/api/lda/aodn/aodn-discovery-parameter-vocabulary/version-1-7/resource.ttl?uri=http://vocab.aodn.org.au/def/discovery_parameter/entity/565>
+        a                            api:ItemEndpoint , api:Page ;
+        api:definition               <https://vocabs.ardc.edu.au/repository/api/lda/aodn/aodn-discovery-parameter-vocabulary/version-1-7/resource.ttl?uri=http://vocab.aodn.org.au/def/discovery_parameter/entity/565> ;
+        api:extendedMetadataVersion  <https://vocabs.ardc.edu.au/repository/api/lda/aodn/aodn-discovery-parameter-vocabulary/version-1-7/resource.ttl?_metadata=all&uri=http://vocab.aodn.org.au/def/discovery_parameter/entity/565> ;
+        foaf:primaryTopic            <http://vocab.aodn.org.au/def/discovery_parameter/entity/565> .
