@@ -32,19 +32,49 @@
       "why": "DOI handle API: no such DOI (responseCode 100)"
     },
     {
-      "name": "doi-ra",
+      "name": "doi-handle-article",
       "request": {
-        "url": "https://doi.org/ra/10.25901/gg27-ck96,10.3390/min11111195",
+        "url": "https://doi.org/api/handles/10.3390/min11111195",
         "accept": "application/json",
         "method": "GET"
       },
       "hops": [],
-      "final_url": "https://doi.org/ra/10.25901/gg27-ck96,10.3390/min11111195",
+      "final_url": "https://doi.org/api/handles/10.3390/min11111195",
       "status": 200,
       "content_type": "application/json;charset=UTF-8",
-      "body": "doi-ra.json",
+      "body": "doi-handle-article.json",
       "trimmed": false,
-      "why": "Registration agency: DataCite vs Crossref"
+      "why": "DOI handle API: the journal-article DOI exists"
+    },
+    {
+      "name": "doi-ra-datacite",
+      "request": {
+        "url": "https://doi.org/ra/10.25901/gg27-ck96",
+        "accept": "application/json",
+        "method": "GET"
+      },
+      "hops": [],
+      "final_url": "https://doi.org/ra/10.25901/gg27-ck96",
+      "status": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "body": "doi-ra-datacite.json",
+      "trimmed": false,
+      "why": "Registration agency of a dataset DOI: DataCite"
+    },
+    {
+      "name": "doi-ra-crossref",
+      "request": {
+        "url": "https://doi.org/ra/10.3390/min11111195",
+        "accept": "application/json",
+        "method": "GET"
+      },
+      "hops": [],
+      "final_url": "https://doi.org/ra/10.3390/min11111195",
+      "status": 200,
+      "content_type": "application/json;charset=UTF-8",
+      "body": "doi-ra-crossref.json",
+      "trimmed": false,
+      "why": "Registration agency of a journal-article DOI: Crossref"
     },
     {
       "name": "datacite-dataset",

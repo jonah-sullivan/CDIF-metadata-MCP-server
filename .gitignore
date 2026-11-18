@@ -2,3 +2,6 @@
 __pycache__/
 vendor/
 .coverage
+# pidcheck: cached resolver results, and optional service tokens
+.cache/
+.env

@@ -6,5 +6,6 @@ from .identifiers import (
     classify,
     extract,
 )
+from .resolve import Resolver
 
-__all__ = ["Identifier", "check_offline", "classify", "extract"]
+__all__ = ["Identifier", "Resolver", "check_offline", "classify", "extract"]
