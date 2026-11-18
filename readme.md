@@ -23,10 +23,13 @@ script, and looks up the implementation guide to explain the gaps.
 ```bash
 git clone https://github.com/<you>/cdif-mcp && cd cdif-mcp
 python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements-dev.txt     # or requirements.txt to run only
 git clone --depth 1 https://github.com/Cross-Domain-Interoperability-Framework/doc-corediscovery vendor/doc-corediscovery
-python test-server.py
+python -m pytest
 ```
+
+The tests need no network access. `tests/test_mcp_server.py` drives the
+server through a real MCP client in memory.
 
 ## Connect to Claude Desktop
 
@@ -156,7 +159,8 @@ call is a short string and the server loads the record itself.
   Violations. SHACL Warnings and Info are recommendations. `schema_valid`
   gives the JSON Schema result alone; pass `shacl=False` to skip SHACL.
 - Of the 47 bundled examples, 46 pass the JSON Schema and 36 meet the SHACL
-  rules (run `test-server.py` for the list). A very large record such as
+  rules (`python -m pytest tests/test_mcp_server.py -rx` lists the
+  others, as expected failures). A very large record such as
   `ncei-ghrsst-mur-sst.jsonld` (30k triples) takes about 15 s to check
   against the SHACL rules.
 
