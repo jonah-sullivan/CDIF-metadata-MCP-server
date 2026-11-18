@@ -106,7 +106,7 @@ MAPPINGS: list[Mapping] = [
         f"{_ID}/identifier/*/code",
         "The DOI (as https://doi.org/...) or, failing that, the first "
         "http(s) identifier; else the landing page; else urn:uuid of the "
-        "metadata identifier.",
+        "metadata identifier when it is a UUID; else '#resource'.",
     ),
     Mapping(
         "schema:identifier",
