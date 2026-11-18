@@ -56,6 +56,36 @@ async def main():
         print("guide search ->", [h["section"] for h in hits])
         assert hits
 
+        # ISO 19115 crosswalk on bundled NCRIS records (no network).
+        isos = (await c.call_tool("list_iso_examples", {})).data
+        print("ISO examples ->", len(isos))
+        r = (await c.call_tool("crosswalk_iso19115", {
+            "example": "tern-cmrset-evapotranspiration.xml"})).data
+        print("ISO crosswalk ->", r["validation"]["valid"], r["record"]["@id"],
+              "| missing:", r["crosswalk"]["missing_required"])
+        assert r["validation"]["valid"]
+        r = (await c.call_tool("crosswalk_iso19115", {
+            "example": "auscope-gsv-mineral-occurrences.xml",
+            "include_record": False})).data
+        print("ISO 19139, no licence ->", r["validation"]["valid"],
+              r["crosswalk"]["missing_required"])
+        assert "record" not in r and not r["validation"]["valid"]
+        r = (await c.call_tool("crosswalk_iso19115", {
+            "example": "auscope-gsnsw-wms-service.xml"})).data
+        print("ISO service record ->", r["crosswalk"]["out_of_scope"][:50])
+        assert "record" not in r and "validation" not in r
+        for bad_args in ({}, {"example": "../../DemoMcpServer.py"},
+                         {"example": "manifest.json"},
+                         {"uuid": "abc"},
+                         {"uuid": "../x", "catalogue": "https://x.org"},
+                         {"url": "file:///etc/passwd"},
+                         {"example": "aodn-sst-l3s.xml",
+                          "catalogue": "https://x.org"}):
+            res = await c.call_tool("crosswalk_iso19115", bad_args,
+                                    raise_on_error=False)
+            assert res.is_error, bad_args
+        print("bad crosswalk_iso19115 arguments rejected")
+
         # Shipped examples: report schema and SHACL results separately. Not
         # every example meets the SHACL rules, so this reports, not asserts.
         names = (await c.call_tool("list_cdif_examples", {})).data

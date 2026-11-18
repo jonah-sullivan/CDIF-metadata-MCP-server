@@ -19,12 +19,16 @@ from fastmcp import FastMCP
 from jsonschema.exceptions import best_match
 from rdflib.namespace import SH
 
+import crosswalk as xwalk
+
 # CODATA's composite CDIF Discovery spec (Core + Discovery), cloned into
 # vendor/ (see README).
 PROFILE = Path(__file__).parent / "vendor" / "doc-corediscovery"
 SCHEMA = PROFILE / "CDIFDiscoveryDocStructuredSchema.json"
 FRAME = PROFILE / "CDIFDiscoveryDoc-frame.jsonld"
 GUIDE = PROFILE / "CDIFDiscoveryDocImplementationGuide.md"
+# ISO 19115 records from NCRIS facility catalogues (see its README).
+ISO_EXAMPLES = Path(__file__).parent / "tests" / "fixtures" / "iso"
 SHAPES = rdflib.Graph().parse(PROFILE / "discoveryDocRules.shacl",
                               format="turtle")
 
@@ -41,7 +45,9 @@ mcp = FastMCP(
         "Tools for assessing dataset metadata against the CDIF Discovery "
         "profile. Typical flow: validate_cdif(url=...) or "
         "validate_cdif(example=...) -> search_cdif_guide(query) to explain "
-        "how to fix what failed."
+        "how to fix what failed. For ISO 19115 XML records (GeoNetwork "
+        "catalogues), crosswalk_iso19115(...) converts the record to CDIF "
+        "and validates it in one call."
     ),
 )
 
@@ -300,6 +306,74 @@ def get_cdif_example(name: str) -> dict:
     template or comparison. name comes from list_cdif_examples(). To check
     whether it is valid, call validate_cdif(example=name) instead."""
     return _load_example(name)
+
+
+@mcp.tool
+def crosswalk_iso19115(url: str | None = None,
+                       uuid: str | None = None,
+                       catalogue: str | None = None,
+                       example: str | None = None,
+                       validate: bool = True,
+                       include_record: bool = True) -> dict:
+    """Convert an ISO 19115 metadata record (ISO 19115-3 or ISO 19139 XML,
+    as served by GeoNetwork catalogues) to CDIF Discovery JSON-LD, and
+    validate the result. Give exactly ONE of:
+      url:     the record's XML URL, or a GeoNetwork record page such as
+               .../srv/eng/catalog.search#/metadata/<uuid> (converted to
+               its XML automatically)
+      uuid + catalogue: a GeoNetwork record id and the catalogue's base
+               URL, e.g. catalogue="https://geonetwork.tern.org.au/geonetwork"
+      example: a bundled ISO record name from list_iso_examples()
+    Returns "crosswalk": the CDIF properties produced and their ISO
+    sources ("mapped"), CDIF required properties the ISO record cannot
+    supply ("missing_required"), ISO sections that were ignored
+    ("unmapped") and notes on fallbacks and inferences; "validation": the
+    validate_cdif result for the converted record (skip with
+    validate=False); and "record": the CDIF JSON-LD (omit with
+    include_record=False for a shorter reply). A record that does not
+    describe a dataset (e.g. a service) returns "out_of_scope" instead."""
+    given = [k for k, v in (("url", url), ("uuid", uuid),
+                            ("example", example)) if v is not None]
+    if len(given) != 1:
+        raise ValueError("Give exactly one of url, uuid (with catalogue) or "
+                         f"example (got: {', '.join(given) or 'none'}).")
+    if catalogue is not None and uuid is None:
+        raise ValueError("catalogue is only used together with uuid.")
+    source = None
+    if example is not None:
+        path = ISO_EXAMPLES / Path(example).name  # no directory traversal
+        if path.suffix != ".xml" or not path.is_file():
+            raise ValueError(f"No such ISO example: {example}. Call "
+                             f"list_iso_examples().")
+        xml = path.read_bytes()
+    else:
+        source = xwalk.record_xml_url(url=url, uuid=uuid, catalogue=catalogue)
+        try:
+            xml = xwalk.fetch_xml(source)
+        except httpx.HTTPError as e:
+            raise ValueError(f"Could not fetch {source}: {e}") from None
+
+    with contextlib.redirect_stdout(io.StringIO()):
+        out = xwalk.crosswalk(xml, source_url=source)
+    result = {"source": source or example, "crosswalk": out["report"]}
+    if out["record"] is None:
+        return result
+    if validate:
+        result["validation"] = _validate_one(out["record"])
+    if include_record:
+        result["record"] = out["record"]
+    return result
+
+
+@mcp.tool
+def list_iso_examples() -> list[dict]:
+    """List the bundled ISO 19115 records (from the TERN, IMOS/AODN and
+    AuScope GeoNetwork catalogues) that crosswalk_iso19115(example=...)
+    accepts, with the feature each one exercises."""
+    manifest = json.loads((ISO_EXAMPLES / "manifest.json").read_text("utf-8"))
+    return [{"name": r["file"], "facility": r["catalogue"],
+             "standard": r["standard"], "why": r["why"]}
+            for r in manifest["records"]]
 
 
 def _load_example(name: str) -> dict:
