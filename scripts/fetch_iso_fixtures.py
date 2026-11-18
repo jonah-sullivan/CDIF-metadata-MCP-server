@@ -1,4 +1,4 @@
-"""Download the ISO 19115 fixture records listed in tests/fixtures/iso/manifest.json.
+"""Download the ISO 19115 fixtures listed in tests/fixtures/iso/manifest.json.
 
 Usage:  python scripts/fetch_iso_fixtures.py [--only FILE ...]
 
@@ -7,6 +7,7 @@ Each record is fetched from its GeoNetwork catalogue
 dialect the manifest expects, and saved next to the manifest. The manifest
 is updated with the source URL, fetch date and SHA-256 of each file.
 """
+
 import argparse
 import datetime
 import hashlib
@@ -17,7 +18,9 @@ from pathlib import Path
 import httpx
 from lxml import etree
 
-FIXTURES = Path(__file__).resolve().parent.parent / "tests" / "fixtures" / "iso"
+FIXTURES = (
+    Path(__file__).resolve().parent.parent / "tests" / "fixtures" / "iso"
+)
 MANIFEST = FIXTURES / "manifest.json"
 
 # Root element namespace -> dialect.
@@ -27,15 +30,22 @@ DIALECTS = {
 }
 
 # Catalogue XML is untrusted: no entity expansion, no network access.
-PARSER = etree.XMLParser(resolve_entities=False, no_network=True,
-                         huge_tree=False, remove_blank_text=False)
+PARSER = etree.XMLParser(
+    resolve_entities=False,
+    no_network=True,
+    huge_tree=False,
+    remove_blank_text=False,
+)
 
 
 def fetch(base: str, uuid: str) -> tuple[str, bytes]:
     url = f"{base}/srv/api/records/{uuid}/formatters/xml"
-    r = httpx.get(url, follow_redirects=True, timeout=60,
-                  headers={"Accept": "application/xml",
-                           "User-Agent": "cdif-mcp/0.1"})
+    r = httpx.get(
+        url,
+        follow_redirects=True,
+        timeout=60,
+        headers={"Accept": "application/xml", "User-Agent": "cdif-mcp/0.1"},
+    )
     r.raise_for_status()
     return url, r.content
 
@@ -56,24 +66,32 @@ def main() -> int:
         if args.only and rec["file"] not in args.only:
             continue
         try:
-            url, xml = fetch(manifest["catalogues"][rec["catalogue"]], rec["uuid"])
+            url, xml = fetch(
+                manifest["catalogues"][rec["catalogue"]], rec["uuid"]
+            )
             found = dialect(xml)
         except Exception as e:
             print(f"FAIL {rec['file']}: {e}", file=sys.stderr)
             failed += 1
             continue
         if found != rec["standard"]:
-            print(f"FAIL {rec['file']}: expected {rec['standard']}, got {found}",
-                  file=sys.stderr)
+            print(
+                f"FAIL {rec['file']}: expected {rec['standard']}, got {found}",
+                file=sys.stderr,
+            )
             failed += 1
             continue
         (FIXTURES / rec["file"]).write_bytes(xml)
-        rec.update(source=url, fetched=datetime.date.today().isoformat(),
-                   sha256=hashlib.sha256(xml).hexdigest())
+        rec.update(
+            source=url,
+            fetched=datetime.date.today().isoformat(),
+            sha256=hashlib.sha256(xml).hexdigest(),
+        )
         print(f"ok   {rec['file']} ({len(xml):,} bytes, {found})")
 
-    MANIFEST.write_text(json.dumps(manifest, indent=2, ensure_ascii=False) + "\n",
-                        "utf-8")
+    MANIFEST.write_text(
+        json.dumps(manifest, indent=2, ensure_ascii=False) + "\n", "utf-8"
+    )
     return 1 if failed else 0
 
 
