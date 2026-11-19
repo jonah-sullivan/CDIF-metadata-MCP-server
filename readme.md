@@ -425,12 +425,15 @@ Example: [docs/facility-report-2026-11-19.md](docs/facility-report-2026-11-19.md
 - ArcGIS support covers public groups on ArcGIS Online (www.arcgis.com).
   Groups on an ArcGIS Enterprise portal, and private items, are not
   supported.
-- Building the crosswalk exposed three problems in CDIF's own artefacts,
+- Building the crosswalk exposed four problems in CDIF's own artefacts,
   which should be raised upstream with CODATA (see "Problems found in CDIF
   itself" in the crosswalk documentation):
   1. CDIF's complete example uses invalid JSON-LD for WKT geometry.
   2. The validation frame drops funders that have no identifier.
   3. Dataset rules also apply to the catalog record.
+  4. The validation script can validate the catalog record instead of the
+     dataset, when the dataset has no URL or distribution. The MCP server
+     works around this.
 - Identifier checks:
   - **RVA registration.** RVA has no lookup by URI. A vocabulary is shown
     as RVA-hosted when its terms resolve into RVA, but one that is

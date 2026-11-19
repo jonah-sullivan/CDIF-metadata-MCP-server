@@ -99,6 +99,74 @@ def test_shacl_can_be_skipped():
     assert "shacl" not in r
 
 
+# -- choosing the node to validate ------------------------------------------
+
+
+@pytest.mark.parametrize(
+    ("types", "expected"),
+    [
+        ("dcat:CatalogRecord", True),
+        ({"@id": "dcat:CatalogRecord"}, True),  # as framing leaves it
+        ([{"@id": "dcat:CatalogRecord"}], True),
+        (["schema:Thing", "dcat:CatalogRecord"], True),
+        ({"@id": "http://www.w3.org/ns/dcat#CatalogRecord"}, True),
+        ({"@id": "dcat:Dataset"}, False),
+        (None, False),
+    ],
+)
+def test_is_catalog_record(types, expected):
+    node = {"@id": "x"}
+    if types is not None:
+        node["schema:additionalType"] = types
+    assert DemoMcpServer._is_catalog_record(node) is expected
+    assert DemoMcpServer.cdif._is_catalog_record is (
+        DemoMcpServer._is_catalog_record
+    )
+
+
+def test_dataset_validated_not_catalog_record():
+    """A dataset with no url or distribution whose catalog record's @id
+    sorts first (an ArcGIS export URL before urn:uuid). CODATA's framing
+    script picked the catalog record here, reporting schema:name,
+    schema:identifier and schema:subjectOf missing from the dataset."""
+    import crosswalk
+
+    url = (
+        "https://www.arcgis.com/sharing/rest/content/items/"
+        "52cb2b4d300d4bc59d31555ad9e5dc8c/info/metadata/metadata.xml"
+        "?format=iso19139"
+    )
+    xml = (
+        Path(__file__).parent
+        / "fixtures/arcgis/acs-ocean-chemistry-variables.xml"
+    )
+    rec = crosswalk.crosswalk(xml.read_bytes(), source_url=url)["record"]
+    assert rec["@id"] > rec["schema:subjectOf"]["@id"]
+    r = DemoMcpServer._validate_one(rec, shacl=False)
+    messages = [p["message"] for p in r["problems"]]
+    assert messages == [
+        "'schema:dateModified' is a required property",
+        "$: 'schema:url' is a required property",
+    ]
+    assert "https://w3id.org/cdif/discovery/1.1" in r["declared_conformance"]
+
+
+def test_catalog_record_chosen_is_reported(monkeypatch):
+    """If framing still returns the catalog record, say so instead of
+    reporting its errors as the dataset's."""
+    monkeypatch.setattr(
+        DemoMcpServer.cdif,
+        "frame_cdif_document",
+        lambda *a: {
+            "@type": "schema:Dataset",
+            "schema:additionalType": {"@id": "dcat:CatalogRecord"},
+        },
+    )
+    r = DemoMcpServer._validate_one(TYPICAL, shacl=False)
+    assert not r["valid"]
+    assert "selected the catalog record" in r["problems"][0]["message"]
+
+
 def test_guide_search():
     hits = data("search_cdif_guide", {"query": "subjectOf CatalogRecord"})
     assert hits

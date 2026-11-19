@@ -374,7 +374,7 @@ Sections ignored by the crosswalk, and in how many of the 9 converted records th
 
 ## Problems found in CDIF itself
 
-Building the crosswalk exposed three problems in the CDIF artefacts. They
+Building the crosswalk exposed four problems in the CDIF artefacts. They
 affect any CDIF producer, not only this one.
 
 1. **Invalid JSON-LD for WKT geometry.** The CDIF JSON Schema, and
@@ -395,3 +395,18 @@ affect any CDIF producer, not only this one.
    also checked on it. The MCP server's `validate_cdif` reports these
    separately, as `catalog_record_results`, so that they are not read as
    gaps in the dataset.
+4. **The validation script can validate the catalog record instead of the
+   dataset.** `FrameAndValidate.py` chooses the node to validate with
+   `pick_main_entity`, which skips catalog records using
+   `_is_catalog_record`. That function recognises only the string
+   `"dcat:CatalogRecord"`, but after framing `schema:additionalType` is
+   `{"@id": "dcat:CatalogRecord"}`, so the catalog record is never
+   skipped. When the dataset has neither `schema:url` nor
+   `schema:distribution`, the script takes the first node in `@graph`,
+   which is the catalog record whenever its `@id` sorts first. The JSON
+   Schema then reports the catalog record's gaps (`schema:name`,
+   `schema:identifier`, `schema:subjectOf`...) as the dataset's. ArcGIS
+   ISO 19139 exports hit this: the dataset `@id` is a `urn:uuid` and the
+   catalog record's is the `https://www.arcgis.com/...` export URL. The MCP
+   server replaces `_is_catalog_record` with a version that recognises
+   both forms.

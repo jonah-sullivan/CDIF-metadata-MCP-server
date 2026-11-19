@@ -44,6 +44,34 @@ sys.path.insert(0, str(PROFILE))
 with contextlib.redirect_stdout(io.StringIO()):
     import FrameAndValidate as cdif
 
+
+def _is_catalog_record(item) -> bool:
+    """Whether a framed node is the catalog record (schema:subjectOf).
+
+    Replaces CODATA's FrameAndValidate._is_catalog_record, which
+    pick_main_entity uses to skip the catalog record when choosing the
+    node to validate. CODATA's version recognises only the string
+    'dcat:CatalogRecord', but after framing schema:additionalType holds
+    {"@id": "dcat:CatalogRecord"}, so the catalog record is never skipped.
+    When the dataset has neither schema:url nor schema:distribution, the
+    picker then falls back to the first node in @graph, which is the
+    catalog record whenever its @id sorts first (e.g. an ArcGIS export URL
+    before a urn:uuid dataset id), and the dataset is never validated.
+    """
+    if not isinstance(item, dict):
+        return False
+    types = item.get("schema:additionalType")
+    if not isinstance(types, list):
+        types = [types]
+    return any(
+        (t.get("@id") if isinstance(t, dict) else t)
+        in ("dcat:CatalogRecord", "http://www.w3.org/ns/dcat#CatalogRecord")
+        for t in types
+    )
+
+
+cdif._is_catalog_record = _is_catalog_record
+
 mcp = FastMCP(
     "cdif-metadata",
     instructions=(
@@ -258,6 +286,26 @@ def _validate_one(
                         f"(record @type: {types}). CDIF requires the "
                         f"described resource to be typed schema:Dataset; "
                         f"other types may be listed alongside it."
+                    ),
+                }
+            ],
+        }
+    # If the framing script still chose the catalog record (for instance
+    # because a CODATA update bypasses the replacement above), its errors
+    # would describe the wrong node; say so rather than report them.
+    if _is_catalog_record(framed):
+        return {
+            "valid": False,
+            "schema_valid": False,
+            "declared_conformance": [],
+            "problem_count": 1,
+            "problems": [
+                {
+                    "path": "$",
+                    "message": (
+                        "The CDIF framing script selected the catalog "
+                        "record (schema:subjectOf) instead of the dataset, "
+                        "so the dataset could not be validated."
                     ),
                 }
             ],
