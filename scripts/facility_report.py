@@ -6,11 +6,16 @@ Usage:
         --catalogue IMOS/AODN=https://catalogue-imos.aodn.org.au/geonetwork \\
         --catalogue AuScope=https://portal.auscope.org.au/geonetwork \\
         [--sample 50] [--seed N] [--out-dir docs] [--name NAME]
+        [--check-identifiers]
 
 For each catalogue, lists its public records with resource type
 'dataset', draws a random sample, converts each record's ISO 19115 XML
 to CDIF Discovery with this repo's crosswalk, and validates it with the
-MCP server's validator (CDIF JSON Schema and SHACL). Writes NAME.md (a
+MCP server's validator (CDIF JSON Schema and SHACL). Identifiers are
+always checked offline (persistent identifiers, ORCIDs, RORs, check
+digits); with --check-identifiers they are also resolved, and vocabulary
+terms checked against their vocabularies (slower: many requests, cached
+in .cache/pidcheck/). Writes NAME.md (a
 summary) and NAME.csv (one row per record) to --out-dir. The report
 records the seed, so a run can be repeated on the same records
 (catalogue contents permitting), and SHA-256 hashes of the files that
@@ -39,6 +44,7 @@ from crosswalk.geonetwork import (  # noqa: E402
     list_dataset_uuids,
     record_xml_url,
 )
+from pidcheck import check_record  # noqa: E402
 
 CDIF = ROOT / "vendor" / "doc-corediscovery"
 # Files whose content determines a record's result.
@@ -50,6 +56,10 @@ PROVENANCE_FILES = {
     "Crosswalk": ROOT / "crosswalk" / "iso19115.py",
     "GeoNetwork access": ROOT / "crosswalk" / "geonetwork.py",
     "Validator (MCP server)": ROOT / "DemoMcpServer.py",
+    "Identifier checks": ROOT / "pidcheck" / "identifiers.py",
+    "Identifier resolution": ROOT / "pidcheck" / "resolve.py",
+    "Vocabulary checks": ROOT / "pidcheck" / "vocab.py",
+    "Identifier report": ROOT / "pidcheck" / "check.py",
 }
 
 FIELDS = [
@@ -80,6 +90,25 @@ FIELDS = [
     "shacl_violation_messages",
     "inferences",
     "unmapped",
+    # identifier checks, offline (always)
+    "dataset_has_pid",
+    "people",
+    "people_with_orcid",
+    "organisations",
+    "organisations_with_ror",
+    "pid_problems",
+    "pid_warnings",
+    # identifier checks with --check-identifiers
+    "identifiers_checked",
+    "identifiers_resolving",
+    "dataset_doi_type",
+    "terms_checked",
+    "terms_ok",
+    "terms_label_matches",
+    "terms_label_mismatches",
+    "terms_deprecated",
+    "terms_not_machine_readable",
+    "rva_vocabularies",
 ]
 PAUSE_SECONDS = 0.2  # between record fetches, to be gentle on catalogues
 
@@ -108,8 +137,19 @@ REQUIRED_FALLBACKS = {
 }
 
 
-def assess(facility: str, base: str, uuid: str, validate) -> dict:
-    """Fetch, convert and validate one record; return a CSV row."""
+def offline_identifier_check(record: dict) -> dict:
+    return check_record(record, resolve=False, max_findings=1000)
+
+
+def assess(
+    facility: str,
+    base: str,
+    uuid: str,
+    validate,
+    check_ids=offline_identifier_check,
+) -> dict:
+    """Fetch, convert and validate one record; return a CSV row.
+    check_ids(record) gives the identifier report (offline by default)."""
     row = dict.fromkeys(FIELDS, "")
     url = record_xml_url(uuid=uuid, catalogue=base)
     row.update(facility=facility, catalogue=base, uuid=uuid, xml_url=url)
@@ -187,7 +227,36 @@ def assess(facility: str, base: str, uuid: str, validate) -> dict:
         inferences=_join(inferences),
         unmapped=_join(u["element"] for u in rep["unmapped"]),
     )
+    row.update(_identifier_columns(check_ids(rec)))
     return row
+
+
+def _identifier_columns(report: dict) -> dict:
+    s = report["summary"]
+    cols = {
+        "dataset_has_pid": s["dataset_has_pid"],
+        "people": s["people"],
+        "people_with_orcid": s["people_with_orcid"],
+        "organisations": s["organisations"],
+        "organisations_with_ror": s["organisations_with_ror"],
+        "pid_problems": _join(f["code"] for f in report["problems"]),
+        "pid_warnings": _join(f["code"] for f in report["warnings"]),
+    }
+    if "identifiers_checked" in s:
+        t = s["terms"]
+        cols.update(
+            identifiers_checked=s["identifiers_checked"],
+            identifiers_resolving=s["identifiers_resolving"],
+            dataset_doi_type=s.get("dataset_doi_type") or "",
+            terms_checked=t["checked"],
+            terms_ok=t["ok"],
+            terms_label_matches=t["label_matches"],
+            terms_label_mismatches=t["label_mismatches"],
+            terms_deprecated=t["deprecated"],
+            terms_not_machine_readable=t["not_machine_readable"],
+            rva_vocabularies=_join(s["rva_vocabularies"]),
+        )
+    return cols
 
 
 # -- summarising ------------------------------------------------------------
@@ -207,6 +276,54 @@ def _md(text: str) -> str:
 
 TRUE = {True, "True", "true"}
 
+# Readable descriptions of identifier finding codes (pidcheck).
+CODE_DESCRIPTIONS = {
+    "orcid-check-digit": "ORCID iD with an invalid check digit",
+    "ror-check-digit": "ROR ID with invalid check digits",
+    "isni-check-digit": "ISNI with an invalid check digit",
+    "shared-party-identifier": (
+        "One identifier used for differently named people or organisations"
+    ),
+    "party-local-url": (
+        "Person or organisation identified by an ordinary URL, not a PID"
+    ),
+    "dataset-no-pid": "Dataset has no persistent identifier",
+    "not-a-uri": "Identifier that is not a URI",
+    "term-set-not-a-uri": "Vocabulary named but not identified by a URI",
+    "identifier-not-found": "Identifier that does not exist",
+    "identifier-broken": "Identifier that returns an error",
+    "dataset-doi-is-publication": "Dataset DOI that identifies a publication",
+    "doi-not-findable": "DOI that is not findable",
+    "inactive-organisation": "Organisation that is inactive in ROR",
+    "term-not-found": "Vocabulary term that does not resolve",
+    "term-not-machine-readable": (
+        "Vocabulary terms with no machine-readable description"
+    ),
+    "label-mismatch": "Keyword name that differs from its vocabulary label",
+    "deprecated-term": "Deprecated vocabulary term",
+    "term-set-not-found": "Vocabulary URI that does not resolve",
+    "term-uri-shared": (
+        "One URI used as the identifier of several different terms"
+    ),
+    "superseded-vocabulary-version": (
+        "Terms from a superseded RVA vocabulary version"
+    ),
+}
+
+
+def _int(v) -> int:
+    try:
+        return int(v)
+    except (TypeError, ValueError):
+        return 0
+
+
+def _ratio(rows: list[dict], num: str, *den: str) -> str:
+    """Totals across records: 'n of d (p%)'."""
+    n = sum(_int(r[num]) for r in rows)
+    d = sum(_int(r[k]) for r in rows for k in den)
+    return f"{n} of {d} ({round(100 * n / d)}%)" if d else "-"
+
 
 def summarise(rows: list[dict], meta: dict) -> str:
     """Markdown report from assessed rows and run metadata."""
@@ -223,6 +340,16 @@ def summarise(rows: list[dict], meta: dict) -> str:
             pool = by[f] if of_sample else conv[f]
             cells.append(_pct(sum(1 for r in pool if pred(r)), len(pool)))
         return f"| {label} | " + " | ".join(cells) + " |"
+
+    resolved = meta.get("identifiers_resolved", False)
+
+    def rva_used(f: str) -> list[str]:
+        """Distinct RVA vocabularies. An entry without a version (when
+        RVA's registry did not answer for that record) is dropped if the
+        same vocabulary appears with one."""
+        used = {v for r in conv[f] for v in _split(r["rva_vocabularies"])}
+        versioned = {v.split(" (", 1)[0] for v in used if " (" in v}
+        return sorted(v for v in used if " (" in v or v not in versioned)
 
     def top(field: str, f: str, n: int = 5) -> list[str]:
         c = Counter(s for r in conv[f] for s in _split(r[field]))
@@ -251,6 +378,19 @@ def summarise(rows: list[dict], meta: dict) -> str:
             f"from it)."
         ),
         f"- **Per-record results:** [{meta['csv']}]({meta['csv']}).",
+        (
+            "- **Identifiers:** checked offline for every record "
+            "(persistent identifiers, ORCIDs, RORs, check digits). "
+            + (
+                "They were also resolved (DOIs through DataCite and "
+                "Crossref, ORCID, ROR, other URIs by GET), and vocabulary "
+                "terms dereferenced and checked against their "
+                "vocabularies."
+                if resolved
+                else "They were not resolved: run with "
+                "--check-identifiers for resolution and vocabulary checks."
+            )
+        ),
         (
             "- **Files that determined the results** (first 12 hex digits of "
             "their SHA-256; a different hash means results may differ):"
@@ -330,8 +470,62 @@ def summarise(rows: list[dict], meta: dict) -> str:
             "Keywords with vocabulary URIs",
             lambda r: int(r["keywords_with_uri"] or 0) > 0,
         ),
-        "",
+        metric(
+            "Dataset has a persistent identifier",
+            lambda r: r["dataset_has_pid"] in TRUE,
+        ),
+        metric(
+            "People with an ORCID",
+            value=lambda f: _ratio(conv[f], "people_with_orcid", "people"),
+        ),
+        metric(
+            "Organisations with a ROR",
+            value=lambda f: _ratio(
+                conv[f], "organisations_with_ror", "organisations"
+            ),
+        ),
     ]
+    if resolved:
+        lines += [
+            metric(
+                "All checked identifiers resolve",
+                lambda r: (
+                    r["identifiers_checked"] != ""
+                    and _int(r["identifiers_resolving"])
+                    == _int(r["identifiers_checked"])
+                ),
+            ),
+            metric(
+                "Dataset DOI identifies a publication",
+                lambda r: (
+                    "dataset-doi-is-publication" in _split(r["pid_warnings"])
+                ),
+            ),
+            metric(
+                "Vocabulary terms with a machine-readable description",
+                value=lambda f: _ratio(conv[f], "terms_ok", "terms_checked"),
+            ),
+            metric(
+                "Term names matching their vocabulary label",
+                value=lambda f: _ratio(
+                    conv[f],
+                    "terms_label_matches",
+                    "terms_label_matches",
+                    "terms_label_mismatches",
+                ),
+            ),
+            metric(
+                "Deprecated vocabulary terms",
+                value=lambda f: str(
+                    sum(_int(r["terms_deprecated"]) for r in conv[f])
+                ),
+            ),
+            metric(
+                "RVA-hosted vocabularies used",
+                value=lambda f: str(len(rva_used(f))),
+            ),
+        ]
+    lines.append("")
 
     sections = [
         (
@@ -366,6 +560,40 @@ def summarise(rows: list[dict], meta: dict) -> str:
             else:
                 lines.append("None.")
             lines.append("")
+
+    lines += [
+        "## Identifier and vocabulary findings",
+        "",
+        "Problems and warnings from the identifier checks, by number of "
+        "records.",
+        "",
+    ]
+    for f in facilities:
+        c = Counter(
+            code
+            for r in conv[f]
+            for code in _split(r["pid_problems"]) + _split(r["pid_warnings"])
+        )
+        ranked = sorted(c.items(), key=lambda kv: (-kv[1], kv[0]))[:8]
+        lines += [f"### {f}", ""]
+        if ranked:
+            lines += [
+                "| Records | Finding |",
+                "| --- | --- |",
+                *(
+                    f"| {n} | {CODE_DESCRIPTIONS.get(code, code)} |"
+                    for code, n in ranked
+                ),
+            ]
+        else:
+            lines.append("None.")
+        lines.append("")
+    if resolved:
+        lines += ["## Vocabularies hosted in RVA", ""]
+        for f in facilities:
+            used = rva_used(f)
+            lines.append(f"- **{f}:** " + ("; ".join(used) or "none"))
+        lines.append("")
 
     not_converted = [r for r in rows if r["status"] != "converted"]
     lines += ["## Records not converted", ""]
@@ -423,6 +651,11 @@ def main() -> int:
     ap.add_argument("--seed", type=int, default=None)
     ap.add_argument("--out-dir", type=Path, default=ROOT / "docs")
     ap.add_argument("--name", default=None)
+    ap.add_argument(
+        "--check-identifiers",
+        action="store_true",
+        help="resolve identifiers and check vocabulary terms (slower)",
+    )
     args = ap.parse_args()
 
     import DemoMcpServer as srv
@@ -439,7 +672,16 @@ def main() -> int:
         "hashes": file_hashes(),
         "versions": {},
         "populations": {},
+        "identifiers_resolved": args.check_identifiers,
     }
+    check_ids = offline_identifier_check
+    if args.check_identifiers:
+        from pidcheck import default_resolver
+
+        resolver = default_resolver()
+
+        def check_ids(record):
+            return check_record(record, resolver, max_findings=1000)
 
     rows = []
     for facility, base in catalogues.items():
@@ -450,7 +692,7 @@ def main() -> int:
         rng = random.Random(f"{seed}:{facility}")
         sample = sorted(rng.sample(uuids, min(args.sample, len(uuids))))
         for i, uuid in enumerate(sample, 1):
-            row = assess(facility, base, uuid, srv._validate_one)
+            row = assess(facility, base, uuid, srv._validate_one, check_ids)
             rows.append(row)
             print(
                 f"  [{i}/{len(sample)}] {row['status']:12} "

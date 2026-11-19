@@ -4,6 +4,7 @@ import importlib.util
 from pathlib import Path
 
 import pytest
+from pid_replay import isolated_settings  # noqa: F401
 
 from crosswalk import CrosswalkError, geonetwork
 
@@ -171,3 +172,103 @@ def test_fetch_failure_is_recorded(monkeypatch):
     row = rpt.assess("F", "https://x.org/gn", "u", lambda r: {})
     assert row["status"] == "fetch_error"
     assert "refused" in row["error"]
+
+
+# -- identifier columns ------------------------------------------------------
+
+META = {
+    "date": "2026-01-01",
+    "sample": 2,
+    "seed": 7,
+    "csv": "r.csv",
+    "hashes": {"Crosswalk": "abc"},
+    "versions": {"F": "4.4"},
+    "populations": {"F": 10},
+}
+
+
+def _assess(rpt, monkeypatch, files, check_ids=None):
+    import DemoMcpServer as srv
+
+    monkeypatch.setattr(
+        rpt,
+        "fetch_xml",
+        lambda url: (FIXTURES / files[url.split("/")[-3]]).read_bytes(),
+    )
+    kw = {"check_ids": check_ids} if check_ids else {}
+    return [
+        rpt.assess("F", "https://x.org/gn", u, srv._validate_one, **kw)
+        for u in files
+    ]
+
+
+def test_offline_identifier_columns(monkeypatch):
+    rpt = _load_report()
+    rows = _assess(
+        rpt,
+        monkeypatch,
+        {
+            "u1": "auscope-calperum-czo.xml",
+            "u2": "auscope-gsv-mineral-occurrences.xml",
+        },
+    )
+    calperum, gsv = rows
+    assert calperum["dataset_has_pid"] is True
+    assert (calperum["people"], calperum["people_with_orcid"]) == (3, 3)
+    assert calperum["identifiers_checked"] == ""  # not resolved
+    assert gsv["dataset_has_pid"] is False
+    assert "dataset-no-pid" in gsv["pid_warnings"]
+
+    md = rpt.summarise(rows, META)
+    assert "| Dataset has a persistent identifier | 1 (50%) |" in md
+    assert "| People with an ORCID | 3 of 4 (75%) |" in md
+    assert "Dataset has no persistent identifier |" in md
+    assert "They were not resolved" in md
+    assert "All checked identifiers resolve" not in md
+
+
+@pytest.mark.usefixtures("isolated_settings")
+def test_resolved_identifier_columns(monkeypatch):
+    from pid_replay import resolver
+
+    from pidcheck import check_record
+
+    rpt = _load_report()
+    r, _ = resolver()
+    rows = _assess(
+        rpt,
+        monkeypatch,
+        {"u1": "auscope-rosebery-3d-model.xml"},
+        check_ids=lambda rec: check_record(rec, r, max_findings=1000),
+    )
+    row = rows[0]
+    assert row["dataset_doi_type"] == "journal-article"
+    assert "dataset-doi-is-publication" in row["pid_warnings"]
+    assert row["identifiers_checked"] >= 1
+
+    md = rpt.summarise(rows, {**META, "identifiers_resolved": True})
+    assert "| Dataset DOI identifies a publication | 1 (100%) |" in md
+    assert "Dataset DOI that identifies a publication |" in md
+    assert "## Vocabularies hosted in RVA" in md
+    assert "They were also resolved" in md
+
+
+def test_rva_list_drops_unversioned_duplicates():
+    rpt = _load_report()
+    row = {k: "" for k in rpt.FIELDS}
+    rows = [
+        {
+            **row,
+            "facility": "F",
+            "status": "converted",
+            "rva_vocabularies": "AODN Extents",
+        },
+        {
+            **row,
+            "facility": "F",
+            "status": "converted",
+            "rva_vocabularies": "AODN Extents (version-4-0, current) | Other",
+        },
+    ]
+    md = rpt.summarise(rows, {**META, "identifiers_resolved": True})
+    assert "- **F:** AODN Extents (version-4-0, current); Other" in md

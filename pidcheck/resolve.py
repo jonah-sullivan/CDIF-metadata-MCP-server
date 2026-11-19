@@ -39,8 +39,15 @@ import httpx
 from . import config
 
 USER_AGENT = "cdif-mcp/0.1 (pidcheck)"
-TIMEOUT = 30
+# A host that does not accept connections fails fast; slow responses
+# from a host that does are given longer.
+TIMEOUT = httpx.Timeout(30, connect=10)
 PER_HOST = 2  # concurrent requests per host
+# After this many consecutive connection failures (refused, timed out), a
+# host is treated as down for the rest of the run: its other identifiers
+# are reported unreachable without waiting on it again.
+HOST_FAILURE_LIMIT = 3
+HOST_DOWN_SECONDS = 600
 WORKERS = 8
 RETRY_STATUSES = {429, 502, 503, 504}
 CACHED_STATUSES = {"ok", "not-found", "broken"}
@@ -115,6 +122,8 @@ class Resolver:
         self.cache = cache if cache is not None else Cache()
         self.retry_wait = retry_wait
         self._host_locks: dict[str, threading.Semaphore] = {}
+        # host -> (consecutive connection failures, time of the last one)
+        self._host_failures: dict[str, tuple[int, float]] = {}
         self._lock = threading.Lock()
         self._orcid_token: str | None = None
 
@@ -136,10 +145,17 @@ class Resolver:
     ):
         """GET url -> (response or None, error text or None). Retries once
         on timeouts, connection errors, 429 and 5xx gateway errors. With
-        read=False the body is not downloaded."""
+        read=False the body is not downloaded. A host that is down (see
+        HOST_FAILURE_LIMIT) is not tried."""
         hdrs = {"Accept": accept, **(headers or {})}
+        host = urlsplit(url).hostname or ""
         error = None
         for attempt in range(2):
+            if self.host_down(host):
+                return None, (
+                    f"{host} not tried: it failed to connect "
+                    f"{HOST_FAILURE_LIMIT} times in a row"
+                )
             try:
                 with self._host_gate(url):
                     if read:
@@ -147,6 +163,7 @@ class Resolver:
                     else:
                         with self.client.stream("GET", url, headers=hdrs) as r:
                             pass
+                self._record_host(host, ok=True)
                 if r.status_code not in RETRY_STATUSES or attempt:
                     return r, None
                 wait = r.headers.get("retry-after", "")
@@ -155,10 +172,33 @@ class Resolver:
                 )
             except httpx.HTTPError as e:
                 error = f"{type(e).__name__}: {e}"[:200]
+                if isinstance(e, httpx.TransportError):
+                    self._record_host(host, ok=False)
                 if attempt:
                     break
                 time.sleep(self.retry_wait)
         return None, error
+
+    def host_down(self, host: str) -> bool:
+        """True while a host's recent connection failures reach the limit.
+        It is tried again HOST_DOWN_SECONDS after its last failure, so a
+        long-running server recovers when the host does."""
+        with self._lock:
+            count, last = self._host_failures.get(host, (0, 0.0))
+            return (
+                count >= HOST_FAILURE_LIMIT
+                and time.monotonic() - last < HOST_DOWN_SECONDS
+            )
+
+    def _record_host(self, host: str, ok: bool) -> None:
+        """Count consecutive connection failures per host; any response
+        (whatever its status) resets the count."""
+        with self._lock:
+            if ok:
+                self._host_failures.pop(host, None)
+            else:
+                count, _ = self._host_failures.get(host, (0, 0.0))
+                self._host_failures[host] = (count + 1, time.monotonic())
 
     # -- results -------------------------------------------------------------
 

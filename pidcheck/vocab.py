@@ -75,7 +75,8 @@ def dereference(resolver: Resolver, uri: str) -> dict:
     status: ok | no-label | not-described (RDF without this URI) |
     not-rdf | not-found | broken | unreachable.
     """
-    key = f"concept:{uri}"
+    # v2: all labels kept (v1 entries kept only the first 10)
+    key = f"concept:v2:{uri}"
     if (hit := resolver.cache.get(key)) is not None:
         return {**hit, "cached": True}
     result = _dereference(resolver, uri)
@@ -143,12 +144,22 @@ def _dereference(resolver: Resolver, uri: str) -> dict:
     )
     if subject is None:
         return {**info, "status": "not-described"}
+    # All labels are kept for matching (QUDT gives units labels in dozens
+    # of languages), English first so messages show an English label.
+    literals = [
+        o
+        for p in (SKOS.prefLabel, SKOS.altLabel, RDFS.label)
+        for o in g.objects(subject, p)
+        if str(o).strip()  # NVS has empty altLabels
+    ]
+
+    def english_first(o) -> int:
+        lang = (getattr(o, "language", None) or "").lower()
+        return 0 if lang.startswith("en") else 1 if not lang else 2
+
     labels = list(
         dict.fromkeys(
-            str(o).strip()
-            for p in (SKOS.prefLabel, SKOS.altLabel, RDFS.label)
-            for o in g.objects(subject, p)
-            if str(o).strip()  # NVS has empty altLabels
+            str(o).strip() for o in sorted(literals, key=english_first)
         )
     )
     types = [str(t) for t in g.objects(subject, RDF.type)]
@@ -158,7 +169,7 @@ def _dereference(resolver: Resolver, uri: str) -> dict:
     return {
         **info,
         "status": "ok" if labels else "no-label",
-        "labels": labels[:10],
+        "labels": labels,
         "types": types[:5],
         "concept": str(SKOS.Concept) in types,
         "schemes": [str(o) for o in g.objects(subject, SKOS.inScheme)][:5],
@@ -369,8 +380,47 @@ def check_vocabulary(
         ),
         0,
     )
+    # A URI given as the identifier of several differently named terms
+    # (e.g. a code space such as the CF standard names page, used as every
+    # variable's propertyID) identifies a vocabulary, not each term. It is
+    # reported once, not checked as a term.
+    labels_by_uri: dict[str, list[str]] = {}
+    for i in terms:
+        if i.label and i.label not in labels_by_uri.setdefault(
+            i.normalised, []
+        ):
+            labels_by_uri[i.normalised].append(i.label)
+    shared = {u: ls for u, ls in labels_by_uri.items() if len(ls) > 1}
+    counts["shared_uris"] = len(shared)
+    for uri, labels in shared.items():
+        ident = next(i for i in terms if i.normalised == uri)
+        examples = ", ".join(f"'{x}'" for x in labels[:3])
+        findings.append(
+            _finding(
+                "warning",
+                "term-uri-shared",
+                f"{len(labels)} terms ({examples}) share {uri} as their "
+                f"identifier: it identifies a vocabulary or code space, "
+                f"not each term.",
+                ident,
+            )
+        )
+        d = described[uri]
+        if d["status"] in ("not-found", "broken"):
+            findings.append(
+                _finding(
+                    "warning",
+                    "term-set-not-found",
+                    f"Vocabulary URI {uri} does not resolve "
+                    f"(HTTP {d.get('http_status')}).",
+                    ident,
+                )
+            )
+
     seen: set[str] = set()
     for i in terms:
+        if i.normalised in shared:
+            continue
         d = described[i.normalised]
         first = i.normalised not in seen
         seen.add(i.normalised)

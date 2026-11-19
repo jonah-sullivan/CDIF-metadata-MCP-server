@@ -234,17 +234,17 @@ def check_record(
         }
         summary["vocabularies_named"] = vocab["summary"]["vocabularies"]
         summary["rva_vocabularies"] = [
-            " ".join(
-                filter(
-                    None,
-                    (
-                        v.get("title") or v["path"],
-                        f"(version {v['version']}, {v.get('version_status')})"
-                        if v.get("version")
-                        else None,
-                    ),
-                )
-            )
-            for v in vocab["vocabularies"]["rva"]
+            _rva_label(v) for v in vocab["vocabularies"]["rva"]
         ]
     return {"summary": summary, **_compact(_aggregate(findings), max_findings)}
+
+
+def _rva_label(v: dict) -> str:
+    """'AODN Platform Vocabulary (version-7-0, current)'."""
+    name = v.get("title") or v["path"]
+    version = v.get("version")
+    if not version:
+        return name
+    if not version.lower().startswith("version"):
+        version = f"version {version}"
+    return f"{name} ({version}, {v.get('version_status')})"

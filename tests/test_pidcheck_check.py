@@ -111,3 +111,19 @@ def test_offline_only():
     assert "identifiers_checked" not in report["summary"]
     assert "orcid-check-digit" in codes(report, "problems")
     assert "dataset-doi-is-publication" not in codes(report, "warnings")
+
+
+def test_rva_label():
+    from pidcheck.check import _rva_label
+
+    assert _rva_label(
+        {
+            "title": "AODN Platform Vocabulary",
+            "version": "version-7-0",
+            "version_status": "current",
+        }
+    ) == ("AODN Platform Vocabulary (version-7-0, current)")
+    assert _rva_label(
+        {"title": "ANZSRC FoR", "version": "2020", "version_status": "current"}
+    ) == ("ANZSRC FoR (version 2020, current)")
+    assert _rva_label({"path": "x/y"}) == "x/y"

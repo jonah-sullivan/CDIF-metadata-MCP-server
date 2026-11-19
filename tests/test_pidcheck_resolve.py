@@ -254,3 +254,55 @@ def test_environment_overrides_dotenv(monkeypatch):
     assert config.setting("ROR_CLIENT_ID") == "from-file"
     monkeypatch.setenv("ROR_CLIENT_ID", "from-env")
     assert config.setting("ROR_CLIENT_ID") == "from-env"
+
+
+def test_host_down_after_repeated_connection_failures():
+    """A host that refuses connections is given up on, so a record with
+    many identifiers there does not wait on each in turn."""
+    attempts = []
+
+    def refuse(request):
+        attempts.append(request)
+        raise httpx.ConnectError("refused", request=request)
+
+    urls = [f"https://down.example.org/item/{n}" for n in range(10)]
+    r, _ = resolver(Replay(dict.fromkeys(urls, refuse)))
+    results = [r.resolve(u, "uri") for u in urls]
+    assert all(x["status"] == "unreachable" for x in results)
+    assert len(attempts) == 3  # HOST_FAILURE_LIMIT, then no more tries
+    assert r.host_down("down.example.org")
+    assert "not tried" in results[-1]["error"]
+
+
+def test_host_recovers_on_any_response():
+    calls = []
+
+    def flaky(request):
+        calls.append(request)
+        if len(calls) % 2:
+            raise httpx.ConnectError("refused", request=request)
+        return httpx.Response(404)
+
+    urls = [f"https://flaky.example.org/{n}" for n in range(4)]
+    r, _ = resolver(Replay(dict.fromkeys(urls, flaky)))
+    statuses = [r.resolve(u, "uri")["status"] for u in urls]
+    assert statuses == ["not-found"] * 4  # each retry got an answer
+    assert not r.host_down("flaky.example.org")
+
+
+def test_host_tried_again_after_down_period(monkeypatch):
+    from pidcheck import resolve
+
+    def refuse(request):
+        raise httpx.ConnectError("refused", request=request)
+
+    url = "https://down.example.org/x"
+    r, replay = resolver(Replay({url: refuse}))
+    r.resolve(url, "uri")
+    r.resolve(url, "uri")  # 4 failures: down
+    n = len(replay.requests)
+    r.resolve(url, "uri")
+    assert len(replay.requests) == n  # not tried while down
+    monkeypatch.setattr(resolve, "HOST_DOWN_SECONDS", 0)
+    r.resolve(url, "uri")
+    assert len(replay.requests) > n  # tried again once the period is over

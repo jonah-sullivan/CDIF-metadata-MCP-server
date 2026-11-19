@@ -258,3 +258,55 @@ def test_superseded_rva_version():
         f["code"] for f in check_vocabulary(extract(record), r)["findings"]
     ]
     assert codes == ["superseded-vocabulary-version"]
+
+
+def test_shared_uri_reported_once_not_as_terms():
+    """AODN uses the (dead) CF standard names page as every variable's
+    propertyID: it identifies a code space, not each variable."""
+    record = {
+        "schema:variableMeasured": [
+            {
+                "@type": ["schema:PropertyValue"],
+                "schema:name": name,
+                "schema:propertyID": CF,
+            }
+            for name in ("sea_water_temperature", "wind_from_direction")
+        ]
+    }
+    r, _ = resolver()
+    result = check_vocabulary(extract(record), r)
+    codes = [f["code"] for f in result["findings"]]
+    assert codes == ["term-uri-shared", "term-set-not-found"]
+    assert result["summary"]["shared_uris"] == 1
+    assert result["summary"]["not_found"] == 0
+    assert (
+        "2 terms ('sea_water_temperature', 'wind_from_direction')"
+        in (result["findings"][0]["message"])
+    )
+
+
+def test_all_labels_kept_english_first():
+    """QUDT has labels in dozens of languages; the English one must be
+    found however many there are, and shown first."""
+    other = "".join(
+        f'  rdfs:label "Label {n}"@x-{n:02d} ;\n' for n in range(15)
+    )
+    ttl = (
+        "@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n"
+        "<https://units.example.org/W-PER-M2>\n"
+        + other
+        + '  rdfs:label "Watt per Square Metre"@en .\n'
+    )
+    uri = "https://units.example.org/W-PER-M2"
+    r, _ = resolver(
+        Replay(
+            {
+                uri: lambda q: httpx.Response(
+                    200, text=ttl, headers={"content-type": "text/turtle"}
+                )
+            }
+        )
+    )
+    d = dereference(r, uri)
+    assert d["labels"][0] == "Watt per Square Metre"
+    assert len(d["labels"]) == 16
