@@ -46,7 +46,7 @@ call. It is off by default, because the checks make network requests.
 ## Setup
 
 ```bash
-git clone https://github.com/<you>/cdif-mcp && cd cdif-mcp
+git clone https://github.com/<you>/CDIF-metadata-MCP-server && cd CDIF-metadata-MCP-server
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements-dev.txt     # or requirements.txt to run only
 git clone --depth 1 https://github.com/Cross-Domain-Interoperability-Framework/doc-corediscovery vendor/doc-corediscovery

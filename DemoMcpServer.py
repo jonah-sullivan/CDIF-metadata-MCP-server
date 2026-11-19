@@ -1,7 +1,7 @@
 """cdif-mcp: an MCP server that lets AI agents check dataset metadata
 against the CDIF Discovery profile (https://w3id.org/cdif/discovery/1.1).
 
-Run:  python server.py        (stdio transport, for Claude Desktop etc.)
+Run:  python DemoMcpServer.py        (stdio transport, for Claude Desktop etc.)
 """
 
 import contextlib
