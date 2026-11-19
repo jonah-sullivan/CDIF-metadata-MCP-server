@@ -300,10 +300,9 @@ README describes how each service behaves. Re-record them with
 ## Facility report
 
 `scripts/facility_report.py` assesses how ready a facility's catalogue is
-for CDIF. For each GeoNetwork catalogue given, it lists the public records
-with resource type `dataset`, draws a random sample, converts and validates
-each record, and writes a Markdown summary and a CSV with one row per
-record:
+for CDIF. For each catalogue given, it lists the public dataset records,
+draws a random sample, converts and validates each record, and writes a
+Markdown summary and a CSV with one row per record:
 
 ```bash
 .venv/bin/python scripts/facility_report.py \
@@ -314,7 +313,22 @@ record:
   # optional: --seed N, --out-dir docs, --name NAME
 ```
 
-It works with GeoNetwork 4 (search API) and GeoNetwork 3 (the `q` service).
+It works with GeoNetwork 4 (search API) and GeoNetwork 3 (the `q` service),
+and with ArcGIS Online groups, which are what ArcGIS Hub sites search. For
+a Hub site, pass the group id, or the Hub search URL that names it:
+
+```bash
+.venv/bin/python scripts/facility_report.py \
+  --arcgis-group "ACS=https://www.acs.gov.au/search?groupIds=40a78e66db6944c0aca00fad63a93056" \
+  --name acs-report --check-identifiers
+```
+
+From an ArcGIS group it samples the public data items (services,
+geodatabases and data files; not PDFs, maps or apps) and fetches each
+item's metadata as ArcGIS's ISO 19139 export
+(`.../items/{id}/info/metadata/metadata.xml?format=iso19139`). The report
+lists how many items of each type the group holds. Both kinds of catalogue
+can be given in one run.
 It fetches the records one at a time from the live catalogues. 50 records
 from each of these three take about 15 minutes. With `--check-identifiers`,
 expect 10 to 25 minutes, depending on how much of the identifier cache is
@@ -388,7 +402,7 @@ Example: [docs/facility-report-2026-11-19.md](docs/facility-report-2026-11-19.md
 | Path | Contents |
 | --- | --- |
 | `DemoMcpServer.py` | The MCP server and its tools, including the validator |
-| `crosswalk/` | ISO 19115 crosswalk (`iso19115.py`), GeoNetwork access (`geonetwork.py`), and its relation to CODATA's spreadsheet (`codata.py`) |
+| `crosswalk/` | ISO 19115 crosswalk (`iso19115.py`), GeoNetwork access (`geonetwork.py`), ArcGIS Online groups (`arcgis.py`), and its relation to CODATA's spreadsheet (`codata.py`) |
 | `pidcheck/` | Identifier and vocabulary checks: offline (`identifiers.py`), resolution and cache (`resolve.py`), vocabularies and RVA (`vocab.py`), the combined report (`check.py`), settings and tokens (`config.py`) |
 | `qwen_agent.py` | A terminal MCP client for a model served by Lemonade |
 | `scripts/` | `facility_report.py`, `gen_crosswalk_docs.py`, `fetch_iso_fixtures.py` (refreshes the bundled ISO records) and `record_pid_fixtures.py` (re-records identifier-service responses) |
@@ -408,6 +422,9 @@ Example: [docs/facility-report-2026-11-19.md](docs/facility-report-2026-11-19.md
   See "Not mapped yet" in the crosswalk documentation.
 - The facility report lists GeoNetwork 4 catalogues in a single search,
   which is limited to 10,000 records. Larger catalogues would need paging.
+- ArcGIS support covers public groups on ArcGIS Online (www.arcgis.com).
+  Groups on an ArcGIS Enterprise portal, and private items, are not
+  supported.
 - Building the crosswalk exposed three problems in CDIF's own artefacts,
   which should be raised upstream with CODATA (see "Problems found in CDIF
   itself" in the crosswalk documentation):

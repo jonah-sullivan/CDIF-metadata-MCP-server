@@ -101,6 +101,84 @@ def test_parse_catalogues():
         rpt.parse_catalogues(["https://x.org/gn"])
 
 
+def test_parse_arcgis_groups():
+    rpt = _load_report()
+    gid = "40a78e66db6944c0aca00fad63a93056"
+    assert rpt.parse_arcgis_groups(
+        [f"ACS=https://www.acs.gov.au/search?groupIds={gid}", f"B={gid}"]
+    ) == {"ACS": gid, "B": gid}
+    for bad in [gid, "ACS=", "ACS=https://www.acs.gov.au/search"]:
+        with pytest.raises(SystemExit):
+            rpt.parse_arcgis_groups([bad])
+
+
+def test_list_records(monkeypatch):
+    """ArcGIS items come with their ISO 19139 URL; GeoNetwork records with
+    none (assess() builds it); meta gets versions, populations, types."""
+    rpt = _load_report()
+    item = "52cb2b4d300d4bc59d31555ad9e5dc8c"
+    monkeypatch.setattr(
+        rpt, "list_group_items", lambda g: ([item], {"PDF": 2})
+    )
+    monkeypatch.setattr(
+        rpt, "list_dataset_uuids", lambda base: ("4.4.12", ["u1", "u2"])
+    )
+    meta = {"versions": {}, "populations": {}}
+    assert rpt.list_records("arcgis", "g", meta, "ACS") == [
+        (item, rpt.item_xml_url(item))
+    ]
+    assert rpt.list_records("geonetwork", "https://x", meta, "T") == [
+        ("u1", None),
+        ("u2", None),
+    ]
+    assert meta == {
+        "versions": {"ACS": "ArcGIS Online group", "T": "GeoNetwork 4.4.12"},
+        "populations": {"ACS": 1, "T": 2},
+        "item_types": {"ACS": {"PDF": 2}},
+    }
+
+
+def test_assess_arcgis_record(monkeypatch):
+    """An ArcGIS ISO 19139 export, fetched from the URL given to assess()."""
+    import DemoMcpServer as srv
+
+    rpt = _load_report()
+    item = "52cb2b4d300d4bc59d31555ad9e5dc8c"
+    url = rpt.item_xml_url(item)
+    xml = (
+        ROOT / "tests/fixtures/arcgis/acs-ocean-chemistry-variables.xml"
+    ).read_bytes()
+    fetched = []
+    monkeypatch.setattr(
+        rpt, "fetch_xml", lambda u: fetched.append(u) or xml
+    )
+    group = rpt.arcgis_group_url("40a78e66db6944c0aca00fad63a93056")
+    row = rpt.assess("ACS", group, item, srv._validate_one, xml_url=url)
+    assert fetched == [url]
+    assert (row["catalogue"], row["xml_url"]) == (group, url)
+    assert row["status"] == "converted"
+    assert row["dialect"] == "iso19139"
+    assert row["title"] == "Ocean chemistry variables"
+    assert row["licence"] == "inferred"
+    assert "schema:dateModified" in row["missing_required"]
+
+    md = rpt.summarise(
+        [row],
+        {
+            **META,
+            "versions": {"ACS": "ArcGIS Online group"},
+            "populations": {"ACS": 41},
+            "item_types": {"ACS": {"File Geodatabase": 15, "PDF": 7}},
+        },
+    )
+    assert "| Catalogue | ArcGIS Online group |" in md
+    assert "| Dataset records in catalogue | 41 |" in md
+    assert (
+        "- **ACS** (ArcGIS group): items by type: File Geodatabase 15, "
+        "PDF 7." in md
+    )
+
+
 def test_assess_and_summarise(monkeypatch):
     """assess() on bundled records (fetch replaced), then summarise()."""
     import DemoMcpServer as srv

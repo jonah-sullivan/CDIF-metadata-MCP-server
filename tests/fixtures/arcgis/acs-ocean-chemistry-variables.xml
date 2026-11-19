@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><MD_Metadata xmlns:gts="http://www.isotc211.org/2005/gts" xmlns:gco="http://www.isotc211.org/2005/gco" xmlns:xalan="http://xml.apache.org/xalan" xmlns:srv="http://www.isotc211.org/2005/srv" xmlns:gmx="http://www.isotc211.org/2005/gmx" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gml="http://www.opengis.net/gml" xmlns="http://www.isotc211.org/2005/gmd">
+    <fileIdentifier>
+        <gco:CharacterString>52cb2b4d300d4bc59d31555ad9e5dc8c</gco:CharacterString>
+    </fileIdentifier>
+    <characterSet>
+        <MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8" codeSpace="ISOTC211/19115">utf8</MD_CharacterSetCode>
+    </characterSet>
+    <hierarchyLevel>
+        <MD_ScopeCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode" codeListValue="dataset" codeSpace="ISOTC211/19115">dataset</MD_ScopeCode>
+    </hierarchyLevel>
+    <hierarchyLevelName>
+        <gco:CharacterString>dataset</gco:CharacterString>
+    </hierarchyLevelName>
+    <contact gco:nilReason="missing"/>
+    <dateStamp gco:nilReason="missing"/>
+    <metadataStandardName>
+        <gco:CharacterString>ISO 19139 Geographic Information - Metadata - Implementation Specification</gco:CharacterString>
+    </metadataStandardName>
+    <metadataStandardVersion>
+        <gco:CharacterString>2007</gco:CharacterString>
+    </metadataStandardVersion>
+    <identificationInfo>
+        <MD_DataIdentification>
+            <citation>
+                <CI_Citation>
+                    <title>
+                        <gco:CharacterString>Ocean chemistry variables</gco:CharacterString>
+                    </title>
+                    <date gco:nilReason="missing"/>
+                </CI_Citation>
+            </citation>
+            <abstract>
+                <gco:CharacterString>OverviewOcean Chemistry variables are provided on a ~10 km grid covering the Australian region for global warming levels +1.2&amp;nbsp;°C, +1.5&amp;nbsp;°C, +2.0&amp;nbsp;°C, +3.0&amp;nbsp;°C and +4.0&amp;nbsp;°C. Data are derived from atmospheric fields from CMIP5 RCP8.5 global climate model data used to drive an eddy-resolving model (Ocean Forecasting Australian Model version&amp;nbsp;3, OFAM3). The data is based on just one realisation of the future ocean state.Rising atmospheric CO2 levels increase the uptake of CO2 by the oceans. About 28% of anthropogenic CO2 emissions since 1800 have been absorbed by the oceans. This affects the oceans’ carbonate chemistry and decreases their pH, a process known as ocean acidification. The pH changes in surface waters are primarily driven by increasing CO2 in the atmosphere, causing the uptake of CO2 which reacts with water producing hydrogen ions and a pH decrease.Data are available for global warming levels +1.2&amp;nbsp;°C, +1.5&amp;nbsp;°C, +2.0&amp;nbsp;°C, +3.0&amp;nbsp;°C and +4.0&amp;nbsp;°C (with respect to the pre-industrial 1850–1900 mean value), created using data from an ocean model simulation. The data is based on just one realisation of the future ocean state.The datasets in this collection show a single realisation for ocean hydrochemistry variables. The data were used in Australia’s National Climate Risk Assessment (2025).Indices includedSurface pH – mean annual surface&amp;nbsp;pH for the Australia region in the current climate, and the change in pH mean state at each GWL.Note: This dataset is not visualised on the ACS Hazard Data Explorer.Technical detailsThe data consists of gridded data covering the Australian region in NetCDF format. Data are provided for global warming levels +1.2&amp;nbsp;°C, +1.5&amp;nbsp;°C, +2.0&amp;nbsp;°C and +3.0&amp;nbsp;°C, and were created using bias-adjusted output from climate model simulations.Global warming levels represent 20-year periods where the average global temperature reaches +1.2&amp;nbsp;°C, +1.5&amp;nbsp;°C, +2.0&amp;nbsp;°C and +3.0&amp;nbsp;°C above the global average temperature for the pre-industrial period (1850–1900). Global warming level +1.2&amp;nbsp;°C is sometimes referred to as the “current” climate as it covers 2011–2030.The National Climate Risk Assessment used ~10&amp;nbsp;km resolution ocean modelling driven by atmospheric data from CMIP5 (~10 km resolution ocean modelling driven by data from CMIP6 was not available). The data used in the assessment comes from a future ocean simulation which uses the multi-model mean from CMIP5 atmospheric forcing fields under the RCP8.5 projection to drive an ocean eddy-resolving model (Ocean Forecasting Australia Model version&amp;nbsp;3, OFAM3). Data are provided globally, and collected into separate datasets for the global warming levels for the Australian Exclusive Economic Zone (EEZ) and marine subregions.Observations and modelling of ocean warming and acidification are limited by the short timescales of global ocean surface and deep ocean observations fit for model use, as well as our understanding of the global ocean circulation. Impacts from and to the high latitudes, including ice sheet loss and sea ice changes, are critical to a global understanding.It is important to note the CMIP type global models have nominal resolution of about 1 degree (~100 km in the Australian region). CMIP models can represent large scale changes in the open ocean (e.g. meridional overturning circulation) but lack the resolution to represent the boundary currents around Australia (e.g. East Australian Current, Leeuwin Current) which are critical to future changes in the ocean arounds Australia.In the open ocean, CMIP simulations do represent the large-scale future changes in ocean acidification. However, CMIP models under-estimate ocean acidification variability in the continental shelf regions of Australia.The downscaled product used in this data collection, with resolution of about 10&amp;nbsp;km, is suitable for representing these boundary currents and the changes in the ocean regions around Australia. However, in the coastal regions (water depth less than 100 m), a resolution of 1&amp;nbsp;km is needed to represent local circulation features and how they will respond to future change, which is important to issues like the existence of refugia for coral bleaching.To prepare the data for publishing the ACS has applied consistent land, sea and data void masks.Supporting documentsA technical report that describes the creation of the data:Jakob D, Risbey J, Bahramian K, Bende-Michl U, Benger N, Bhardwaj J, Black M, Bongiovanni K, Bourbon H, Buchanan P, Carrara E, Do C, Evans A, Fox-Hughes P, Gregory R, Griesser A, Grose M, Hague B, Hoffmann D, Howard E, Irving D, Jacobs S, Jones D, Maguire S, Matear R, Narsey S, O’Grady J, Oke A, Osbrough S, Parker T, Pepler A, Peter J, Rafter T, Ramsay H, Rogers C, Sharples W, Stassen C, Stellema A, Su C-H, Takbash A, Thatcher M, Tolhurst G, Tozer C, Udy D, Watkins A and Zhang X (2025) Climate Hazard Information developed for use in Climate Risk Assessment, Bureau Research Report, Australian Bureau of Meteorology.A technical report that provides supporting technical material used to assess the implications of climate change on marine natural ecosystems:Bugnot AB, Woolley S, Brodie S, Bustamante RH, Dunstan P, Richardson AJ, Blanchard J, Blamey L and Fulton E (2025) Natural Ecosystems Technical Report: Marine. A technical report prepared for the Australian Climate Service as part of the National Climate Risk Assessment, CSIRO, Australia. doi:10.25919/cyxj-0c87.A National Climate Risk Assessment Report that describes conclusions drawn from the data:Australian Climate Service (2025) Australia’s Future Climate and Hazards Report. 108pp.A high-level summary report on Natural Ecosystems risk:Nicol S, Bergstrom DM, Austin J, Bollard B, Brody S, Brooks S, Bugnot A, Bustamante R, Dunstan P, Ferrier S, Fulton B, Herr A, Liedloff A, Marvanek S, Mokany K, Prober SM, Richards AE, Stratford D, Vickers M, Williams KJ and Woolley S (2025) Natural Ecosystems Technical Report: Synthesis. A technical report prepared for the Australian Climate Service as part of the National Climate Risk Assessment. CSIRO, Australia. doi:10.25919/4wd8-db71.Scientific papers related to the Ocean Forecasting Australia Model version&amp;nbsp;3 (OFAM3) simulations:Feng M, Zhang X, Oke P, Monselesan D, Chamberlain M, Matear R and Schiller A (2016) Invigorating ocean boundary current systems around Australia during 1979–2014: As simulated in a near-global eddy-resolving ocean model, Journal of Geophysical Research: Oceans, 121:3395–3408, doi:10.1002/2016JC011842.Hayashida H, Matear RJ and Strutton PG (2020a) Background nutrient concentration determines phytoplankton bloom response to marine heatwaves, Global Change Biology, 26(9):4800–4811, doi:10.1111/gcb.15255.Hayashida H, Matear RJ, Strutton PG and Zhang X (2020b) Insights into projected changes in marine heatwaves from a high-resolution ocean circulation model, Nature Communications, 11(1):4352, doi:10.1038/s41467-020-18241-x.Matear RJ, Chamberlain MA, Sun C and Feng M (2013) Climate change projection of the Tasman Sea from an Eddy-resolving Ocean Model, Journal of Geophysical Research: Oceans, 118(6):2961–2976, doi:1002/jgrc.20202.Matear RJ, Chamberlain MA, Sun C and Feng M (2015) Climate change projection for the western tropical Pacific Ocean using a high-resolution ocean model: Implications for tuna fisheries, Deep Sea Research Part II: Topical Studies in Oceanography, 113(0):22–46, doi:10.1016/j.dsr2.2014.07.003.Oke PR, Sakov P, Cahill ML, Dunn JR, Fiedler R, Griffin DA, Mansbridge JV, Ridgway KR, and Schiller A (2013) Towards a dynamically balanced eddy-resolving ocean reanalysis: BRAN3, Ocean Modelling, 67:52–70, doi:10.1016/j.ocemod.2013.03.008.Zhang X, Oke PR, Feng M, Chamberlain MA, Church JA, Monselesan D, Sun C, Matear RJ, Schiller A and Fiedler R (2016) A near-global eddy-resolving OGCM for climate studies, Geoscientific Model Development Discussions, doi:0.5194/gmd-2016-17.SupportIf you have any questions or feedback, please email&amp;nbsp;acs@acs.gov.au.AcknowledgementPlease include the following acknowledgement in work that uses this data:“This work uses data created by the Australian Climate Service (ACS) with the assistance of resources from the National Computational Infrastructure (NCI) Australia. The ACS data contains modified information from the Coupled Model Intercomparison Project (CMIP) multi-model dataset.”DisclaimerThe Australian Government acting through the Australian Climate Service, a partnership between the Bureau of Meteorology, CSIRO, Australian Bureau of Statistics and Geoscience Australia, has exercised due care and skill in preparing and compiling the data. Notwithstanding, the Australian Climate Service, its partners, employees and advisers disclaim all liability, including liability for negligence and for any loss, damage, injury, expense or cost incurred by any person as a result of accessing, using or relying on any of the data to the maximum extent permitted by law. It does not represent a statement of the policy of the Australian Government. These data do not constitute personal financial, legal or other professional advice. Users should obtain any appropriate independent professional advice relevant to their particular circumstances.UpdatesDateUpdate description18/03/2026Dataset made available.</gco:CharacterString>
+            </abstract>
+            <purpose>
+                <gco:CharacterString>Ocean chemistry indices, including annual average acidification in surface pH.</gco:CharacterString>
+            </purpose>
+            <credit>
+                <gco:CharacterString>© Commonwealth of Australia 2026&#13;
+&#13;
+Please include the following acknowledgement in work that uses this data:&#13;
+&#13;
+“This work uses data created by the Australian Climate Service (ACS) with the assistance of resources from the National Computational Infrastructure (NCI) Australia. The ACS data contains modified information from the Coupled Model Intercomparison Project (CMIP) multi-model dataset.”</gco:CharacterString>
+            </credit>
+            <descriptiveKeywords>
+                <MD_Keywords>
+                    <keyword>
+                        <gco:CharacterString>National Climate Risk Assessment</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>data</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>hazard</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>ocean chemistry</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>acidification</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>pH</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>projected</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>GWLs</gco:CharacterString>
+                    </keyword>
+                    <keyword>
+                        <gco:CharacterString>rcp85</gco:CharacterString>
+                    </keyword>
+                </MD_Keywords>
+            </descriptiveKeywords>
+            <resourceConstraints>
+                <MD_Constraints>
+                    <useLimitation>
+                        <gco:CharacterString>Creative Commons Attribution 4.0 International licence</gco:CharacterString>
+                    </useLimitation>
+                </MD_Constraints>
+            </resourceConstraints>
+            <language gco:nilReason="missing"/>
+            <characterSet>
+                <MD_CharacterSetCode codeList="http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode" codeListValue="utf8" codeSpace="ISOTC211/19115">utf8</MD_CharacterSetCode>
+            </characterSet>
+        </MD_DataIdentification>
+    </identificationInfo>
+    <distributionInfo>
+        <MD_Distribution>
+            <distributionFormat>
+                <MD_Format>
+                    <name>
+                        <gco:CharacterString>File Geodatabase</gco:CharacterString>
+                    </name>
+                    <version gco:nilReason="missing"/>
+                </MD_Format>
+            </distributionFormat>
+        </MD_Distribution>
+    </distributionInfo>
+</MD_Metadata>

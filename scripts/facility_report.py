@@ -1,15 +1,20 @@
-"""Assess a random sample of GeoNetwork catalogue records against CDIF.
+"""Assess a random sample of catalogue records against CDIF.
 
 Usage:
     python scripts/facility_report.py \\
         --catalogue TERN=https://geonetwork.tern.org.au/geonetwork \\
         --catalogue IMOS/AODN=https://catalogue-imos.aodn.org.au/geonetwork \\
         --catalogue AuScope=https://portal.auscope.org.au/geonetwork \\
+        --arcgis-group ACS=40a78e66db6944c0aca00fad63a93056 \\
         [--sample 50] [--seed N] [--out-dir docs] [--name NAME]
         [--check-identifiers]
 
-For each catalogue, lists its public records with resource type
-'dataset', draws a random sample, converts each record's ISO 19115 XML
+Give GeoNetwork catalogues with --catalogue, and ArcGIS Online groups
+(such as the group behind an ArcGIS Hub site's search page) with
+--arcgis-group, as a group id or a URL that names one. For each, lists its
+public records with resource type 'dataset' (for an ArcGIS group, its
+public data items: services, geodatabases, files; not PDFs, maps or apps),
+draws a random sample, converts each record's ISO 19115 XML
 to CDIF Discovery with this repo's crosswalk, and validates it with the
 MCP server's validator (CDIF JSON Schema and SHACL). Identifiers are
 always checked offline (persistent identifiers, ORCIDs, RORs, check
@@ -38,6 +43,11 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from crosswalk import CrosswalkError, crosswalk  # noqa: E402
+from crosswalk.arcgis import (  # noqa: E402
+    group_id,
+    item_xml_url,
+    list_group_items,
+)
 from crosswalk.geonetwork import (  # noqa: E402
     catalogue_base,
     fetch_xml,
@@ -55,6 +65,7 @@ PROVENANCE_FILES = {
     "CDIF framing script": CDIF / "FrameAndValidate.py",
     "Crosswalk": ROOT / "crosswalk" / "iso19115.py",
     "GeoNetwork access": ROOT / "crosswalk" / "geonetwork.py",
+    "ArcGIS access": ROOT / "crosswalk" / "arcgis.py",
     "Validator (MCP server)": ROOT / "DemoMcpServer.py",
     "Identifier checks": ROOT / "pidcheck" / "identifiers.py",
     "Identifier resolution": ROOT / "pidcheck" / "resolve.py",
@@ -147,11 +158,13 @@ def assess(
     uuid: str,
     validate,
     check_ids=offline_identifier_check,
+    xml_url: str | None = None,
 ) -> dict:
     """Fetch, convert and validate one record; return a CSV row.
-    check_ids(record) gives the identifier report (offline by default)."""
+    check_ids(record) gives the identifier report (offline by default).
+    xml_url is the record's XML; by default, its GeoNetwork XML in base."""
     row = dict.fromkeys(FIELDS, "")
-    url = record_xml_url(uuid=uuid, catalogue=base)
+    url = xml_url or record_xml_url(uuid=uuid, catalogue=base)
     row.update(facility=facility, catalogue=base, uuid=uuid, xml_url=url)
     try:
         xml = fetch_xml(url)
@@ -357,11 +370,11 @@ def summarise(rows: list[dict], meta: dict) -> str:
         return [f"| {k} | {_md(msg)} |" for msg, k in ranked[:n]]
 
     lines = [
-        f"# CDIF readiness of NCRIS facility metadata ({meta['date']})",
+        f"# CDIF readiness of facility metadata ({meta['date']})",
         "",
         (
             "How well a random sample of public dataset records from each "
-            "facility's GeoNetwork catalogue converts to the [CDIF Discovery "
+            "facility's catalogue converts to the [CDIF Discovery "
             "profile](https://w3id.org/cdif/discovery/1.1), and what is "
             "missing. Each record's ISO 19115 XML was converted with this "
             "repository's crosswalk (see "
@@ -373,9 +386,17 @@ def summarise(rows: list[dict], meta: dict) -> str:
         "",
         (
             f"- **Sample:** {meta['sample']} records per catalogue, drawn at "
-            f"random from its public records with resource type `dataset`, "
-            f"using seed {meta['seed']} (each catalogue's seed is derived "
-            f"from it)."
+            f"random from its public records with resource type `dataset` "
+            f"(GeoNetwork) or its public data items (ArcGIS group, metadata "
+            f"exported by ArcGIS as ISO 19139), using seed {meta['seed']} "
+            f"(each catalogue's seed is derived from it)."
+        ),
+        *(
+            f"- **{f}** (ArcGIS group): items by type: "
+            + ", ".join(f"{t} {n}" for t, n in types.items())
+            + ". Only the data types are sampled; "
+            + "documents, maps and apps are not."
+            for f, types in meta.get("item_types", {}).items()
         ),
         f"- **Per-record results:** [{meta['csv']}]({meta['csv']}).",
         (
@@ -423,7 +444,7 @@ def summarise(rows: list[dict], meta: dict) -> str:
         "",
         "| | " + " | ".join(facilities) + " |",
         "| --- |" + " --- |" * len(facilities),
-        metric("GeoNetwork", value=lambda f: meta["versions"][f]),
+        metric("Catalogue", value=lambda f: meta["versions"][f]),
         metric(
             "Dataset records in catalogue",
             value=lambda f: f"{meta['populations'][f]:,}",
@@ -634,6 +655,41 @@ def parse_catalogues(values: list[str]) -> dict[str, str]:
     return cats
 
 
+def parse_arcgis_groups(values: list[str]) -> dict[str, str]:
+    """NAME=GROUP (an id or a URL naming one) -> {NAME: group id}."""
+    groups = {}
+    for v in values:
+        name, sep, group = v.partition("=")
+        if not sep or not name or not group:
+            raise SystemExit(f"--arcgis-group must be NAME=GROUP, got {v!r}")
+        try:
+            groups[name] = group_id(group)
+        except CrosswalkError as e:
+            raise SystemExit(f"--arcgis-group {name}: {e}") from None
+    return groups
+
+
+def arcgis_group_url(gid: str) -> str:
+    return f"https://www.arcgis.com/home/group.html?id={gid}"
+
+
+def list_records(kind: str, where: str, meta: dict, facility: str):
+    """List a catalogue's records: [(record id, XML URL or None)]. Records
+    the catalogue's version and population (and, for ArcGIS, its item
+    types) in meta."""
+    if kind == "arcgis":
+        ids, types = list_group_items(where)
+        meta["versions"][facility] = "ArcGIS Online group"
+        meta.setdefault("item_types", {})[facility] = types
+        listed = [(i, item_xml_url(i)) for i in ids]
+    else:
+        version, uuids = list_dataset_uuids(where)
+        meta["versions"][facility] = f"GeoNetwork {version}"
+        listed = [(u, None) for u in uuids]
+    meta["populations"][facility] = len(listed)
+    return listed
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(
         description=__doc__.splitlines()[0],
@@ -643,9 +699,17 @@ def main() -> int:
     ap.add_argument(
         "--catalogue",
         action="append",
-        required=True,
+        default=[],
         metavar="NAME=URL",
         help="facility name and GeoNetwork base URL (repeatable)",
+    )
+    ap.add_argument(
+        "--arcgis-group",
+        action="append",
+        default=[],
+        metavar="NAME=GROUP",
+        help="facility name and ArcGIS Online group id, or a Hub or ArcGIS "
+        "URL naming the group (e.g. .../search?groupIds=ID) (repeatable)",
     )
     ap.add_argument("--sample", type=int, default=50)
     ap.add_argument("--seed", type=int, default=None)
@@ -657,10 +721,19 @@ def main() -> int:
         help="resolve identifiers and check vocabulary terms (slower)",
     )
     args = ap.parse_args()
+    if not (args.catalogue or args.arcgis_group):
+        ap.error("give at least one --catalogue or --arcgis-group")
 
     import DemoMcpServer as srv
 
-    catalogues = parse_catalogues(args.catalogue)
+    catalogues = {
+        name: ("geonetwork", base, base)
+        for name, base in parse_catalogues(args.catalogue).items()
+    }
+    for name, gid in parse_arcgis_groups(args.arcgis_group).items():
+        if name in catalogues:
+            ap.error(f"facility name {name!r} given twice")
+        catalogues[name] = ("arcgis", gid, arcgis_group_url(gid))
     seed = args.seed if args.seed is not None else random.randrange(10**6)
     date = datetime.date.today().isoformat()
     name = args.name or f"facility-report-{date}"
@@ -684,15 +757,15 @@ def main() -> int:
             return check_record(record, resolver, max_findings=1000)
 
     rows = []
-    for facility, base in catalogues.items():
-        print(f"{facility}: listing {base} ...", file=sys.stderr)
-        version, uuids = list_dataset_uuids(base)
-        meta["versions"][facility] = version
-        meta["populations"][facility] = len(uuids)
+    for facility, (kind, where, label) in catalogues.items():
+        print(f"{facility}: listing {label} ...", file=sys.stderr)
+        listed = list_records(kind, where, meta, facility)
         rng = random.Random(f"{seed}:{facility}")
-        sample = sorted(rng.sample(uuids, min(args.sample, len(uuids))))
-        for i, uuid in enumerate(sample, 1):
-            row = assess(facility, base, uuid, srv._validate_one, check_ids)
+        sample = sorted(rng.sample(listed, min(args.sample, len(listed))))
+        for i, (uuid, url) in enumerate(sample, 1):
+            row = assess(
+                facility, label, uuid, srv._validate_one, check_ids, url
+            )
             rows.append(row)
             print(
                 f"  [{i}/{len(sample)}] {row['status']:12} "
