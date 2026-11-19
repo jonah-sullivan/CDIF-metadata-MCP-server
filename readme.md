@@ -2,7 +2,7 @@
 
 An MCP server that lets an AI agent assess dataset metadata against the
 [CDIF Discovery profile](https://github.com/Cross-Domain-Interoperability-Framework/doc-corediscovery)
-(Cross-Domain Interoperability Framework, v1.1). It does two jobs:
+(Cross-Domain Interoperability Framework, v1.1). It does three jobs:
 
 - **Validate JSON-LD.** Check the schema.org JSON-LD embedded in a dataset
   landing page, or any JSON-LD record, against CODATA's CDIF JSON Schema and
@@ -11,6 +11,9 @@ An MCP server that lets an AI agent assess dataset metadata against the
   19139 XML), such as those published by the GeoNetwork catalogues of TERN,
   IMOS/AODN and AuScope, to CDIF JSON-LD, validate it, and report what was
   mapped, inferred, missing and ignored.
+- **Check identifiers and vocabulary terms.** Check that a record's DOIs,
+  ORCIDs, RORs and other identifiers resolve and are what they claim, and
+  that its keywords and variables match the vocabularies they cite.
 
 Ask an MCP client such as Claude Desktop, for example:
 
@@ -19,6 +22,8 @@ Ask an MCP client such as Claude Desktop, for example:
 - *"Convert TERN record 3567cff4-4a73-439e-a1b4-d30caf3c8959 from
   https://geonetwork.tern.org.au/geonetwork to CDIF. Does it validate, and
   what had to be inferred?"*
+- *"Check the identifiers in the bundled example
+  auscope-rosebery-3d-model.xml. Is its DOI sound?"*
 
 ## Tools
 
@@ -31,6 +36,12 @@ Ask an MCP client such as Claude Desktop, for example:
 | `crosswalk_iso19115(url \| example)` | Converts an ISO 19115 record (by XML URL or GeoNetwork page URL, or a bundled example) to CDIF and validates it |
 | `crosswalk_geonetwork_record(catalogue, uuid)` | The same, for a record identified by its uuid in a GeoNetwork catalogue |
 | `list_iso_examples()` | Bundled ISO 19115 records from TERN, IMOS/AODN and AuScope |
+| `check_identifiers(source)` | Checks the identifiers and vocabulary terms of a record: a bundled example name, a landing page URL, an ISO XML URL or a GeoNetwork page URL |
+| `check_geonetwork_identifiers(catalogue, uuid)` | The same, for a record identified by its uuid in a GeoNetwork catalogue |
+
+`validate_cdif`, `crosswalk_iso19115` and `crosswalk_geonetwork_record`
+also take `check_identifiers=true`, to run the same checks in the same
+call. It is off by default, because the checks make network requests.
 
 ## Setup
 
@@ -161,6 +172,11 @@ designed as a result:
   when the error message spelled out the exact call to make. As required
   parameters of their own tool (`crosswalk_geonetwork_record`), it supplied
   both first time.
+- **Give optional features a tool of their own.** qwen never passed the
+  optional `check_identifiers=true` flag, even when the prompt named it.
+  Without it, it once claimed a DOI "resolves as intended" with nothing to
+  base that on. Given `check_identifiers(source)`, a tool whose only input
+  is required, it called it correctly first time.
 - **Keep easily misread output out of the main lists.** CDIF types the
   metadata record in `schema:subjectOf` as `schema:Dataset`, so Dataset
   recommendations also fire on it. Labelling those results was not enough:
@@ -218,6 +234,69 @@ date; `--check` exits 1 for CI).
 XML from catalogues is parsed with entity expansion and network access
 turned off, and record fetches refuse HTML pages and responses over 20 MB.
 
+## Identifier and vocabulary checks
+
+The `pidcheck` package checks every identifier and vocabulary term in a
+CDIF record, in three layers:
+
+1. **Offline:** finds each identifier and its role (the dataset, a person,
+   an organisation, a licence, a keyword, a vocabulary, a variable, a
+   unit), classifies it (DOI, ORCID, ROR, ISNI, handle, ARK, RAiD, IGSN,
+   persistent URI such as w3id, ordinary URL, plain string), and verifies
+   ORCID, ISNI and ROR check digits.
+2. **Resolution:**
+   - DOIs through the doi.org handle API, with the registration agency and
+     the DataCite or Crossref resource type;
+   - ORCIDs and RORs through their APIs (a ROR's status and successor);
+   - any other URI by GET.
+3. **Vocabularies:**
+   - each term is fetched as RDF and its label, scheme and deprecation
+     checked;
+   - vocabulary URIs that are dead links or web pages are flagged;
+   - vocabularies hosted in Research Vocabularies Australia (RVA) are named,
+     with whether their version is current.
+
+**From an MCP client:** `check_identifiers(source=...)` or
+`check_geonetwork_identifiers(catalogue=..., uuid=...)`, or
+`check_identifiers=true` on the validation and crosswalk tools. The reply is
+a `summary` (counts: dataset PID, people with ORCIDs, organisations with
+RORs, identifiers resolving, terms checked) plus separate `problems`,
+`warnings` and `notes` lists. Similar findings are grouped with a count and
+examples, and each list is capped at 10. The checks never change `valid`:
+they are about how well the record works for machines, not about
+conformance.
+
+**From Python:** `pidcheck.check_record(record)`, with `resolve=False` for
+the offline layer only.
+
+Among the findings:
+
+| Severity | Examples |
+| --- | --- |
+| problem | invalid check digit; an identifier or term that does not exist; one identifier shared by differently named people |
+| warning | dataset without a persistent identifier; a dataset DOI that is really a journal article; an inactive ROR organisation; a party identified by an ordinary URL; a term name that differs from its vocabulary label; a deprecated term; terms with no machine-readable description; a dead vocabulary URI; one URI used for many different terms |
+| note | a vocabulary identified by a web page; a term filed under a different scheme; a service that did not respond |
+
+**Network use:**
+- Requests are limited to two at a time per host, with one retry on
+  timeouts and gateway errors.
+- A host that refuses three connections in a row is skipped for 10 minutes,
+  so one unreachable catalogue cannot stall a run.
+- Definitive results are cached in `.cache/pidcheck/` for 30 days. Outages
+  are not cached.
+- Only the identifier itself is sent to each service.
+
+**Optional tokens:** copy `.env.example` to `.env` (not committed). Real
+environment variables take precedence.
+- `ROR_CLIENT_ID` is sent to ROR as `Client-Id`.
+- `ORCID_CLIENT_ID` and `ORCID_CLIENT_SECRET` (or `ORCID_ACCESS_TOKEN`) give
+  a `/read-public` token, sent only to ORCID.
+- Both services allow anonymous use at lower rate limits.
+
+The tests replay real responses recorded in `tests/fixtures/pid/`, whose
+README describes how each service behaves. Re-record them with
+`python scripts/record_pid_fixtures.py`.
+
 ## Facility report
 
 `scripts/facility_report.py` assesses how ready a facility's catalogue is
@@ -231,12 +310,15 @@ record:
   --catalogue TERN=https://geonetwork.tern.org.au/geonetwork \
   --catalogue IMOS/AODN=https://catalogue-imos.aodn.org.au/geonetwork \
   --catalogue AuScope=https://portal.auscope.org.au/geonetwork \
-  --sample 50        # optional: --seed N, --out-dir docs, --name NAME
+  --sample 50 --check-identifiers
+  # optional: --seed N, --out-dir docs, --name NAME
 ```
 
 It works with GeoNetwork 4 (search API) and GeoNetwork 3 (the `q` service).
-It fetches the records one at a time from the live catalogues; 50 records
-from each of these three take about 15 minutes.
+It fetches the records one at a time from the live catalogues. 50 records
+from each of these three take about 15 minutes. With `--check-identifiers`,
+expect 10 to 25 minutes, depending on how much of the identifier cache is
+already filled.
 
 - **Reproducible:** the report records the random seed, so the same seed
   draws the same records while a catalogue's contents are unchanged. It also
@@ -249,12 +331,26 @@ from each of these three take about 15 minutes.
   licence), and is the better measure of how ready the source metadata is.
 - **Other signals:** DOIs, licences given as URIs, named creators, and
   variables and keywords with vocabulary URIs.
+- **Identifiers:** always checked offline (dataset PIDs, people with
+  ORCIDs, organisations with RORs). With `--check-identifiers`, the report
+  adds:
+  - identifiers that resolve;
+  - dataset DOIs that identify publications;
+  - vocabulary terms with machine-readable descriptions and matching
+    labels;
+  - deprecated terms;
+  - the RVA vocabularies used;
+  - a ranked list of identifier findings per facility.
 
 Example: [docs/facility-report-2026-11-19.md](docs/facility-report-2026-11-19.md),
-50 records each from TERN, IMOS/AODN and AuScope. All converted, and 100%,
-100% and 96% were CDIF valid. But only 44%, 0% and 0% were valid from
-source values alone, mostly because the records lack a resource
-identifier.
+50 records each from TERN, IMOS/AODN and AuScope:
+- **Validity.** All records converted, and 100%, 100% and 96% were CDIF
+  valid. But only 44%, 0% and 0% were valid from source values alone,
+  mostly because the records lack a resource identifier.
+- **People and organisations.** None of the 150 records names a person with
+  an ORCID or an organisation with a ROR.
+- **Publication DOIs.** 8 of TERN's 22 dataset DOIs, and 4 of AuScope's 5
+  persistent identifiers, are DOIs for journal articles rather than data.
 
 ## How it works
 
@@ -293,9 +389,11 @@ identifier.
 | --- | --- |
 | `DemoMcpServer.py` | The MCP server and its tools, including the validator |
 | `crosswalk/` | ISO 19115 crosswalk (`iso19115.py`), GeoNetwork access (`geonetwork.py`), and its relation to CODATA's spreadsheet (`codata.py`) |
+| `pidcheck/` | Identifier and vocabulary checks: offline (`identifiers.py`), resolution and cache (`resolve.py`), vocabularies and RVA (`vocab.py`), the combined report (`check.py`), settings and tokens (`config.py`) |
 | `qwen_agent.py` | A terminal MCP client for a model served by Lemonade |
-| `scripts/` | `facility_report.py`, `gen_crosswalk_docs.py`, and `fetch_iso_fixtures.py` (refreshes the bundled ISO records) |
-| `tests/` | pytest suite; `tests/fixtures/iso/` holds the bundled ISO records, with their sources in `manifest.json` |
+| `scripts/` | `facility_report.py`, `gen_crosswalk_docs.py`, `fetch_iso_fixtures.py` (refreshes the bundled ISO records) and `record_pid_fixtures.py` (re-records identifier-service responses) |
+| `tests/` | pytest suite; `tests/fixtures/iso/` holds the bundled ISO records and `tests/fixtures/pid/` recorded identifier-service responses, each with a `manifest.json` and README |
+| `.env.example` | Optional ROR and ORCID tokens and cache settings (copy to `.env`) |
 | `docs/` | Generated crosswalk documentation and the example facility report |
 | `vendor/doc-corediscovery/` | CODATA's CDIF Discovery profile (cloned during setup, not committed) |
 
@@ -316,5 +414,23 @@ identifier.
   1. CDIF's complete example uses invalid JSON-LD for WKT geometry.
   2. The validation frame drops funders that have no identifier.
   3. Dataset rules also apply to the catalog record.
+- Identifier checks:
+  - **RVA registration.** RVA has no lookup by URI. A vocabulary is shown
+    as RVA-hosted when its terms resolve into RVA, but one that is
+    registered in RVA and served elsewhere (such as TERN's controlled
+    vocabularies) is not detected.
+  - **Keyword-service URLs.** Some records identify keywords with
+    GeoNetwork keyword-service URLs (e.g. MarLIN's `xml.keyword.get?...&id=`)
+    that wrap the real concept URI. These are checked as given, not
+    unwrapped.
+  - **ORCID tokens.** The client-credentials exchange for ORCID tokens is
+    tested against a fake service only, not against ORCID's production
+    endpoint.
+  - **Loose matching.** The ORCID name comparison is deliberately loose
+    (the family name must appear). Label matching ignores case and spacing
+    but not wording, so a term whose label the vocabulary has since revised
+    is reported as a mismatch.
+  - **Point in time.** Resolution reflects services when checked. A service
+    that was down is reported as unreachable, not as a broken identifier.
 
 CDIF artefacts are (c) CODATA, CC-BY-4.0.
